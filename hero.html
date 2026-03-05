@@ -3,540 +3,496 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Axios · exactly the snippet</title>
-  <!-- minimal tailwind for spacing only, full custom style to match snippet -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>AXIOS · EDGY MINIMAL</title>
+  <!-- no frameworks, just raw css -->
+  <!-- GSAP for bite-sized motion -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- brutal fonts: Anton, Bebas Neue, Space Mono, Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- use Bebas Neue for headlines, and Plus Jakarta Sans / Inter for clean look (similar to snippet) -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: #0b0d10;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    /* ---------- EXACT NAVBAR (matches snippet) ---------- */
+
+    body {
+      background: #0a0a0a; /* pure black */
+      font-family: 'Inter', sans-serif;
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+
+    /* ===== TYPOGRAPHY — RAW, UPPERCASE, LOUD ===== */
+    h1, h2, h3, .giant, .nav-link, .btn, .badge, .card-title {
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    /* ===== NAVBAR — BROKEN, ASYMMETRICAL ===== */
     .navbar {
       position: fixed;
-      top: 0; left: 0; width: 100%;
+      top: 20px;
+      left: 20px;
+      right: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.9rem 2.5rem 0.9rem 2.5rem;
-      background-color: transparent;
+      padding: 0;
+      background: transparent;
       z-index: 100;
-      transition: 0.15s;
+      border-bottom: 3px solid #f0f0f0;
     }
-    .navbar.scrolled {
-      background: rgba(10, 10, 15, 0.92);
-      backdrop-filter: blur(10px);
-    }
+
     .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      background: #f0f0f0;
+      padding: 0.8rem 2rem 0.8rem 1.5rem;
+      clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
     }
+
     .logo-box {
-      width: 32px;
-      height: 32px;
-      background-color: #c6f135;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 18px;
-      color: #111;
+      font-family: 'Anton', sans-serif;
+      font-size: 2.2rem;
+      color: #0a0a0a;
+      line-height: 1;
     }
-    .logotype {
-      font-weight: 800;
-      font-size: 1.45rem;
-      letter-spacing: -0.02em;
-      color: white;
-    }
+
     .nav-links {
       display: flex;
-      gap: 2.5rem;
-      margin-left: -2rem;
-    }
-    .nav-links span {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.8);
-      letter-spacing: 0.02em;
-      cursor: default;
-      transition: color 0.1s;
-    }
-    .nav-links span:hover { color: #c6f135; }
-    .nav-links .active { color: white; font-weight: 700; }
-
-    .right-icons {
-      display: flex;
-      align-items: center;
-      gap: 1.3rem;
-    }
-    .search-icon svg {
-      width: 18px;
-      height: 18px;
-      stroke: rgba(255,255,255,0.7);
-      stroke-width: 2;
-    }
-    .hamburger-icon {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      width: 26px;
-    }
-    .hamburger-icon span {
-      height: 2px;
-      background-color: white;
-      border-radius: 2px;
-    }
-    .hamburger-icon span:nth-child(1) { width: 100%; }
-    .hamburger-icon span:nth-child(2) { width: 100%; }
-    .hamburger-icon span:nth-child(3) { width: 80%; }
-
-    /* ---------- HERO section (pixel-perfect to snippet) ---------- */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background-color: #080a10;
-    }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&q=85');
-      background-size: cover;
-      background-position: center 30%;
-      filter: grayscale(100%) brightness(0.3);
-      z-index: 0;
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.25);
-      z-index: 1;
-    }
-    .hero-container {
-      position: relative;
-      z-index: 10;
-      max-width: 1280px;
-      margin: 0 auto;
-      width: 100%;
-      padding: 0 2.5rem 0 2.5rem;
-      flex: 1;
-      display: flex;
-      align-items: center;
-      padding-top: 80px; /* navbar space */
+      gap: 0;
     }
 
-    /* TWO COLUMN LAYOUT – exactly like snippet (left headline, right descriptor + spinner) */
-    .hero-grid {
-      display: flex;
-      width: 100%;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 2rem;
-      padding: 3rem 0 4rem 0;
-    }
-    .left-col {
-      flex: 0 0 60%;
-      max-width: 60%;
-    }
-    .right-col {
-      flex: 0 0 35%;
-      max-width: 35%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 3rem;
-    }
-
-    /* small award badge */
-    .award-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 60px;
-      padding: 0.45rem 1.4rem 0.45rem 1.2rem;
-      margin-bottom: 1.8rem;
-    }
-    .green-dot {
-      width: 8px;
-      height: 8px;
-      background-color: #c6f135;
-      border-radius: 50%;
-    }
-    .badge-text {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.15rem;
-      color: rgba(255,255,255,0.7);
-      text-transform: uppercase;
-    }
-
-    /* headline – exact replica of "Creating brands and digital solutions" */
-    .headline {
-      font-family: 'Bebas Neue', cursive;
-      color: white;
-      line-height: 0.9;
-    }
-    .headline-xl {
-      font-size: clamp(4.8rem, 12vw, 8rem);
-      font-weight: 400;
-      margin: 0;
-      letter-spacing: 0.01em;
-    }
-    .headline-mid {
-      font-size: clamp(4.8rem, 12vw, 7.8rem);
-      font-weight: 400;
-      margin-top: -0.3rem;
-    }
-    .headline-sm {
-      font-size: clamp(4.8rem, 12vw, 7.8rem);
-      font-weight: 400;
-      margin-top: -0.4rem;
-    }
-    .pill-green {
-      background-color: #c6f135;
-      color: #111;
-      border-radius: 999px;
-      padding: 0 0.25rem 0 0.3rem;
-      display: inline-block;
-      line-height: 1;
-      font-family: 'Bebas Neue', cursive;
-    }
-
-    /* right column description text */
-    .descr-text {
-      color: rgba(255,255,255,0.65);
+    .nav-links a {
+      font-family: 'Space Mono', monospace;
       font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.6;
-      text-align: right;
-      max-width: 300px;
+      font-weight: 700;
+      color: #f0f0f0;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-left: 3px solid #f0f0f0;
+      transition: 0.1s;
     }
 
-    /* ------ SPINNING BADGE (exact match to image) ------ */
-    .spinner-block {
-      display: flex;
-      justify-content: flex-end;
+    .nav-links a:hover {
+      background: #f0f0f0;
+      color: #0a0a0a;
     }
-    .circular-badge {
-      width: 140px;
-      height: 140px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .rotating-svg {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      animation: spin 14s linear infinite;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    .circle-bg {
-      fill: none;
-      stroke: rgba(255,255,255,0.15);
-      stroke-width: 1.5;
-    }
-    .circle-text {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 8.5px;
-      font-weight: 700;
-      fill: rgba(255,255,255,0.9);
-      letter-spacing: 3.5px;
-      text-transform: uppercase;
-    }
-    .center-arrow {
+
+    .menu-icon {
       width: 50px;
       height: 50px;
-      background-color: #c6f135;
-      border-radius: 50%;
+      background: #f0f0f0;
+      clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      z-index: 2;
-    }
-    .center-arrow svg {
-      width: 22px;
-      height: 22px;
-      stroke: #111;
-      stroke-width: 2.2;
-      transform: rotate(-45deg);
+      align-items: flex-end;
+      padding-right: 8px;
+      gap: 5px;
     }
 
-    /* CTA buttons */
+    .menu-icon span {
+      width: 24px;
+      height: 3px;
+      background: #0a0a0a;
+    }
+
+    /* ===== HERO — OFFCENTER, BOLD, MINIMAL ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 6rem 2rem;
+      position: relative;
+    }
+
+    .hero-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .hero-left {
+      border-right: 4px solid #f0f0f0;
+      padding-right: 3rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #f0f0f0;
+      color: #0a0a0a;
+      padding: 0.4rem 1.5rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      transform: rotate(-2deg);
+    }
+
+    .hero-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(5rem, 12vw, 9rem);
+      line-height: 0.85;
+      color: #f0f0f0;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .hero-title.strike {
+      text-decoration: line-through 6px #f0f0f0;
+      margin-left: 2rem;
+    }
+
+    .hero-description {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.2rem;
+      line-height: 1.4;
+      color: #f0f0f0;
+      max-width: 400px;
+      margin: 2rem 0 3rem;
+      border-left: 6px solid #f0f0f0;
+      padding-left: 1.5rem;
+    }
+
     .cta-group {
       display: flex;
       gap: 1rem;
-      margin-top: 2.8rem;
+      flex-wrap: wrap;
     }
+
     .btn-primary {
-      background-color: #c6f135;
-      border-radius: 60px;
-      padding: 0.75rem 2rem;
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: #111;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
+      background: #f0f0f0;
       border: none;
+      padding: 1rem 3rem;
+      font-family: 'Anton', sans-serif;
+      font-size: 1.5rem;
+      color: #0a0a0a;
+      cursor: pointer;
       transition: 0.1s;
+      clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 0% 100%);
     }
-    .btn-primary svg {
-      width: 16px;
-      height: 16px;
-      stroke: #111;
-      stroke-width: 2.5;
+
+    .btn-primary:hover {
+      background: #ffffff;
+      transform: translate(-2px, -2px);
     }
+
     .btn-outline {
       background: transparent;
-      border-radius: 60px;
-      padding: 0.75rem 2rem;
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: white;
-      border: 1px solid rgba(255,255,255,0.3);
+      border: 4px solid #f0f0f0;
+      padding: 1rem 3rem;
+      font-family: 'Anton', sans-serif;
+      font-size: 1.5rem;
+      color: #f0f0f0;
+      cursor: pointer;
+      transition: 0.1s;
+      clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+    }
+
+    .btn-outline:hover {
+      background: #f0f0f0;
+      color: #0a0a0a;
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: flex-end;
+    }
+
+    .hero-card {
+      background: transparent;
+      border: 4px solid #f0f0f0;
+      padding: 2rem;
+      width: 100%;
+      max-width: 350px;
+      transform: rotate(1deg);
+    }
+
+    .hero-card:nth-child(2) {
+      transform: rotate(-2deg);
+      margin-right: -2rem;
+    }
+
+    .card-number {
+      font-family: 'Anton', sans-serif;
+      font-size: 4rem;
+      color: #f0f0f0;
+      line-height: 1;
+      opacity: 0.5;
+    }
+
+    .card-text {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f0f0f0;
+      border-top: 4px solid #f0f0f0;
+      padding-top: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    /* ===== FEATURES — RAW GRID ===== */
+    .features {
+      background: #0a0a0a;
+      padding: 6rem 2rem;
+      border-top: 4px solid #f0f0f0;
+      border-bottom: 4px solid #f0f0f0;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-item {
+      border: 4px solid #f0f0f0;
+      padding: 2.5rem 2rem;
+      background: transparent;
       transition: 0.1s;
     }
-    .btn-outline:hover {
-      border-color: #c6f135;
-      color: #c6f135;
+
+    .feature-item:hover {
+      background: #f0f0f0;
+      color: #0a0a0a;
     }
 
-    /* ------ MARQUEE exactly as snippet (black text on green, same words) ------ */
-    .marquee-bar {
-      background-color: #c6f135;
-      padding: 0.8rem 0;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-    .marquee-content {
-      display: inline-flex;
-      align-items: center;
-      animation: marqueeScroll 22s linear infinite;
-    }
-    @keyframes marqueeScroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .marquee-item {
-      display: inline-flex;
-      align-items: center;
-      font-size: 0.9rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: #111;
-    }
-    .marquee-item span {
-      margin: 0 1.8rem;
-      font-size: 1.4rem;
-      font-weight: 300;
-      color: #111;
-      opacity: 0.7;
-    }
-
-    /* mobile menu */
-    .mobile-menu {
-      position: fixed;
-      inset: 0;
-      background: #0a0c12;
-      z-index: 200;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-    }
-    .mobile-menu.show { display: flex; }
-    .close-mobile {
-      position: absolute;
-      top: 1.5rem;
-      right: 2rem;
-      color: white;
+    .feature-icon {
       font-size: 3rem;
-      cursor: pointer;
-    }
-    .mobile-link {
-      font-size: 2rem;
-      color: rgba(255,255,255,0.8);
-      font-weight: 500;
+      margin-bottom: 1.5rem;
+      filter: invert(1);
     }
 
-    /* responsiveness */
+    .feature-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 2rem;
+      color: inherit;
+      margin-bottom: 1rem;
+    }
+
+    .feature-desc {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: inherit;
+    }
+
+    .feature-item:hover .feature-icon {
+      filter: invert(0);
+    }
+
+    /* ===== STATS — BARE NUMBERS ===== */
+    .stats {
+      padding: 5rem 2rem;
+      display: flex;
+      justify-content: space-around;
+      gap: 2rem;
+      flex-wrap: wrap;
+      background: #0a0a0a;
+    }
+
+    .stat-item {
+      text-align: center;
+      border-bottom: 4px solid #f0f0f0;
+      padding-bottom: 1rem;
+      min-width: 150px;
+    }
+
+    .stat-number {
+      font-family: 'Anton', sans-serif;
+      font-size: 4rem;
+      color: #f0f0f0;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      color: #f0f0f0;
+      letter-spacing: 2px;
+    }
+
+    /* ===== CTA — BRUTAL ===== */
+    .cta-section {
+      padding: 6rem 2rem;
+      text-align: center;
+      border-top: 4px solid #f0f0f0;
+    }
+
+    .cta-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 5rem;
+      color: #f0f0f0;
+      max-width: 900px;
+      margin: 0 auto;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .cta-button {
+      margin-top: 3rem;
+      background: #f0f0f0;
+      border: none;
+      padding: 1.5rem 6rem;
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      color: #0a0a0a;
+      cursor: pointer;
+      clip-path: polygon(2% 0%, 100% 0%, 98% 100%, 0% 100%);
+      transition: 0.1s;
+    }
+
+    .cta-button:hover {
+      background: #ffffff;
+      transform: scale(1.02);
+    }
+
+    /* mobile */
     @media (max-width: 900px) {
-      .hero-grid { flex-direction: column; align-items: flex-start; }
-      .left-col, .right-col { max-width: 100%; }
-      .right-col { align-items: flex-start; margin-top: 2rem; }
-      .descr-text { text-align: left; }
-      .navbar { padding: 1rem 1.5rem; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-left { border-right: none; }
+      .hero-right { align-items: flex-start; }
+      .features-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
   </style>
 </head>
 <body>
 
-<!-- ========== NAVBAR exactly like snippet ========== -->
-<div class="navbar" id="navbar">
+<!-- NAVBAR — B R O K E N -->
+<div class="navbar">
   <div class="logo-area">
-    <div class="logo-box">a</div>
-    <span class="logotype">Axios</span>
+    <span class="logo-box">AXIOS</span>
   </div>
   <div class="nav-links">
-    <span class="active">Home</span>
-    <span>About Us</span>
-    <span>Services</span>
-    <span>Portfolio</span>
-    <span>Blog</span>
-    <span>Contact</span>
+    <a href="#">HOME</a>
+    <a href="#">EDGE</a>
+    <a href="#">RAW</a>
+    <a href="#">VOID</a>
   </div>
-  <div class="right-icons">
-    <div class="search-icon">
-      <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg>
-    </div>
-    <!-- hamburger identical to snippet (three lines, third shorter) -->
-    <div class="hamburger-icon" id="hamBtn">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+  <div class="menu-icon">
+    <span></span><span></span><span></span>
   </div>
 </div>
 
-<!-- mobile menu overlay (simple) -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="close-mobile" id="closeMobile">&times;</div>
-  <span class="mobile-link">Home</span>
-  <span class="mobile-link">About Us</span>
-  <span class="mobile-link">Services</span>
-  <span class="mobile-link">Portfolio</span>
-  <span class="mobile-link">Blog</span>
-  <span class="mobile-link">Contact</span>
-</div>
-
-<!-- ========== HERO section: pixel-perfect to snippet ========== -->
+<!-- HERO — OFF-CENTER, LOUD -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-
   <div class="hero-container">
     <div class="hero-grid">
-
-      <!-- LEFT COLUMN (headline) -->
-      <div class="left-col">
-        <!-- award pill (exact) -->
-        <div class="award-badge">
-          <span class="green-dot"></span>
-          <span class="badge-text">AWARD-WINNING DIGITAL AGENCY</span>
+      <!-- left — brutal text -->
+      <div class="hero-left">
+        <div class="badge">MINIMAL · EDGE</div>
+        <div class="hero-title">BREAK</div>
+        <div class="hero-title strike">THE RULES</div>
+        <div class="hero-description">
+          No excess. No bullshit. Just raw data, sharp automation, and pure edge.
         </div>
-
-        <!-- headline lines with pills (exact match) -->
-        <div class="headline headline-xl">
-          Creating <span class="pill-green">brands</span>
-        </div>
-        <div class="headline headline-mid">
-          and digital
-        </div>
-        <div class="headline headline-sm">
-          <span class="pill-green">solutions</span>
-        </div>
-
-        <!-- CTA buttons (exact) -->
         <div class="cta-group">
-          <button class="btn-primary">
-            Get Started
-            <svg fill="none" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-          <button class="btn-outline">View Portfolio</button>
+          <button class="btn-primary">ENTER</button>
+          <button class="btn-outline">VOID</button>
         </div>
       </div>
 
-      <!-- RIGHT COLUMN (descriptor + rotating badge) -->
-      <div class="right-col">
-        <!-- descriptor text (exact wording from snippet) -->
-        <div class="descr-text">
-          We design exceptional brands, products, web apps, mobile apps, websites for startups and enterprises.
+      <!-- right — asymmetrical cards -->
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="card-number">01</div>
+          <div class="card-text">NEURAL CORE</div>
         </div>
-
-        <!-- ROTATING BADGE (exact replica) -->
-        <div class="spinner-block">
-          <div class="circular-badge">
-            <!-- rotating svg ring with text -->
-            <svg class="rotating-svg" viewBox="0 0 140 140">
-              <defs>
-                <path id="textPath" d="M70,20 a50,50 0 1,1 0,100 a50,50 0 1,1 0,-100" />
-              </defs>
-              <circle cx="70" cy="70" r="65" class="circle-bg" />
-              <text class="circle-text">
-                <textPath href="#textPath" startOffset="0%">SINCE 2001 · LEADING DIGITAL AGENCY · </textPath>
-              </text>
-            </svg>
-            <!-- center arrow (green circle with arrow) -->
-            <div class="center-arrow">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </div>
-          </div>
+        <div class="hero-card">
+          <div class="card-number">02</div>
+          <div class="card-text">QUANTUM FLOW</div>
+        </div>
+        <div class="hero-card">
+          <div class="card-number">03</div>
+          <div class="card-text">SYNTH VOID</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== MARQUEE (exact wording, green bg) ========== -->
-<div class="marquee-bar">
-  <div class="marquee-content">
-    <!-- first set -->
-    <div class="marquee-item">Web Development <span>✳︎</span></div>
-    <div class="marquee-item">UI/UX Design <span>✳︎</span></div>
-    <div class="marquee-item">App Development <span>✳︎</span></div>
-    <div class="marquee-item">Innovative Ideas <span>✳︎</span></div>
-    <div class="marquee-item">Development agency <span>✳︎</span></div>
-    <!-- second set (duplicate for loop) -->
-    <div class="marquee-item">Web Development <span>✳︎</span></div>
-    <div class="marquee-item">UI/UX Design <span>✳︎</span></div>
-    <div class="marquee-item">App Development <span>✳︎</span></div>
-    <div class="marquee-item">Innovative Ideas <span>✳︎</span></div>
-    <div class="marquee-item">Development agency <span>✳︎</span></div>
+<!-- FEATURES — raw grid -->
+<section class="features">
+  <div class="features-grid">
+    <div class="feature-item">
+      <div class="feature-icon">⚡</div>
+      <div class="feature-title">REAL-TIME</div>
+      <div class="feature-desc">sub-millisecond. no latency. just speed.</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🌀</div>
+      <div class="feature-title">AUTOMATION</div>
+      <div class="feature-desc">workflows that run themselves. you just watch.</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🔒</div>
+      <div class="feature-title">SECURE</div>
+      <div class="feature-desc">encrypted. locked. untouchable.</div>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- STATS — bare numbers -->
+<section class="stats">
+  <div class="stat-item">
+    <div class="stat-number">100+</div>
+    <div class="stat-label">ENTERPRISES</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">99.99</div>
+    <div class="stat-label">UPTIME</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">5ms</div>
+    <div class="stat-label">LATENCY</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">24/7</div>
+    <div class="stat-label">SUPPORT</div>
+  </div>
+</section>
+
+<!-- CTA — brutal -->
+<section class="cta-section">
+  <div class="cta-title">READY TO BREAK FREE?</div>
+  <button class="cta-button">GET EDGY</button>
+  <p class="text-gray-400 mt-6 text-sm font-mono">no credit · 14 days</p>
+</section>
 
 <script>
-  // navbar scroll effect
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) navbar.classList.add('scrolled');
-    else navbar.classList.remove('scrolled');
-  });
+  gsap.registerPlugin(ScrollTrigger);
 
-  // mobile menu
-  const hamBtn = document.getElementById('hamBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const closeMobile = document.getElementById('closeMobile');
-
-  hamBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('show');
+  // minimal animations — because edgy doesn't need much
+  gsap.from('.hero-left', { x: -100, opacity: 0, duration: 1, delay: 0.2 });
+  gsap.from('.hero-card', { y: 80, opacity: 0, duration: 0.8, stagger: 0.15, delay: 0.4 });
+  gsap.from('.feature-item', {
+    y: 50, opacity: 0, duration: 0.8, stagger: 0.2,
+    scrollTrigger: { trigger: '.features', start: 'top 75%' }
   });
-  closeMobile.addEventListener('click', () => {
-    mobileMenu.classList.remove('show');
+  gsap.from('.stat-item', {
+    scale: 0.7, opacity: 0, duration: 0.8, stagger: 0.15,
+    scrollTrigger: { trigger: '.stats', start: 'top 80%' }
   });
-  mobileMenu.addEventListener('click', (e) => {
-    if (e.target === mobileMenu) mobileMenu.classList.remove('show');
+  gsap.from('.cta-title', {
+    y: 40, opacity: 0, duration: 0.8,
+    scrollTrigger: { trigger: '.cta-section', start: 'top 80%' }
   });
-
-  // ensure marquee is seamless: duplicate already in html
 </script>
 </body>
 </html>
