@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axios · exactly the snippet</title>
+  <!-- minimal tailwind for spacing only, full custom style to match snippet -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- use Bebas Neue for headlines, and Plus Jakarta Sans / Inter for clean look (similar to snippet) -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #0b0d10;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    /* ---------- EXACT NAVBAR (matches snippet) ---------- */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 2.5rem 0.9rem 2.5rem;
+      background-color: transparent;
+      z-index: 100;
+      transition: 0.15s;
+    }
+    .navbar.scrolled {
+      background: rgba(10, 10, 15, 0.92);
+      backdrop-filter: blur(10px);
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-box {
+      width: 32px;
+      height: 32px;
+      background-color: #c6f135;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 18px;
+      color: #111;
+    }
+    .logotype {
+      font-weight: 800;
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+      color: white;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      margin-left: -2rem;
+    }
+    .nav-links span {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 0.02em;
+      cursor: default;
+      transition: color 0.1s;
+    }
+    .nav-links span:hover { color: #c6f135; }
+    .nav-links .active { color: white; font-weight: 700; }
+
+    .right-icons {
+      display: flex;
+      align-items: center;
+      gap: 1.3rem;
+    }
+    .search-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: rgba(255,255,255,0.7);
+      stroke-width: 2;
+    }
+    .hamburger-icon {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 26px;
+    }
+    .hamburger-icon span {
+      height: 2px;
+      background-color: white;
+      border-radius: 2px;
+    }
+    .hamburger-icon span:nth-child(1) { width: 100%; }
+    .hamburger-icon span:nth-child(2) { width: 100%; }
+    .hamburger-icon span:nth-child(3) { width: 80%; }
+
+    /* ---------- HERO section (pixel-perfect to snippet) ---------- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: #080a10;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&q=85');
+      background-size: cover;
+      background-position: center 30%;
+      filter: grayscale(100%) brightness(0.3);
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.25);
+      z-index: 1;
+    }
+    .hero-container {
+      position: relative;
+      z-index: 10;
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 2.5rem 0 2.5rem;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-top: 80px; /* navbar space */
+    }
+
+    /* TWO COLUMN LAYOUT – exactly like snippet (left headline, right descriptor + spinner) */
+    .hero-grid {
+      display: flex;
+      width: 100%;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 3rem 0 4rem 0;
+    }
+    .left-col {
+      flex: 0 0 60%;
+      max-width: 60%;
+    }
+    .right-col {
+      flex: 0 0 35%;
+      max-width: 35%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3rem;
+    }
+
+    /* small award badge */
+    .award-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 60px;
+      padding: 0.45rem 1.4rem 0.45rem 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+    .green-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #c6f135;
+      border-radius: 50%;
+    }
+    .badge-text {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15rem;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+    }
+
+    /* headline – exact replica of "Creating brands and digital solutions" */
+    .headline {
+      font-family: 'Bebas Neue', cursive;
+      color: white;
+      line-height: 0.9;
+    }
+    .headline-xl {
+      font-size: clamp(4.8rem, 12vw, 8rem);
+      font-weight: 400;
+      margin: 0;
+      letter-spacing: 0.01em;
+    }
+    .headline-mid {
+      font-size: clamp(4.8rem, 12vw, 7.8rem);
+      font-weight: 400;
+      margin-top: -0.3rem;
+    }
+    .headline-sm {
+      font-size: clamp(4.8rem, 12vw, 7.8rem);
+      font-weight: 400;
+      margin-top: -0.4rem;
+    }
+    .pill-green {
+      background-color: #c6f135;
+      color: #111;
+      border-radius: 999px;
+      padding: 0 0.25rem 0 0.3rem;
+      display: inline-block;
+      line-height: 1;
+      font-family: 'Bebas Neue', cursive;
+    }
+
+    /* right column description text */
+    .descr-text {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.6;
+      text-align: right;
+      max-width: 300px;
+    }
+
+    /* ------ SPINNING BADGE (exact match to image) ------ */
+    .spinner-block {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .circular-badge {
+      width: 140px;
+      height: 140px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .rotating-svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      animation: spin 14s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .circle-bg {
+      fill: none;
+      stroke: rgba(255,255,255,0.15);
+      stroke-width: 1.5;
+    }
+    .circle-text {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8.5px;
+      font-weight: 700;
+      fill: rgba(255,255,255,0.9);
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+    }
+    .center-arrow {
+      width: 50px;
+      height: 50px;
+      background-color: #c6f135;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+    .center-arrow svg {
+      width: 22px;
+      height: 22px;
+      stroke: #111;
+      stroke-width: 2.2;
+      transform: rotate(-45deg);
+    }
+
+    /* CTA buttons */
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.8rem;
+    }
+    .btn-primary {
+      background-color: #c6f135;
+      border-radius: 60px;
+      padding: 0.75rem 2rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #111;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: none;
+      transition: 0.1s;
+    }
+    .btn-primary svg {
+      width: 16px;
+      height: 16px;
+      stroke: #111;
+      stroke-width: 2.5;
+    }
+    .btn-outline {
+      background: transparent;
+      border-radius: 60px;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+      transition: 0.1s;
+    }
+    .btn-outline:hover {
+      border-color: #c6f135;
+      color: #c6f135;
+    }
+
+    /* ------ MARQUEE exactly as snippet (black text on green, same words) ------ */
+    .marquee-bar {
+      background-color: #c6f135;
+      padding: 0.8rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .marquee-content {
+      display: inline-flex;
+      align-items: center;
+      animation: marqueeScroll 22s linear infinite;
+    }
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #111;
+    }
+    .marquee-item span {
+      margin: 0 1.8rem;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: #111;
+      opacity: 0.7;
+    }
+
+    /* mobile menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: #0a0c12;
+      z-index: 200;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .mobile-menu.show { display: flex; }
+    .close-mobile {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      color: white;
+      font-size: 3rem;
+      cursor: pointer;
+    }
+    .mobile-link {
+      font-size: 2rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+    }
+
+    /* responsiveness */
+    @media (max-width: 900px) {
+      .hero-grid { flex-direction: column; align-items: flex-start; }
+      .left-col, .right-col { max-width: 100%; }
+      .right-col { align-items: flex-start; margin-top: 2rem; }
+      .descr-text { text-align: left; }
+      .navbar { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVBAR exactly like snippet ========== -->
+<div class="navbar" id="navbar">
+  <div class="logo-area">
+    <div class="logo-box">a</div>
+    <span class="logotype">Axios</span>
+  </div>
+  <div class="nav-links">
+    <span class="active">Home</span>
+    <span>About Us</span>
+    <span>Services</span>
+    <span>Portfolio</span>
+    <span>Blog</span>
+    <span>Contact</span>
+  </div>
+  <div class="right-icons">
+    <div class="search-icon">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg>
+    </div>
+    <!-- hamburger identical to snippet (three lines, third shorter) -->
+    <div class="hamburger-icon" id="hamBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<!-- mobile menu overlay (simple) -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="close-mobile" id="closeMobile">&times;</div>
+  <span class="mobile-link">Home</span>
+  <span class="mobile-link">About Us</span>
+  <span class="mobile-link">Services</span>
+  <span class="mobile-link">Portfolio</span>
+  <span class="mobile-link">Blog</span>
+  <span class="mobile-link">Contact</span>
+</div>
+
+<!-- ========== HERO section: pixel-perfect to snippet ========== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-container">
+    <div class="hero-grid">
+
+      <!-- LEFT COLUMN (headline) -->
+      <div class="left-col">
+        <!-- award pill (exact) -->
+        <div class="award-badge">
+          <span class="green-dot"></span>
+          <span class="badge-text">AWARD-WINNING DIGITAL AGENCY</span>
+        </div>
+
+        <!-- headline lines with pills (exact match) -->
+        <div class="headline headline-xl">
+          Creating <span class="pill-green">brands</span>
+        </div>
+        <div class="headline headline-mid">
+          and digital
+        </div>
+        <div class="headline headline-sm">
+          <span class="pill-green">solutions</span>
+        </div>
+
+        <!-- CTA buttons (exact) -->
+        <div class="cta-group">
+          <button class="btn-primary">
+            Get Started
+            <svg fill="none" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn-outline">View Portfolio</button>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN (descriptor + rotating badge) -->
+      <div class="right-col">
+        <!-- descriptor text (exact wording from snippet) -->
+        <div class="descr-text">
+          We design exceptional brands, products, web apps, mobile apps, websites for startups and enterprises.
+        </div>
+
+        <!-- ROTATING BADGE (exact replica) -->
+        <div class="spinner-block">
+          <div class="circular-badge">
+            <!-- rotating svg ring with text -->
+            <svg class="rotating-svg" viewBox="0 0 140 140">
+              <defs>
+                <path id="textPath" d="M70,20 a50,50 0 1,1 0,100 a50,50 0 1,1 0,-100" />
+              </defs>
+              <circle cx="70" cy="70" r="65" class="circle-bg" />
+              <text class="circle-text">
+                <textPath href="#textPath" startOffset="0%">SINCE 2001 · LEADING DIGITAL AGENCY · </textPath>
+              </text>
+            </svg>
+            <!-- center arrow (green circle with arrow) -->
+            <div class="center-arrow">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MARQUEE (exact wording, green bg) ========== -->
+<div class="marquee-bar">
+  <div class="marquee-content">
+    <!-- first set -->
+    <div class="marquee-item">Web Development <span>✳︎</span></div>
+    <div class="marquee-item">UI/UX Design <span>✳︎</span></div>
+    <div class="marquee-item">App Development <span>✳︎</span></div>
+    <div class="marquee-item">Innovative Ideas <span>✳︎</span></div>
+    <div class="marquee-item">Development agency <span>✳︎</span></div>
+    <!-- second set (duplicate for loop) -->
+    <div class="marquee-item">Web Development <span>✳︎</span></div>
+    <div class="marquee-item">UI/UX Design <span>✳︎</span></div>
+    <div class="marquee-item">App Development <span>✳︎</span></div>
+    <div class="marquee-item">Innovative Ideas <span>✳︎</span></div>
+    <div class="marquee-item">Development agency <span>✳︎</span></div>
+  </div>
+</div>
+
+<script>
+  // navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+
+  // mobile menu
+  const hamBtn = document.getElementById('hamBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMobile = document.getElementById('closeMobile');
+
+  hamBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('show');
+  });
+  closeMobile.addEventListener('click', () => {
+    mobileMenu.classList.remove('show');
+  });
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) mobileMenu.classList.remove('show');
+  });
+
+  // ensure marquee is seamless: duplicate already in html
+</script>
+</body>
+</html>

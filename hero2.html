@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Alliance · Franchise growth</title>
+    <!-- Font Awesome 5 (free) for the small arrow & social/icons if needed -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9fafc;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.4;
+            color: #1a2639;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* main container with max width to mimic clean layout */
+        .page {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 1.8rem 2.5rem;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* ----- navigation (exactly as in description) ----- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: -0.02em;
+            color: #0b1e33;
+        }
+        .logo span {
+            color: #3b6eef; /* subtle accent */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3a5e;
+            font-size: 1rem;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover {
+            color: #1d4ed8;
+        }
+
+        .contact-link {
+            background-color: #0b1e33;
+            color: white !important;
+            padding: 0.5rem 1.4rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            margin-left: 0.5rem;
+            transition: background-color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-link i {
+            font-size: 0.75rem;
+        }
+
+        .contact-link:hover {
+            background-color: #1e3a6b;
+            color: white !important;
+        }
+
+        /* ----- main hero area (two columns) ----- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2.8rem 0 3.5rem 0;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .hero-left {
+            flex: 1 1 400px;
+        }
+
+        .hero-left h1 {
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: #0a1a2b;
+            margin-bottom: 1rem;
+        }
+
+        .hero-left h1 i {
+            color: #1d4ed8;
+            font-style: normal;
+            border-bottom: 4px solid #e2e9ff;
+        }
+
+        .hero-left .sub-line {
+            font-size: 1.1rem;
+            color: #2e405b;
+            margin-bottom: 2.2rem;
+            max-width: 450px;
+        }
+
+        .get-in-touch-block {
+            background-color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 60px;
+            box-shadow: 0 15px 30px -10px rgba(0,20,50,0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .get-in-touch-block .text {
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: #111f33;
+        }
+
+        .get-in-touch-block .pill-button {
+            background: #0b1e33;
+            color: white;
+            border: none;
+            padding: 0.9rem 2.8rem;
+            border-radius: 40px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 8px 14px -6px #1e3a6b50;
+        }
+
+        .get-in-touch-block .pill-button i {
+            font-size: 0.9rem;
+        }
+
+        .get-in-touch-block .pill-button:hover {
+            background: #142e4f;
+            transform: scale(1.02);
+            box-shadow: 0 12px 18px -8px #0b1e33a0;
+        }
+
+        /* right side */
+        .hero-right {
+            flex: 1 1 300px;
+            background: #eef2f8;
+            border-radius: 40px;
+            padding: 2rem 2rem 2.2rem 2rem;
+            box-shadow: 0 20px 30px -10px rgba(23, 45, 80, 0.12);
+            border: 1px solid white;
+        }
+
+        .hero-right p {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #142842;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .hero-right p .light {
+            font-weight: 400;
+            color: #3f5579;
+        }
+
+        .partner-strip {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .partner-row {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            background: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.02);
+            font-weight: 500;
+            color: #1f3147;
+            transition: all 0.1s;
+            border: 1px solid #ffffff;
+        }
+
+        .partner-row i {
+            font-size: 1.8rem;
+            width: 2rem;
+            text-align: center;
+        }
+
+        .partner-row .fa-google {
+            color: #4285F4;
+        }
+        .partner-row .fa-facebook {
+            color: #1877F2;
+        }
+        .partner-row .fa-microsoft {
+            color: #00a1f1;
+        }
+
+        .partner-row span {
+            font-size: 1.1rem;
+        }
+
+        /* bottom microsoft / partner line as per image */
+        .extra-logos {
+            margin-top: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #4b5b77;
+            border-top: 1px dashed rgba(0,0,0,0.1);
+            padding-top: 1.5rem;
+        }
+
+        .extra-logos i {
+            font-size: 1.4rem;
+            margin-right: 0.3rem;
+            vertical-align: middle;
+        }
+
+        /* small footer / company info – just to fill */
+        .footer-note {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #718096;
+            border-top: 1px solid #e9edf3;
+            padding-top: 1.5rem;
+        }
+
+        .footer-note .copy {
+            opacity: 0.7;
+        }
+
+        /* interactive js demo – simple click message */
+        .toast-msg {
+            visibility: hidden;
+            min-width: 240px;
+            background-color: #142134;
+            color: #fff;
+            text-align: center;
+            border-radius: 50px;
+            padding: 14px 18px;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 500;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.2s, visibility 0.2s;
+            z-index: 1000;
+        }
+
+        .toast-msg.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* responsive touches */
+        @media (max-width: 800px) {
+            .page { padding: 1.2rem 1.5rem; }
+            .hero-left h1 { font-size: 2.8rem; }
+            .navbar { flex-direction: column; gap: 1rem; align-items: start; }
+            .nav-links { flex-wrap: wrap; gap: 1rem; }
+        }
+
+        @media (max-width: 550px) {
+            .get-in-touch-block { flex-direction: column; align-items: flex-start; border-radius: 40px; gap: 1rem; }
+            .hero-right { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- navigation exactly as described: Solutions · Services · Case Study · Company · Contact us (with icon) -->
+        <nav class="navbar">
+            <div class="logo">Growth<span>Alliance</span></div>
+            <div class="nav-links">
+                <a href="#">Solutions</a>
+                <a href="#">Services</a>
+                <a href="#">Case Study</a>
+                <a href="#">Company</a>
+                <a href="#" class="contact-link">Contact us <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </nav>
+
+        <!-- main hero area -->
+        <div class="hero">
+            <div class="hero-left">
+                <h1>Accelerate your<br>franchise's growth.</h1>
+                <div class="sub-line">Partnering with franchises to deliver<br>customised digital marketing solutions.</div>
+
+                <!-- "Get in touch" block exactly like the image: left text & button -->
+                <div class="get-in-touch-block">
+                    <span class="text">Get in touch</span>
+                    <button class="pill-button" id="contactTriggerBtn">
+                        <i class="fas fa-arrow-right"></i> Contact
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <!-- paragraph from the image (repeated line but fits) -->
+                <p>Partnering with franchises to deliver<br><span class="light">customised digital marketing solutions.</span></p>
+                
+                <!-- google, facebook, microsoft as boxed rows (exactly like image list) -->
+                <div class="partner-strip">
+                    <div class="partner-row">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </div>
+                    <div class="partner-row">
+                        <i class="fab fa-facebook"></i>
+                        <span>facebook</span>
+                    </div>
+                    <div class="partner-row">
+                        <i class="fab fa-microsoft"></i>
+                        <span>Microsoft</span>
+                    </div>
+                </div>
+
+                <!-- extra subtle line: could be "and more" but we just keep the three as given -->
+                <div class="extra-logos">
+                    <i class="fas fa-check-circle" style="color:#2b6c4b;"></i> trusted partners
+                </div>
+            </div>
+        </div>
+
+        <!-- subtle footer (just for design consistency, not in jpg but keeps layout) -->
+        <div class="footer-note">
+            <div class="copy">© 2025 Growth Alliance — franchise growth partners</div>
+            <div style="display: flex; gap: 20px;">
+                <span>Google</span> <span>facebook</span> <span>Microsoft</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- hidden toast for JS interaction -->
+    <div id="liveToast" class="toast-msg">📧 Thanks! We’ll be in touch soon.</div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // JS behaviour: clicking any "Contact us" (nav or the big contact button) shows a nice toast
+            const navContact = document.querySelector('.contact-link');
+            const heroButton = document.getElementById('contactTriggerBtn');
+            const toast = document.getElementById('liveToast');
+
+            // also any "Get in touch" block itself? we use button but also we can add nav link
+            const contactElements = [navContact, heroButton];
+
+            function showToast(message) {
+                // optional set custom message
+                toast.textContent = message || '📧 Thanks! We’ll be in touch soon.';
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 2400);
+            }
+
+            contactElements.forEach(el => {
+                if (el) {
+                    el.addEventListener('click', (e) => {
+                        // if it's the anchor link, we prevent default just to show toast
+                        if (el.tagName === 'A' && el.classList.contains('contact-link')) {
+                            e.preventDefault();
+                            showToast('📬 Contact request sent (demo)');
+                        } else if (el.tagName === 'BUTTON') {
+                            e.preventDefault(); // button inside form? no form but still
+                            showToast('✅ We’ll contact you shortly!');
+                        }
+                    });
+                }
+            });
+
+            // additional fun: clicking on any partner row shows a simple message (just for interactivity)
+            const partnerRows = document.querySelectorAll('.partner-row');
+            partnerRows.forEach(row => {
+                row.addEventListener('click', () => {
+                    const platform = row.querySelector('span')?.innerText || 'partner';
+                    showToast(`✨ ${platform} integration — case study available`);
+                });
+            });
+
+            // also the "Contact us" in the nav is already covered, but we might double-check 
+            // to prevent actual navigation (since it's a demo)
+            const allContactLinks = document.querySelectorAll('a[href="#"]');
+            allContactLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (link.classList.contains('contact-link') || link.innerText.includes('Contact')) {
+                        e.preventDefault();
+                        showToast('📨 Growth Alliance – message sent (demo)');
+                    }
+                });
+            });
+        })();
+    </script>
+
+    <!-- tiny style for partner-row hover (non-essential but nice) -->
+    <style>
+        .partner-row {
+            cursor: pointer;
+            transition: background 0.15s, transform 0.1s;
+        }
+        .partner-row:hover {
+            background: #f0f5ff;
+            transform: translateX(4px);
+            border-color: #d9e5ff;
+        }
+        .pill-button {
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>
