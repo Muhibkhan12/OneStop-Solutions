@@ -3,882 +3,399 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Growth Alliance — unified premium page</title>
-  <!-- Tailwind + Inter + Font Awesome + Swiper -->
+  <title>Growth Alliance</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
-    /* ----- global reset & fonts ----- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background: #faf9f7;
-      color: #111;
-      line-height: 1.5;
-    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--lime:#ceff66;--lime-dark:#a6e62c;--ink:#111;--bg:#faf9f7;--muted:#5a5a5a;--hf:'Plus Jakarta Sans',sans-serif;--bf:'Inter',sans-serif}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--bf);background:var(--bg);color:var(--ink);line-height:1.5;overflow-x:hidden}
 
-    /* ----- hero styles (preserved) ----- */
-    .hero-overlay {
-      background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%);
-      pointer-events: none;
-    }
-    .nav-link {
-      position: relative;
-      transition: color 0.2s ease;
-    }
-    .nav-link:hover {
-      color: #ffffff;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background: #d6ff7c;
-      transition: width 0.25s ease-out;
-    }
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    .dropdown-indicator {
-      margin-left: 5px;
-      font-size: 12px;
-      display: inline-block;
-      transition: transform 0.2s;
-    }
-    .nav-link:hover .dropdown-indicator {
-      transform: translateY(1px);
-    }
-    .btn-primary {
-      background: linear-gradient(145deg, #c5f467, #a6e62c);
-      transition: all 0.25s ease;
-      box-shadow: 0 10px 20px -8px rgba(166, 230, 44, 0.4);
-    }
-    .btn-primary:hover {
-      background: linear-gradient(145deg, #b3e04e, #93cd25);
-      transform: translateY(-2px);
-      box-shadow: 0 20px 25px -8px rgba(128, 180, 30, 0.5);
-    }
-    .btn-primary i {
-      transition: transform 0.2s ease;
-    }
-    .btn-primary:hover i {
-      transform: translateX(4px);
-    }
-    .trust-logo {
-      opacity: 0.8;
-      transition: opacity 0.2s;
-    }
-    .trust-logo:hover {
-      opacity: 1;
-    }
-    .hero-padding {
-      padding: 2rem 3rem;
-    }
-    @media (min-width: 1280px) {
-      .hero-padding {
-        padding: 2.5rem 5rem;
-      }
-    }
-    .hero-bg {
-      background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2940&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center 30%;
-    }
+    /* SCROLL REVEAL */
+    .reveal{opacity:0;transform:translateY(52px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .reveal-left{opacity:0;transform:translateX(-60px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+    .reveal-right{opacity:0;transform:translateX(60px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+    .reveal-left.visible,.reveal-right.visible{opacity:1;transform:translateX(0)}
+    .d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}.d4{transition-delay:.38s}
 
-    /* ----- feature section styles (original) ----- */
-    .section-premium {
-      max-width: 1440px;
-      margin: 0 auto;
-      padding: 140px 80px;
-      position: relative;
-      background: #fafafa;
-    }
+    h1,h2,h3,h4{font-family:var(--hf)}
 
-    .vertical-divider {
-      position: absolute;
-      top: 120px;
-      left: 60px;
-      width: 1px;
-      height: 260px;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.02), rgba(0,0,0,0.12), rgba(0,0,0,0.02));
-      z-index: 1;
-    }
+    /* HERO */
+    .hero-overlay{background:linear-gradient(105deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.38) 55%,rgba(0,0,0,.05) 100%);pointer-events:none}
+    .nav-link{position:relative;font-family:var(--bf);font-weight:500;transition:color .2s}
+    .nav-link:hover{color:#fff}
+    .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--lime);transition:width .25s ease-out}
+    .nav-link:hover::after{width:100%}
+    .btn-primary{font-family:var(--bf);font-weight:600;background:linear-gradient(145deg,#c5f467,#a6e62c);transition:all .28s ease;box-shadow:0 10px 24px -8px rgba(166,230,44,.45)}
+    .btn-primary:hover{background:linear-gradient(145deg,#b3e04e,#93cd25);transform:translateY(-2px);box-shadow:0 18px 28px -8px rgba(128,180,30,.5)}
+    .btn-primary i{transition:transform .2s}
+    .btn-primary:hover i{transform:translateX(4px)}
 
-    .lime-accent-line {
-      position: absolute;
-      top: 180px;
-      right: 100px;
-      width: 160px;
-      height: 3px;
-      background: #caf05e;
-      border-radius: 4px;
-      opacity: 0.8;
-      box-shadow: 0 2px 8px rgba(202, 240, 94, 0.3);
-      z-index: 2;
-    }
+    /* MOBILE MENU */
+    #mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(10,10,10,.96);backdrop-filter:blur(16px);padding:1.5rem 2rem;z-index:50;border-top:1px solid rgba(255,255,255,.08)}
+    #mobile-menu.open{display:block}
+    #mobile-menu a{display:block;font-family:var(--bf);font-weight:500;color:rgba(255,255,255,.75);font-size:1.1rem;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.06);transition:color .2s}
+    #mobile-menu a:hover{color:var(--lime)}
+    #mobile-menu a:last-child{border-bottom:none}
 
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-      position: relative;
-      z-index: 10;
-    }
+    /* FEATURE */
+    .section-premium{max-width:1440px;margin:0 auto;padding:110px 80px;position:relative;background:#fafafa}
+    .vertical-divider{position:absolute;top:120px;left:60px;width:1px;height:260px;background:linear-gradient(to bottom,transparent,rgba(0,0,0,.12),transparent);z-index:1}
+    .lime-accent-line{position:absolute;top:180px;right:100px;width:160px;height:3px;background:var(--lime);border-radius:4px;opacity:.7;z-index:2}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:10}
+    .main-image{width:100%;height:auto;border-radius:24px;box-shadow:0 40px 60px -28px rgba(0,0,0,.3);filter:grayscale(100%) contrast(1.08);object-fit:cover;aspect-ratio:1/1.08;display:block;transition:all .5s cubic-bezier(.2,.9,.3,1)}
+    .main-image:hover{transform:scale(1.015);filter:grayscale(70%) contrast(1.05)}
+    .feat-heading{font-family:var(--hf);font-size:clamp(32px,4.5vw,54px);font-weight:800;line-height:1.12;letter-spacing:-.025em;color:var(--ink);margin-bottom:1.6rem}
+    .feat-body{font-family:var(--bf);font-size:1.05rem;color:var(--muted);max-width:520px;margin-bottom:2.5rem;line-height:1.7}
+    .secondary-img{width:70%;max-width:360px;border-radius:24px;box-shadow:0 30px 40px -25px rgba(0,0,0,.25);filter:grayscale(100%) contrast(1.1);aspect-ratio:4/3;object-fit:cover;transition:all .45s ease}
+    .secondary-img:hover{transform:scale(1.02) translateY(-4px)}
+    .decor-squares{position:absolute;top:-10px;right:20px;z-index:20;pointer-events:none}
+    .square-lime{width:85px;height:85px;background:var(--lime);position:absolute;top:0;right:60px;opacity:.9;transform:rotate(10deg);border-radius:18px;box-shadow:-10px 12px 25px -8px rgba(160,210,60,.25)}
+    .square-dark{width:85px;height:85px;background:#1e1e24;position:absolute;top:30px;right:0;transform:rotate(-7deg);border-radius:18px;box-shadow:12px 15px 25px -10px rgba(0,0,0,.25)}
 
-    .left-image-block {
-      position: relative;
-    }
+    /* BRANDS */
+    .brands-section{background:#0f0f0f;padding:80px 0 72px;overflow:hidden;position:relative}
+    .brands-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(206,255,102,.06) 0%,transparent 70%);pointer-events:none}
+    .brands-label{font-family:var(--bf);font-size:.78rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.3);text-align:center;margin-bottom:3.5rem}
+    .brands-label span{display:inline-block;width:32px;height:1px;background:rgba(255,255,255,.2);vertical-align:middle;margin:0 12px}
+    .marquee-row{overflow:hidden}
+    .marquee-track{display:flex;white-space:nowrap;will-change:transform}
+    .marquee-track.fwd{animation:marqueeFwd 32s linear infinite}
+    .marquee-track.rev{animation:marqueeRev 38s linear infinite}
+    .marquee-track:hover{animation-play-state:paused}
+    @keyframes marqueeFwd{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @keyframes marqueeRev{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+    .brand-item{display:inline-flex;align-items:center;gap:14px;padding:0 44px;flex-shrink:0;opacity:.4;transition:opacity .35s;cursor:default}
+    .brand-item:hover{opacity:1}
+    .brand-icon{width:36px;height:36px;background:rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .brand-icon img{width:22px;height:22px;filter:brightness(0) invert(1);object-fit:contain}
+    .brand-name{font-family:var(--hf);font-size:1.15rem;font-weight:700;color:#fff;letter-spacing:-.01em}
+    .brand-dot{width:4px;height:4px;background:var(--lime);border-radius:50%;flex-shrink:0;margin-left:4px}
+    .brands-divider{width:100%;height:1px;background:rgba(255,255,255,.05);margin:40px 0}
 
-    .main-image {
-      width: 100%;
-      height: auto;
-      border-radius: 24px;
-      box-shadow: 0 35px 50px -25px rgba(0,0,0,0.3);
-      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
-      display: block;
-      filter: grayscale(100%) contrast(1.08) brightness(0.98);
-      object-fit: cover;
-      aspect-ratio: 1/1.08;
-      transform: scale(1);
-    }
+    /* SERVICES */
+    .services-modern{max-width:1440px;margin:0 auto;padding:120px 80px;background:#fff;position:relative;overflow:hidden}
+    .services-modern::before{content:'';position:absolute;top:-50px;right:-50px;width:280px;height:280px;background:rgba(206,255,102,.1);border-radius:48px;transform:rotate(25deg);z-index:0;pointer-events:none}
+    .service-header{position:relative;z-index:5;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;margin-bottom:5rem;gap:2rem}
+    .header-tag{font-family:var(--bf);font-weight:500;font-size:.82rem;letter-spacing:.28em;text-transform:uppercase;color:#8f8f8f;display:block;margin-bottom:1rem;border-left:4px solid var(--lime);padding-left:1rem;line-height:1.2}
+    .header-title{font-family:var(--hf);font-size:clamp(2.4rem,6vw,4.6rem);font-weight:800;line-height:1.08;letter-spacing:-.025em;max-width:800px;color:var(--ink)}
+    .header-title span{color:var(--ink);background:linear-gradient(145deg,var(--lime),#b3e845);padding:0 .12em .08em;display:inline-block;transform:skewX(-4deg) rotate(-1deg);box-shadow:-8px 8px 0 rgba(0,0,0,.14)}
+    .header-desc{max-width:340px;color:#4a4a4a;font-family:var(--bf);font-size:1.05rem;line-height:1.65;border-bottom:2px solid var(--lime);padding-bottom:1rem}
+    .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;position:relative;z-index:10;align-items:start}
+    .service-card-modern{background:#fff;border-radius:42px;padding:2.5rem 2rem 2rem;box-shadow:0 30px 50px -30px rgba(0,0,0,.18);transition:all .45s cubic-bezier(.23,1,.32,1);border:1px solid #f0f0f0;display:flex;flex-direction:column;position:relative}
+    .service-card-modern:hover{transform:translateY(-18px) scale(1.01);box-shadow:0 40px 65px -22px rgba(0,0,0,.22);border-color:var(--lime)}
+    .card-1{margin-top:0}.card-2{margin-top:60px}.card-3{margin-top:20px}
+    .icon-frame{width:80px;height:80px;background:var(--ink);border-radius:28px;display:flex;align-items:center;justify-content:center;margin-bottom:2rem;box-shadow:14px 14px 0 var(--lime);transition:all .3s ease}
+    .service-card-modern:hover .icon-frame{box-shadow:8px 8px 0 var(--lime);transform:scale(.97);background:#2a2a2a}
+    .icon-frame i{font-size:2.4rem;color:var(--lime);transition:transform .3s}
+    .service-card-modern:hover .icon-frame i{transform:scale(1.1) rotate(-3deg);color:#fff}
+    .card-title{font-family:var(--hf);font-size:1.9rem;font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-bottom:.9rem}
+    .card-desc{font-family:var(--bf);color:#5a5a5a;font-size:.98rem;line-height:1.65;margin-bottom:2rem;flex:1}
+    .image-zone{width:100%;height:200px;border-radius:24px;overflow:hidden;background:#ececec;border:1px solid #ddd;transition:all .4s ease;clip-path:polygon(8% 0,100% 0%,92% 100%,0% 100%);filter:grayscale(1)}
+    .service-card-modern:hover .image-zone{clip-path:polygon(0 0,100% 0,100% 100%,0% 100%);filter:grayscale(.15);border-radius:28px 8px 28px 8px}
+    .image-zone img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s ease}
+    .service-card-modern:hover .image-zone img{transform:scale(1.09)}
+    .card-lime-bar{width:60px;height:4px;background:var(--lime);border-radius:4px;margin-top:1.5rem;transition:width .35s}
+    .service-card-modern:hover .card-lime-bar{width:110px}
 
-    .main-image:hover {
-      transform: scale(1.01);
-      box-shadow: 0 45px 60px -28px rgba(0,0,0,0.35);
-      filter: grayscale(80%) contrast(1.05);
-    }
+    /* STATS */
+    .stat-number{font-family:var(--hf);font-size:clamp(2.4rem,7vw,4rem);font-weight:800;line-height:1;letter-spacing:-.03em;color:var(--lime);-webkit-text-stroke:2px var(--ink);text-shadow:4px 4px 0 var(--ink)}
 
-    .right-content {
-      position: relative;
-      padding-top: 12px;
-    }
+    /* TESTIMONIALS */
+    .lime-marker{background:var(--lime);width:32px;height:8px;border-radius:12px;margin-bottom:1.5rem}
+    .testimonial-card{background:#fff;border-radius:36px;padding:3rem 2.5rem;box-shadow:0 35px 60px -30px rgba(0,0,0,.28);border:1px solid #eee}
 
-    .heading {
-      font-size: clamp(42px, 5.2vw, 56px);
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      color: #111;
-      max-width: 650px;
-      margin-bottom: 1.8rem;
-      text-wrap: pretty;
-    }
+    /* SWIPER */
+    .swiper-pagination-bullet{background:#aaa;opacity:.5;transition:all .2s}
+    .swiper-pagination-bullet-active{background:var(--lime)!important;opacity:1;transform:scale(1.3)}
+    .swiper-button-prev,.swiper-button-next{color:var(--ink);background:rgba(255,255,255,.92);width:44px;height:44px;border-radius:50%;box-shadow:0 8px 20px rgba(0,0,0,.08);transition:all .2s}
+    .swiper-button-prev:after,.swiper-button-next:after{font-size:1.1rem;font-weight:700}
+    .swiper-button-prev:hover,.swiper-button-next:hover{background:var(--lime);color:#000}
+    .swiper-slide{height:auto}
 
-    .body-text {
-      font-size: 1.15rem;
-      color: #5a5a5a;
-      max-width: 540px;
-      margin-bottom: 3rem;
-      line-height: 1.65;
-    }
+    /* FOOTER */
+    .footer-link{font-family:var(--bf);color:#aaa;transition:color .2s}
+    .footer-link:hover{color:var(--lime)}
 
-    .secondary-image-wrapper {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 40px;
-      position: relative;
-      z-index: 12;
-    }
+    /* SCROLL PROGRESS */
+    #scroll-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--lime);z-index:999;transition:width .1s linear;box-shadow:0 0 10px rgba(206,255,102,.6)}
 
-    .secondary-img {
-      width: 70%;
-      max-width: 360px;
-      border-radius: 24px;
-      box-shadow: 0 30px 40px -25px rgba(0,0,0,0.25);
-      filter: grayscale(100%) contrast(1.1) brightness(1.02);
-      transition: all 0.4s ease;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      border: 2px solid rgba(255,255,255,0.1);
+    /* RESPONSIVE */
+    @media(max-width:1100px){
+      .section-premium{padding:80px 48px}
+      .two-col{gap:48px}
+      .vertical-divider{left:36px}
+      .lime-accent-line{right:48px}
+      .services-modern{padding:100px 48px}
+      .card-grid{gap:20px}
+      .card-2{margin-top:30px}
+      .card-3{margin-top:10px}
     }
-
-    .secondary-img:hover {
-      transform: scale(1.02) translateY(-4px);
-      box-shadow: 0 40px 50px -20px rgba(0,0,0,0.3);
-      filter: grayscale(90%) contrast(1.08);
+    @media(max-width:900px){
+      .section-premium{padding:64px 32px}
+      .two-col{grid-template-columns:1fr;gap:40px}
+      .vertical-divider,.lime-accent-line{display:none}
+      .main-image{aspect-ratio:16/9}
+      .secondary-img{width:62%}
+      .decor-squares{right:16px}
+      .square-lime,.square-dark{width:60px;height:60px;border-radius:12px}
+      .square-dark{top:22px}
+      .services-modern{padding:80px 32px}
+      .card-grid{grid-template-columns:1fr;gap:24px}
+      .card-2,.card-3{margin-top:0}
+      .service-header{flex-direction:column;align-items:flex-start}
+      .header-desc{max-width:100%}
+      .testimonial-card{padding:2rem 1.5rem}
     }
-
-    .decor-squares {
-      position: absolute;
-      top: -10px;
-      right: 20px;
-      z-index: 20;
-      pointer-events: none;
+    @media(max-width:640px){
+      .section-premium{padding:56px 20px}
+      .feat-heading{font-size:clamp(28px,8vw,40px)}
+      .feat-body{font-size:.95rem;margin-bottom:1.5rem}
+      .secondary-img{width:82%}
+      .services-modern{padding:60px 20px}
+      .service-card-modern{padding:1.75rem 1.5rem 1.5rem;border-radius:28px}
+      .icon-frame{width:64px;height:64px;border-radius:20px;margin-bottom:1.5rem}
+      .icon-frame i{font-size:1.9rem}
+      .card-title{font-size:1.5rem}
+      .image-zone{height:160px}
+      .stat-number{font-size:2.5rem}
+      .testimonial-card{padding:1.75rem 1.25rem;border-radius:24px}
+      .swiper-button-prev,.swiper-button-next{width:36px;height:36px}
+      .brands-section{padding:60px 0 56px}
+      .brand-name{font-size:1rem}
+      .brand-item{padding:0 28px}
     }
-
-    .square-lime {
-      width: 85px;
-      height: 85px;
-      background: #ceff66;
-      position: absolute;
-      top: 0;
-      right: 60px;
-      opacity: 0.9;
-      transform: rotate(10deg);
-      border-radius: 18px;
-      box-shadow: -10px 12px 25px -8px rgba(160, 210, 60, 0.25);
+    @media(max-width:380px){
+      .feat-heading{font-size:26px}
+      .stat-number{font-size:2.1rem;-webkit-text-stroke:1.5px var(--ink)}
     }
-
-    .square-dark {
-      width: 85px;
-      height: 85px;
-      background: #1e1e24;
-      position: absolute;
-      top: 30px;
-      right: 0;
-      transform: rotate(-7deg);
-      border-radius: 18px;
-      box-shadow: 12px 15px 25px -10px rgba(0,0,0,0.25);
-    }
-
-    .circle-badge {
-      position: absolute;
-      top: 45%;
-      left: 48%;
-      transform: translate(-50%, -50%);
-      width: 130px;
-      height: 130px;
-      background: #ceff66;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 30;
-      box-shadow: 0 15px 25px -8px rgba(180, 230, 60, 0.5);
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-      animation: floatBadge 6s infinite alternate ease-in-out;
-    }
-
-    .circle-badge:hover {
-      transform: translate(-50%, -50%) scale(1.06) rotate(3deg);
-      box-shadow: 0 20px 32px -6px rgba(180, 240, 60, 0.7);
-    }
-
-    .badge-arrow {
-      font-size: 2.6rem;
-      color: #111;
-      font-weight: 300;
-      line-height: 1;
-      transition: transform 0.3s;
-    }
-
-    .circle-badge:hover .badge-arrow {
-      transform: translateY(-5px);
-    }
-
-    .circle-badge::after {
-      content: '';
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      right: 8px;
-      bottom: 8px;
-      border: 1.8px dashed rgba(0,0,0,0.15);
-      border-radius: 50%;
-      pointer-events: none;
-      animation: rotateRing 24s linear infinite;
-    }
-
-    @keyframes rotateRing {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    @keyframes floatBadge {
-      0% { transform: translate(-50%, -50%) translateY(0); }
-      100% { transform: translate(-50%, -50%) translateY(-8px); }
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(24px);
-      animation: fadeUp 0.8s ease forwards;
-    }
-
-    .delay-1 { animation-delay: 0.15s; }
-    .delay-2 { animation-delay: 0.35s; }
-    .delay-3 { animation-delay: 0.55s; }
-
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ----- service card (original style kept for consistency) ----- */
-    .service-card {
-      background: #ffffff;
-      border-radius: 32px;
-      padding: 2.4rem 2rem;
-      box-shadow: 0 20px 35px -20px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-      border: 1px solid rgba(0,0,0,0.02);
-    }
-    .service-card:hover {
-      transform: scale(1.02) translateY(-8px);
-      box-shadow: 0 30px 45px -18px rgba(0,0,0,0.2);
-      border-color: rgba(206, 255, 102, 0.3);
-    }
-    .service-icon {
-      font-size: 2.4rem;
-      color: #ceff66;
-      margin-bottom: 1.5rem;
-      background: #111;
-      display: inline-block;
-      padding: 0.8rem 1rem;
-      border-radius: 30px;
-      box-shadow: 0 6px 12px -6px rgba(0,0,0,0.3);
-    }
-    .stat-number {
-      font-size: 4rem;
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      color: #ceff66;
-      -webkit-text-stroke: 2px #111;
-      text-shadow: 6px 6px 0 #111;
-    }
-    .testimonial-card {
-      background: #fff;
-      border-radius: 36px;
-      padding: 3rem 2.5rem;
-      box-shadow: 0 35px 60px -30px rgba(0,0,0,0.3);
-      border: 1px solid #eee;
-    }
-    .lime-marker {
-      background: #ceff66;
-      width: 32px;
-      height: 8px;
-      border-radius: 12px;
-      margin-bottom: 1.5rem;
-    }
-    .footer-link {
-      color: #aaa;
-      transition: color 0.2s;
-    }
-    .footer-link:hover {
-      color: #ceff66;
-    }
-
-    /* ----- REDESIGNED SERVICES SECTION (modern, asymmetric, premium) ----- */
-    .services-modern {
-      max-width: 1440px;
-      margin: 0 auto;
-      padding: 140px 80px;
-      background: #ffffff;
-      position: relative;
-      overflow: hidden;
-    }
-    .services-modern::before {
-      content: '';
-      position: absolute;
-      top: -50px;
-      right: -50px;
-      width: 280px;
-      height: 280px;
-      background: rgba(206, 255, 102, 0.12);
-      border-radius: 48px;
-      transform: rotate(25deg);
-      z-index: 0;
-      pointer-events: none;
-    }
-    .services-modern::after {
-      content: '';
-      position: absolute;
-      bottom: 40px;
-      left: -60px;
-      width: 220px;
-      height: 220px;
-      border: 3px solid rgba(0,0,0,0.03);
-      border-radius: 60px;
-      transform: rotate(-10deg);
-      z-index: 0;
-    }
-    .service-header {
-      position: relative;
-      z-index: 5;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 5rem;
-    }
-    .header-tag {
-      font-family: 'Inter', monospace;
-      font-weight: 500;
-      font-size: 0.85rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: #8f8f8f;
-      display: block;
-      margin-bottom: 1rem;
-      border-left: 4px solid #ceff66;
-      padding-left: 1rem;
-      line-height: 1.2;
-    }
-    .header-title {
-      font-size: clamp(3rem, 7vw, 4.8rem);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      max-width: 800px;
-      color: #111;
-    }
-    .header-title span {
-      color: #111;
-      background: linear-gradient(145deg, #ceff66, #b3e845);
-      padding: 0 0.15em 0.1em;
-      display: inline-block;
-      transform: skewX(-5deg) rotate(-1deg);
-      box-shadow: -8px 8px 0 rgba(0,0,0,0.15);
-      margin-left: 0.1em;
-      margin-right: 0.1em;
-    }
-    .header-desc {
-      max-width: 340px;
-      color: #4a4a4a;
-      font-size: 1.15rem;
-      line-height: 1.6;
-      border-bottom: 2px solid #ceff66;
-      padding-bottom: 1rem;
-    }
-    .card-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 30px;
-      position: relative;
-      z-index: 10;
-      align-items: start;
-    }
-    .service-card-modern {
-      background: #ffffff;
-      border-radius: 42px;
-      padding: 2.5rem 2rem 2rem 2rem;
-      box-shadow: 0 30px 50px -30px rgba(0,0,0,0.2);
-      transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
-      border: 1px solid #f0f0f0;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      backdrop-filter: blur(2px);
-    }
-    .service-card-modern:hover {
-      transform: translateY(-16px) scale(1.01);
-      box-shadow: 0 40px 65px -25px rgba(0,0,0,0.25);
-      border-color: #ceff66;
-    }
-    .card-1 { margin-top: 0; }
-    .card-2 { margin-top: 60px; }
-    .card-3 { margin-top: 20px; }
-    .icon-frame {
-      width: 80px;
-      height: 80px;
-      background: #111;
-      border-radius: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 2rem;
-      box-shadow: 14px 14px 0 #ceff66;
-      transition: all 0.3s ease;
-    }
-    .service-card-modern:hover .icon-frame {
-      box-shadow: 8px 8px 0 #ceff66;
-      transform: scale(0.98);
-    }
-    .icon-frame i {
-      font-size: 2.5rem;
-      color: #ceff66;
-      transition: transform 0.3s;
-    }
-    .service-card-modern:hover .icon-frame i {
-      transform: scale(1.1) rotate(-3deg);
-      color: #ffffff;
-    }
-    .service-card-modern:hover .icon-frame {
-      background: #2a2a2a;
-    }
-    .card-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-    .card-desc {
-      color: #5a5a5a;
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-      flex: 1;
-    }
-    .image-zone {
-      width: 100%;
-      height: 200px;
-      border-radius: 24px;
-      overflow: hidden;
-      background: #ececec;
-      margin-top: 0.5rem;
-      border: 1px solid #ddd;
-      transition: all 0.4s ease;
-      clip-path: polygon(8% 0, 100% 0%, 92% 100%, 0% 100%);
-      transform: scale(1);
-      filter: grayscale(1);
-    }
-    .service-card-modern:hover .image-zone {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-      filter: grayscale(0.2);
-      border-radius: 30px 10px 30px 10px;
-    }
-    .image-zone img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 1s ease;
-    }
-    .service-card-modern:hover .image-zone img {
-      transform: scale(1.08);
-    }
-    .card-lime-bar {
-      width: 60px;
-      height: 4px;
-      background: #ceff66;
-      border-radius: 4px;
-      margin-top: 1.5rem;
-      transition: width 0.3s;
-    }
-    .service-card-modern:hover .card-lime-bar {
-      width: 100px;
-    }
-    .floating-lime {
-      position: absolute;
-      bottom: 60px;
-      right: 80px;
-      width: 160px;
-      height: 160px;
-      background: #ceff66;
-      opacity: 0.2;
-      border-radius: 60px 20px 60px 20px;
-      transform: rotate(8deg);
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    /* ----- Swiper slider custom styles (non‑conflicting) ----- */
-    .swiper-pagination-bullet {
-      background: #aaa;
-      opacity: 0.5;
-      transition: all 0.2s;
-    }
-    .swiper-pagination-bullet-active {
-      background: #ceff66 !important;
-      opacity: 1;
-      transform: scale(1.3);
-    }
-    .swiper-button-prev, .swiper-button-next {
-      color: #111;
-      background: rgba(255,255,255,0.9);
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      backdrop-filter: blur(2px);
-      transition: all 0.2s;
-      border: 1px solid rgba(0,0,0,0.02);
-    }
-    .swiper-button-prev:after, .swiper-button-next:after {
-      font-size: 1.1rem;
-      font-weight: bold;
-    }
-    .swiper-button-prev:hover, .swiper-button-next:hover {
-      background: #ceff66;
-      color: #000;
-      border-color: transparent;
-    }
-    .swiper-slide {
-      height: auto;
-    }
-    .decorative-team-img {
-      transition: all 0.2s;
-    }
-    @media (max-width: 1024px) {
-      .decorative-team-img {
-        display: none !important;
-      }
-    }
-
-    @media (max-width: 1100px) {
-      .services-modern { padding: 100px 40px; }
-      .card-grid { gap: 20px; }
-      .card-2 { margin-top: 30px; }
-      .card-3 { margin-top: 10px; }
-    }
-    @media (max-width: 850px) {
-      .card-grid { grid-template-columns: 1fr; }
-      .card-2, .card-3 { margin-top: 0; }
-      .service-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-      .header-desc { max-width: 100%; }
-    }
-    @media (max-width: 800px) {
-      .section-premium { padding: 80px 30px; }
-      .two-col { grid-template-columns: 1fr; }
-      .stat-number { font-size: 3rem; }
+    @media(hover:none){
+      .service-card-modern:hover,.main-image:hover,.btn-primary:hover{transform:none!important}
     }
   </style>
 </head>
 <body class="antialiased">
 
-  <!-- ========== HERO SECTION ========== -->
-  <div class="relative w-full min-h-[90vh] md:min-h-[85vh] bg-neutral-900 hero-bg flex flex-col">
+<div id="scroll-progress"></div>
+
+<!-- HERO -->
+<div class="relative w-full min-h-[92vh] md:min-h-[88vh] bg-neutral-900 flex flex-col">
+  <div class="absolute  inset-0 overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2940&auto=format&fit=crop" alt="Business team" class="w-full h-full object-cover object-[center_30%]">
     <div class="absolute inset-0 hero-overlay"></div>
-    <div class="relative z-20 w-full hero-padding flex items-center justify-between text-white">
-      <div class="flex items-center">
-        <img src="images/logo.gif" alt="Growth Alliance logo" class="h-12 w-auto brightness-0 invert hover:brightness-100 transition duration-300" style="filter: brightness(0) invert(1);">
-      </div>
-      <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-        <a href="#" class="nav-link">Solutions</a>
-        <a href="#" class="nav-link">Services</a>
-        <a href="#" class="nav-link">Case Study</a>
-        <a href="#" class="nav-link flex items-center">Company <span class="dropdown-indicator">▼</span></a>
-      </div>
-      <div>
-        <a href="#" class="inline-block rounded-full border border-white/30 px-5 py-2 text-sm font-medium text-white transition-all hover:bg-white/10 hover:border-white/50">Contact us</a>
-      </div>
+  </div>
+  <div class="relative z-30 w-full flex items-center justify-between text-white px-5 py-5 md:px-12 md:py-6 lg:px-20 lg:py-7">
+    <span class="font-bold text-xl tracking-tight" style="font-family:'Plus Jakarta Sans',sans-serif">Growth<span style="color:var(--lime)">Alliance</span></span>
+    <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+      <a href="#" class="nav-link">Solutions</a>
+      <a href="#" class="nav-link">Services</a>
+      <a href="#" class="nav-link">Case Study</a>
+      <a href="#" class="nav-link flex items-center">Company <span style="margin-left:5px;font-size:11px">▼</span></a>
     </div>
-    <div class="relative z-20 flex-1 flex flex-col justify-center hero-padding pt-12 md:pt-0">
-      <div class="max-w-3xl">
-        <h1 class="text-white font-bold tracking-[-0.02em] leading-[1.1] text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl">
-          Accelerate your<br>franchise’s growth.
-        </h1>
-        <p class="text-white/70 text-base sm:text-lg md:text-xl max-w-md md:max-w-lg mt-8 leading-relaxed">
-          Partnering with franchises to deliver customised digital marketing solutions.
-        </p>
-        <div class="mt-10">
-          <a href="#" class="btn-primary inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-neutral-900 shadow-xl transition-all">
-            Get in touch <i class="fas fa-arrow-right text-sm"></i>
-          </a>
-        </div>
-      </div>
+    <div class="flex items-center gap-4">
+      <a href="#" class="hidden sm:inline-block rounded-full border border-white/30 px-5 py-2 text-sm font-medium text-white hover:bg-white/10 hover:border-white/50 transition-all">Contact us</a>
+      <button id="menuToggle" class="md:hidden flex flex-col gap-1.5 p-1" aria-label="Menu">
+        <span class="w-6 h-0.5 bg-white transition-all duration-300" id="bar1"></span>
+        <span class="w-6 h-0.5 bg-white transition-all duration-300" id="bar2"></span>
+        <span class="w-6 h-0.5 bg-white transition-all duration-300" id="bar3"></span>
+      </button>
     </div>
-    <div class="relative z-20 w-full hero-padding flex justify-end pb-12 md:pb-16">
-      <div class="flex items-center space-x-10">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" class="trust-logo w-20 h-auto brightness-0 invert opacity-80 hover:opacity-100 transition" style="filter: brightness(0) invert(1);">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook" class="trust-logo w-20 h-auto brightness-0 invert opacity-80 hover:opacity-100 transition">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" alt="Microsoft" class="trust-logo w-16 h-auto brightness-0 invert opacity-80 hover:opacity-100 transition">
+  </div>
+  <div id="mobile-menu">
+    <a href="#">Solutions</a><a href="#">Services</a><a href="#">Case Study</a><a href="#">Company</a>
+    <a href="#" style="color:var(--lime)!important;border-bottom:none!important">Contact us →</a>
+  </div>
+  <div class="relative z-20 flex-1 flex flex-col justify-center px-5 pt-8 pb-4 md:px-12 lg:px-20">
+    <div class="max-w-3xl">
+      <p class="reveal text-sm font-medium tracking-[0.22em] uppercase mb-5" style="color:var(--lime);font-family:var(--bf)">Digital Growth Partner</p>
+      <h1 class="reveal d1 text-white font-extrabold tracking-[-0.025em] leading-[1.08] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.2rem]">Accelerate your<br>franchise's growth.</h1>
+      <p class="reveal d2 text-white/65 text-base sm:text-lg mt-6 md:mt-8 max-w-md leading-relaxed" style="font-family:var(--bf)">Partnering with franchises to deliver customised digital marketing solutions that scale.</p>
+      <div class="reveal d3 mt-8 md:mt-10 flex flex-wrap gap-4">
+        <a href="#" class="btn-primary inline-flex items-center gap-2 rounded-full px-7 py-3.5 md:px-8 md:py-4 text-base font-semibold text-neutral-900 shadow-xl">Get in touch <i class="fas fa-arrow-right text-sm"></i></a>
+        <a href="#" class="inline-flex items-center gap-2 border border-white/25 rounded-full px-7 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-all" style="font-family:var(--bf)">Our work <i class="fas fa-play text-xs"></i></a>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- ========== FEATURE SECTION (original) ========== -->
-  <div class="section-premium">
-    <div class="vertical-divider"></div>
-    <div class="lime-accent-line"></div>
-    <div class="two-col">
-      <div class="left-image-block fade-in">
-        <img class="main-image" src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2940&auto=format&fit=crop" alt="High-end corporate teamwork, black and white – strategic meeting">
-      </div>
-      <div class="right-content">
-        <h2 class="heading fade-in delay-1">Digital agency problems and their best solutions</h2>
-        <p class="body-text fade-in delay-2">
-          Crafting compelling digital experiences that captivate audiences and drive meaningful connections. Our digital agency combines innovation, strategy, and expertise to fuel your online success. On the other hand, we denounce righteous indignation and dislike men who are so beguiled.
-        </p>
-        <div class="secondary-image-wrapper fade-in delay-3">
-          <img class="secondary-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2940&auto=format&fit=crop" alt="Close-up creative agency discussion, black and white">
-        </div>
-      </div>
+<!-- FEATURE SECTION -->
+<div class="section-premium">
+  <div class="vertical-divider"></div>
+  <div class="lime-accent-line"></div>
+  <div class="two-col">
+    <div class="reveal-left">
+      <img class="main-image" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Corporate team">
     </div>
-    <div class="decor-squares">
-      <div class="square-lime"></div>
-      <div class="square-dark"></div>
-    </div>
-    <div class="circle-badge">
-      <span class="badge-arrow"><i class="fas fa-arrow-up" style="color: #111; font-size: inherit;"></i></span>
-    </div>
-  </div>
-
-  <!-- ========== REDESIGNED SERVICES SECTION (modern, asymmetric) ========== -->
-  <section class="services-modern">
-    <div class="floating-lime"></div>
-    <div class="service-header">
-      <div>
-        <span class="header-tag">our capabilities</span>
-        <h2 class="header-title">Strategies that <span>scale</span> your franchise</h2>
-      </div>
-      <p class="header-desc">We combine data, creativity, and local expertise to accelerate multi‑unit growth.</p>
-    </div>
-    <div class="card-grid">
-      <!-- card 1 -->
-      <div class="service-card-modern card-1">
-        <div class="icon-frame"><i class="fas fa-chart-line"></i></div>
-        <h3 class="card-title">Performance media</h3>
-        <p class="card-desc">Hyper‑targeted campaigns that drive foot traffic and online conversions, fully attributed.</p>
-        <div class="image-zone"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" alt="analytics"></div>
-        <div class="card-lime-bar"></div>
-      </div>
-      <!-- card 2 -->
-      <div class="service-card-modern card-2">
-        <div class="icon-frame"><i class="fas fa-store-alt"></i></div>
-        <h3 class="card-title">Local presence</h3>
-        <p class="card-desc">Unified listings, review management, and geo‑specific content for every franchise location.</p>
-        <div class="image-zone"><img src="https://images.unsplash.com/photo-1573497491765-dccce02c29df?q=80&w=2787&auto=format&fit=crop" alt="local team"></div>
-        <div class="card-lime-bar"></div>
-      </div>
-      <!-- card 3 -->
-      <div class="service-card-modern card-3">
-        <div class="icon-frame"><i class="fas fa-pen-fancy"></i></div>
-        <h3 class="card-title">Creative & conv.</h3>
-        <p class="card-desc">High‑converting landing pages, A/B tested creatives, and unified brand voice across markets.</p>
-        <div class="image-zone"><img src="https://images.unsplash.com/photo-1555421689-3f034debb7a6?q=80&w=2940&auto=format&fit=crop" alt="creative session"></div>
-        <div class="card-lime-bar"></div>
-      </div>
-    </div>
-    <div style="position:absolute; bottom:40px; left:60px; width:120px; height:2px; background:#ceff66; opacity:0.5; transform:rotate(-15deg); z-index:5;"></div>
-  </section>
-
-  <!-- ========== STATS SECTION ========== -->
-  <div class="max-w-[1440px] mx-auto px-6 md:px-20 py-28 bg-[#f4f3f0]">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-14 text-center">
-      <div class="fade-in"><div class="stat-number">92%</div><p class="text-sm font-medium uppercase tracking-widest mt-2">franchisee retention</p><div class="w-12 h-1 bg-lime-400 mx-auto mt-4"></div></div>
-      <div class="fade-in delay-1"><div class="stat-number">3.2B</div><p class="text-sm font-medium uppercase tracking-widest mt-2">digital impressions</p><div class="w-12 h-1 bg-lime-400 mx-auto mt-4"></div></div>
-      <div class="fade-in delay-2"><div class="stat-number">+47%</div><p class="text-sm font-medium uppercase tracking-widest mt-2">avg. local sales</p><div class="w-12 h-1 bg-lime-400 mx-auto mt-4"></div></div>
-      <div class="fade-in delay-3"><div class="stat-number">250+</div><p class="text-sm font-medium uppercase tracking-widest mt-2">franchise partners</p><div class="w-12 h-1 bg-lime-400 mx-auto mt-4"></div></div>
-    </div>
-    <div class="mt-24 relative h-64 md:h-80 w-full overflow-hidden rounded-3xl">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2942&auto=format&fit=crop" class="w-full h-full object-cover grayscale brightness-95" alt="diverse team meeting">
-      <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent flex items-center px-10"><p class="text-white text-3xl md:text-4xl font-bold max-w-xl">"They don’t just market — they grow with us."</p></div>
-    </div>
-  </div>
-
-  <!-- ========== TESTIMONIAL SLIDER (preserved layout, multiple slides) ========== -->
-  <div class="max-w-[1440px] mx-auto px-6 md:px-20 py-32 bg-white">
-    <div class="flex flex-col lg:flex-row gap-20 items-center">
-      <div class="lg:w-1/2">
-        <div class="lime-marker"></div>
-        <h2 class="text-5xl lg:text-6xl font-bold tracking-tight leading-tight">Results that <span class="bg-lime-400 px-2 text-black">speak</span> louder than any pitch</h2>
-        <p class="text-gray-500 text-lg mt-8 max-w-md">We helped a 120‑unit franchise boost local SEO visibility by 190% and unify their digital identity.</p>
-        <div class="mt-10 flex items-center gap-5">
-          <div class="w-16 h-16 rounded-full overflow-hidden grayscale"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2961&auto=format&fit=crop" class="w-full h-full object-cover" alt="client"></div>
-          <div><p class="font-semibold">Emma Linfield</p><p class="text-sm text-gray-400">CMO, RapidBurger Co.</p></div>
-        </div>
-      </div>
-      <div class="lg:w-1/2 relative">
-        <!-- swiper container -->
-        <div class="swiper testimonialSwiper">
-          <div class="swiper-wrapper">
-            <!-- slide 1 -->
-            <div class="swiper-slide">
-              <div class="testimonial-card relative">
-                <i class="fas fa-quote-right text-5xl text-lime-300 opacity-40 absolute top-6 right-8"></i>
-                <p class="text-2xl leading-relaxed relative z-10">“Growth Alliance transformed how we connect with local customers. Their agency‑style thinking paired with franchise‑level execution is unmatched. We’ve renewed for three years straight.”</p>
-                <div class="flex items-center gap-2 mt-10"><span class="text-lime-400 text-xl">★★★★★</span><span class="text-gray-400 text-sm">(5.0)</span></div>
-                <p class="text-sm text-gray-400 mt-4 border-t border-gray-100 pt-3">— Emma Linfield, RapidBurger Co.</p>
-              </div>
-            </div>
-            <!-- slide 2 -->
-            <div class="swiper-slide">
-              <div class="testimonial-card relative">
-                <i class="fas fa-quote-right text-5xl text-lime-300 opacity-40 absolute top-6 right-8"></i>
-                <p class="text-2xl leading-relaxed relative z-10">“The local presence strategy brought a 156% increase in store locator usage across all our franchises. Their team understands multi‑unit complexity like no other.”</p>
-                <div class="flex items-center gap-2 mt-10"><span class="text-lime-400 text-xl">★★★★★</span><span class="text-gray-400 text-sm">(5.0)</span></div>
-                <p class="text-sm text-gray-400 mt-4 border-t border-gray-100 pt-3">— Marcus Velez, COO · PitaFresh</p>
-              </div>
-            </div>
-            <!-- slide 3 -->
-            <div class="swiper-slide">
-              <div class="testimonial-card relative">
-                <i class="fas fa-quote-right text-5xl text-lime-300 opacity-40 absolute top-6 right-8"></i>
-                <p class="text-2xl leading-relaxed relative z-10">“Their creative campaigns delivered a 4.2x ROAS while keeping our brand voice consistent across 200+ locations. Absolute game changer.”</p>
-                <div class="flex items-center gap-2 mt-10"><span class="text-lime-400 text-xl">★★★★★</span><span class="text-gray-400 text-sm">(5.0)</span></div>
-                <p class="text-sm text-gray-400 mt-4 border-t border-gray-100 pt-3">— Nadia Kwan, Marketing Director · Motto Mortgage</p>
-              </div>
-            </div>
-            <!-- slide 4 -->
-            <div class="swiper-slide">
-              <div class="testimonial-card relative">
-                <i class="fas fa-quote-right text-5xl text-lime-300 opacity-40 absolute top-6 right-8"></i>
-                <p class="text-2xl leading-relaxed relative z-10">“We finally have unified data across all franchisees. Growth Alliance built the dashboards and the strategy – now we scale with confidence.”</p>
-                <div class="flex items-center gap-2 mt-10"><span class="text-lime-400 text-xl">★★★★★</span><span class="text-gray-400 text-sm">(5.0)</span></div>
-                <p class="text-sm text-gray-400 mt-4 border-t border-gray-100 pt-3">— David Park, VP Franchise · The Joint Chiropractic</p>
-              </div>
-            </div>
-          </div>
-          <!-- navigation arrows -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-          <!-- pagination dots -->
-          <div class="swiper-pagination"></div>
-        </div>
-        <!-- decorative image (hidden on mobile) -->
-        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2874&auto=format&fit=crop" class="absolute -bottom-10 -left-16 w-32 h-32 rounded-2xl object-cover grayscale hidden lg:block shadow-2xl border-4 border-white decorative-team-img" alt="team huddle">
+    <div>
+      <p class="reveal header-tag" style="margin-bottom:1.2rem">our approach</p>
+      <h2 class="reveal d1 feat-heading">Digital agency problems and their best solutions</h2>
+      <p class="reveal d2 feat-body">Crafting compelling digital experiences that captivate audiences and drive meaningful connections. Our agency combines innovation, strategy, and deep franchise expertise to fuel your online success.</p>
+      <div class="reveal flex d3 mt-10">
+        <img class="secondary-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop" alt="Agency discussion">
+        <img class="secondary-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop" alt="Agency discussion">
       </div>
     </div>
   </div>
+  <div class="decor-squares"><div class="square-lime"></div><div class="square-dark"></div></div>
+</div>
 
-  <!-- ========== CTA SECTION ========== -->
-  <div class="max-w-[1440px] mx-auto px-6 md:px-20 py-28 bg-[#faf9f7]">
-    <div class="bg-black text-white rounded-3xl px-8 py-24 md:p-24 relative overflow-hidden">
-      <div class="absolute -right-10 -top-10 w-64 h-64 bg-lime-400/10 rounded-full blur-3xl"></div>
-      <div class="absolute -left-10 -bottom-10 w-48 h-48 border-4 border-lime-400/20 rounded-full"></div>
-      <div class="relative z-20 max-w-3xl">
-        <h2 class="text-5xl md:text-6xl font-bold tracking-tight">Ready to outgrow<br>the competition?</h2>
-        <p class="text-gray-300 text-xl mt-6 max-w-lg">Let’s build a digital roadmap tailored to your franchise system, from local store pages to national campaigns.</p>
-        <div class="mt-12 flex flex-wrap gap-6">
-          <a href="#" class="btn-primary inline-flex items-center gap-3 rounded-full px-10 py-5 text-xl font-semibold text-neutral-900 shadow-2xl transition-all">Schedule a call <i class="fas fa-arrow-right text-sm"></i></a>
-          <a href="#" class="inline-flex items-center gap-2 border border-white/30 rounded-full px-10 py-5 text-xl font-medium text-white hover:bg-white/10 transition-all">View case studies</a>
-        </div>
-      </div>
-      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2940&auto=format&fit=crop" class="absolute right-10 bottom-10 w-36 h-36 rounded-2xl object-cover grayscale opacity-50 hidden xl:block" alt="team">
+<!-- BRANDS WE WORK WITH -->
+<section class="brands-section">
+  <p class="reveal brands-label"><span></span>brands we work with<span></span></p>
+  <div class="marquee-row">
+    <div class="marquee-track fwd">
+      <!-- <div class="brand-item"><div class="brand-icon"><img src="images/1.png" alt="Google"></div><span class="brand-name">Google</span><div class="brand-dot"></div></div> -->
+      <div class="brand-item"><span class="brand-name">Argosy BPO</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">TEK BUZZ</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">GATEWAY MERCHENT CAPITAL</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">VIRGO</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">CLICK MILLIONS</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">CANNET</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">NORTHERN LEASING SYSTEMS. INC</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">SYSTEC SOLUTIONS</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">THE MARKET SOURCE</span><div class="brand-dot"></div></div>
     </div>
   </div>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="max-w-[1440px] mx-auto px-6 md:px-20 py-16 border-t border-gray-200 bg-white">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-      <div class="flex items-center gap-2">
-        <img src="images/logo.gif" alt="Growth Alliance" class="h-10 w-auto brightness-0 invert" style="filter: brightness(0) invert(0);">
-        <span class="text-xs text-gray-400 font-mono">© 2025</span>
-      </div>
-      <div class="flex flex-wrap gap-8 text-sm">
-        <a href="#" class="footer-link">Solutions</a>
-        <a href="#" class="footer-link">Services</a>
-        <a href="#" class="footer-link">Case study</a>
-        <a href="#" class="footer-link">Privacy</a>
-        <a href="#" class="footer-link">Contact</a>
-      </div>
-      <div class="flex gap-5 text-gray-400">
-        <i class="fab fa-linkedin-in hover:text-lime-400 cursor-pointer transition"></i>
-        <i class="fab fa-x-twitter hover:text-lime-400 cursor-pointer transition"></i>
-        <i class="fab fa-instagram hover:text-lime-400 cursor-pointer transition"></i>
+</section>
+
+<!-- SERVICES -->
+<section class="services-modern">
+  <div class="service-header">
+    <div>
+      <span class="reveal header-tag">our capabilities</span>
+      <h2 class="reveal d1 header-title">Strategies that <span>scale</span> your franchise</h2>
+    </div>
+    <p class="reveal d2 header-desc">We combine data, creativity, and local expertise to accelerate multi‑unit growth.</p>
+  </div>
+  <div class="card-grid">
+    <div class="reveal d1 service-card-modern card-1">
+      <div class="icon-frame"><i class="fas fa-chart-line"></i></div>
+      <h3 class="card-title">Performance media</h3>
+      <p class="card-desc">Hyper‑targeted campaigns that drive foot traffic and online conversions, fully attributed.</p>
+      <div class="image-zone"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="analytics"></div>
+      <div class="card-lime-bar"></div>
+    </div>
+    <div class="reveal d2 service-card-modern card-2">
+      <div class="icon-frame"><i class="fas fa-store-alt"></i></div>
+      <h3 class="card-title">Local presence</h3>
+      <p class="card-desc">Unified listings, review management, and geo‑specific content for every franchise location.</p>
+      <div class="image-zone"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop" alt="local team"></div>
+      <div class="card-lime-bar"></div>
+    </div>
+    <div class="reveal d3 service-card-modern card-3">
+      <div class="icon-frame"><i class="fas fa-pen-fancy"></i></div>
+      <h3 class="card-title">Creative & conv.</h3>
+      <p class="card-desc">High‑converting landing pages, A/B tested creatives, and unified brand voice across markets.</p>
+      <div class="image-zone"><img src="https://images.unsplash.com/photo-1555421689-3f034debb7a6?q=80&w=800&auto=format&fit=crop" alt="creative"></div>
+      <div class="card-lime-bar"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-20 md:py-28 bg-[#f4f3f0]">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-14 text-center">
+    <div class="reveal d1"><div class="stat-number">92%</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">franchisee retention</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
+    <div class="reveal d2"><div class="stat-number">3.2B</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">digital impressions</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
+    <div class="reveal d3"><div class="stat-number">+47%</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">avg. local sales</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
+    <div class="reveal d4"><div class="stat-number">250+</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">franchise partners</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
+  </div>
+  <div class="reveal mt-16 md:mt-24 relative h-52 sm:h-64 md:h-80 w-full overflow-hidden rounded-2xl md:rounded-3xl">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop" class="w-full h-full object-cover grayscale brightness-95" alt="team">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/55 to-transparent flex items-center px-6 md:px-10">
+      <p class="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold max-w-xl" style="font-family:'Plus Jakarta Sans',sans-serif">"They don't just market — they grow with us."</p>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-20 md:py-32 bg-white">
+  <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start lg:items-center">
+    <div class="reveal-left lg:w-1/2 w-full">
+      <div class="lime-marker"></div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-[-0.025em] leading-tight" style="font-family:'Plus Jakarta Sans',sans-serif">Results that <span class="bg-lime-400 px-2 text-black">speak</span> louder than any pitch</h2>
+      <p class="text-gray-500 text-base md:text-lg mt-6 max-w-md leading-relaxed" style="font-family:var(--bf)">We helped a 120‑unit franchise boost local SEO visibility by 190% and unify their digital identity.</p>
+      <div class="mt-8 flex items-center gap-4">
+        <div class="w-14 h-14 rounded-full overflow-hidden grayscale flex-shrink-0"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover" alt="Emma"></div>
+        <div><p class="font-semibold" style="font-family:'Plus Jakarta Sans',sans-serif">Emma Linfield</p><p class="text-sm text-gray-400" style="font-family:var(--bf)">CMO, RapidBurger Co.</p></div>
       </div>
     </div>
-  </footer>
+    <div class="reveal-right lg:w-1/2 w-full">
+      <div class="swiper testimonialSwiper pb-12">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><div class="testimonial-card relative"><i class="fas fa-quote-right text-4xl text-lime-300 opacity-40 absolute top-5 right-6"></i><p class="text-lg md:text-2xl leading-relaxed relative z-10" style="font-family:var(--bf)">"Growth Alliance transformed how we connect with local customers. Their agency‑style thinking paired with franchise‑level execution is unmatched."</p><div class="flex items-center gap-2 mt-8"><span class="text-lime-400">★★★★★</span><span class="text-gray-400 text-sm">(5.0)</span></div><p class="text-sm text-gray-400 mt-4 border-t border-gray-100 pt-3" style="font-family:var(--bf)">— Emma Linfield, RapidBurger Co.</p></div></div>
+          <div class="swiper-slide"><div class="testimonial-card relative"><i class="fas fa-quote-right text-4xl text-lime-300 opacity-40 absolute top-5 right-6"></i><p class="text-lg md:text-2xl leading-relaxed relative z-10" style="font-family:var(--bf)">"The local presence strategy brought a 156% increase in store locator usage across all our franchises."</p><div class="flex items-center gap-2 mt-8"><span class="text-lime-400">★★★★★</span><span class="text-gray-400 text-sm">(5.0)</span></div><p class="text-sm text-gray-400 mt-4 border-t border-gray-100 pt-3" style="font-family:var(--bf)">— Marcus Velez, COO · PitaFresh</p></div></div>
+          <div class="swiper-slide"><div class="testimonial-card relative"><i class="fas fa-quote-right text-4xl text-lime-300 opacity-40 absolute top-5 right-6"></i><p class="text-lg md:text-2xl leading-relaxed relative z-10" style="font-family:var(--bf)">"Their creative campaigns delivered a 4.2x ROAS while keeping our brand voice consistent across 200+ locations."</p><div class="flex items-center gap-2 mt-8"><span class="text-lime-400">★★★★★</span><span class="text-gray-400 text-sm">(5.0)</span></div><p class="text-sm text-gray-400 mt-4 border-t border-gray-100 pt-3" style="font-family:var(--bf)">— Nadia Kwan · Motto Mortgage</p></div></div>
+          <div class="swiper-slide"><div class="testimonial-card relative"><i class="fas fa-quote-right text-4xl text-lime-300 opacity-40 absolute top-5 right-6"></i><p class="text-lg md:text-2xl leading-relaxed relative z-10" style="font-family:var(--bf)">"We finally have unified data across all franchisees. Growth Alliance built the dashboards and the strategy."</p><div class="flex items-center gap-2 mt-8"><span class="text-lime-400">★★★★★</span><span class="text-gray-400 text-sm">(5.0)</span></div><p class="text-sm text-gray-400 mt-4 border-t border-gray-100 pt-3" style="font-family:var(--bf)">— David Park · The Joint Chiropractic</p></div></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const swiper = new Swiper('.testimonialSwiper', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: { delay: 6000, disableOnInteraction: false, pauseOnMouseEnter: true },
-        speed: 600,
-        pagination: { el: '.swiper-pagination', clickable: true },
-        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      });
-    });
-    (function() { console.log('Growth Alliance – fully integrated with redesigned services & testimonial slider'); })();
-  </script>
+<!-- CTA -->
+<div class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-16 md:py-28 bg-[#faf9f7]">
+  <div class="reveal bg-black text-white rounded-2xl md:rounded-3xl px-6 py-16 sm:px-10 md:p-16 lg:p-24 relative overflow-hidden">
+    <div class="absolute -right-10 -top-10 w-48 md:w-64 h-48 md:h-64 bg-lime-400/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-10 -bottom-10 w-36 md:w-48 h-36 md:h-48 border-4 border-lime-400/20 rounded-full pointer-events-none"></div>
+    <div class="relative z-20 max-w-3xl">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight" style="font-family:'Plus Jakarta Sans',sans-serif">Ready to outgrow<br>the competition?</h2>
+      <p class="text-gray-300 text-base md:text-xl mt-5 md:mt-6 max-w-lg leading-relaxed" style="font-family:var(--bf)">Let's build a digital roadmap tailored to your franchise system, from local store pages to national campaigns.</p>
+      <div class="mt-8 md:mt-12 flex flex-wrap gap-4 md:gap-6">
+        <a href="#" class="btn-primary inline-flex items-center gap-3 rounded-full px-7 py-4 md:px-10 md:py-5 text-base md:text-xl font-semibold text-neutral-900 shadow-2xl">Schedule a call <i class="fas fa-arrow-right text-sm"></i></a>
+        <a href="#" class="inline-flex items-center gap-2 border border-white/30 rounded-full px-7 py-4 md:px-10 md:py-5 text-base md:text-xl font-medium text-white hover:bg-white/10 transition-all" style="font-family:var(--bf)">View case studies</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-12 md:py-16 border-t border-gray-200 bg-white">
+  <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 sm:gap-4">
+    <div class="flex items-center gap-2">
+      <span class="font-bold text-lg tracking-tight" style="font-family:'Plus Jakarta Sans',sans-serif">Growth<span style="color:var(--lime)">Alliance</span></span>
+      <span class="text-xs text-gray-400 font-mono">© 2025</span>
+    </div>
+    <div class="flex flex-wrap gap-4 sm:gap-6 md:gap-8 text-sm">
+      <a href="#" class="footer-link">Solutions</a><a href="#" class="footer-link">Services</a><a href="#" class="footer-link">Case study</a><a href="#" class="footer-link">Privacy</a><a href="#" class="footer-link">Contact</a>
+    </div>
+    <div class="flex gap-5 text-gray-400 text-lg">
+      <i class="fab fa-linkedin-in hover:text-lime-400 cursor-pointer transition"></i>
+      <i class="fab fa-x-twitter hover:text-lime-400 cursor-pointer transition"></i>
+      <i class="fab fa-instagram hover:text-lime-400 cursor-pointer transition"></i>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  new Swiper('.testimonialSwiper',{slidesPerView:1,spaceBetween:20,loop:true,autoplay:{delay:6000,disableOnInteraction:false,pauseOnMouseEnter:true},speed:700,pagination:{el:'.swiper-pagination',clickable:true},navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'}});
+});
+
+// Hamburger
+const toggle=document.getElementById('menuToggle'),mMenu=document.getElementById('mobile-menu'),b1=document.getElementById('bar1'),b2=document.getElementById('bar2'),b3=document.getElementById('bar3');
+let mOpen=false;
+toggle.addEventListener('click',()=>{mOpen=!mOpen;mMenu.classList.toggle('open',mOpen);b1.style.transform=mOpen?'translateY(8px) rotate(45deg)':'';b2.style.opacity=mOpen?'0':'1';b3.style.transform=mOpen?'translateY(-8px) rotate(-45deg)':'';});
+mMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mOpen=false;mMenu.classList.remove('open');b1.style.transform=b3.style.transform='';b2.style.opacity='1';}));
+
+// Scroll progress
+window.addEventListener('scroll',()=>{const s=window.scrollY,m=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('scroll-progress').style.width=(s/m*100)+'%';},{passive:true});
+
+// Scroll reveal
+const els=document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+const obs=new IntersectionObserver((entries)=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+els.forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
