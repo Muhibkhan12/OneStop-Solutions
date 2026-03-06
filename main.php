@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Growth Alliance</title>
+  <title>Growth Alliance - Full Page (Without Navbar and Footer)</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,21 +28,10 @@
 
     /* HERO */
     .hero-overlay{background:linear-gradient(105deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.38) 55%,rgba(0,0,0,.05) 100%);pointer-events:none}
-    .nav-link{position:relative;font-family:var(--bf);font-weight:500;transition:color .2s}
-    .nav-link:hover{color:#fff}
-    .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--lime);transition:width .25s ease-out}
-    .nav-link:hover::after{width:100%}
     .btn-primary{font-family:var(--bf);font-weight:600;background:linear-gradient(145deg,#c5f467,#a6e62c);transition:all .28s ease;box-shadow:0 10px 24px -8px rgba(166,230,44,.45)}
     .btn-primary:hover{background:linear-gradient(145deg,#b3e04e,#93cd25);transform:translateY(-2px);box-shadow:0 18px 28px -8px rgba(128,180,30,.5)}
     .btn-primary i{transition:transform .2s}
     .btn-primary:hover i{transform:translateX(4px)}
-
-    /* MOBILE MENU */
-    #mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(10,10,10,.96);backdrop-filter:blur(16px);padding:1.5rem 2rem;z-index:50;border-top:1px solid rgba(255,255,255,.08)}
-    #mobile-menu.open{display:block}
-    #mobile-menu a{display:block;font-family:var(--bf);font-weight:500;color:rgba(255,255,255,.75);font-size:1.1rem;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.06);transition:color .2s}
-    #mobile-menu a:hover{color:var(--lime)}
-    #mobile-menu a:last-child{border-bottom:none}
 
     /* FEATURE */
     .section-premium{max-width:1440px;margin:0 auto;padding:110px 80px;position:relative;background:#fafafa}
@@ -119,10 +108,6 @@
     .swiper-button-prev:hover,.swiper-button-next:hover{background:var(--lime);color:#000}
     .swiper-slide{height:auto}
 
-    /* FOOTER */
-    .footer-link{font-family:var(--bf);color:#aaa;transition:color .2s}
-    .footer-link:hover{color:var(--lime)}
-
     /* SCROLL PROGRESS */
     #scroll-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--lime);z-index:999;transition:width .1s linear;box-shadow:0 0 10px rgba(206,255,102,.6)}
 
@@ -181,36 +166,20 @@
   </style>
 </head>
 <body class="antialiased">
+  <?php
+    @include('navbar.php');
+  ?>
 
 <div id="scroll-progress"></div>
 
-<!-- HERO -->
+<!-- HERO (without navbar) -->
 <div class="relative w-full min-h-[92vh] md:min-h-[88vh] bg-neutral-900 flex flex-col">
-  <div class="absolute  inset-0 overflow-hidden">
+  <div class="absolute inset-0 overflow-hidden">
     <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2940&auto=format&fit=crop" alt="Business team" class="w-full h-full object-cover object-[center_30%]">
     <div class="absolute inset-0 hero-overlay"></div>
   </div>
-  <div class="relative z-30 w-full flex items-center justify-between text-white px-5 py-5 md:px-12 md:py-6 lg:px-20 lg:py-7">
-    <span class="font-bold text-xl tracking-tight" style="font-family:'Plus Jakarta Sans',sans-serif">Growth<span style="color:var(--lime)">Alliance</span></span>
-    <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-      <a href="#" class="nav-link">Solutions</a>
-      <a href="#" class="nav-link">Services</a>
-      <a href="#" class="nav-link">Case Study</a>
-      <a href="#" class="nav-link flex items-center">Company <span style="margin-left:5px;font-size:11px">▼</span></a>
-    </div>
-    <div class="flex items-center gap-4">
-      <a href="#" class="hidden sm:inline-block rounded-full border border-white/30 px-5 py-2 text-sm font-medium text-white hover:bg-white/10 hover:border-white/50 transition-all">Contact us</a>
-      <button id="menuToggle" class="md:hidden flex flex-col gap-1.5 p-1" aria-label="Menu">
-        <span class="w-6 h-0.5 bg-white transition-all duration-300" id="bar1"></span>
-        <span class="w-6 h-0.5 bg-white transition-all duration-300" id="bar2"></span>
-        <span class="w-6 h-0.5 bg-white transition-all duration-300" id="bar3"></span>
-      </button>
-    </div>
-  </div>
-  <div id="mobile-menu">
-    <a href="#">Solutions</a><a href="#">Services</a><a href="#">Case Study</a><a href="#">Company</a>
-    <a href="#" style="color:var(--lime)!important;border-bottom:none!important">Contact us →</a>
-  </div>
+  
+  <!-- Hero Content -->
   <div class="relative z-20 flex-1 flex flex-col justify-center px-5 pt-8 pb-4 md:px-12 lg:px-20">
     <div class="max-w-3xl">
       <p class="reveal text-sm font-medium tracking-[0.22em] uppercase mb-5" style="color:var(--lime);font-family:var(--bf)">Digital Growth Partner</p>
@@ -250,7 +219,6 @@
   <p class="reveal brands-label"><span></span>brands we work with<span></span></p>
   <div class="marquee-row">
     <div class="marquee-track fwd">
-      <!-- <div class="brand-item"><div class="brand-icon"><img src="images/1.png" alt="Google"></div><span class="brand-name">Google</span><div class="brand-dot"></div></div> -->
       <div class="brand-item"><span class="brand-name">Argosy BPO</span><div class="brand-dot"></div></div>
       <div class="brand-item"><span class="brand-name">TEK BUZZ</span><div class="brand-dot"></div></div>
       <div class="brand-item"><span class="brand-name">GATEWAY MERCHENT CAPITAL</span><div class="brand-dot"></div></div>
@@ -262,7 +230,6 @@
       <div class="brand-item"><span class="brand-name">THE MARKET SOURCE</span><div class="brand-dot"></div></div>
     </div>
   </div>
-
 </section>
 
 <!-- SERVICES -->
@@ -359,35 +326,16 @@
   </div>
 </div>
 
-<!-- FOOTER -->
-<footer class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-12 md:py-16 border-t border-gray-200 bg-white">
-  <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 sm:gap-4">
-    <div class="flex items-center gap-2">
-      <span class="font-bold text-lg tracking-tight" style="font-family:'Plus Jakarta Sans',sans-serif">Growth<span style="color:var(--lime)">Alliance</span></span>
-      <span class="text-xs text-gray-400 font-mono">© 2025</span>
-    </div>
-    <div class="flex flex-wrap gap-4 sm:gap-6 md:gap-8 text-sm">
-      <a href="#" class="footer-link">Solutions</a><a href="#" class="footer-link">Services</a><a href="#" class="footer-link">Case study</a><a href="#" class="footer-link">Privacy</a><a href="#" class="footer-link">Contact</a>
-    </div>
-    <div class="flex gap-5 text-gray-400 text-lg">
-      <i class="fab fa-linkedin-in hover:text-lime-400 cursor-pointer transition"></i>
-      <i class="fab fa-x-twitter hover:text-lime-400 cursor-pointer transition"></i>
-      <i class="fab fa-instagram hover:text-lime-400 cursor-pointer transition"></i>
-    </div>
-  </div>
-</footer>
+
+<?php
+  @include('footer.php');
+?>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
   new Swiper('.testimonialSwiper',{slidesPerView:1,spaceBetween:20,loop:true,autoplay:{delay:6000,disableOnInteraction:false,pauseOnMouseEnter:true},speed:700,pagination:{el:'.swiper-pagination',clickable:true},navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'}});
 });
-
-// Hamburger
-const toggle=document.getElementById('menuToggle'),mMenu=document.getElementById('mobile-menu'),b1=document.getElementById('bar1'),b2=document.getElementById('bar2'),b3=document.getElementById('bar3');
-let mOpen=false;
-toggle.addEventListener('click',()=>{mOpen=!mOpen;mMenu.classList.toggle('open',mOpen);b1.style.transform=mOpen?'translateY(8px) rotate(45deg)':'';b2.style.opacity=mOpen?'0':'1';b3.style.transform=mOpen?'translateY(-8px) rotate(-45deg)':'';});
-mMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mOpen=false;mMenu.classList.remove('open');b1.style.transform=b3.style.transform='';b2.style.opacity='1';}));
 
 // Scroll progress
 window.addEventListener('scroll',()=>{const s=window.scrollY,m=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('scroll-progress').style.width=(s/m*100)+'%';},{passive:true});
