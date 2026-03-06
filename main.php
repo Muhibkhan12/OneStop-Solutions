@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Growth Alliance - Full Page (Without Navbar and Footer)</title>
+  <title>One Stop Solutions – BPO & Contact Centre</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,30 +68,268 @@
     .brand-dot{width:4px;height:4px;background:var(--lime);border-radius:50%;flex-shrink:0;margin-left:4px}
     .brands-divider{width:100%;height:1px;background:rgba(255,255,255,.05);margin:40px 0}
 
-    /* SERVICES */
-    .services-modern{max-width:1440px;margin:0 auto;padding:120px 80px;background:#fff;position:relative;overflow:hidden}
-    .services-modern::before{content:'';position:absolute;top:-50px;right:-50px;width:280px;height:280px;background:rgba(206,255,102,.1);border-radius:48px;transform:rotate(25deg);z-index:0;pointer-events:none}
-    .service-header{position:relative;z-index:5;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;margin-bottom:5rem;gap:2rem}
-    .header-tag{font-family:var(--bf);font-weight:500;font-size:.82rem;letter-spacing:.28em;text-transform:uppercase;color:#8f8f8f;display:block;margin-bottom:1rem;border-left:4px solid var(--lime);padding-left:1rem;line-height:1.2}
-    .header-title{font-family:var(--hf);font-size:clamp(2.4rem,6vw,4.6rem);font-weight:800;line-height:1.08;letter-spacing:-.025em;max-width:800px;color:var(--ink)}
-    .header-title span{color:var(--ink);background:linear-gradient(145deg,var(--lime),#b3e845);padding:0 .12em .08em;display:inline-block;transform:skewX(-4deg) rotate(-1deg);box-shadow:-8px 8px 0 rgba(0,0,0,.14)}
-    .header-desc{max-width:340px;color:#4a4a4a;font-family:var(--bf);font-size:1.05rem;line-height:1.65;border-bottom:2px solid var(--lime);padding-bottom:1rem}
-    .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;position:relative;z-index:10;align-items:start}
-    .service-card-modern{background:#fff;border-radius:42px;padding:2.5rem 2rem 2rem;box-shadow:0 30px 50px -30px rgba(0,0,0,.18);transition:all .45s cubic-bezier(.23,1,.32,1);border:1px solid #f0f0f0;display:flex;flex-direction:column;position:relative}
-    .service-card-modern:hover{transform:translateY(-18px) scale(1.01);box-shadow:0 40px 65px -22px rgba(0,0,0,.22);border-color:var(--lime)}
-    .card-1{margin-top:0}.card-2{margin-top:60px}.card-3{margin-top:20px}
-    .icon-frame{width:80px;height:80px;background:var(--ink);border-radius:28px;display:flex;align-items:center;justify-content:center;margin-bottom:2rem;box-shadow:14px 14px 0 var(--lime);transition:all .3s ease}
-    .service-card-modern:hover .icon-frame{box-shadow:8px 8px 0 var(--lime);transform:scale(.97);background:#2a2a2a}
-    .icon-frame i{font-size:2.4rem;color:var(--lime);transition:transform .3s}
-    .service-card-modern:hover .icon-frame i{transform:scale(1.1) rotate(-3deg);color:#fff}
-    .card-title{font-family:var(--hf);font-size:1.9rem;font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-bottom:.9rem}
-    .card-desc{font-family:var(--bf);color:#5a5a5a;font-size:.98rem;line-height:1.65;margin-bottom:2rem;flex:1}
-    .image-zone{width:100%;height:200px;border-radius:24px;overflow:hidden;background:#ececec;border:1px solid #ddd;transition:all .4s ease;clip-path:polygon(8% 0,100% 0%,92% 100%,0% 100%);filter:grayscale(1)}
-    .service-card-modern:hover .image-zone{clip-path:polygon(0 0,100% 0,100% 100%,0% 100%);filter:grayscale(.15);border-radius:28px 8px 28px 8px}
-    .image-zone img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s ease}
-    .service-card-modern:hover .image-zone img{transform:scale(1.09)}
-    .card-lime-bar{width:60px;height:4px;background:var(--lime);border-radius:4px;margin-top:1.5rem;transition:width .35s}
-    .service-card-modern:hover .card-lime-bar{width:110px}
+    /* SERVICES - MODERN WITH VISIBLE BG IMAGES */
+    .services-modern{
+      max-width:1440px;
+      margin:0 auto;
+      padding:120px 80px;
+      background:#fff;
+      position:relative;
+      overflow:hidden
+    }
+    .services-modern::before{
+      content:'';
+      position:absolute;
+      top:-50px;
+      right:-50px;
+      width:280px;
+      height:280px;
+      background:rgba(206,255,102,.1);
+      border-radius:48px;
+      transform:rotate(25deg);
+      z-index:0;
+      pointer-events:none
+    }
+    .service-header{
+      position:relative;
+      z-index:5;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      align-items:flex-end;
+      margin-bottom:5rem;
+      gap:2rem
+    }
+    .header-tag{
+      font-family:var(--bf);
+      font-weight:500;
+      font-size:.82rem;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      color:#8f8f8f;
+      display:block;
+      margin-bottom:1rem;
+      border-left:4px solid var(--lime);
+      padding-left:1rem;
+      line-height:1.2
+    }
+    .header-title{
+      font-family:var(--hf);
+      font-size:clamp(2.4rem,6vw,4.6rem);
+      font-weight:800;
+      line-height:1.08;
+      letter-spacing:-.025em;
+      max-width:800px;
+      color:var(--ink)
+    }
+    .header-title span{
+      color:var(--ink);
+      background:linear-gradient(145deg,var(--lime),#b3e845);
+      padding:0 .12em .08em;
+      display:inline-block;
+      transform:skewX(-4deg) rotate(-1deg);
+      box-shadow:-8px 8px 0 rgba(0,0,0,.14)
+    }
+    .header-desc{
+      max-width:340px;
+      color:#4a4a4a;
+      font-family:var(--bf);
+      font-size:1.05rem;
+      line-height:1.65;
+      border-bottom:2px solid var(--lime);
+      padding-bottom:1rem
+    }
+    
+    /* CARDS WITH VISIBLE BG IMAGES */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card-modern {
+      border-radius: 32px;
+      padding: 0;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.05);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 420px;
+      background: transparent;
+    }
+
+    /* Background image styling - now visible */
+    .card-bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+      transition: transform 0.7s ease;
+      z-index: 0;
+      pointer-events: none;
+      filter: grayscale(100%) brightness(0.9);
+    }
+
+    .service-card-modern:hover .card-bg-image {
+      transform: scale(1.08);
+    }
+
+    /* Dark overlay for better text readability */
+    .card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .service-card-modern::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #ceff66, transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 3;
+    }
+
+    .service-card-modern:hover {
+      transform: translateY(-5px);
+      border-color: rgba(206, 255, 102, 0.15);
+      box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card-modern:hover::before {
+      opacity: 1;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .icon-wrapper {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-dot {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #ceff66;
+      border-radius: 16px;
+      opacity: 0.3;
+      transform: rotate(10deg);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card-modern:hover .icon-dot {
+      transform: rotate(15deg) scale(1.1);
+    }
+
+    .icon-wrapper i {
+      font-size: 1.5rem;
+      color: white;
+      position: relative;
+      z-index: 2;
+      transition: color 0.2s ease;
+    }
+
+    .service-card-modern:hover .icon-wrapper i {
+      color: #ceff66;
+    }
+
+    .card-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .card-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      transition: color 0.2s ease;
+    }
+
+    .card-footer i {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.7);
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .service-card-modern:hover .card-link {
+      color: #ceff66;
+    }
+
+    .service-card-modern:hover .card-footer i {
+      transform: translateX(3px);
+      color: #ceff66;
+    }
+
+    /* Different card positions */
+    .card-1 { transform: translateY(0); }
+    .card-2 { transform: translateY(1rem); }
+    .card-3 { transform: translateY(2rem); }
+
+    .card-1:hover,
+    .card-2:hover,
+    .card-3:hover {
+      transform: translateY(-5px) scale(1.01);
+    }
 
     /* STATS */
     .stat-number{font-family:var(--hf);font-size:clamp(2.4rem,7vw,4rem);font-weight:800;line-height:1;letter-spacing:-.03em;color:var(--lime);-webkit-text-stroke:2px var(--ink);text-shadow:4px 4px 0 var(--ink)}
@@ -119,8 +357,15 @@
       .lime-accent-line{right:48px}
       .services-modern{padding:100px 48px}
       .card-grid{gap:20px}
-      .card-2{margin-top:30px}
-      .card-3{margin-top:10px}
+    }
+    @media(max-width:1024px){
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .card-2, .card-3 {
+        transform: translateY(0);
+      }
     }
     @media(max-width:900px){
       .section-premium{padding:64px 32px}
@@ -133,7 +378,6 @@
       .square-dark{top:22px}
       .services-modern{padding:80px 32px}
       .card-grid{grid-template-columns:1fr;gap:24px}
-      .card-2,.card-3{margin-top:0}
       .service-header{flex-direction:column;align-items:flex-start}
       .header-desc{max-width:100%}
       .testimonial-card{padding:2rem 1.5rem}
@@ -144,11 +388,27 @@
       .feat-body{font-size:.95rem;margin-bottom:1.5rem}
       .secondary-img{width:82%}
       .services-modern{padding:60px 20px}
-      .service-card-modern{padding:1.75rem 1.5rem 1.5rem;border-radius:28px}
-      .icon-frame{width:64px;height:64px;border-radius:20px;margin-bottom:1.5rem}
-      .icon-frame i{font-size:1.9rem}
-      .card-title{font-size:1.5rem}
-      .image-zone{height:160px}
+      .card-grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+      }
+      .service-card-modern {
+        min-height: 380px;
+      }
+      .card-content {
+        padding: 1.5rem;
+      }
+      .icon-wrapper {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 1.5rem;
+      }
+      .icon-wrapper i {
+        font-size: 1.25rem;
+      }
+      .card-title {
+        font-size: 1.3rem;
+      }
       .stat-number{font-size:2.5rem}
       .testimonial-card{padding:1.75rem 1.25rem;border-radius:24px}
       .swiper-button-prev,.swiper-button-next{width:36px;height:36px}
@@ -167,140 +427,164 @@
 </head>
 <body class="antialiased">
   <?php
-    @include('navbar.php');
+    @include('navbar.php'); 
   ?>
 
 <div id="scroll-progress"></div>
 
-<!-- HERO (without navbar) -->
+<!-- HERO (One Stop Solutions) -->
 <div class="relative w-full min-h-[92vh] md:min-h-[88vh] bg-neutral-900 flex flex-col">
   <div class="absolute inset-0 overflow-hidden">
-    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2940&auto=format&fit=crop" alt="Business team" class="w-full h-full object-cover object-[center_30%]">
+    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2940&auto=format&fit=crop" alt="Contact centre team" class="w-full h-full object-cover object-[center_30%]">
     <div class="absolute inset-0 hero-overlay"></div>
   </div>
   
   <!-- Hero Content -->
   <div class="relative z-20 flex-1 flex flex-col justify-center px-5 pt-8 pb-4 md:px-12 lg:px-20">
     <div class="max-w-3xl">
-      <p class="reveal text-sm font-medium tracking-[0.22em] uppercase mb-5" style="color:var(--lime);font-family:var(--bf)">Digital Growth Partner</p>
-      <h1 class="reveal d1 text-white font-extrabold tracking-[-0.025em] leading-[1.08] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.2rem]">Accelerate your<br>franchise's growth.</h1>
-      <p class="reveal d2 text-white/65 text-base sm:text-lg mt-6 md:mt-8 max-w-md leading-relaxed" style="font-family:var(--bf)">Partnering with franchises to deliver customised digital marketing solutions that scale.</p>
+      <p class="reveal text-sm font-medium tracking-[0.22em] uppercase mb-5" style="color:var(--lime);font-family:var(--bf)">BPO • Contact Centre • Marketing</p>
+      <h1 class="reveal d1 text-white font-extrabold tracking-[-0.025em] leading-[1.08] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.2rem]">Outsourcing that<br>builds real loyalty.</h1>
+      <p class="reveal d2 text-white/65 text-base sm:text-lg mt-6 md:mt-8 max-w-md leading-relaxed" style="font-family:var(--bf)">Founded 2014, Karachi — we combine people, process & technology to deliver customized BPO, contact centre & marketing solutions worldwide.</p>
       <div class="reveal d3 mt-8 md:mt-10 flex flex-wrap gap-4">
-        <a href="#" class="btn-primary inline-flex items-center gap-2 rounded-full px-7 py-3.5 md:px-8 md:py-4 text-base font-semibold text-neutral-900 shadow-xl">Get in touch <i class="fas fa-arrow-right text-sm"></i></a>
-        <a href="#" class="inline-flex items-center gap-2 border border-white/25 rounded-full px-7 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-all" style="font-family:var(--bf)">Our work <i class="fas fa-play text-xs"></i></a>
+        <a href="#" class="btn-primary inline-flex items-center gap-2 rounded-full px-7 py-3.5 md:px-8 md:py-4 text-base font-semibold text-neutral-900 shadow-xl">Let's connect <i class="fas fa-arrow-right text-sm"></i></a>
+        <a href="#" class="inline-flex items-center gap-2 border border-white/25 rounded-full px-7 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-all" style="font-family:var(--bf)">24/7 support <i class="fas fa-headset text-xs"></i></a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- FEATURE SECTION -->
+<!-- FEATURE SECTION (About the company) -->
 <div class="section-premium">
   <div class="vertical-divider"></div>
   <div class="lime-accent-line"></div>
   <div class="two-col">
     <div class="reveal-left">
-      <img class="main-image" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Corporate team">
+      <img class="main-image" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1974&auto=format&fit=crop" alt="Karachi team">
     </div>
     <div>
-      <p class="reveal header-tag" style="margin-bottom:1.2rem">our approach</p>
-      <h2 class="reveal d1 feat-heading">Digital agency problems and their best solutions</h2>
-      <p class="reveal d2 feat-body">Crafting compelling digital experiences that captivate audiences and drive meaningful connections. Our agency combines innovation, strategy, and deep franchise expertise to fuel your online success.</p>
-      <div class="reveal flex d3 mt-10">
-        <img class="secondary-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop" alt="Agency discussion">
-        <img class="secondary-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop" alt="Agency discussion">
+      <p class="reveal header-tag" style="margin-bottom:1.2rem">since 2014</p>
+      <h2 class="reveal d1 feat-heading">Personal communication is our strongest bond.</h2>
+      <p class="reveal d2 feat-body">Anchored in Karachi, One Stop Solutions delivers customized outsourcing that improves customer satisfaction, retention, and profitability. We believe direct contact — phone, email, chat, SMS, fax — builds trust that lasts.</p>
+      <div class="reveal flex d3 mt-10 gap-4">
+        <img class="secondary-img" src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop" alt="Customer service agent">
+        <img class="secondary-img" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1974&auto=format&fit=crop" alt="Team discussion">
       </div>
     </div>
   </div>
   <div class="decor-squares"><div class="square-lime"></div><div class="square-dark"></div></div>
 </div>
 
-<!-- BRANDS WE WORK WITH -->
+<!-- BRANDS WE WORK WITH (client logos – placeholder names reflect BPO industry) -->
 <section class="brands-section">
-  <p class="reveal brands-label"><span></span>brands we work with<span></span></p>
+  <p class="reveal brands-label"><span></span>trusted by domestic & global clients<span></span></p>
   <div class="marquee-row">
     <div class="marquee-track fwd">
-      <div class="brand-item"><span class="brand-name">Argosy BPO</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">TEK BUZZ</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">GATEWAY MERCHENT CAPITAL</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">VIRGO</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">CLICK MILLIONS</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">CANNET</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">NORTHERN LEASING SYSTEMS. INC</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">SYSTEC SOLUTIONS</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">THE MARKET SOURCE</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">TELUS International</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">Concentrix</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">Startek</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">Sitel Group</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">Alorica</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">VXI</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">iSON Xperiences</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">Teleperformance</span><div class="brand-dot"></div></div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES - WITH VISIBLE BG IMAGES (full service list) -->
 <section class="services-modern">
   <div class="service-header">
     <div>
-      <span class="reveal header-tag">our capabilities</span>
-      <h2 class="reveal d1 header-title">Strategies that <span>scale</span> your franchise</h2>
+      <span class="reveal header-tag">solutions we deliver</span>
+      <h2 class="reveal d1 header-title"><span>Omnichannel</span> BPO & digital marketing</h2>
     </div>
-    <p class="reveal d2 header-desc">We combine data, creativity, and local expertise to accelerate multi‑unit growth.</p>
+    <p class="reveal d2 header-desc">From inbound/outbound to web design & market research — we cover every touchpoint.</p>
   </div>
+  
   <div class="card-grid">
+    <!-- Card 1 - Outbound / Inbound -->
     <div class="reveal d1 service-card-modern card-1">
-      <div class="icon-frame"><i class="fas fa-chart-line"></i></div>
-      <h3 class="card-title">Performance media</h3>
-      <p class="card-desc">Hyper‑targeted campaigns that drive foot traffic and online conversions, fully attributed.</p>
-      <div class="image-zone"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="analytics"></div>
-      <div class="card-lime-bar"></div>
+      <img class="card-bg-image" src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2069&auto=format&fit=crop" alt="call center">
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="icon-wrapper">
+          <div class="icon-dot"></div>
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <h3 class="card-title">Outbound & Inbound</h3>
+        <p class="card-desc">Lead generation, winback programs, order taking, technical support & 24/7 answering service — human touch at scale.</p>
+        
+      </div>
     </div>
+    
+    <!-- Card 2 - Surveys & Research -->
     <div class="reveal d2 service-card-modern card-2">
-      <div class="icon-frame"><i class="fas fa-store-alt"></i></div>
-      <h3 class="card-title">Local presence</h3>
-      <p class="card-desc">Unified listings, review management, and geo‑specific content for every franchise location.</p>
-      <div class="image-zone"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop" alt="local team"></div>
-      <div class="card-lime-bar"></div>
+      <img class="card-bg-image" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop" alt="market research">
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="icon-wrapper">
+          <div class="icon-dot"></div>
+          <i class="fas fa-chart-pie"></i>
+        </div>
+        <h3 class="card-title">Market Research & Surveys</h3>
+        <p class="card-desc">Customer satisfaction surveys, data verification, quality monitoring, and deep research to drive retention.</p>
+        
+      </div>
     </div>
+    
+    <!-- Card 3 - Digital & Creative -->
     <div class="reveal d3 service-card-modern card-3">
-      <div class="icon-frame"><i class="fas fa-pen-fancy"></i></div>
-      <h3 class="card-title">Creative & conv.</h3>
-      <p class="card-desc">High‑converting landing pages, A/B tested creatives, and unified brand voice across markets.</p>
-      <div class="image-zone"><img src="https://images.unsplash.com/photo-1555421689-3f034debb7a6?q=80&w=800&auto=format&fit=crop" alt="creative"></div>
-      <div class="card-lime-bar"></div>
+      <img class="card-bg-image" src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop" alt="web design">
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="icon-wrapper">
+          <div class="icon-dot"></div>
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <h3 class="card-title">Web & Digital Marketing</h3>
+        <p class="card-desc">Web design, development, email/chat support, ticketing, SEO, and managed services — your digital presence, optimized.</p>
+
+      </div>
     </div>
   </div>
+  <!-- additional small note (services list) -->
+  <!-- <p class="text-center text-sm text-gray-400 mt-8 tracking-wider">✔ Lead generation  ✔ Data verification  ✔ Ticketing  ✔ Technical support  ✔ Order processing  ✔ Managed services  ✔ Digital marketing</p> -->
 </section>
 
-<!-- STATS -->
+<!-- STATS (BPO focused) -->
 <div class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-20 md:py-28 bg-[#f4f3f0]">
   <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-14 text-center">
-    <div class="reveal d1"><div class="stat-number">92%</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">franchisee retention</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
-    <div class="reveal d2"><div class="stat-number">3.2B</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">digital impressions</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
-    <div class="reveal d3"><div class="stat-number">+47%</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">avg. local sales</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
-    <div class="reveal d4"><div class="stat-number">250+</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">franchise partners</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
+    <div class="reveal d1"><div class="stat-number">98%</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">client retention</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
+    <div class="reveal d2"><div class="stat-number">50+</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">global clients</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
+    <div class="reveal d3"><div class="stat-number">24/7</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">coverage</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
+    <div class="reveal d4"><div class="stat-number">700+</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">trained agents</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
   </div>
   <div class="reveal mt-16 md:mt-24 relative h-52 sm:h-64 md:h-80 w-full overflow-hidden rounded-2xl md:rounded-3xl">
-    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop" class="w-full h-full object-cover grayscale brightness-95" alt="team">
+    <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover grayscale brightness-95" alt="operations team">
     <div class="absolute inset-0 bg-gradient-to-r from-black/55 to-transparent flex items-center px-6 md:px-10">
-      <p class="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold max-w-xl" style="font-family:'Plus Jakarta Sans',sans-serif">"They don't just market — they grow with us."</p>
+      <p class="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold max-w-xl" style="font-family:'Plus Jakarta Sans',sans-serif">“They don't just outsource — they partner.”</p>
     </div>
   </div>
 </div>
 
-<!-- TESTIMONIALS -->
+<!-- TESTIMONIALS (updated with BPO context) -->
 <div class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-20 md:py-32 bg-white">
   <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start lg:items-center">
     <div class="reveal-left lg:w-1/2 w-full">
       <div class="lime-marker"></div>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-[-0.025em] leading-tight" style="font-family:'Plus Jakarta Sans',sans-serif">Results that <span class="bg-lime-400 px-2 text-black">speak</span> louder than any pitch</h2>
-      <p class="text-gray-500 text-base md:text-lg mt-6 max-w-md leading-relaxed" style="font-family:var(--bf)">We helped a 120‑unit franchise boost local SEO visibility by 190% and unify their digital identity.</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-[-0.025em] leading-tight" style="font-family:'Plus Jakarta Sans',sans-serif">Relationships <span class="bg-lime-400 px-2 text-black">built</span> on every call, chat & email</h2>
+      <p class="text-gray-500 text-base md:text-lg mt-6 max-w-md leading-relaxed" style="font-family:var(--bf)">A global logistics firm reduced churn by 34% after implementing our winback and quality survey programs.</p>
       <div class="mt-8 flex items-center gap-4">
-        <div class="w-14 h-14 rounded-full overflow-hidden grayscale flex-shrink-0"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover" alt="Emma"></div>
-        <div><p class="font-semibold" style="font-family:'Plus Jakarta Sans',sans-serif">Emma Linfield</p><p class="text-sm text-gray-400" style="font-family:var(--bf)">CMO, RapidBurger Co.</p></div>
+        <div class="w-14 h-14 rounded-full overflow-hidden grayscale flex-shrink-0"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover" alt="Sarah"></div>
+        <div><p class="font-semibold" style="font-family:'Plus Jakarta Sans',sans-serif">Ahmed Raza</p><p class="text-sm text-gray-400" style="font-family:var(--bf)">COO, TransWorld Logistics</p></div>
       </div>
     </div>
     <div class="reveal-right lg:w-1/2 w-full">
       <div class="swiper testimonialSwiper pb-12">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><div class="testimonial-card relative"><i class="fas fa-quote-right text-4xl text-lime-300 opacity-40 absolute top-5 right-6"></i><p class="text-lg md:text-2xl leading-relaxed relative z-10" style="font-family:var(--bf)">"Growth Alliance transformed how we connect with local customers. Their agency‑style thinking paired with franchise‑level execution is unmatched."</p><div class="flex items-center gap-2 mt-8"><span class="text-lime-400">★★★★★</span><span class="text-gray-400 text-sm">(5.0)</span></div><p class="text-sm text-gray-400 mt-4 border-t border-gray-100 pt-3" style="font-family:var(--bf)">— Emma Linfield, RapidBurger Co.</p></div></div>
-          <div class="swiper-slide"><div class="testimonial-card relative"><i class="fas fa-quote-right text-4xl text-lime-300 opacity-40 absolute top-5 right-6"></i><p class="text-lg md:text-2xl leading-relaxed relative z-10" style="font-family:var(--bf)">"The local presence strategy brought a 156% increase in store locator usage across all our franchises."</p><div class="flex items-center gap-2 mt-8"><span class="text-lime-400">★★★★★</span><span class="text-gray-400 text-sm">(5.0)</span></div><p class="text-sm text-gray-400 mt-4 border-t border-gray-100 pt-3" style="font-family:var(--bf)">— Marcus Velez, COO · PitaFresh</p></div></div>
-          <div class="swiper-slide"><div class="testimonial-card relative"><i class="fas fa-quote-right text-4xl text-lime-300 opacity-40 absolute top-5 right-6"></i><p class="text-lg md:text-2xl leading-relaxed relative z-10" style="font-family:var(--bf)">"Their creative campaigns delivered a 4.2x ROAS while keeping our brand voice consistent across 200+ locations."</p><div class="flex items-center gap-2 mt-8"><span class="text-lime-400">★★★★★</span><span class="text-gray-400 text-sm">(5.0)</span></div><p class="text-sm text-gray-400 mt-4 border-t border-gray-100 pt-3" style="font-family:var(--bf)">— Nadia Kwan · Motto Mortgage</p></div></div>
-          <div class="swiper-slide"><div class="testimonial-card relative"><i class="fas fa-quote-right text-4xl text-lime-300 opacity-40 absolute top-5 right-6"></i><p class="text-lg md:text-2xl leading-relaxed relative z-10" style="font-family:var(--bf)">"We finally have unified data across all franchisees. Growth Alliance built the dashboards and the strategy."</p><div class="flex items-center gap-2 mt-8"><span class="text-lime-400">★★★★★</span><span class="text-gray-400 text-sm">(5.0)</span></div><p class="text-sm text-gray-400 mt-4 border-t border-gray-100 pt-3" style="font-family:var(--bf)">— David Park · The Joint Chiropractic</p></div></div>
+          <div class="swiper-slide"><div class="testimonial-card relative"><i class="fas fa-quote-right text-4xl text-lime-300 opacity-40 absolute top-5 right-6"></i><p class="text-lg md:text-2xl leading-relaxed relative z-10" style="font-family:var(--bf)">"One Stop Solutions handles our overflow inbound with care. Their agents actually listen — our NPS jumped 22 points."</p><div class="flex items-center gap-2 mt-8"><span class="text-lime-400">★★★★★</span><span class="text-gray-400 text-sm">(5.0)</span></div><p class="text-sm text-gray-400 mt-4 border-t border-gray-100 pt-3" style="font-family:var(--bf)">— Maria G., client success lead</p></div></div>
+          <div class="swiper-slide"><div class="testimonial-card relative"><i class="fas fa-quote-right text-4xl text-lime-300 opacity-40 absolute top-5 right-6"></i><p class="text-lg md:text-2xl leading-relaxed relative z-10" style="font-family:var(--bf)">"The data verification and survey services gave us clean, actionable insights. They're an extension of our team."</p><div class="flex items-center gap-2 mt-8"><span class="text-lime-400">★★★★★</span><span class="text-gray-400 text-sm">(5.0)</span></div><p class="text-sm text-gray-400 mt-4 border-t border-gray-100 pt-3" style="font-family:var(--bf)">— James K., market intelligence</p></div></div>
+          <div class="swiper-slide"><div class="testimonial-card relative"><i class="fas fa-quote-right text-4xl text-lime-300 opacity-40 absolute top-5 right-6"></i><p class="text-lg md:text-2xl leading-relaxed relative z-10" style="font-family:var(--bf)">"From ticketing to tech support — they cover everything. We scaled our operations without scaling headcount."</p><div class="flex items-center gap-2 mt-8"><span class="text-lime-400">★★★★★</span><span class="text-gray-400 text-sm">(5.0)</span></div><p class="text-sm text-gray-400 mt-4 border-t border-gray-100 pt-3" style="font-family:var(--bf)">— Lena Schmidt, COO · nexVent</p></div></div>
         </div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
@@ -310,22 +594,21 @@
   </div>
 </div>
 
-<!-- CTA -->
+<!-- CTA (tailored to One Stop) -->
 <div class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-16 md:py-28 bg-[#faf9f7]">
   <div class="reveal bg-black text-white rounded-2xl md:rounded-3xl px-6 py-16 sm:px-10 md:p-16 lg:p-24 relative overflow-hidden">
     <div class="absolute -right-10 -top-10 w-48 md:w-64 h-48 md:h-64 bg-lime-400/10 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute -left-10 -bottom-10 w-36 md:w-48 h-36 md:h-48 border-4 border-lime-400/20 rounded-full pointer-events-none"></div>
     <div class="relative z-20 max-w-3xl">
-      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight" style="font-family:'Plus Jakarta Sans',sans-serif">Ready to outgrow<br>the competition?</h2>
-      <p class="text-gray-300 text-base md:text-xl mt-5 md:mt-6 max-w-lg leading-relaxed" style="font-family:var(--bf)">Let's build a digital roadmap tailored to your franchise system, from local store pages to national campaigns.</p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight" style="font-family:'Plus Jakarta Sans',sans-serif">Ready to outsource<br>without compromise?</h2>
+      <p class="text-gray-300 text-base md:text-xl mt-5 md:mt-6 max-w-lg leading-relaxed" style="font-family:var(--bf)">Let's design a solution that blends your culture with our operational excellence — from inbound to digital marketing.</p>
       <div class="mt-8 md:mt-12 flex flex-wrap gap-4 md:gap-6">
-        <a href="#" class="btn-primary inline-flex items-center gap-3 rounded-full px-7 py-4 md:px-10 md:py-5 text-base md:text-xl font-semibold text-neutral-900 shadow-2xl">Schedule a call <i class="fas fa-arrow-right text-sm"></i></a>
-        <a href="#" class="inline-flex items-center gap-2 border border-white/30 rounded-full px-7 py-4 md:px-10 md:py-5 text-base md:text-xl font-medium text-white hover:bg-white/10 transition-all" style="font-family:var(--bf)">View case studies</a>
+        <a href="#" class="btn-primary inline-flex items-center gap-3 rounded-full px-7 py-4 md:px-10 md:py-5 text-base md:text-xl font-semibold text-neutral-900 shadow-2xl">Start conversation <i class="fas fa-arrow-right text-sm"></i></a>
+        <a href="#" class="inline-flex items-center gap-2 border border-white/30 rounded-full px-7 py-4 md:px-10 md:py-5 text-base md:text-xl font-medium text-white hover:bg-white/10 transition-all" style="font-family:var(--bf)">Explore services</a>
       </div>
     </div>
   </div>
 </div>
-
 
 <?php
   @include('footer.php');
