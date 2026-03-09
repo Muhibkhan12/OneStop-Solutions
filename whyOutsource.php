@@ -13,12 +13,12 @@
     /* Modern animations */
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
+      50% { transform: translateY(-10px); }
     }
     
     @keyframes pulse-glow {
-      0%, 100% { opacity: 0.5; filter: blur(40px); }
-      50% { opacity: 0.8; filter: blur(60px); }
+      0%, 100% { opacity: 0.3; filter: blur(40px); }
+      50% { opacity: 0.6; filter: blur(60px); }
     }
     
     @keyframes rotate-slow {
@@ -26,16 +26,8 @@
       to { transform: rotate(360deg); }
     }
     
-    @keyframes tickerRoll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-    
-    .ticker-track { animation: tickerRoll 22s linear infinite; }
-    .ticker-track:hover { animation-play-state: paused; }
-    
     /* Scroll reveal */
-    .reveal { opacity: 0; transform: translateY(52px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
     .reveal-left { opacity: 0; transform: translateX(-60px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
     .reveal-right { opacity: 0; transform: translateX(60px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
     .reveal.visible, .reveal-left.visible, .reveal-right.visible { opacity: 1; transform: translate(0); }
@@ -46,7 +38,22 @@
     .d4 { transition-delay: 0.38s; }
     .d5 { transition-delay: 0.48s; }
     
-    /* Modern card styles */
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, #fff 0%, #ceff66 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Glass card effect */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(206, 255, 102, 0.1);
+    }
+    
+    /* Card styles */
     .benefit-card-modern {
       position: relative;
       transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
@@ -59,86 +66,34 @@
       box-shadow: 0 30px 50px -20px rgba(206, 255, 102, 0.3);
     }
     
-    .benefit-card-modern::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 28px;
-      padding: 2px;
-      background: linear-gradient(145deg, rgba(206,255,102,0.3), transparent 60%);
-      /* -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); */
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    
-    .benefit-card-modern:hover::before {
-      opacity: 1;
-    }
-    
-    .glass-card {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(206, 255, 102, 0.1);
-    }
-    
-    .floating-element {
+    /* Floating animation */
+    .float {
       animation: float 6s ease-in-out infinite;
     }
     
+    /* Pulse glow */
     .pulse-glow {
       animation: pulse-glow 4s ease-in-out infinite;
     }
     
+    /* Rotate slow */
     .rotate-slow {
       animation: rotate-slow 20s linear infinite;
     }
     
-    /* Gradient text */
-    .gradient-text {
-      background: linear-gradient(135deg, #fff 0%, #ceff66 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    /* Add padding to body to account for fixed navbar */
+    body {
+      padding-top: 80px;
     }
     
-    /* Split background effect */
-    .split-bg {
-      position: relative;
-    }
-    
-    .split-bg::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 1px;
-      height: 100%;
-      background: linear-gradient(to bottom, transparent, rgba(206,255,102,0.2), transparent);
-      transform: translateX(-50%);
-    }
-    
-    /* Custom cursor effect (optional) */
-    .cursor-glow {
-      position: fixed;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(206,255,102,0.15) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      mix-blend-mode: screen;
-      transform: translate(-50%, -50%);
-      transition: transform 0.1s ease;
+    @media (max-width: 768px) {
+      body {
+        padding-top: 70px;
+      }
     }
   </style>
 </head>
-<body class="antialiased font-['Inter'] bg-[#0a0a0a] text-white overflow-x-hidden relative">
-
-<!-- Custom cursor glow (optional, remove if not wanted) -->
-<div id="cursor-glow" class="cursor-glow fixed hidden lg:block"></div>
+<body class="antialiased font-['Inter'] bg-[#0a0a0a] text-white overflow-x-hidden">
 
 <!-- Scroll Progress -->
 <div id="scroll-progress" class="fixed top-0 left-0 w-0 h-[3px] bg-[#ceff66] z-[9999] duration-100 shadow-[0_0_20px_rgba(206,255,102,0.8)]"></div>
@@ -155,137 +110,36 @@
   <a href="#contact" class="block font-medium text-white/70 text-lg py-3 hover:text-[#ceff66] hover:pl-2 transition-all">Get in touch →</a>
 </div>
 
-<!-- ========== HERO - MODERN 3D SPACE THEME ========== -->
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#050505]">
+<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#ceff66] via-[#b3e04e] to-[#a6d84a]">
+  
   <!-- Animated background elements -->
-  <div class="absolute inset-0 opacity-30">
-    <div class="absolute top-20 left-10 w-72 h-72 bg-[#ceff66] rounded-full mix-blend-screen filter blur-[100px] animate-pulse"></div>
-    <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-600 rounded-full mix-blend-screen filter blur-[120px] animate-pulse animation-delay-2000"></div>
-    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-[#ceff66]/20 rounded-full rotate-slow"></div>
-    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] border border-[#ceff66]/10 rounded-full rotate-slow" style="animation-direction: reverse;"></div>
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-20 left-10 w-96 h-96 bg-white rounded-full mix-blend-overlay filter blur-[80px] animate-pulse"></div>
+    <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-black rounded-full mix-blend-overlay filter blur-[100px] animate-pulse animation-delay-2000"></div>
   </div>
   
   <!-- Grid overlay -->
-  <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0 L60 0 L60 60 L0 60 Z" fill="none" stroke="rgba(206,255,102,0.05)" stroke-width="0.5"/%3E%3C/svg%3E')] opacity-20"></div>
-
-  <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-32">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      
-      <!-- Left content -->
-      <div class="reveal-left">
-        <div class="flex items-center gap-3 mb-6">
-          <span class="w-10 h-[2px] bg-[#ceff66]"></span>
-          <span class="text-[#ceff66] text-sm font-semibold tracking-[0.2em] uppercase">Since 2014</span>
-        </div>
-        
-        <h1 class="font-['Plus_Jakarta_Sans'] font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.9] tracking-[-0.03em] mb-8">
-          <span class="block">Outsource</span>
-          <span class="gradient-text block">Smarter</span>
-          <span class="block text-white/40">Scale Faster</span>
-        </h1>
-        
-        <p class="text-white/60 text-lg md:text-xl max-w-lg mb-10 leading-relaxed">
-          Transform your business with our award-winning BPO solutions. 7+ years of excellence, 60% average cost savings, and 24/7 dedicated support.
-        </p>
-        
-        <!-- CTA buttons with modern styling -->
-        <div class="flex flex-wrap gap-4">
-          <a href="#benefits" class="group relative inline-flex items-center gap-3 rounded-full px-8 py-4 bg-[#ceff66] text-black font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_20px_30px_-10px_rgba(206,255,102,0.5)]">
-            <span class="relative z-10">Explore benefits</span>
-            <i class="fas fa-arrow-down relative z-10 group-hover:translate-y-1 transition-transform"></i>
-            <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
-          </a>
-          <a href="#contact" class="group relative inline-flex items-center gap-3 rounded-full px-8 py-4 border border-white/20 text-white font-semibold overflow-hidden transition-all duration-300 hover:border-[#ceff66]">
-            <span class="relative z-10">Free proposal</span>
-            <i class="fas fa-arrow-right relative z-10 group-hover:translate-x-1 transition-transform"></i>
-            <div class="absolute inset-0 bg-[#ceff66]/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
-          </a>
-        </div>
-        
-        <!-- Stats with modern design -->
-        <div class="grid grid-cols-4 gap-4 mt-16">
-          <div class="reveal d1">
-            <div class="font-['Plus_Jakarta_Sans'] text-3xl font-bold text-[#ceff66]">7+</div>
-            <div class="text-white/40 text-xs uppercase tracking-wider mt-1">Years</div>
-          </div>
-          <div class="reveal d2">
-            <div class="font-['Plus_Jakarta_Sans'] text-3xl font-bold text-[#ceff66]">60%</div>
-            <div class="text-white/40 text-xs uppercase tracking-wider mt-1">Savings</div>
-          </div>
-          <div class="reveal d3">
-            <div class="font-['Plus_Jakarta_Sans'] text-3xl font-bold text-[#ceff66]">24/7</div>
-            <div class="text-white/40 text-xs uppercase tracking-wider mt-1">Support</div>
-          </div>
-          <div class="reveal d4">
-            <div class="font-['Plus_Jakarta_Sans'] text-3xl font-bold text-[#ceff66]">100%</div>
-            <div class="text-white/40 text-xs uppercase tracking-wider mt-1">Custom</div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Right content - 3D floating card -->
-      <div class="reveal-right relative hidden lg:block">
-        <div class="relative floating-element">
-          <!-- Main floating card -->
-          <div class="relative w-[400px] h-[500px] ml-auto glass-card rounded-[40px] overflow-hidden transform rotate-3 hover:rotate-0 transition-all duration-700">
-            <!-- Background image with overlay -->
-            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1200&auto=format&fit=crop" alt="Team" class="absolute inset-0 w-full h-full object-cover opacity-60">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-            
-            <!-- Content -->
-            <div class="relative z-10 h-full flex flex-col justify-end p-8">
-              <div class="w-16 h-16 bg-[#ceff66] rounded-2xl flex items-center justify-center mb-6 shadow-2xl">
-                <i class="fas fa-rocket text-3xl text-black"></i>
-              </div>
-              <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold text-white mb-3">Global Excellence</h3>
-              <p class="text-white/70 text-sm leading-relaxed">Trusted by 50+ global clients across 15+ industries. Your success is our mission.</p>
-              
-              <!-- Progress bar -->
-              <div class="mt-6 space-y-3">
-                <div class="flex justify-between text-xs">
-                  <span class="text-white/50">Client satisfaction</span>
-                  <span class="text-[#ceff66]">98%</span>
-                </div>
-                <div class="h-1 bg-white/10 rounded-full overflow-hidden">
-                  <div class="h-full w-[98%] bg-[#ceff66] rounded-full"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Floating badges -->
-          <div class="absolute -top-8 -left-8 w-24 h-24 bg-[#ceff66] rounded-3xl flex items-center justify-center shadow-2xl rotate-12 hover:rotate-0 transition-all duration-500">
-            <span class="font-bold text-2xl text-black">7+</span>
-          </div>
-          <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-black border border-[#ceff66]/30 rounded-3xl flex items-center justify-center shadow-2xl -rotate-6 hover:rotate-0 transition-all duration-500 backdrop-blur-sm">
-            <span class="font-bold text-lg text-[#ceff66] text-center">Global<br>Partner</span>
-          </div>
-        </div>
-      </div>
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0 L60 0 L60 60 L0 60 Z" fill="none" stroke="rgba(0,0,0,0.05)" stroke-width="1"/%3E%3C/svg%3E')] opacity-20"></div>
+  
+  <!-- Main content - perfectly centered -->
+  <div class="relative z-10 text-center px-5 sm:px-8 md:px-12 lg:px-20">
+    <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-black/10 backdrop-blur-sm rounded-full border border-black/20 mb-6">
+      <span class="w-2 h-2 bg-black rounded-full animate-pulse"></span>
+      <span class="text-black/70 text-sm font-medium tracking-wider">WHY OUTSOURCE</span>
     </div>
+    
+    <h1 class="reveal d1 font-['Plus_Jakarta_Sans'] font-extrabold text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-black leading-[1.1] tracking-[-0.03em] mb-6">
+      Outsource <span class="text-white">Smarter</span>
+    </h1>
+    
+    <p class="reveal d2 text-black/70 text-lg md:text-xl max-w-3xl mx-auto">
+      7+ years of excellence, 60% average cost savings, and 24/7 dedicated support.
+    </p>
   </div>
   
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2">
-    <span class="text-white/30 text-xs tracking-widest uppercase">Scroll</span>
-    <div class="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center p-1">
-      <div class="w-1 h-2 bg-[#ceff66] rounded-full animate-bounce"></div>
-    </div>
-  </div>
+  <!-- Decorative bottom gradient -->
+  <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
 </section>
-
-<!-- ========== TICKER - MODERN MINIMAL ========== -->
-<div class="bg-[#ceff66] py-5 overflow-hidden relative">
-  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-black/5 to-transparent"></div>
-  <div class="ticker-track flex whitespace-nowrap">
-    <span class="font-['Plus_Jakarta_Sans'] text-base font-bold text-black px-10 tracking-[0.1em] uppercase flex-shrink-0">✦ Serious Savings</span>
-    <span class="font-['Plus_Jakarta_Sans'] text-base font-bold text-black px-10 tracking-[0.1em] uppercase flex-shrink-0">✦ Flexible Staffing</span>
-    <span class="font-['Plus_Jakarta_Sans'] text-base font-bold text-black px-10 tracking-[0.1em] uppercase flex-shrink-0">✦ Excellent Management</span>
-    <span class="font-['Plus_Jakarta_Sans'] text-base font-bold text-black px-10 tracking-[0.1em] uppercase flex-shrink-0">✦ Risk Management</span>
-    <span class="font-['Plus_Jakarta_Sans'] text-base font-bold text-black px-10 tracking-[0.1em] uppercase flex-shrink-0">✦ Greater Agility</span>
-    <span class="font-['Plus_Jakarta_Sans'] text-base font-bold text-black px-10 tracking-[0.1em] uppercase flex-shrink-0">✦ Free Proposal</span>
-  </div>
-</div>
 
 <!-- ========== WHO WE ARE - MODERN SPLIT LAYOUT ========== -->
 <section class="relative py-32 bg-[#0a0a0a] overflow-hidden">
@@ -621,15 +475,6 @@
       if (b3) b3.style.transform = '';
     }));
   }
-
-  // Optional cursor glow effect
-  const cursor = document.getElementById('cursor-glow');
-  if (cursor) {
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    });
-  }
 </script>
 
 <style>
@@ -637,9 +482,13 @@
   .animation-delay-1000 { animation-delay: 1s; }
   .animation-delay-2000 { animation-delay: 2s; }
   
-  /* Hide cursor glow on mobile */
-  @media (max-width: 1024px) {
-    .cursor-glow { display: none; }
+  @keyframes rotate-reverse {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+  }
+  
+  .rotate-reverse {
+    animation: rotate-reverse 25s linear infinite;
   }
 </style>
 
