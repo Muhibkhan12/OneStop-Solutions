@@ -453,25 +453,76 @@
   </div>
 </div>
 
-<!-- FEATURE SECTION (About the company) -->
-<div class="section-premium">
-  <div class="vertical-divider"></div>
-  <div class="lime-accent-line"></div>
-  <div class="two-col">
-    <div class="reveal-left">
-      <img class="main-image" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1974&auto=format&fit=crop" alt="Karachi team">
-    </div>
-    <div>
-      <p class="reveal header-tag" style="margin-bottom:1.2rem">since 2014</p>
-      <h2 class="reveal d1 feat-heading">Personal communication is our strongest bond.</h2>
-      <p class="reveal d2 feat-body">Anchored in Karachi, One Stop Solutions delivers customized outsourcing that improves customer satisfaction, retention, and profitability. We believe direct contact — phone, email, chat, SMS, fax — builds trust that lasts.</p>
-      <div class="reveal flex d3 mt-10 gap-4">
-        <img class="secondary-img" src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop" alt="Customer service agent">
-        <img class="secondary-img" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1974&auto=format&fit=crop" alt="Team discussion">
+<!-- FEATURE SECTION (About the company) - Fully responsive with perfect heights/widths preserved -->
+<div class="section-premium w-full bg-white py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12 overflow-hidden">
+  
+  <!-- decorative elements - hidden on mobile/tablet -->
+  <div class="vertical-divider hidden xl:block absolute left-[10%] top-0 w-px h-full bg-gradient-to-b from-transparent via-[#ceff66]/30 to-transparent"></div>
+  <div class="lime-accent-line hidden xl:block absolute top-20 left-0 w-20 h-1 bg-[#ceff66]"></div>
+  
+  <div class="max-w-[1440px] mx-auto">
+    <!-- two-col layout - responsive flex with proper ordering -->
+    <div class="two-col flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
+      
+      <!-- left column - main image (EXACTLY AS YOU SET IT) -->
+      <div class="reveal-left w-full lg:w-1/2 flex justify-center order-2 lg:order-1">
+        <div class="relative w-full max-w-[90%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-none">
+          <img 
+            class="main-image w-full h-[83%] object-cover rounded-2xl md:rounded-3xl shadow-[0_30px_50px_-20px_rgba(0,0,0,0.3)]" 
+            src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1974&auto=format&fit=crop" 
+            alt="Karachi team"
+            style="aspect-ratio: 4/5;"
+          >
+
+        </div>
+      </div>
+      
+      <!-- right column - content -->
+      <div class="w-full lg:w-1/2 order-1 lg:order-2">
+        <!-- header tag -->
+        <div class="reveal flex items-center gap-2 sm:gap-3 mb-3 sm:mb-5">
+          <span class="w-6 sm:w-8 h-px bg-[#ceff66]"></span>
+          <p class="text-[#ceff66] text-[0.6rem] sm:text-[0.7rem] font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase">since 2014</p>
+        </div>
+        
+        <!-- heading - responsive but preserves size ratios -->
+        <h2 class="reveal d1 feat-heading font-['Plus_Jakarta_Sans'] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-[1.2] tracking-[-0.02em] text-[#111] mb-3 sm:mb-5">
+          Personal communication is our strongest bond.
+        </h2>
+        
+        <!-- body text - responsive -->
+        <p class="reveal d2 feat-body text-[#5a5a5a] text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-xl">
+          Anchored in Karachi, One Stop Solutions delivers customized outsourcing that improves customer satisfaction, retention, and profitability. We believe direct contact — phone, email, chat, SMS, fax — builds trust that lasts.
+        </p>
+        
+        <!-- secondary images - FULLY RESPONSIVE with perfect sizing -->
+        <div class="reveal flex d3 mt-6 sm:mt-8 md:mt-10 gap-3 sm:gap-4 flex-col sm:flex-row">
+          <div class="w-full sm:w-1/2">
+            <img 
+              class="secondary-img w-full h-auto object-cover rounded-lg sm:rounded-xl md:rounded-2xl shadow-md sm:shadow-lg" 
+              src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop" 
+              alt="Customer service agent"
+              style="aspect-ratio: 4/3; width: 100%;"
+            >
+          </div>
+          <div class="w-full sm:w-1/2">
+            <img 
+              class="secondary-img w-full h-auto object-cover rounded-lg sm:rounded-xl md:rounded-2xl shadow-md sm:shadow-lg" 
+              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1974&auto=format&fit=crop" 
+              alt="Team discussion"
+              style="aspect-ratio: 4/3; width: 100%;"
+            >
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="decor-squares"><div class="square-lime"></div><div class="square-dark"></div></div>
+  
+  <!-- decorative squares - hidden on mobile/tablet -->
+  <div class="decor-squares hidden xl:block absolute bottom-10 right-10">
+    <div class="square-lime w-16 md:w-20 h-16 md:h-20 bg-[#ceff66]/10 rotate-12 absolute -right-4 -bottom-4"></div>
+    <div class="square-dark w-20 md:w-24 h-20 md:h-24 bg-[#111]/5 -rotate-6 absolute right-0 bottom-0"></div>
+  </div>
 </div>
 
 <!-- BRANDS WE WORK WITH (client logos – placeholder names reflect BPO industry) -->
@@ -557,7 +608,6 @@
     <div class="reveal d1"><div class="stat-number">98%</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">client retention</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
     <div class="reveal d2"><div class="stat-number">50+</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">global clients</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
     <div class="reveal d3"><div class="stat-number">24/7</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">coverage</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
-    <div class="reveal d4"><div class="stat-number">700+</div><p class="text-xs sm:text-sm font-medium uppercase tracking-widest mt-2" style="font-family:var(--bf)">trained agents</p><div class="w-10 h-1 bg-lime-400 mx-auto mt-3"></div></div>
   </div>
   <div class="reveal mt-16 md:mt-24 relative h-52 sm:h-64 md:h-80 w-full overflow-hidden rounded-2xl md:rounded-3xl">
     <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover grayscale brightness-95" alt="operations team">

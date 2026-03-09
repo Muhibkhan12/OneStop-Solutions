@@ -80,7 +80,7 @@
         <span class="relative z-10">Process.</span>
         <span class="absolute bottom-2 left-0 right-0 h-4 bg-[#ceff66] -z-0 -skew-x-2 opacity-90"></span>
       </span>
-      <span class="text-white/30"> Results.</span>
+      <span class="text-white/60"> Results.</span>
     </h1>
 
     <!-- Sub line -->
