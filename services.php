@@ -60,59 +60,36 @@
 </div>
 
 <!-- ========== HERO (services) – darker, same style ========== -->
-<section class="relative min-h-[70vh] flex flex-col justify-between overflow-hidden bg-black">
-  <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop" alt="Services" class="absolute inset-0 w-full h-full object-cover object-center opacity-40">
-  <div class="absolute inset-0 bg-gradient-to-b from-black/85 via-black/80 to-black/95 z-[1]"></div>
-  <div class="absolute bottom-0 right-0 w-[600px] h-[400px] bg-[radial-gradient(ellipse,rgba(206,255,102,0.1)_0%,transparent_70%)] z-[2] pointer-events-none"></div>
-  <div class="absolute top-0 left-0 right-0 h-[3px] bg-[#ceff66] z-10"></div>
-
-  <!-- hero content -->
-  <div class="relative z-10 flex-1 flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-24 pt-32 pb-10 md:pt-36 md:pb-12 max-w-[1440px] mx-auto w-full">
-    <div class="reveal inline-flex items-center gap-2 border border-white/20 bg-black/30 backdrop-blur-sm text-[#ceff66] text-[0.7rem] font-bold tracking-[0.25em] uppercase px-4 py-2 rounded-full mb-8 w-fit">
-      <span class="w-1.5 h-1.5 rounded-full bg-[#ceff66] animate-pulse"></span>
-      What we deliver
+<!-- ========== HERO - YELLOWISH BG LIKE CONTACT US PAGE ========== -->
+<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#ceff66] via-[#b3e04e] to-[#a6d84a]">
+  
+  <!-- Animated background elements -->
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-20 left-10 w-96 h-96 bg-white rounded-full mix-blend-overlay filter blur-[80px] animate-pulse"></div>
+    <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-black rounded-full mix-blend-overlay filter blur-[100px] animate-pulse animation-delay-2000"></div>
+  </div>
+  
+  <!-- Grid overlay -->
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0 L60 0 L60 60 L0 60 Z" fill="none" stroke="rgba(0,0,0,0.05)" stroke-width="1"/%3E%3C/svg%3E')] opacity-20"></div>
+  
+  <!-- Main content -->
+  <div class="relative z-10 text-center px-5 sm:px-8 md:px-12 lg:px-24 py-20 md:py-28">
+    <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-black/10 backdrop-blur-sm rounded-full border border-black/20 mb-6">
+      <span class="w-2 h-2 bg-black rounded-full animate-pulse"></span>
+      <span class="text-black/70 text-sm font-medium tracking-wider">SERVICES</span>
     </div>
-
-    <h1 class="reveal d1 font-['Plus_Jakarta_Sans'] font-extrabold text-white leading-[1.04] tracking-[-0.03em] text-[clamp(2.4rem,9vw,5.5rem)] max-w-4xl mb-6">
-      Solutions that<br>drive <span class="text-[#ceff66]">growth</span>
+    
+    <h1 class="reveal d1 font-['Plus_Jakarta_Sans'] font-extrabold text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-black leading-[1.1] tracking-[-0.03em] mb-6">
+      Services 
     </h1>
-
-    <div class="reveal d2 flex items-center gap-4">
-      <div class="w-12 h-px bg-[#ceff66]"></div>
-      <p class="text-white/60 text-sm md:text-base font-medium tracking-wide">Inbound · Outbound · Digital · Tech</p>
-    </div>
-
-    <div class="reveal d3 mt-8 flex flex-wrap gap-3">
-      <a href="#service-grid" class="inline-flex items-center gap-2 rounded-full px-6 py-3 sm:px-7 sm:py-3.5 text-sm font-bold text-[#111] bg-[#ceff66] hover:bg-[#d4ff7a] transition-all duration-300 shadow-[0_8px_24px_-6px_rgba(206,255,102,0.4)] hover:-translate-y-0.5">
-        Explore services <i class="fas fa-arrow-down text-xs"></i>
-      </a>
-      <a href="#contact" class="inline-flex items-center gap-2 border border-white/25 backdrop-blur-sm bg-white/10 rounded-full px-6 py-3 sm:px-7 sm:py-3.5 text-sm font-semibold text-white hover:bg-white/20 transition-all duration-300">
-        Discuss project
-      </a>
-    </div>
+    
+    <p class="reveal d2 text-black/70 text-xl max-w-2xl mx-auto">
+      People. Process. Results. — Building trust through excellence since 2008.
+    </p>
   </div>
-
-  <!-- stats row (smaller) -->
-  <div class="relative z-10 w-full px-5 sm:px-8 md:px-12 lg:px-24 pb-10 max-w-[1440px] mx-auto">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
-      <div class="reveal d1 backdrop-blur-md bg-black/40 border border-white/10 rounded-xl sm:rounded-2xl p-4">
-        <div class="font-['Plus_Jakarta_Sans'] text-2xl sm:text-3xl font-extrabold text-white">15+</div>
-        <div class="text-[0.6rem] sm:text-[0.68rem] font-semibold tracking-wider uppercase text-white/40">years expertise</div>
-      </div>
-      <div class="reveal d2 backdrop-blur-md bg-black/40 border border-white/10 rounded-xl sm:rounded-2xl p-4">
-        <div class="font-['Plus_Jakarta_Sans'] text-2xl sm:text-3xl font-extrabold text-white">200+</div>
-        <div class="text-[0.6rem] sm:text-[0.68rem] font-semibold tracking-wider uppercase text-white/40">clients</div>
-      </div>
-      <div class="reveal d3 backdrop-blur-md bg-black/40 border border-white/10 rounded-xl sm:rounded-2xl p-4">
-        <div class="font-['Plus_Jakarta_Sans'] text-2xl sm:text-3xl font-extrabold text-white">50K+</div>
-        <div class="text-[0.6rem] sm:text-[0.68rem] font-semibold tracking-wider uppercase text-white/40">campaigns</div>
-      </div>
-      <div class="reveal d4 bg-[#ceff66] border border-[#ceff66] rounded-xl sm:rounded-2xl p-4">
-        <div class="font-['Plus_Jakarta_Sans'] text-2xl sm:text-3xl font-extrabold text-[#111]">24/7</div>
-        <div class="text-[0.6rem] sm:text-[0.68rem] font-semibold tracking-wider uppercase text-[#111]/70">support</div>
-      </div>
-    </div>
-  </div>
+  
+  <!-- Decorative bottom gradient -->
+  <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#faf9f7] to-transparent"></div>
 </section>
 
 <!-- ========== TICKER (same) ========== -->
@@ -169,9 +146,8 @@
       <!-- Content -->
       <div class="relative p-8 min-h-[400px] flex flex-col justify-center text-white">
         <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-phone-volume text-2xl text-[#111]"></i></div>
-        <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold mb-2">Inbound</h3>
+        <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold mb-2">Inbound Calls</h3>
         <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4">Customer care, order taking, helpdesk — we handle high‑volume inbound with empathy and efficiency.</p>
-        <span class="inline-flex items-center text-[#ceff66] text-sm font-semibold group-hover:translate-x-2 transition-transform">Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i></span>
       </div>
     </div>
     
@@ -183,9 +159,8 @@
       </div>
       <div class="relative p-8 min-h-[400px] flex flex-col justify-center text-white">
         <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-phone-alt text-2xl text-[#111]"></i></div>
-        <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold mb-2">Outbound</h3>
+        <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold mb-2">Outbound Calls</h3>
         <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4">Telemarketing, appointment setting, market research — proactive outreach that delivers results.</p>
-        <span class="inline-flex items-center text-[#ceff66] text-sm font-semibold group-hover:translate-x-2 transition-transform">Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i></span>
       </div>
     </div>
     
@@ -199,7 +174,6 @@
         <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-chart-line text-2xl text-[#111]"></i></div>
         <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold mb-2">Lead generation</h3>
         <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4">Qualified, B2B & B2C leads through multi‑channel strategies that fill your pipeline.</p>
-        <span class="inline-flex items-center text-[#ceff66] text-sm font-semibold group-hover:translate-x-2 transition-transform">Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i></span>
       </div>
     </div>
     
@@ -213,7 +187,6 @@
         <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-headset text-2xl text-[#111]"></i></div>
         <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold mb-2">Customer & quality services</h3>
         <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4">Dedicated support, QA monitoring, and continuous improvement for superior CX.</p>
-        <span class="inline-flex items-center text-[#ceff66] text-sm font-semibold group-hover:translate-x-2 transition-transform">Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i></span>
       </div>
     </div>
     
@@ -227,7 +200,6 @@
         <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-bullseye text-2xl text-[#111]"></i></div>
         <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold mb-2">Digital marketing</h3>
         <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4">SEO, PPC, social media, content — data‑driven campaigns that maximise ROI.</p>
-        <span class="inline-flex items-center text-[#ceff66] text-sm font-semibold group-hover:translate-x-2 transition-transform">Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i></span>
       </div>
     </div>
     
@@ -241,7 +213,6 @@
         <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-code text-2xl text-[#111]"></i></div>
         <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold mb-2">Web development</h3>
         <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4">Custom websites, e‑commerce, portals — built for performance and conversion.</p>
-        <span class="inline-flex items-center text-[#ceff66] text-sm font-semibold group-hover:translate-x-2 transition-transform">Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i></span>
       </div>
     </div>
     
@@ -255,7 +226,6 @@
         <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-poll text-2xl text-[#111]"></i></div>
         <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold mb-2">Survey research</h3>
         <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4">Customer feedback, market studies, data collection — actionable insights from real people.</p>
-        <span class="inline-flex items-center text-[#ceff66] text-sm font-semibold group-hover:translate-x-2 transition-transform">Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i></span>
       </div>
     </div>
     
@@ -269,7 +239,6 @@
         <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-undo-alt text-2xl text-[#111]"></i></div>
         <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold mb-2">Winback programs</h3>
         <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4">Re‑engage lost customers, reduce churn, and recover revenue with tailored retention campaigns.</p>
-        <span class="inline-flex items-center text-[#ceff66] text-sm font-semibold group-hover:translate-x-2 transition-transform">Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i></span>
       </div>
     </div>
     
@@ -283,7 +252,6 @@
         <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-laptop-code text-2xl text-[#111]"></i></div>
         <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold mb-2">Technical support</h3>
         <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4">Tier 1/2 support, troubleshooting, IT helpdesk — fast, reliable, and multilingual.</p>
-        <span class="inline-flex items-center text-[#ceff66] text-sm font-semibold group-hover:translate-x-2 transition-transform">Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i></span>
       </div>
     </div>
   </div>
