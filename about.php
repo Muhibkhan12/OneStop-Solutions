@@ -54,52 +54,70 @@
 </div>
 
 <!-- ========== HERO ========== -->
-<section class="min-h-[72vh] relative flex flex-col justify-between bg-[#0b0b0b] overflow-hidden">
-  <div class="absolute bottom-[-120px] right-[-80px] w-[480px] h-[480px] bg-[radial-gradient(circle,rgba(206,255,102,0.11)_0%,transparent_65%)] pointer-events-none z-0"></div>
-  <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-transparent via-[#ceff66] to-transparent z-[2]"></div>
+<section class="relative min-h-[90vh] flex flex-col justify-between overflow-hidden bg-black"> <!-- added bg-black -->
+  <!-- Background image with darker overlay -->
+  <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="Modern office" class="absolute inset-0 w-full h-full object-cover object-center opacity-40"> <!-- reduced opacity -->
+  <!-- DARKER overlay: stronger gradient to black -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/85 via-black/80 to-black/95 z-[1]"></div>
+  <!-- lime glow remains subtle -->
+  <div class="absolute bottom-0 right-0 w-[600px] h-[400px] bg-[radial-gradient(ellipse,rgba(206,255,102,0.1)_0%,transparent_70%)] z-[2] pointer-events-none"></div>
+  <!-- top lime bar -->
+  <div class="absolute top-0 left-0 right-0 h-[3px] bg-[#ceff66] z-10"></div>
 
-  <div class="relative z-10 flex-1 flex flex-col justify-center px-8 pt-36 pb-12 md:px-16 lg:px-24">
-    <div class="max-w-3xl">
-      <div class="reveal flex items-center gap-[10px] text-[#ceff66] text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-7 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#ceff66]">
-        About OneStop Solutions
-      </div>
-      <h1 class="reveal d1 text-white font-['Plus_Jakarta_Sans'] font-extrabold leading-[1.06] tracking-[-0.025em] text-4xl sm:text-5xl md:text-[3.6rem] lg:text-[4.4rem]">
-        Your one-stop partner<br>
-        for <span class="text-[#ceff66]">BPO, Contact Centre</span><br>
-        &amp; Marketing excellence.
-      </h1>
-      <p class="reveal d2 mt-6 max-w-lg text-base sm:text-lg leading-relaxed text-white/50">
-        Anchored in Karachi, Pakistan — global mindset, cutting-edge technology, people-first results.
-      </p>
-      <div class="reveal d3 mt-9 flex flex-wrap gap-3">
-        <a href="#mission" class="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-neutral-900 bg-gradient-to-br from-[#c5f467] to-[#a6e62c] hover:from-[#b3e04e] hover:to-[#93cd25] transition-all duration-300 shadow-[0_10px_24px_-8px_rgba(166,230,44,0.45)] hover:shadow-[0_18px_28px_-8px_rgba(128,180,30,0.5)] hover:-translate-y-0.5">
-          Our story <i class="fas fa-arrow-down text-xs"></i>
-        </a>
-        <a href="#contact" class="inline-flex items-center gap-2 border border-white/20 rounded-full px-7 py-3.5 text-sm font-medium text-white hover:bg-white/10 transition-all">
-          Get in touch <i class="fas fa-arrow-right text-xs"></i>
-        </a>
-      </div>
+  <!-- Main content -->
+  <div class="relative z-10 flex-1 flex flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-24 pt-32 pb-10 md:pt-36 md:pb-12 max-w-[1440px] mx-auto w-full">
+
+    <!-- Eyebrow -->
+    <div class="reveal inline-flex items-center gap-2 border border-white/20 bg-black/30 backdrop-blur-sm text-[#ceff66] text-[0.7rem] font-bold tracking-[0.25em] uppercase px-4 py-2 rounded-full mb-8 w-fit">
+      <span class="w-1.5 h-1.5 rounded-full bg-[#ceff66] animate-pulse"></span>
+      About OneStop Solutions
+    </div>
+
+    <!-- Heading -->
+    <h1 class="reveal d1 font-['Plus_Jakarta_Sans'] font-extrabold text-white leading-[1.04] tracking-[-0.03em] text-[clamp(2.4rem,9vw,6.5rem)] max-w-4xl mb-6">
+      People.<br>
+      <span class="relative inline-block">
+        <span class="relative z-10">Process.</span>
+        <span class="absolute bottom-2 left-0 right-0 h-4 bg-[#ceff66] -z-0 -skew-x-2 opacity-90"></span>
+      </span>
+      <span class="text-white/30"> Results.</span>
+    </h1>
+
+    <!-- Sub line -->
+    <div class="reveal d2 flex items-center gap-4">
+      <div class="w-12 h-px bg-[#ceff66]"></div>
+      <p class="text-white/60 text-sm md:text-base font-medium tracking-wide">Karachi, Pakistan · Global Reach · Since 2008</p>
+    </div>
+
+    <!-- CTAs -->
+    <div class="reveal d3 mt-8 flex flex-wrap gap-3">
+      <a href="#mission" class="inline-flex items-center gap-2 rounded-full px-6 py-3 sm:px-7 sm:py-3.5 text-sm font-bold text-[#111] bg-[#ceff66] hover:bg-[#d4ff7a] transition-all duration-300 shadow-[0_8px_24px_-6px_rgba(206,255,102,0.4)] hover:-translate-y-0.5">
+        Our story <i class="fas fa-arrow-down text-xs"></i>
+      </a>
+      <a href="#contact" class="inline-flex items-center gap-2 border border-white/25 backdrop-blur-sm bg-white/10 rounded-full px-6 py-3 sm:px-7 sm:py-3.5 text-sm font-semibold text-white hover:bg-white/20 transition-all duration-300">
+        Get in touch <i class="fas fa-arrow-right text-xs"></i>
+      </a>
     </div>
   </div>
 
-  <!-- Stats strip -->
-  <div class="relative z-10 w-full px-8 pb-10 md:px-16 lg:px-24">
-    <div class="flex flex-wrap border-t border-white/5 pt-6">
-      <div class="reveal d1 flex-1 min-w-[130px] pr-8">
-        <div class="font-['Plus_Jakarta_Sans'] text-[1.9rem] font-extrabold text-white tracking-[-0.03em] leading-none">15<span class="text-[#ceff66]">+</span></div>
-        <div class="text-[0.68rem] font-medium tracking-[0.18em] uppercase text-white/35 mt-1">Years experience</div>
+  <!-- Stats — fully responsive grid -->
+  <div class="relative z-10 w-full px-5 sm:px-8 md:px-12 lg:px-24 pb-10 md:pb-12 max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
+      <div class="reveal d1 backdrop-blur-md bg-black/40 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-5">
+        <div class="font-['Plus_Jakarta_Sans'] text-[1.8rem] sm:text-[2rem] font-extrabold text-white tracking-[-0.03em] leading-none">15<span class="text-[#ceff66]">+</span></div>
+        <div class="text-[0.6rem] sm:text-[0.68rem] font-semibold tracking-[0.15em] uppercase text-white/40 mt-1.5">Years experience</div>
       </div>
-      <div class="reveal d2 flex-1 min-w-[130px] border-l border-white/5 pl-8 pr-8">
-        <div class="font-['Plus_Jakarta_Sans'] text-[1.9rem] font-extrabold text-white tracking-[-0.03em] leading-none">200<span class="text-[#ceff66]">+</span></div>
-        <div class="text-[0.68rem] font-medium tracking-[0.18em] uppercase text-white/35 mt-1">Clients served</div>
+      <div class="reveal d2 backdrop-blur-md bg-black/40 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-5">
+        <div class="font-['Plus_Jakarta_Sans'] text-[1.8rem] sm:text-[2rem] font-extrabold text-white tracking-[-0.03em] leading-none">200<span class="text-[#ceff66]">+</span></div>
+        <div class="text-[0.6rem] sm:text-[0.68rem] font-semibold tracking-[0.15em] uppercase text-white/40 mt-1.5">Clients served</div>
       </div>
-      <div class="reveal d3 flex-1 min-w-[130px] border-l border-white/5 pl-8 pr-8">
-        <div class="font-['Plus_Jakarta_Sans'] text-[1.9rem] font-extrabold text-white tracking-[-0.03em] leading-none">6<span class="text-[#ceff66]"> ch</span></div>
-        <div class="text-[0.68rem] font-medium tracking-[0.18em] uppercase text-white/35 mt-1">Contact channels</div>
+      <div class="reveal d3 backdrop-blur-md bg-black/40 border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-5">
+        <div class="font-['Plus_Jakarta_Sans'] text-[1.8rem] sm:text-[2rem] font-extrabold text-white tracking-[-0.03em] leading-none">6<span class="text-[#ceff66]"> ch</span></div>
+        <div class="text-[0.6rem] sm:text-[0.68rem] font-semibold tracking-[0.15em] uppercase text-white/40 mt-1.5">Contact channels</div>
       </div>
-      <div class="reveal d4 flex-1 min-w-[130px] border-l border-white/5 pl-8">
-        <div class="font-['Plus_Jakarta_Sans'] text-[1.9rem] font-extrabold text-white tracking-[-0.03em] leading-none">98<span class="text-[#ceff66]">%</span></div>
-        <div class="text-[0.68rem] font-medium tracking-[0.18em] uppercase text-white/35 mt-1">Satisfaction rate</div>
+      <div class="reveal d4 bg-[#ceff66] border border-[#ceff66] rounded-xl sm:rounded-2xl p-4 sm:p-5">
+        <div class="font-['Plus_Jakarta_Sans'] text-[1.8rem] sm:text-[2rem] font-extrabold text-[#111] tracking-[-0.03em] leading-none">98<span>%</span></div>
+        <div class="text-[0.6rem] sm:text-[0.68rem] font-semibold tracking-[0.15em] uppercase text-[#111]/70 mt-1.5">Satisfaction rate</div>
       </div>
     </div>
   </div>
@@ -172,7 +190,7 @@
 <div class="w-full relative flex" style="height:400vh;">
 
   <!-- LEFT: sticky panel -->
-  <div class="flex-[0_0_48%] h-screen sticky top-0 flex flex-col justify-center bg-[#111] px-[8%] pr-[5%]">
+  <div class="flex-[0_0_48%] h-screen sticky top-0 flex flex-col justify-center bg-[#111] px-[8%] pr-[5%] rounded-r-[40px]">
     <div class="stack-eyebrow flex items-center gap-[10px] text-[#ceff66] text-[0.72rem] font-bold tracking-[0.28em] uppercase mb-6">
       Our core values
     </div>
