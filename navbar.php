@@ -85,6 +85,7 @@
                 About
                 <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ceff66] transition-all duration-250 ease-out group-hover:w-full shadow-[0_0_8px_rgba(206,255,102,0.5)]"></span>
             </a>
+            
             <a href="whyOutsource.php" class="nav-link group relative font-['Inter'] font-medium text-white/90 no-underline hover:text-white tracking-[-0.01em] text-sm">
                 Why Outsource 
                 <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ceff66] transition-all duration-250 ease-out group-hover:w-full shadow-[0_0_8px_rgba(206,255,102,0.5)]"></span>
@@ -94,7 +95,7 @@
         <!-- Right side actions -->
         <div class="flex items-center gap-4">
             <!-- Contact button -->
-            <a href="#" class="contact-btn hidden sm:inline-block px-5 py-2 rounded-full border border-white/30 text-sm font-medium text-white no-underline transition-all bg-transparent hover:bg-white/10 hover:border-white/50 font-['Inter']">
+            <a href="contact.php" class="contact-btn hidden sm:inline-block px-5 py-2 rounded-full border border-white/30 text-sm font-medium text-white no-underline transition-all bg-transparent hover:bg-white/10 hover:border-white/50 font-['Inter']">
                 Contact us
             </a>
             
