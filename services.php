@@ -53,22 +53,22 @@
   <a href="#"          class="block font-medium text-white/75 text-lg py-3 hover:text-[#ceff66] transition-colors">Get in touch &rarr;</a>
 </div>
 
-<!-- ========== HERO — darkened so white navbar text is legible ========== -->
-<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden" style="background: linear-gradient(135deg, #8fb800 0%, #7aa300 40%, #5e8000 100%);">
+<!-- ========== HERO — pitch‑dark background, white text, no overlay ========== -->
+<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden" style="background: linear-gradient(135deg, #121212 0%, #0a0a0a 60%, #030303 100%);">
 
-  <!-- dark overlay — the key change; adds ~35% black on top of the gradient -->
-  <div class="absolute inset-0 bg-black/35 pointer-events-none"></div>
+  <!-- (removed the dark overlay – pitch dark comes from the gradient itself) -->
+  <!-- <div class="absolute inset-0 bg-black/35 pointer-events-none"></div> -->
 
-  <!-- animated blobs (kept, but toned down slightly) -->
-  <div class="absolute inset-0 opacity-15 pointer-events-none">
+  <!-- animated blobs (very subtle white blurs, almost invisible) -->
+  <div class="absolute inset-0 opacity-5 pointer-events-none">
     <div class="absolute top-20 left-10 w-96 h-96 bg-white rounded-full mix-blend-overlay filter blur-[80px] animate-pulse"></div>
-    <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-black rounded-full mix-blend-overlay filter blur-[100px] animate-pulse" style="animation-delay:2s;"></div>
+    <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-white rounded-full mix-blend-overlay filter blur-[100px] animate-pulse" style="animation-delay:2s;"></div>
   </div>
 
-  <!-- grid overlay -->
-  <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image:url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M0 0 L60 0 L60 60 L0 60 Z&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.15)&quot; stroke-width=&quot;1&quot;/%3E%3C/svg%3E');"></div>
+  <!-- grid overlay (barely visible) -->
+  <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image:url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M0 0 L60 0 L60 60 L0 60 Z&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; stroke-width=&quot;1&quot;/%3E%3C/svg%3E');"></div>
 
-  <!-- content -->
+  <!-- content (all text remains white) -->
   <div class="relative z-10 text-center px-5 sm:px-8 md:px-12 lg:px-24 py-20 md:py-28">
     <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 mb-6">
       <span class="w-2 h-2 bg-[#ceff66] rounded-full animate-pulse"></span>
@@ -84,7 +84,7 @@
     </p>
   </div>
 
-  <!-- bottom fade into page bg -->
+  <!-- bottom fade into page bg (preserved) -->
   <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#faf9f7] to-transparent"></div>
 </section>
 
