@@ -29,6 +29,10 @@
         overflow-x: hidden;
     }
 
+    body.menu-open {
+        overflow: hidden;
+    }
+
     h1, h2, h3, h4 {
         font-family: var(--hf);
     }
@@ -37,7 +41,7 @@
     @keyframes slideDown {
         from {
             opacity: 0;
-            transform: translateY(-10px);
+            transform: translateY(-20px);
         }
         to {
             opacity: 1;
@@ -45,12 +49,21 @@
         }
     }
     
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
     .mobile-menu.open {
-        display: block;
-        animation: slideDown 0.3s ease-out;
+        display: flex !important;
+        animation: fadeIn 0.3s ease-out;
     }
 
-    /* Navbar specific hover effects (keeping minimal required) */
+    /* Navbar specific hover effects */
     .nav-link {
         font-family: var(--bf) !important;
     }
@@ -61,6 +74,119 @@
     
     .mobile-menu a {
         font-family: var(--bf) !important;
+    }
+    
+    /* Full screen mobile menu styles */
+    #mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(10px);
+        z-index: 100;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+    
+    .mobile-menu-content {
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .mobile-menu a {
+        display: block;
+        font-size: 1.5rem;
+        padding: 1rem 0;
+        margin: 0.5rem 0;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .mobile-menu a:hover {
+        color: var(--lime);
+        transform: translateX(10px);
+    }
+    
+    .mobile-menu .contact-link {
+        color: var(--lime);
+        font-weight: 600;
+        border: 2px solid var(--lime);
+        border-radius: 50px;
+        padding: 1rem 2rem;
+        margin-top: 2rem;
+        display: inline-block;
+        width: auto;
+    }
+    
+    .mobile-menu .contact-link:hover {
+        background: var(--lime);
+        color: black;
+        transform: scale(1.05);
+    }
+    
+    .mobile-social {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    .mobile-social a {
+        border: none;
+        font-size: 1.2rem;
+        padding: 0;
+        margin: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .mobile-social a:hover {
+        background: var(--lime);
+        color: black;
+        transform: translateY(-3px);
+    }
+    
+    /* Close button for mobile menu */
+    .menu-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-close:hover {
+        background: var(--lime);
+    }
+    
+    .menu-close:hover i {
+        color: black;
+    }
+    
+    .menu-close i {
+        color: white;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
     }
 </style>
 
@@ -85,7 +211,6 @@
                 About
                 <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ceff66] transition-all duration-250 ease-out group-hover:w-full shadow-[0_0_8px_rgba(206,255,102,0.5)]"></span>
             </a>
-            
             <a href="whyOutsource.php" class="nav-link group relative font-['Inter'] font-medium text-white/90 no-underline hover:text-white tracking-[-0.01em] text-sm">
                 Why Outsource 
                 <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ceff66] transition-all duration-250 ease-out group-hover:w-full shadow-[0_0_8px_rgba(206,255,102,0.5)]"></span>
@@ -100,7 +225,7 @@
             </a>
             
             <!-- Hamburger button -->
-            <button id="menuToggle" class="md:hidden flex flex-col gap-1.5 p-1 bg-transparent border-none cursor-pointer" aria-label="Menu">
+            <button id="menuToggle" class="md:hidden flex flex-col gap-1.5 p-1 bg-transparent border-none cursor-pointer z-[110]" aria-label="Menu">
                 <span class="w-6 h-0.5 bg-white transition-all duration-300 rounded-[1px]" id="bar1"></span>
                 <span class="w-6 h-0.5 bg-white transition-all duration-300 rounded-[1px]" id="bar2"></span>
                 <span class="w-6 h-0.5 bg-white transition-all duration-300 rounded-[1px]" id="bar3"></span>
@@ -108,13 +233,24 @@
         </div>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-[rgba(10,10,10,0.96)] px-8 py-6 z-50 border-t border-white/5 shadow-[0_20px_30px_-10px_rgba(0,0,0,0.3)]">
-        <a href="#" class="block font-['Inter'] font-medium text-white/75 text-lg py-3 border-b border-white/5 no-underline transition-all hover:text-[#ceff66] hover:pl-2">Solutions</a>
-        <a href="#" class="block font-['Inter'] font-medium text-white/75 text-lg py-3 border-b border-white/5 no-underline transition-all hover:text-[#ceff66] hover:pl-2">Services</a>
-        <a href="#" class="block font-['Inter'] font-medium text-white/75 text-lg py-3 border-b border-white/5 no-underline transition-all hover:text-[#ceff66] hover:pl-2">Case Study</a>
-        <a href="#" class="block font-['Inter'] font-medium text-white/75 text-lg py-3 border-b border-white/5 no-underline transition-all hover:text-[#ceff66] hover:pl-2">Company</a>
-        <a href="#" class="block font-['Inter'] font-semibold text-[#ceff66] text-lg py-3 no-underline transition-all hover:!text-white hover:bg-transparent">Contact us →</a>
+    <!-- Full Screen Mobile Menu -->
+    <div id="mobile-menu" class="hidden">
+        <div class="menu-close" id="menuClose">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="mobile-menu-content">
+            <a href="index.php">Home</a>
+            <a href="services.php">Services</a>
+            <a href="about.php">About</a>
+            <a href="whyOutsource.php">Why Outsource</a>
+            <a href="contact.php" class="contact-link">Contact Us →</a>
+            
+            <div class="mobile-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -122,6 +258,7 @@
 // Hamburger menu toggle with enhanced functionality
 document.addEventListener('DOMContentLoaded', function() {
     const toggle = document.getElementById('menuToggle');
+    const closeBtn = document.getElementById('menuClose');
     const mMenu = document.getElementById('mobile-menu');
     const b1 = document.getElementById('bar1');
     const b2 = document.getElementById('bar2');
@@ -129,53 +266,53 @@ document.addEventListener('DOMContentLoaded', function() {
     let mOpen = false;
 
     if (toggle && mMenu && b1 && b2 && b3) {
-        toggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            mOpen = !mOpen;
-            mMenu.classList.toggle('open', mOpen);
+        // Function to open menu
+        const openMenu = () => {
+            mOpen = true;
+            mMenu.classList.add('open');
+            document.body.classList.add('menu-open');
             
             // Animate hamburger to X
-            if (mOpen) {
-                b1.style.transform = 'translateY(8px) rotate(45deg)';
-                b2.style.opacity = '0';
-                b3.style.transform = 'translateY(-8px) rotate(-45deg)';
+            b1.style.transform = 'translateY(8px) rotate(45deg)';
+            b2.style.opacity = '0';
+            b3.style.transform = 'translateY(-8px) rotate(-45deg)';
+        };
+        
+        // Function to close menu
+        const closeMenu = () => {
+            mOpen = false;
+            mMenu.classList.remove('open');
+            document.body.classList.remove('menu-open');
+            
+            // Reset hamburger
+            b1.style.transform = '';
+            b2.style.opacity = '1';
+            b3.style.transform = '';
+        };
+
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (!mOpen) {
+                openMenu();
             } else {
-                b1.style.transform = '';
-                b2.style.opacity = '1';
-                b3.style.transform = '';
+                closeMenu();
             }
         });
+
+        // Close menu with close button
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeMenu);
+        }
 
         // Close menu when a link is clicked
         mMenu.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => {
-                mOpen = false;
-                mMenu.classList.remove('open');
-                b1.style.transform = '';
-                b2.style.opacity = '1';
-                b3.style.transform = '';
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (mOpen && !mMenu.contains(e.target) && !toggle.contains(e.target)) {
-                mOpen = false;
-                mMenu.classList.remove('open');
-                b1.style.transform = '';
-                b2.style.opacity = '1';
-                b3.style.transform = '';
-            }
+            a.addEventListener('click', closeMenu);
         });
 
         // Close menu on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && mOpen) {
-                mOpen = false;
-                mMenu.classList.remove('open');
-                b1.style.transform = '';
-                b2.style.opacity = '1';
-                b3.style.transform = '';
+                closeMenu();
             }
         });
 
@@ -185,11 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
                 if (window.innerWidth >= 768 && mOpen) {
-                    mOpen = false;
-                    mMenu.classList.remove('open');
-                    b1.style.transform = '';
-                    b2.style.opacity = '1';
-                    b3.style.transform = '';
+                    closeMenu();
                 }
             }, 250);
         });

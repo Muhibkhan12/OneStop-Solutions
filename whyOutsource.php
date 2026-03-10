@@ -341,7 +341,7 @@
   </div>
 
   <div class="max-w-4xl mx-auto px-5 text-center relative z-10">
-    <div class="text-8xl text-[#ceff66] opacity-20 mb-8 font-['Space_Grotesk']">"</div>
+    <div class="text-8xl text-[#ceff66]  mb-8 text-bold font-['Space_Grotesk']">*</div>
     <p class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-[#111] leading-[1.2] mb-8">
       We handle the intricate, repetitious tasks — so you can focus on the
       <span class="text-[#ceff66]">big picture.</span>

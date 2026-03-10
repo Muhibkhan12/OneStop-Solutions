@@ -25,9 +25,8 @@
       <!-- Brand - wider column -->
       <div class="lg:col-span-2">
         <div class="mb-5">
-          <span class="text-3xl font-bold tracking-tight text-white font-['Space_Grotesk']">
-            Growth<span class="text-[#ceff66] drop-shadow-[0_0_15px_rgba(206,255,102,0.5)]">Alliance</span>
-          </span>
+          <!-- Logo - larger on mobile (h-16), even larger on desktop (h-24) -->
+          <img src="images/logo.gif" alt="Growth Alliance Logo" class="h-16 sm:h-20 md:h-24 lg:h-24 w-auto brightness-0 invert hover:opacity-90 transition-opacity">
         </div>
         <p class="text-white/30 text-sm leading-relaxed max-w-sm mb-6 font-['Inter']">
           Empowering franchises with data-driven digital marketing solutions that deliver real growth.
@@ -202,5 +201,27 @@
   /* Subtle hover effects */
   a, button {
     transition: all 0.3s ease;
+  }
+  
+  /* Responsive logo height adjustments */
+  @media (max-width: 640px) {
+    .h-16 {
+      height: 5rem; /* 80px - larger on mobile */
+    }
+  }
+  
+  @media (min-width: 641px) and (max-width: 768px) {
+    .sm\:h-20 {
+      height: 5rem; /* 80px */
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .md\:h-24 {
+      height: 6rem; /* 96px */
+    }
+    .lg\:h-24 {
+      height: 6rem; /* 96px - same as desktop */
+    }
   }
 </style>
