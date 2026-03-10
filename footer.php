@@ -57,11 +57,11 @@
         </li>
         <li class="text-gray-500 text-sm flex items-start gap-2" style="font-family:var(--bf)">
           <i class="fas fa-phone text-[#ceff66] text-xs mt-1"></i>
-          <span>+1 (555) 123-4567</span>
+          <span>0336 1369929</span>
         </li>
         <li class="text-gray-500 text-sm flex items-start gap-2" style="font-family:var(--bf)">
           <i class="fas fa-map-marker-alt text-[#ceff66] text-xs mt-1"></i>
-          <span>123 Business Ave, Suite 100<br>San Francisco, CA 94105</span>
+          <span>Suite#116, 1st Floor, Park Avenue, Shahra-e-Faisal, P.E.C.H.S Block 2 Block 6 PECHS, Karachi, 75400</span>
         </li>
       </ul>
     </div>

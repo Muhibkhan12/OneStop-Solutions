@@ -282,7 +282,6 @@
 <div id="scroll-progress"></div>
 
 <!-- ========== HERO ========== -->
-<!-- Changed to full screen height with min-h-screen -->
 <div class="relative w-full min-h-screen flex flex-col bg-neutral-900">
   <div class="absolute inset-0 overflow-hidden">
     <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2940&auto=format&fit=crop" alt="Contact centre team" class="w-full h-full object-cover object-[center_30%]">
@@ -323,7 +322,7 @@
           Personal communication is our strongest bond.
         </h2>
         <p class="reveal d2 feat-body text-[#5a5a5a] text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-xl font-['Inter']">
-          Anchored in Karachi, One Stop Solutions delivers customized outsourcing that improves customer satisfaction, retention, and profitability. We believe direct contact &mdash; phone, email, chat, SMS, fax &mdash; builds trust that lasts.
+          Anchored in Karachi, One Stop Solutions delivers customized outsourcing that improves customer satisfaction, retention, and profitability. We believe direct contact &mdash; phone, email, chat &mdash; builds trust that lasts.
         </p>
         <div class="reveal flex d3 mt-6 sm:mt-8 md:mt-10 gap-3 sm:gap-4 flex-col sm:flex-row">
           <div class="w-full sm:w-1/2">

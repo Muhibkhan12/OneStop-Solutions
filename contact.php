@@ -236,7 +236,7 @@
                 <i class="fas fa-map-marker-alt text-[#111] text-xl mt-1"></i>
                 <h4 class="font-['Space_Grotesk'] font-semibold text-[#111] text-lg">Address</h4>
               </div>
-              <p class="text-[#111] opacity-80 pl-8 font-['Inter']">4517 Washington Ave, Manchester, Kentucky 39495</p>
+              <p class="text-[#111] opacity-80 pl-8 font-['Inter']">Suite#116, 1st Floor, Park Avenue, Shahra-e-Faisal, P.E.C.H.S Block 2 Block 6 PECHS, Karachi, 75400</p>
             </div>
             
             <!-- Contact -->
@@ -246,7 +246,7 @@
                 <h4 class="font-['Space_Grotesk'] font-semibold text-[#111] text-lg">Contact</h4>
               </div>
               <div class="pl-8 font-['Inter']">
-                <p class="text-[#111] opacity-80">Phone: +0123-456-789</p>
+                <p class="text-[#111] opacity-80">Phone: 0336 1369929</p>
                 <p class="text-[#111] opacity-80">Email: <a href="mailto:example@gmail.com" class="hover:underline">example@gmail.com</a></p>
               </div>
             </div>

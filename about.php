@@ -95,7 +95,7 @@
     </h1>
 
     <p class="reveal d2 text-white/70 text-xl max-w-2xl mx-auto font-['Inter']">
-      People. Process. Results. &mdash; Building trust through excellence since 2008.
+      People. Process. Results. &mdash; Building trust through excellence since 2014.
     </p>
   </div>
 </section>
@@ -132,7 +132,7 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
       </div>
       <div class="absolute -bottom-8 -right-6 bg-white rounded-2xl px-6 py-5 shadow-2xl border border-gray-100 max-w-[220px] z-10">
-        <div class="font-['Space_Grotesk'] text-3xl font-bold text-[#111] tracking-[-0.03em]">Since <span class="text-[#ceff66]">2008</span></div>
+        <div class="font-['Space_Grotesk'] text-3xl font-bold text-[#111] tracking-[-0.03em]">Since <span class="text-[#ceff66]">2014</span></div>
         <div class="text-xs text-gray-400 mt-1 leading-tight font-['Inter']">Delivering outsourcing excellence across domestic &amp; international markets</div>
       </div>
       <div class="absolute -top-5 -left-5 w-14 h-14 rounded-xl bg-[#ceff66] rotate-12 -z-[1] opacity-80"></div>

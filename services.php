@@ -90,7 +90,7 @@
     </h1>
 
     <p class="reveal d2 text-white/70 text-xl max-w-2xl mx-auto font-['Inter']">
-      People. Process. Results. &mdash; Building trust through excellence since 2008.
+      People. Process. Results. &mdash; Building trust through excellence since 2014.
     </p>
   </div>
 </section>
