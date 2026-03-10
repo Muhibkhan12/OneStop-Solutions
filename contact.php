@@ -116,15 +116,6 @@
 <!-- ========== NAVBAR ========== -->
 <?php @include('navbar.php') ?>
 
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="hidden fixed top-16 left-0 right-0 bg-[rgba(0,0,0,0.95)] backdrop-blur-[20px] px-8 py-6 z-50 border-t border-[#ceff66]/10">
-  <a href="index.html"        class="block font-medium text-white/70 text-lg py-3 border-b border-white/5 hover:text-[#ceff66] hover:pl-2 transition-all">Home</a>
-  <a href="about.html"        class="block font-medium text-white/70 text-lg py-3 border-b border-white/5 hover:text-[#ceff66] hover:pl-2 transition-all">About</a>
-  <a href="services.html"     class="block font-medium text-white/70 text-lg py-3 border-b border-white/5 hover:text-[#ceff66] hover:pl-2 transition-all">Services</a>
-  <a href="why-outsource.html" class="block font-medium text-white/70 text-lg py-3 border-b border-white/5 hover:text-[#ceff66] hover:pl-2 transition-all">Why Outsource</a>
-  <a href="contact.html"      class="block font-medium text-[#ceff66] text-lg py-3 border-b border-white/5">Contact</a>
-</div>
-
 <!-- ========== HERO — pitch‑dark background with round gradient ========== -->
 <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-black">
 
@@ -197,11 +188,30 @@
             </div>
           </div>
           
-          <!-- Subject - full width -->
+          <!-- Service Selection Dropdown - 9 Services with yellowish color for entire dropdown -->
           <div class="mb-5">
-            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">Subject</label>
-            <input type="text" id="subject" name="subject" 
-                   class="contact-input w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#111] placeholder-gray-400 focus:border-[#ceff66] focus:ring-0 transition-all font-['Inter']">
+            <label for="service" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">Select Service</label>
+            <div class="relative">
+              <select id="service" name="service" 
+                      class="w-full px-5 py-4 rounded-2xl bg-[#ceff66] border-2 border-[#ceff66] text-[#111] font-semibold focus:outline-none focus:ring-4 focus:ring-[#ceff66]/30 transition-all appearance-none cursor-pointer font-['Inter']">
+                <option value="" disabled selected style="background-color: #ceff66; color: #111; opacity: 0.7;">Choose a service</option>
+                <option value="inbound-calls" style="background-color: #ceff66; color: #111;"> Inbound Calls</option>
+                <option value="outbound-calls" style="background-color: #ceff66; color: #111;"> Outbound Calls</option>
+                <option value="lead-generation" style="background-color: #ceff66; color: #111;"> Lead Generation</option>
+                <option value="customer-quality" style="background-color: #ceff66; color: #111;"> Customer & Quality Services</option>
+                <option value="digital-marketing" style="background-color: #ceff66; color: #111;"> Digital Marketing</option>
+                <option value="web-development" style="background-color: #ceff66; color: #111;"> Web Development</option>
+                <option value="survey-research" style="background-color: #ceff66; color: #111;"> Survey Research</option>
+                <option value="winback-programs" style="background-color: #ceff66; color: #111;"> Winback Programs</option>
+                <option value="technical-support" style="background-color: #ceff66; color: #111;"> Technical Support</option>
+              </select>
+              <!-- Custom dropdown arrow -->
+              <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+                <svg class="w-5 h-5 text-[#111]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </div>
           </div>
           
           <!-- Message - textarea -->
