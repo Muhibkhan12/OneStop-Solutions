@@ -405,7 +405,7 @@
             Contact us <i class="fas fa-arrow-right text-sm"></i>
           </a>
           <a href="#" class="inline-flex items-center gap-2 border border-white/25 rounded-full px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-medium text-white hover:bg-white/10 transition-all font-['Inter']">
-            +92 123 456 789
+            0336 1369929
           </a>
         </div>
       </div>
@@ -413,27 +413,9 @@
   </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
-<footer class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-10 md:py-16 border-t border-[#e5e5e5] bg-white">
-  <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
-    <div class="flex items-center gap-2">
-      <span class="font-['Space_Grotesk'] font-bold text-base sm:text-lg">OneStop<span class="text-[#ceff66]">Solutions</span></span>
-      <span class="text-xs text-gray-400">&copy; 2025</span>
-    </div>
-    <div class="flex flex-wrap gap-4 sm:gap-6 text-xs sm:text-sm font-['Inter']">
-      <a href="#" class="text-gray-400 hover:text-[#ceff66]">Home</a>
-      <a href="#" class="text-gray-400 hover:text-[#ceff66]">About</a>
-      <a href="#" class="text-gray-400 hover:text-[#ceff66]">Services</a>
-      <a href="#" class="text-gray-400 hover:text-[#ceff66]">Contact</a>
-      <a href="#" class="text-gray-400 hover:text-[#ceff66]">Privacy</a>
-    </div>
-    <div class="flex gap-4 text-gray-400 text-base sm:text-lg">
-      <i class="fab fa-linkedin-in hover:text-[#ceff66] cursor-pointer"></i>
-      <i class="fab fa-x-twitter hover:text-[#ceff66] cursor-pointer"></i>
-      <i class="fab fa-instagram hover:text-[#ceff66] cursor-pointer"></i>
-    </div>
-  </div>
-</footer>
+<?php
+@include('footer.php');
+?>
 
 <!-- ========== JAVASCRIPT ========== -->
 <script>

@@ -448,26 +448,9 @@
 </section>
 
 <!-- ========== FOOTER ========== -->
-<footer class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-12 md:py-16 border-t border-[#e5e5e5] bg-white">
-  <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 sm:gap-4">
-    <div class="flex items-center gap-2">
-      <span class="font-['Space_Grotesk'] font-bold text-lg tracking-tight">OneStop<span class="text-[#ceff66]">Solutions</span></span>
-      <span class="text-xs text-gray-400 font-mono">&copy; 2025</span>
-    </div>
-    <div class="flex flex-wrap gap-4 sm:gap-6 md:gap-8 text-sm font-['Inter']">
-      <a href="index.html" class="text-gray-400 hover:text-[#ceff66] transition-colors">Home</a>
-      <a href="#"          class="text-gray-400 hover:text-[#ceff66] transition-colors">About</a>
-      <a href="#"          class="text-gray-400 hover:text-[#ceff66] transition-colors">Services</a>
-      <a href="#"          class="text-gray-400 hover:text-[#ceff66] transition-colors">Contact</a>
-      <a href="#"          class="text-gray-400 hover:text-[#ceff66] transition-colors">Privacy</a>
-    </div>
-    <div class="flex gap-5 text-gray-400 text-lg">
-      <i class="fab fa-linkedin-in hover:text-[#ceff66] cursor-pointer transition"></i>
-      <i class="fab fa-x-twitter hover:text-[#ceff66] cursor-pointer transition"></i>
-      <i class="fab fa-instagram hover:text-[#ceff66] cursor-pointer transition"></i>
-    </div>
-  </div>
-</footer>
+<?php
+@include('footer.php')
+?>
 
 <!-- ========== JAVASCRIPT ========== -->
 <script>
