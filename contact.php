@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     /* ── Simple animations (kept float, pulse, rotate for non-hero elements) ── */
@@ -77,6 +77,7 @@
       background-color: #f9fafb;
       border: 1px solid #e5e7eb;
       transition: all 0.2s ease;
+      font-family: 'Inter', sans-serif;
     }
     .contact-input:focus {
       border-color: #ceff66;
@@ -92,9 +93,22 @@
       color: #ceff66 !important;
       transform: translateY(-3px);
     }
+
+    /* Font assignments */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    h1, h2, h3, h4, h5, h6, 
+    .font-heading,
+    .hero-title,
+    .section-title,
+    .card-title {
+      font-family: 'Space Grotesk', sans-serif;
+    }
   </style>
 </head>
-<body class="antialiased font-['Inter'] bg-white text-[#111] overflow-x-hidden">
+<body class="antialiased bg-white text-[#111] overflow-x-hidden">
 
 <!-- Scroll Progress -->
 <div id="scroll-progress" class="fixed top-0 left-0 w-0 h-[3px] bg-[#ceff66] z-[9999] duration-100 shadow-[0_0_20px_rgba(206,255,102,0.8)]"></div>
@@ -111,34 +125,34 @@
   <a href="contact.html"      class="block font-medium text-[#ceff66] text-lg py-3 border-b border-white/5">Contact</a>
 </div>
 
-<!-- ========== HERO — pitch‑dark background with round gradient, NO animation ========== -->
+<!-- ========== HERO — pitch‑dark background with round gradient ========== -->
 <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-black">
 
-  <!-- round (radial) accent gradient at bottom right (static, no animation) -->
+  <!-- round (radial) accent gradient at bottom right -->
   <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_bottom_right,_#ceff66_0%,_transparent_70%)] opacity-40 pointer-events-none"></div>
 
-  <!-- Subtle static grid overlay (barely visible) -->
+  <!-- Subtle static grid overlay -->
   <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image:url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M0 0 L60 0 L60 60 L0 60 Z&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; stroke-width=&quot;1&quot;/%3E%3C/svg%3E');"></div>
 
-  <!-- Main content — all text white, with lime accent -->
+  <!-- Main content -->
   <div class="relative z-10 text-center px-5 sm:px-8 md:px-12 lg:px-24 py-20 md:py-28">
     <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 mb-6">
       <span class="w-2 h-2 bg-[#ceff66] rounded-full animate-pulse"></span>
-      <span class="text-white/85 text-sm font-medium tracking-wider">GET IN TOUCH</span>
+      <span class="text-white/85 text-sm font-medium tracking-wider font-['Inter']">GET IN TOUCH</span>
     </div>
 
-    <h1 class="reveal d1 font-['Plus_Jakarta_Sans'] font-extrabold text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white leading-[1.1] tracking-[-0.03em] mb-6">
+    <h1 class="reveal d1 font-['Space_Grotesk'] font-bold text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white leading-[1.1] tracking-[-0.03em] mb-6">
       Contact <span class="text-[#ceff66]">Us</span>
     </h1>
 
-    <p class="reveal d2 text-white/70 text-xl max-w-2xl mx-auto">
+    <p class="reveal d2 text-white/70 text-xl max-w-2xl mx-auto font-['Inter']">
       Have a question or ready to start your outsourcing journey? We're here to help.
     </p>
   </div>
 
 </section>
 
-<!-- ========== NEW MODERN CONTACT SECTION ========== -->
+<!-- ========== MAIN CONTACT SECTION ========== -->
 <section class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
     
@@ -148,8 +162,8 @@
       <!-- LEFT SIDE: Contact Form -->
       <div class="reveal-left">
         <div class="mb-8">
-          <span class="text-[#ceff66] text-sm font-semibold tracking-wider uppercase mb-3 block">Contact Us</span>
-          <h2 class="font-['Plus_Jakarta_Sans'] text-4xl md:text-5xl font-extrabold text-[#111] leading-tight">
+          <span class="text-[#ceff66] text-sm font-semibold tracking-wider uppercase mb-3 block font-['Inter']">Contact Us</span>
+          <h2 class="font-['Space_Grotesk'] text-4xl md:text-5xl font-bold text-[#111] leading-tight">
             Join Us in Creating <span class="text-[#ceff66]">Something Great</span>
           </h2>
         </div>
@@ -158,48 +172,48 @@
           <!-- Two column grid for first name / last name -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
             <div>
-              <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+              <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">First Name</label>
               <input type="text" id="first-name" name="first-name" 
-                     class="contact-input w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#111] placeholder-gray-400 focus:border-[#ceff66] focus:ring-0 transition-all">
+                     class="contact-input w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#111] placeholder-gray-400 focus:border-[#ceff66] focus:ring-0 transition-all font-['Inter']">
             </div>
             <div>
-              <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+              <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">Last Name</label>
               <input type="text" id="last-name" name="last-name" 
-                     class="contact-input w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#111] placeholder-gray-400 focus:border-[#ceff66] focus:ring-0 transition-all">
+                     class="contact-input w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#111] placeholder-gray-400 focus:border-[#ceff66] focus:ring-0 transition-all font-['Inter']">
             </div>
           </div>
           
           <!-- Two column grid for email / phone -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">Email</label>
               <input type="email" id="email" name="email" 
-                     class="contact-input w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#111] placeholder-gray-400 focus:border-[#ceff66] focus:ring-0 transition-all">
+                     class="contact-input w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#111] placeholder-gray-400 focus:border-[#ceff66] focus:ring-0 transition-all font-['Inter']">
             </div>
             <div>
-              <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">Phone Number</label>
               <input type="tel" id="phone" name="phone" 
-                     class="contact-input w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#111] placeholder-gray-400 focus:border-[#ceff66] focus:ring-0 transition-all">
+                     class="contact-input w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#111] placeholder-gray-400 focus:border-[#ceff66] focus:ring-0 transition-all font-['Inter']">
             </div>
           </div>
           
           <!-- Subject - full width -->
           <div class="mb-5">
-            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">Subject</label>
             <input type="text" id="subject" name="subject" 
-                   class="contact-input w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#111] placeholder-gray-400 focus:border-[#ceff66] focus:ring-0 transition-all">
+                   class="contact-input w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#111] placeholder-gray-400 focus:border-[#ceff66] focus:ring-0 transition-all font-['Inter']">
           </div>
           
           <!-- Message - textarea -->
           <div class="mb-8">
-            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">Message</label>
             <textarea id="message" name="message" rows="5" 
-                      class="contact-input w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#111] placeholder-gray-400 focus:border-[#ceff66] focus:ring-0 transition-all resize-none"></textarea>
+                      class="contact-input w-full px-5 py-4 rounded-2xl bg-gray-50 border border-gray-200 text-[#111] placeholder-gray-400 focus:border-[#ceff66] focus:ring-0 transition-all resize-none font-['Inter']"></textarea>
           </div>
           
           <!-- Submit button -->
           <button type="submit" 
-                  class="group inline-flex items-center gap-3 bg-[#ceff66] text-black font-semibold text-lg px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_20px_30px_-10px_rgba(206,255,102,0.5)]">
+                  class="group inline-flex items-center gap-3 bg-[#ceff66] text-black font-semibold text-lg px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_20px_30px_-10px_rgba(206,255,102,0.5)] font-['Inter']">
             Send Message
             <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
           </button>
@@ -214,24 +228,24 @@
           <div class="absolute bottom-0 left-0 w-32 h-32 bg-black opacity-5 rounded-full -ml-10 -mb-10"></div>
           
           <div class="relative z-10">
-            <h3 class="font-['Plus_Jakarta_Sans'] text-2xl font-bold text-[#111] mb-8">Contact Information</h3>
+            <h3 class="font-['Space_Grotesk'] text-2xl font-bold text-[#111] mb-8">Contact Information</h3>
             
             <!-- Address -->
             <div class="mb-8">
               <div class="flex items-start gap-3 mb-2">
                 <i class="fas fa-map-marker-alt text-[#111] text-xl mt-1"></i>
-                <h4 class="font-semibold text-[#111] text-lg">Address</h4>
+                <h4 class="font-['Space_Grotesk'] font-semibold text-[#111] text-lg">Address</h4>
               </div>
-              <p class="text-[#111] opacity-80 pl-8">4517 Washington Ave, Manchester, Kentucky 39495</p>
+              <p class="text-[#111] opacity-80 pl-8 font-['Inter']">4517 Washington Ave, Manchester, Kentucky 39495</p>
             </div>
             
             <!-- Contact -->
             <div class="mb-8">
               <div class="flex items-start gap-3 mb-2">
                 <i class="fas fa-phone-alt text-[#111] text-xl mt-1"></i>
-                <h4 class="font-semibold text-[#111] text-lg">Contact</h4>
+                <h4 class="font-['Space_Grotesk'] font-semibold text-[#111] text-lg">Contact</h4>
               </div>
-              <div class="pl-8">
+              <div class="pl-8 font-['Inter']">
                 <p class="text-[#111] opacity-80">Phone: +0123-456-789</p>
                 <p class="text-[#111] opacity-80">Email: <a href="mailto:example@gmail.com" class="hover:underline">example@gmail.com</a></p>
               </div>
@@ -241,16 +255,16 @@
             <div class="mb-8">
               <div class="flex items-start gap-3 mb-2">
                 <i class="fas fa-clock text-[#111] text-xl mt-1"></i>
-                <h4 class="font-semibold text-[#111] text-lg">Open Time</h4>
+                <h4 class="font-['Space_Grotesk'] font-semibold text-[#111] text-lg">Open Time</h4>
               </div>
-              <p class="text-[#111] opacity-80 pl-8">Monday – Friday : 10:00 – 20:00</p>
+              <p class="text-[#111] opacity-80 pl-8 font-['Inter']">Monday – Friday : 10:00 – 20:00</p>
             </div>
             
             <!-- Stay Connected -->
             <div>
               <div class="flex items-center gap-3 mb-4">
                 <i class="fas fa-share-alt text-[#111] text-xl"></i>
-                <h4 class="font-semibold text-[#111] text-lg">Stay Connected</h4>
+                <h4 class="font-['Space_Grotesk'] font-semibold text-[#111] text-lg">Stay Connected</h4>
               </div>
               <div class="flex gap-3 pl-8">
                 <a href="#" class="social-icon w-10 h-10 bg-black/10 rounded-full flex items-center justify-center text-[#111] hover:bg-black hover:text-[#ceff66] transition-all"><i class="fab fa-facebook-f"></i></a>
@@ -267,7 +281,7 @@
   </div>
 </section>
 
-<!-- ========== MAP SECTION — white background ========== -->
+<!-- ========== MAP SECTION ========== -->
 <section class="relative py-20 bg-white">
   <div class="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
     <div class="bg-[#f5f5f5] rounded-[32px] p-2 border border-[#ceff66]/30 overflow-hidden shadow-lg">
@@ -281,16 +295,16 @@
   </div>
 </section>
 
-<!-- ========== CTA SECTION — dark background (contrast) ========== -->
+<!-- ========== CTA SECTION ========== -->
 <section class="relative py-20 bg-[#111]">
   <div class="max-w-4xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20 text-center">
     <div class="reveal">
-      <span class="text-[#ceff66] text-sm font-semibold tracking-[0.3em] uppercase mb-4 block">Ready to start?</span>
-      <h2 class="font-['Plus_Jakarta_Sans'] text-4xl md:text-5xl font-extrabold text-white mb-6">
+      <span class="text-[#ceff66] text-sm font-semibold tracking-[0.3em] uppercase mb-4 block font-['Inter']">Ready to start?</span>
+      <h2 class="font-['Space_Grotesk'] text-4xl md:text-5xl font-bold text-white mb-6">
         Let's Build Something <span class="text-[#ceff66]">Amazing</span> Together
       </h2>
-      <p class="text-white/40 text-lg max-w-2xl mx-auto mb-8">Whether you're ready to scale or just exploring options, our team is here to guide you every step of the way.</p>
-      <a href="#" class="group inline-flex items-center gap-3 rounded-full px-8 py-4 bg-[#ceff66] text-black font-semibold text-lg hover:scale-105 transition-all duration-300 hover:shadow-[0_20px_30px_-10px_rgba(206,255,102,0.5)]">
+      <p class="text-white/40 text-lg max-w-2xl mx-auto mb-8 font-['Inter']">Whether you're ready to scale or just exploring options, our team is here to guide you every step of the way.</p>
+      <a href="#" class="group inline-flex items-center gap-3 rounded-full px-8 py-4 bg-[#ceff66] text-black font-semibold text-lg hover:scale-105 transition-all duration-300 hover:shadow-[0_20px_30px_-10px_rgba(206,255,102,0.5)] font-['Inter']">
         Schedule a Call
         <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
       </a>
@@ -298,13 +312,13 @@
   </div>
 </section>
 
-<!-- ========== FOOTER — dark to match CTA ========== -->
+<!-- ========== FOOTER ========== -->
 <footer class="bg-[#050505] border-t border-white/5 py-16">
   <div class="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
       <div class="col-span-2">
-        <span class="font-['Plus_Jakarta_Sans'] font-bold text-2xl text-white hover:scale-105 hover:text-[#ceff66] transition-all inline-block">OneStop<span class="text-[#ceff66]">Solutions</span></span>
-        <p class="text-white/30 text-sm mt-4 max-w-md">Transforming businesses through strategic outsourcing since 2014. Your success is our mission.</p>
+        <span class="font-['Space_Grotesk'] font-bold text-2xl text-white hover:scale-105 hover:text-[#ceff66] transition-all inline-block">OneStop<span class="text-[#ceff66]">Solutions</span></span>
+        <p class="text-white/30 text-sm mt-4 max-w-md font-['Inter']">Transforming businesses through strategic outsourcing since 2014. Your success is our mission.</p>
         <div class="flex gap-4 mt-6">
           <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-white/70 hover:bg-[#ceff66] hover:text-black hover:scale-110 hover:rotate-12 transition-all"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-white/70 hover:bg-[#ceff66] hover:text-black hover:scale-110 hover:-rotate-12 transition-all"><i class="fab fa-x-twitter"></i></a>
@@ -312,25 +326,25 @@
         </div>
       </div>
       <div>
-        <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+        <h4 class="font-['Space_Grotesk'] font-semibold text-white mb-4">Quick Links</h4>
         <ul class="space-y-2">
-          <li><a href="index.html"         class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block">Home</a></li>
-          <li><a href="about.html"         class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block">About</a></li>
-          <li><a href="services.html"      class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block">Services</a></li>
-          <li><a href="why-outsource.html" class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block">Why Outsource</a></li>
-          <li><a href="contact.html"       class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block">Contact</a></li>
+          <li><a href="index.html"         class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">Home</a></li>
+          <li><a href="about.html"         class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">About</a></li>
+          <li><a href="services.html"      class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">Services</a></li>
+          <li><a href="why-outsource.html" class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">Why Outsource</a></li>
+          <li><a href="contact.html"       class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="font-semibold text-white mb-4">Legal</h4>
+        <h4 class="font-['Space_Grotesk'] font-semibold text-white mb-4">Legal</h4>
         <ul class="space-y-2">
-          <li><a href="#" class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block">Privacy Policy</a></li>
-          <li><a href="#" class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block">Terms of Service</a></li>
-          <li><a href="#" class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block">Cookie Policy</a></li>
+          <li><a href="#" class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">Privacy Policy</a></li>
+          <li><a href="#" class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">Terms of Service</a></li>
+          <li><a href="#" class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">Cookie Policy</a></li>
         </ul>
       </div>
     </div>
-    <div class="border-t border-white/5 mt-12 pt-8 text-center text-white/20 text-sm">
+    <div class="border-t border-white/5 mt-12 pt-8 text-center text-white/20 text-sm font-['Inter']">
       © 2025 OneStop Solutions. All rights reserved.
     </div>
   </div>
