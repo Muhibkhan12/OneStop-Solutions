@@ -55,26 +55,36 @@
   <a href="#"          class="block font-medium text-[#ceff66] text-lg py-3 hover:text-white transition-colors">Get in touch &rarr;</a>
 </div>
 
-<!-- ========== HERO ========== -->
-<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#ceff66] via-[#b3e04e] to-[#a6d84a]">
-  <div class="absolute inset-0 opacity-20">
+<!-- ========== HERO — pitch‑dark background with round gradient (like previous page) ========== -->
+<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-black">
+
+  <!-- round (radial) accent gradient at bottom right (like services page) -->
+  <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_bottom_right,_#ceff66_0%,_transparent_70%)] opacity-40 pointer-events-none"></div>
+  
+  <!-- animated blobs (very subtle white blurs, almost invisible) -->
+  <div class="absolute inset-0 opacity-5 pointer-events-none">
     <div class="absolute top-20 left-10 w-96 h-96 bg-white rounded-full mix-blend-overlay filter blur-[80px] animate-pulse"></div>
-    <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-black rounded-full mix-blend-overlay filter blur-[100px] animate-pulse" style="animation-delay:2s;"></div>
+    <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-white rounded-full mix-blend-overlay filter blur-[100px] animate-pulse" style="animation-delay:2s;"></div>
   </div>
-  <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M0 0 L60 0 L60 60 L0 60 Z\" fill=\"none\" stroke=\"rgba(0,0,0,0.05)\" stroke-width=\"1\"/%3E%3C/svg%3E')] opacity-20"></div>
+
+  <!-- grid overlay (barely visible) -->
+  <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image:url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M0 0 L60 0 L60 60 L0 60 Z&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; stroke-width=&quot;1&quot;/%3E%3C/svg%3E');"></div>
+
+  <!-- content (all text white, except lime accents) -->
   <div class="relative z-10 text-center px-5 sm:px-8 md:px-12 lg:px-24 py-20 md:py-28">
-    <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-black/10 backdrop-blur-sm rounded-full border border-black/20 mb-6">
-      <span class="w-2 h-2 bg-black rounded-full animate-pulse"></span>
-      <span class="text-black/70 text-sm font-medium tracking-wider">ABOUT US</span>
+    <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 mb-6">
+      <span class="w-2 h-2 bg-[#ceff66] rounded-full animate-pulse"></span>
+      <span class="text-white/85 text-sm font-medium tracking-wider">ABOUT US</span>
     </div>
-    <h1 class="reveal d1 font-['Plus_Jakarta_Sans'] font-extrabold text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-black leading-[1.1] tracking-[-0.03em] mb-6">
-      About <span class="text-white">Us</span>
+
+    <h1 class="reveal d1 font-['Plus_Jakarta_Sans'] font-extrabold text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white leading-[1.1] tracking-[-0.03em] mb-6">
+      About <span class="text-[#ceff66]">Us</span>
     </h1>
-    <p class="reveal d2 text-black/70 text-xl max-w-2xl mx-auto">
+
+    <p class="reveal d2 text-white/70 text-xl max-w-2xl mx-auto">
       People. Process. Results. &mdash; Building trust through excellence since 2008.
     </p>
   </div>
-  <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#faf9f7] to-transparent"></div>
 </section>
 
 <!-- ========== TICKER ========== -->
