@@ -283,7 +283,8 @@
 <div id="scroll-progress"></div>
 
 <!-- ========== HERO ========== -->
-<div class="relative w-full min-h-[92vh] md:min-h-[88vh] bg-neutral-900 flex flex-col">
+<!-- Changed to full screen height with min-h-screen -->
+<div class="relative w-full min-h-screen flex flex-col bg-neutral-900">
   <div class="absolute inset-0 overflow-hidden">
     <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2940&auto=format&fit=crop" alt="Contact centre team" class="w-full h-full object-cover object-[center_30%]">
     <div class="absolute inset-0 hero-overlay"></div>
