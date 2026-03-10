@@ -73,7 +73,7 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center gap-8">
-            <a href="main.php" class="nav-link group relative font-['Inter'] font-medium text-white/90 no-underline hover:text-white tracking-[-0.01em] text-sm">
+            <a href="index.php" class="nav-link group relative font-['Inter'] font-medium text-white/90 no-underline hover:text-white tracking-[-0.01em] text-sm">
                 Home
                 <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ceff66] transition-all duration-250 ease-out group-hover:w-full shadow-[0_0_8px_rgba(206,255,102,0.5)]"></span>
             </a>

@@ -313,42 +313,9 @@
 </section>
 
 <!-- ========== FOOTER ========== -->
-<footer class="bg-[#050505] border-t border-white/5 py-16">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-      <div class="col-span-2">
-        <span class="font-['Space_Grotesk'] font-bold text-2xl text-white hover:scale-105 hover:text-[#ceff66] transition-all inline-block">OneStop<span class="text-[#ceff66]">Solutions</span></span>
-        <p class="text-white/30 text-sm mt-4 max-w-md font-['Inter']">Transforming businesses through strategic outsourcing since 2014. Your success is our mission.</p>
-        <div class="flex gap-4 mt-6">
-          <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-white/70 hover:bg-[#ceff66] hover:text-black hover:scale-110 hover:rotate-12 transition-all"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-white/70 hover:bg-[#ceff66] hover:text-black hover:scale-110 hover:-rotate-12 transition-all"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-white/70 hover:bg-[#ceff66] hover:text-black hover:scale-110 hover:rotate-6 transition-all"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-      <div>
-        <h4 class="font-['Space_Grotesk'] font-semibold text-white mb-4">Quick Links</h4>
-        <ul class="space-y-2">
-          <li><a href="index.html"         class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">Home</a></li>
-          <li><a href="about.html"         class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">About</a></li>
-          <li><a href="services.html"      class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">Services</a></li>
-          <li><a href="why-outsource.html" class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">Why Outsource</a></li>
-          <li><a href="contact.html"       class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-['Space_Grotesk'] font-semibold text-white mb-4">Legal</h4>
-        <ul class="space-y-2">
-          <li><a href="#" class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">Privacy Policy</a></li>
-          <li><a href="#" class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">Terms of Service</a></li>
-          <li><a href="#" class="text-white/30 hover:text-[#ceff66] hover:translate-x-2 transition-all inline-block font-['Inter']">Cookie Policy</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="border-t border-white/5 mt-12 pt-8 text-center text-white/20 text-sm font-['Inter']">
-      © 2025 OneStop Solutions. All rights reserved.
-    </div>
-  </div>
-</footer>
+<?php
+  @include('footer.php');
+?>
 
 <!-- ========== JAVASCRIPT ========== -->
 <script>
