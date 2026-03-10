@@ -53,11 +53,13 @@
   <a href="#"          class="block font-medium text-white/75 text-lg py-3 hover:text-[#ceff66] transition-colors">Get in touch &rarr;</a>
 </div>
 
-<!-- ========== HERO — pitch‑dark background, white text, no overlay ========== -->
-<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden" style="background: linear-gradient(135deg, #121212 0%, #0a0a0a 60%, #030303 100%);">
+<!-- ========== HERO — pitch‑dark background (solid black) + round bottom‑right gradient ========== -->
+<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-black">
 
-  <!-- (removed the dark overlay – pitch dark comes from the gradient itself) -->
-  <!-- <div class="absolute inset-0 bg-black/35 pointer-events-none"></div> -->
+  <!-- round (radial) accent gradient at bottom right -->
+  <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_bottom_right,_#ceff66_0%,_transparent_70%)] opacity-40 pointer-events-none"></div>
+  
+  <!-- (removed the dark overlay and gradient – pure black background) -->
 
   <!-- animated blobs (very subtle white blurs, almost invisible) -->
   <div class="absolute inset-0 opacity-5 pointer-events-none">
@@ -85,7 +87,6 @@
   </div>
 
   <!-- bottom fade into page bg (preserved) -->
-  <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#faf9f7] to-transparent"></div>
 </section>
 
 <!-- ========== TICKER ========== -->
