@@ -351,23 +351,23 @@
   <p class="reveal brands-label"><span></span>trusted by domestic &amp; global clients<span></span></p>
   <div class="marquee-row">
     <div class="marquee-track fwd">
-      <div class="brand-item"><span class="brand-name">TELUS International</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">Concentrix</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">Startek</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">Sitel Group</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">Alorica</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">VXI</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">iSON Xperiences</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">Teleperformance</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">Argosy BPO</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">TEK BUZZ</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">GATEWAY MERCHANT CAPITAL</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">VIRGO</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">CLICK MILLIONS</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">CANNET</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">NORTHERN LEASING SYSTEMS</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">THE MARKETING SOURCE</span><div class="brand-dot"></div></div>
       <!-- duplicate for seamless loop -->
-      <div class="brand-item"><span class="brand-name">TELUS International</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">Concentrix</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">Startek</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">Sitel Group</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">Alorica</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">VXI</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">iSON Xperiences</span><div class="brand-dot"></div></div>
-      <div class="brand-item"><span class="brand-name">Teleperformance</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">Argosy BPO</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">TEK BUZZ</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">GATEWAY MERCHANT CAPITAL</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">VIRGO</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">CLICK MILLIONS</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">CANNET</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">NORTHERN LEASING SYSTEMS</span><div class="brand-dot"></div></div>
+      <div class="brand-item"><span class="brand-name">THE MARKETING SOURCE</span><div class="brand-dot"></div></div>
     </div>
   </div>
 </section>
