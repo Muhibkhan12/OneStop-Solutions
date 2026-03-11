@@ -370,10 +370,10 @@
           Whether you need a full BPO setup, a dedicated contact centre, or a results-driven marketing campaign &mdash; we have the team, technology and experience to deliver.
         </p>
         <div class="flex flex-wrap gap-4">
-          <a href="#" class="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-neutral-900 bg-gradient-to-br from-[#c5f467] to-[#a6e62c] hover:from-[#b3e04e] hover:to-[#93cd25] transition-all duration-300 shadow-2xl hover:-translate-y-0.5 font-['Inter']">
+          <a href="contact.php" class="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-neutral-900 bg-gradient-to-br from-[#c5f467] to-[#a6e62c] hover:from-[#b3e04e] hover:to-[#93cd25] transition-all duration-300 shadow-2xl hover:-translate-y-0.5 font-['Inter']">
             Start a conversation <i class="fas fa-arrow-right text-sm"></i>
           </a>
-          <a href="#" class="inline-flex items-center gap-2 border border-white/25 rounded-full px-8 py-4 text-base font-medium text-white hover:bg-white/10 transition-all font-['Inter']">
+          <a href="services.php" class="inline-flex items-center gap-2 border border-white/25 rounded-full px-8 py-4 text-base font-medium text-white hover:bg-white/10 transition-all font-['Inter']">
             View services
           </a>
         </div>

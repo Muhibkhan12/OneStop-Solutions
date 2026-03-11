@@ -235,7 +235,7 @@
         Founded 2014, Karachi &mdash; we combine people, process &amp; technology to deliver customized BPO, contact centre &amp; marketing solutions worldwide.
       </p>
       <div class="reveal d3 mt-8 md:mt-10 flex flex-wrap gap-4">
-        <a href="#" class="btn-primary inline-flex items-center gap-2 rounded-full px-7 py-3.5 md:px-8 md:py-4 text-base font-semibold text-neutral-900 shadow-xl">
+        <a href="contact.php" class="btn-primary inline-flex items-center gap-2 rounded-full px-7 py-3.5 md:px-8 md:py-4 text-base font-semibold text-neutral-900 shadow-xl">
           Let's connect <i class="fas fa-arrow-right text-sm"></i>
         </a>
         <a href="#" class="inline-flex items-center gap-2 border border-white/25 rounded-full px-7 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-all font-['Inter']">
