@@ -287,7 +287,7 @@
             <div class="absolute left-0 top-0 w-11 h-11 md:w-14 md:h-14 bg-[#ceff66] rounded-2xl flex items-center justify-center font-['Space_Grotesk'] text-lg md:text-xl font-bold text-[#111] shadow-[6px_6px_0_rgba(0,0,0,0.15)] transition-transform group-hover:scale-105 group-hover:-rotate-3">02</div>
             <div class="absolute left-[22px] md:left-[27px] top-11 md:top-14 w-[2px] h-[calc(100%+40px)] bg-gradient-to-b from-[rgba(206,255,102,0.3)] to-transparent pointer-events-none"></div>
             <h3 class="font-['Space_Grotesk'] text-base md:text-lg font-bold mb-2">Every touchpoint matters</h3>
-            <p class="text-[#5a5a5a] text-sm md:text-[0.95rem] leading-relaxed font-['Inter']">Whether via telephone, email, on-line chatting, fax or SMS &mdash; each communication represents a unique opportunity to strengthen your relationship with the customer.</p>
+            <p class="text-[#5a5a5a] text-sm md:text-[0.95rem] leading-relaxed font-['Inter']">Whether via telephone, email, or chat &mdash; each communication represents a unique opportunity to strengthen your relationship with the customer.</p>
           </div>
           <div class="reveal d3 relative pl-[60px] md:pl-20 group">
             <div class="absolute left-0 top-0 w-11 h-11 md:w-14 md:h-14 bg-[#ceff66] rounded-2xl flex items-center justify-center font-['Space_Grotesk'] text-lg md:text-xl font-bold text-[#111] shadow-[6px_6px_0_rgba(0,0,0,0.15)] transition-transform group-hover:scale-105 group-hover:-rotate-3">03</div>
@@ -310,8 +310,8 @@
           </div>
         </div>
         <div class="absolute -bottom-6 -left-8 bg-black text-white rounded-2xl px-5 py-4 shadow-2xl z-10">
-          <div class="font-['Space_Grotesk'] text-2xl md:text-3xl font-bold text-[#ceff66] tracking-[-0.03em] leading-none">6 channels</div>
-          <div class="text-xs text-white/55 mt-1 font-['Inter']">Phone &middot; Email &middot; Chat &middot; Fax &middot; SMS &middot; Social</div>
+          <div class="font-['Space_Grotesk'] text-2xl md:text-3xl font-bold text-[#ceff66] tracking-[-0.03em] leading-none">3 channels</div>
+          <div class="text-xs text-white/55 mt-1 font-['Inter']">Phone &middot; Email &middot; Chat</div>
         </div>
       </div>
     </div>

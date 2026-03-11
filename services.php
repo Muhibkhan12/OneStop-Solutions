@@ -265,7 +265,7 @@
       <h2 class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
         The <span class="text-[#ceff66]">OneStop</span> advantage
       </h2>
-      <p class="text-white/40 text-sm md:text-base max-w-lg mx-auto mt-4 font-['Inter']">Where strategy meets execution</p>
+      <p class="text-white/40 text-sm md:text-base max-w-lg mx-auto mt-4 font-['Inter']">A decade of human-centered excellence</p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -275,8 +275,8 @@
             <span class="font-['Space_Grotesk'] text-xl font-bold text-[#ceff66]">01</span>
           </div>
           <div>
-            <h3 class="font-['Space_Grotesk'] text-xl font-bold text-white mb-2">Integrated approach</h3>
-            <p class="text-white/40 text-sm leading-relaxed font-['Inter']">Inbound, outbound, digital, and tech support work in concert &mdash; not silos &mdash; for seamless customer experiences.</p>
+            <h3 class="font-['Space_Grotesk'] text-xl font-bold text-white mb-2">A decade of excellence</h3>
+            <p class="text-white/40 text-sm leading-relaxed font-['Inter']">Serving clients since 2014 with consistent, reliable, and human-powered solutions that stand the test of time.</p>
           </div>
         </div>
         <div class="reveal d2 group flex gap-5">
@@ -284,8 +284,8 @@
             <span class="font-['Space_Grotesk'] text-xl font-bold text-[#ceff66]">02</span>
           </div>
           <div>
-            <h3 class="font-['Space_Grotesk'] text-xl font-bold text-white mb-2">Proven process</h3>
-            <p class="text-white/40 text-sm leading-relaxed font-['Inter']">15+ years of refining workflows, QA protocols, and training to deliver consistent, measurable results.</p>
+            <h3 class="font-['Space_Grotesk'] text-xl font-bold text-white mb-2">Human-first approach</h3>
+            <p class="text-white/40 text-sm leading-relaxed font-['Inter']">Real people, real conversations. We believe in the power of human connection over automated responses.</p>
           </div>
         </div>
         <div class="reveal d3 group flex gap-5">
@@ -293,12 +293,12 @@
             <span class="font-['Space_Grotesk'] text-xl font-bold text-[#ceff66]">03</span>
           </div>
           <div>
-            <h3 class="font-['Space_Grotesk'] text-xl font-bold text-white mb-2">Technology-driven</h3>
-            <p class="text-white/40 text-sm leading-relaxed font-['Inter']">AI-powered analytics, real-time reporting, and multi-channel integration for maximum efficiency.</p>
+            <h3 class="font-['Space_Grotesk'] text-xl font-bold text-white mb-2">Proven methodology</h3>
+            <p class="text-white/40 text-sm leading-relaxed font-['Inter']">Refined over 10+ years of hands-on experience, our processes deliver results through expertise, not algorithms.</p>
           </div>
         </div>
         <div class="reveal d4 mt-8 pt-6 border-t border-white/5">
-          <p class="text-white/30 text-sm italic leading-relaxed font-['Inter']">"We don't just execute &mdash; we integrate. Every touchpoint matters, every interaction counts."</p>
+          <p class="text-white/30 text-sm italic leading-relaxed font-['Inter']">"Ten years of building relationships, not just transactions. Every client is a partnership, every solution is crafted by humans."</p>
           <div class="flex items-center gap-2 mt-3">
             <div class="w-6 h-px bg-[#ceff66]/30"></div>
             <span class="text-[#ceff66]/50 text-xs font-medium font-['Inter']">OneStop leadership</span>
@@ -309,43 +309,35 @@
       <div class="space-y-6">
         <div class="grid grid-cols-2 gap-4">
           <div class="reveal bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/5 hover:border-[#ceff66]/20 transition-colors">
-            <div class="font-['Space_Grotesk'] text-3xl font-bold text-[#ceff66] mb-1">98%</div>
-            <div class="text-white/40 text-xs uppercase tracking-wider font-['Inter']">client retention</div>
+            <div class="font-['Space_Grotesk'] text-3xl font-bold text-[#ceff66] mb-1">10+</div>
+            <div class="text-white/40 text-xs uppercase tracking-wider font-['Inter']">years serving</div>
             <div class="w-8 h-0.5 bg-[#ceff66]/30 mt-3"></div>
           </div>
           <div class="reveal d2 bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/5 hover:border-[#ceff66]/20 transition-colors">
-            <div class="font-['Space_Grotesk'] text-3xl font-bold text-[#ceff66] mb-1">24/7</div>
-            <div class="text-white/40 text-xs uppercase tracking-wider font-['Inter']">operations</div>
+            <div class="font-['Space_Grotesk'] text-3xl font-bold text-[#ceff66] mb-1">100%</div>
+            <div class="text-white/40 text-xs uppercase tracking-wider font-['Inter']">human-powered</div>
             <div class="w-8 h-0.5 bg-[#ceff66]/30 mt-3"></div>
           </div>
         </div>
         <div class="reveal d3 bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/5">
-          <h4 class="text-white/70 text-sm font-medium mb-4 font-['Space_Grotesk']">Core capabilities</h4>
+          <h4 class="text-white/70 text-sm font-medium mb-4 font-['Space_Grotesk']">Our expertise</h4>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 bg-[#ceff66]/10 text-[#ceff66] text-xs rounded-full border border-[#ceff66]/20 font-['Inter']">Multi-channel</span>
-            <span class="px-3 py-1.5 bg-white/5 text-white/60 text-xs rounded-full border border-white/10 font-['Inter']">AI-powered</span>
-            <span class="px-3 py-1.5 bg-white/5 text-white/60 text-xs rounded-full border border-white/10 font-['Inter']">Real-time reporting</span>
+            <span class="px-3 py-1.5 bg-[#ceff66]/10 text-[#ceff66] text-xs rounded-full border border-[#ceff66]/20 font-['Inter']">Multi-channel support</span>
             <span class="px-3 py-1.5 bg-white/5 text-white/60 text-xs rounded-full border border-white/10 font-['Inter']">Dedicated teams</span>
             <span class="px-3 py-1.5 bg-white/5 text-white/60 text-xs rounded-full border border-white/10 font-['Inter']">Quality assurance</span>
-            <span class="px-3 py-1.5 bg-white/5 text-white/60 text-xs rounded-full border border-white/10 font-['Inter']">24/7 support</span>
+            <span class="px-3 py-1.5 bg-white/5 text-white/60 text-xs rounded-full border border-white/10 font-['Inter']">24/7 live support</span>
+            <span class="px-3 py-1.5 bg-white/5 text-white/60 text-xs rounded-full border border-white/10 font-['Inter']">Experienced agents</span>
+            <span class="px-3 py-1.5 bg-white/5 text-white/60 text-xs rounded-full border border-white/10 font-['Inter']">Real-time reporting</span>
           </div>
         </div>
         <div class="reveal d4 grid grid-cols-2 gap-4 mt-4">
           <div class="text-center p-4">
-            <div class="font-['Space_Grotesk'] text-2xl font-bold text-[#ceff66]">500K+</div>
-            <div class="text-white/30 text-xs uppercase tracking-wider mt-1 font-['Inter']">calls/month</div>
+            <div class="font-['Space_Grotesk'] text-2xl font-bold text-[#ceff66]">2014</div>
+            <div class="text-white/30 text-xs uppercase tracking-wider mt-1 font-['Inter']">founded</div>
           </div>
           <div class="text-center p-4">
-            <div class="font-['Space_Grotesk'] text-2xl font-bold text-[#ceff66]">15+</div>
-            <div class="text-white/30 text-xs uppercase tracking-wider mt-1 font-['Inter']">languages</div>
-          </div>
-          <div class="text-center p-4">
-            <div class="font-['Space_Grotesk'] text-2xl font-bold text-[#ceff66]">99.9%</div>
-            <div class="text-white/30 text-xs uppercase tracking-wider mt-1 font-['Inter']">uptime</div>
-          </div>
-          <div class="text-center p-4">
-            <div class="font-['Space_Grotesk'] text-2xl font-bold text-[#ceff66]">#1</div>
-            <div class="text-white/30 text-xs uppercase tracking-wider mt-1 font-['Inter']">CX rating</div>
+            <div class="font-['Space_Grotesk'] text-2xl font-bold text-[#ceff66]">98%</div>
+            <div class="text-white/30 text-xs uppercase tracking-wider mt-1 font-['Inter']">retention</div>
           </div>
         </div>
       </div>

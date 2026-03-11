@@ -395,7 +395,7 @@
     <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
 
         <button class="menu-close-btn" id="menuClose" aria-label="Close menu">
-            <i class="fas fa-times"></i>
+            
         </button>
 
         <!-- big nav links -->

@@ -192,7 +192,7 @@
               <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=800&auto=format&fit=crop" alt="Team" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
               <div class="absolute bottom-4 left-4 text-white">
-                <div class="text-2xl font-bold font-['Space_Grotesk']">150+</div>
+                <div class="text-2xl font-bold font-['Space_Grotesk']">50+</div>
                 <div class="text-xs text-white/60 font-['Inter']">Team Members</div>
               </div>
             </div>
@@ -373,7 +373,7 @@
           We can work up a FREE customised proposal specific to your requirement, technology and tenure of the project. No obligation, just clarity.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="#" class="group inline-flex items-center gap-3 rounded-full px-8 py-4 bg-[#ceff66] text-black font-semibold text-lg hover:scale-105 transition-all duration-300 hover:shadow-[0_20px_30px_-10px_rgba(206,255,102,0.5)] font-['Inter']">
+          <a href="contact.php" class="group inline-flex items-center gap-3 rounded-full px-8 py-4 bg-[#ceff66] text-black font-semibold text-lg hover:scale-105 transition-all duration-300 hover:shadow-[0_20px_30px_-10px_rgba(206,255,102,0.5)] font-['Inter']">
             Request free proposal
             <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
           </a>
