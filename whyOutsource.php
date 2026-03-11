@@ -22,8 +22,6 @@
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
-
-    /* PCB trace pulse animation (kept, but might be removed if not needed) */
     @keyframes trace-flow {
       0% { stroke-dashoffset: 1000; opacity: 0.15; }
       50% { opacity: 0.55; }
@@ -38,11 +36,7 @@
       50% { opacity: 0.4; }
     }
 
-    .pcb-trace {
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      animation: trace-flow 6s linear infinite;
-    }
+    .pcb-trace { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: trace-flow 6s linear infinite; }
     .pcb-trace-2 { animation-delay: 1.2s; animation-duration: 7s; }
     .pcb-trace-3 { animation-delay: 2.4s; animation-duration: 5.5s; }
     .pcb-trace-4 { animation-delay: 0.6s; animation-duration: 8s; }
@@ -50,7 +44,6 @@
     .pcb-trace-6 { animation-delay: 1.8s; animation-duration: 7.5s; }
     .pcb-trace-7 { animation-delay: 0.3s; animation-duration: 9s; }
     .pcb-trace-8 { animation-delay: 4s; animation-duration: 5s; }
-
     .pcb-dot { animation: dot-pulse 3s ease-in-out infinite; }
     .pcb-dot-2 { animation-delay: 0.5s; }
     .pcb-dot-3 { animation-delay: 1s; }
@@ -95,18 +88,41 @@
     .pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
     .rotate-slow { animation: rotate-slow 20s linear infinite; }
 
-    body { 
+    body {
       padding-top: 0;
       font-family: 'Inter', sans-serif;
     }
-    
-    h1, h2, h3, h4, h5, h6, 
-    .font-heading {
+
+    h1, h2, h3, h4, h5, h6, .font-heading {
       font-family: 'Space Grotesk', sans-serif;
     }
 
     .animation-delay-1000 { animation-delay: 1s; }
     .animation-delay-2000 { animation-delay: 2s; }
+
+    /* =============================================
+       NAVBAR HIDE-ON-SCROLL
+       ─────────────────────────────────────────────
+       KEY FIX: navbar.php's inner .navbar-wrapper
+       had `position: absolute` which was fighting
+       this fixed wrapper. That's now set to
+       `position: relative` in navbar.php.
+
+       This outer #navbar-wrapper owns ALL the
+       fixed positioning and the slide animation.
+       ============================================= */
+    #navbar-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+    #navbar-wrapper.nav-hidden {
+      transform: translateY(-100%);
+    }
   </style>
 </head>
 <body class="antialiased bg-white text-[#111] overflow-x-hidden">
@@ -115,40 +131,24 @@
 <div id="scroll-progress" class="fixed top-0 left-0 w-0 h-[3px] bg-[#ceff66] z-[9999] duration-100 shadow-[0_0_20px_rgba(206,255,102,0.8)]"></div>
 
 <!-- ========== NAVBAR ========== -->
-<div class="fixed top-0 left-0 right-0 z-50">
-<?php @include('navbar.php') ?>
+<div id="navbar-wrapper">
+  <?php @include('navbar.php') ?>
 </div>
 
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="hidden fixed top-16 left-0 right-0 bg-[rgba(0,0,0,0.95)] backdrop-blur-[20px] px-8 py-6 z-50 border-t border-[#ceff66]/10">
-  <a href="index.html" class="block font-medium text-white/70 text-lg py-3 border-b border-white/5 hover:text-[#ceff66] hover:pl-2 transition-all font-['Inter']">Home</a>
-  <a href="about.html" class="block font-medium text-white/70 text-lg py-3 border-b border-white/5 hover:text-[#ceff66] hover:pl-2 transition-all font-['Inter']">About</a>
-  <a href="#" class="block font-medium text-white/70 text-lg py-3 border-b border-white/5 hover:text-[#ceff66] hover:pl-2 transition-all font-['Inter']">Services</a>
-  <a href="why-outsource.html" class="block font-medium text-[#ceff66] text-lg py-3 border-b border-white/5 font-['Inter']">Why Outsource</a>
-  <a href="#contact" class="block font-medium text-white/70 text-lg py-3 hover:text-[#ceff66] hover:pl-2 transition-all font-['Inter']">Get in touch →</a>
-</div>
-
-<!-- ========== HERO — pitch‑dark background with round gradient ========== -->
-<!-- Fixed navbar overlap issue by removing -mt-[80px] and adding pt for fixed navbar -->
+<!-- ========== HERO ========== -->
 <section class="relative z-0 min-h-[50vh] flex items-center justify-center overflow-hidden bg-black pt-20">
 
-  <!-- round (radial) accent gradient at bottom right -->
   <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_bottom_right,_#ceff66_0%,_transparent_70%)] opacity-40 pointer-events-none"></div>
-
-  <!-- Subtle static grid overlay (barely visible) -->
   <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image:url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M0 0 L60 0 L60 60 L0 60 Z&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; stroke-width=&quot;1&quot;/%3E%3C/svg%3E');"></div>
 
-  <!-- Main content — all text white, with lime accent -->
   <div class="relative z-10 text-center px-5 sm:px-8 md:px-12 lg:px-24 py-20 md:py-28">
     <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 mb-6">
       <span class="w-2 h-2 bg-[#ceff66] rounded-full animate-pulse"></span>
       <span class="text-white/85 text-sm font-medium tracking-wider font-['Inter']">WHY OUTSOURCE</span>
     </div>
-
     <h1 class="reveal d1 font-['Space_Grotesk'] font-bold text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white leading-[1.1] tracking-[-0.03em] mb-6">
       Outsource <span class="text-[#ceff66]">Smarter</span>
     </h1>
-
     <p class="reveal d2 text-white/70 text-xl max-w-2xl mx-auto font-['Inter']">
       7+ years of excellence, 60% average cost savings, and 24/7 dedicated support.
     </p>
@@ -156,7 +156,7 @@
 
 </section>
 
-<!-- ========== WHO WE ARE - MODERN SPLIT LAYOUT (White Background) ========== -->
+<!-- ========== WHO WE ARE ========== -->
 <section class="relative py-32 bg-white overflow-hidden">
   <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#ceff66]/10 rounded-full blur-[120px]"></div>
   <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-200/30 rounded-full blur-[100px]"></div>
@@ -227,7 +227,7 @@
   </div>
 </section>
 
-<!-- ========== BENEFITS SECTION (Light Gray Background) ========== -->
+<!-- ========== BENEFITS SECTION ========== -->
 <section class="relative py-32 bg-gray-50 overflow-hidden" id="benefits">
   <div class="absolute inset-0 opacity-10">
     <div class="absolute top-20 left-20 w-96 h-96 bg-[#ceff66] rounded-full blur-[100px] animate-pulse"></div>
@@ -305,7 +305,7 @@
   </div>
 </section>
 
-<!-- ========== STATS SECTION (White Background) ========== -->
+<!-- ========== STATS SECTION ========== -->
 <section class="relative py-32 bg-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -333,15 +333,14 @@
   </div>
 </section>
 
-<!-- ========== QUOTE SECTION (Light Gray Background) ========== -->
+<!-- ========== QUOTE SECTION ========== -->
 <section class="relative py-32 bg-gray-50 overflow-hidden">
   <div class="absolute inset-0">
     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-[#ceff66]/20 rounded-full"></div>
     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-[#ceff66]/40 rounded-full"></div>
   </div>
-
   <div class="max-w-4xl mx-auto px-5 text-center relative z-10">
-    <div class="text-8xl text-[#ceff66]  mb-8 text-bold font-['Space_Grotesk']">*</div>
+    <div class="text-8xl text-[#ceff66] mb-8 font-bold font-['Space_Grotesk']">*</div>
     <p class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-[#111] leading-[1.2] mb-8">
       We handle the intricate, repetitious tasks — so you can focus on the
       <span class="text-[#ceff66]">big picture.</span>
@@ -358,13 +357,12 @@
   </div>
 </section>
 
-<!-- ========== CTA SECTION (Dark Background) ========== -->
+<!-- ========== CTA SECTION ========== -->
 <section class="relative py-32 bg-[#0a0a0a]" id="contact">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
     <div class="relative glass-card rounded-[48px] p-12 md:p-20 overflow-hidden border border-[#ceff66]/20">
       <div class="absolute -top-40 -right-40 w-80 h-80 bg-[#ceff66] rounded-full blur-[100px] opacity-20 animate-pulse"></div>
       <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-600 rounded-full blur-[100px] opacity-20 animate-pulse animation-delay-2000"></div>
-
       <div class="relative z-10 text-center">
         <span class="text-[#ceff66] text-sm font-semibold tracking-[0.3em] uppercase mb-4 block font-['Inter']">Ready to outsource?</span>
         <h2 class="font-['Space_Grotesk'] text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -374,7 +372,6 @@
         <p class="text-white/40 text-lg max-w-2xl mx-auto mb-12 font-['Inter']">
           We can work up a FREE customised proposal specific to your requirement, technology and tenure of the project. No obligation, just clarity.
         </p>
-
         <div class="flex flex-wrap justify-center gap-4">
           <a href="#" class="group inline-flex items-center gap-3 rounded-full px-8 py-4 bg-[#ceff66] text-black font-semibold text-lg hover:scale-105 transition-all duration-300 hover:shadow-[0_20px_30px_-10px_rgba(206,255,102,0.5)] font-['Inter']">
             Request free proposal
@@ -390,19 +387,49 @@
   </div>
 </section>
 
-<!-- ========== FOOTER (Dark) ========== -->
-<?php
-@include('footer.php')
-?>
+<!-- ========== FOOTER ========== -->
+<?php @include('footer.php') ?>
 
 <!-- ========== JAVASCRIPT ========== -->
 <script>
+  // ── Scroll progress bar ──────────────────────────────────────────────────
+  const progressBar    = document.getElementById('scroll-progress');
+  const navbarWrapper  = document.getElementById('navbar-wrapper');
+
+  let lastScrollY = 0;
+  let ticking     = false;
+
+  function handleNavbarScroll() {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY <= 10) {
+      navbarWrapper.classList.remove('nav-hidden');
+    } else if (currentScrollY > lastScrollY + 5) {
+      // Scrolling DOWN — hide
+      navbarWrapper.classList.add('nav-hidden');
+    } else if (currentScrollY < lastScrollY - 5) {
+      // Scrolling UP — show
+      navbarWrapper.classList.remove('nav-hidden');
+    }
+
+    lastScrollY = currentScrollY;
+    ticking = false;
+  }
+
   window.addEventListener('scroll', () => {
+    // Progress bar
     const s = window.scrollY;
     const m = document.documentElement.scrollHeight - window.innerHeight;
-    document.getElementById('scroll-progress').style.width = (s / m * 100) + '%';
+    progressBar.style.width = (s / m * 100) + '%';
+
+    // Navbar (rAF-throttled)
+    if (!ticking) {
+      requestAnimationFrame(handleNavbarScroll);
+      ticking = true;
+    }
   }, { passive: true });
 
+  // ── Reveal on scroll ─────────────────────────────────────────────────────
   const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(en => {
@@ -410,30 +437,6 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach(el => revealObs.observe(el));
-
-  const toggle = document.getElementById('menuToggle');
-  const mMenu  = document.getElementById('mobile-menu');
-  const b1 = document.getElementById('bar1');
-  const b2 = document.getElementById('bar2');
-  const b3 = document.getElementById('bar3');
-  let mOpen = false;
-  if (toggle) {
-    toggle.addEventListener('click', () => {
-      mOpen = !mOpen;
-      mMenu.classList.toggle('open', mOpen);
-      if (b1) b1.style.transform = mOpen ? 'translateY(8px) rotate(45deg)' : '';
-      if (b2) b2.style.opacity   = mOpen ? '0' : '1';
-      if (b3) b3.style.transform = mOpen ? 'translateY(-8px) rotate(-45deg)' : '';
-    });
-  }
-  if (mMenu) {
-    mMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      mOpen = false; mMenu.classList.remove('open');
-      if (b1) b1.style.transform = '';
-      if (b2) b2.style.opacity   = '1';
-      if (b3) b3.style.transform = '';
-    }));
-  }
 </script>
 
 </body>

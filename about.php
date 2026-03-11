@@ -37,54 +37,51 @@
       gap: 1.1rem;
     }
 
-    /* Font assignments */
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    
-    h1, h2, h3, h4, h5, h6, 
-    .font-heading,
-    .hero-title,
-    .section-title,
-    .card-title {
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4, h5, h6, .font-heading, .hero-title, .section-title, .card-title {
       font-family: 'Space Grotesk', sans-serif;
+    }
+
+    /* ── Navbar hide-on-scroll (same as whyOutsource) ── */
+    #navbar-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+    #navbar-wrapper.nav-hidden {
+      transform: translateY(-100%);
     }
   </style>
 </head>
+<!-- No padding-top on body — navbar overlaps the dark hero -->
 <body class="antialiased bg-[#faf9f7] text-[#111] overflow-x-hidden">
 
 <!-- Scroll Progress -->
-<div id="scroll-progress" class="fixed top-0 left-0 w-0 h-[3px] bg-[#ceff66] z-[999] duration-100 shadow-[0_0_10px_rgba(206,255,102,0.6)]"></div>
+<div id="scroll-progress" class="fixed top-0 left-0 w-0 h-[3px] bg-[#ceff66] z-[9999] duration-100 shadow-[0_0_10px_rgba(206,255,102,0.6)]"></div>
 
 <!-- ========== NAVBAR ========== -->
-<?php @include('navbar.php') ?>
-
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="hidden fixed top-16 left-0 right-0 bg-[rgba(10,10,10,0.96)] backdrop-blur-[16px] px-8 py-6 z-50 border-t border-white/5">
-  <a href="index.html" class="block font-medium text-white/75 text-lg py-3 border-b border-white/5 hover:text-[#ceff66] transition-colors font-['Inter']">Home</a>
-  <a href="#"          class="block font-medium text-white/75 text-lg py-3 border-b border-white/5 hover:text-[#ceff66] transition-colors font-['Inter']">About</a>
-  <a href="#"          class="block font-medium text-white/75 text-lg py-3 border-b border-white/5 hover:text-[#ceff66] transition-colors font-['Inter']">Services</a>
-  <a href="#"          class="block font-medium text-white/75 text-lg py-3 border-b border-white/5 hover:text-[#ceff66] transition-colors font-['Inter']">Case Study</a>
-  <a href="#"          class="block font-medium text-[#ceff66] text-lg py-3 hover:text-white transition-colors font-['Inter']">Get in touch &rarr;</a>
+<div id="navbar-wrapper">
+  <?php @include('navbar.php') ?>
 </div>
 
-<!-- ========== HERO — pitch‑dark background with round gradient ========== -->
-<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-black">
+<!-- ========== HERO — starts at top-0, navbar floats over it ========== -->
+<section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-black">
 
-  <!-- round (radial) accent gradient at bottom right -->
   <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_bottom_right,_#ceff66_0%,_transparent_70%)] opacity-40 pointer-events-none"></div>
-  
-  <!-- animated blobs (very subtle white blurs, almost invisible) -->
+
   <div class="absolute inset-0 opacity-5 pointer-events-none">
     <div class="absolute top-20 left-10 w-96 h-96 bg-white rounded-full mix-blend-overlay filter blur-[80px] animate-pulse"></div>
     <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-white rounded-full mix-blend-overlay filter blur-[100px] animate-pulse" style="animation-delay:2s;"></div>
   </div>
 
-  <!-- grid overlay (barely visible) -->
   <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image:url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M0 0 L60 0 L60 60 L0 60 Z&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; stroke-width=&quot;1&quot;/%3E%3C/svg%3E');"></div>
 
-  <!-- content (all text white, except lime accents) -->
-  <div class="relative z-10 text-center px-5 sm:px-8 md:px-12 lg:px-24 py-20 md:py-28">
+  <!-- Extra top padding so content clears the navbar -->
+  <div class="relative z-10 text-center px-5 sm:px-8 md:px-12 lg:px-24 pt-32 pb-20 md:pt-40 md:pb-28">
     <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 mb-6">
       <span class="w-2 h-2 bg-[#ceff66] rounded-full animate-pulse"></span>
       <span class="text-white/85 text-sm font-medium tracking-wider font-['Inter']">ABOUT US</span>
@@ -125,7 +122,6 @@
   <div class="absolute top-0 right-0 w-64 h-64 rounded-bl-[80px] bg-[rgba(206,255,102,0.06)] pointer-events-none"></div>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
 
-    <!-- Left: image -->
     <div class="reveal-left relative">
       <div class="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-[0_50px_80px_-30px_rgba(0,0,0,0.25)]">
         <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1200&auto=format&fit=crop" alt="OneStop team" class="w-full h-full object-cover grayscale contrast-[1.05]">
@@ -139,7 +135,6 @@
       <div class="absolute -top-2 -left-2 w-10 h-10 rounded-lg bg-[#1e1e24] -rotate-[8deg] -z-[1]"></div>
     </div>
 
-    <!-- Right: text -->
     <div>
       <div class="reveal flex items-center gap-[10px] text-[#ceff66] text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-5 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#ceff66] font-['Inter']">
         Who we are
@@ -163,16 +158,8 @@
   </div>
 </section>
 
-<!-- ========================================================
-     CORE VALUES SECTION
-     - Mobile / Tablet (< lg): vertical grid, no scroll tricks
-     - Desktop (lg+): original sticky-scroll stacked card effect
-     ======================================================== -->
-
 <!-- ── MOBILE + TABLET (hidden on lg and above) ── -->
 <section class="lg:hidden bg-[#111] py-16 px-5 sm:px-8 md:px-12">
-
-  <!-- Header -->
   <div class="mb-10">
     <div class="flex items-center gap-3 text-[#ceff66] text-[0.72rem] font-bold tracking-[0.28em] uppercase mb-5 font-['Inter']">
       <span class="block w-7 h-0.5 bg-[#ceff66] flex-shrink-0"></span>
@@ -186,68 +173,46 @@
     </p>
   </div>
 
-  <!-- 1-col on mobile, 2-col on sm+ -->
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-
-    <!-- Card 1: dark -->
     <div class="mobile-val-card bg-[#1c1c1c] text-white">
-      <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 bg-[rgba(206,255,102,0.12)] text-[#ceff66]">
-        <i class="fas fa-handshake"></i>
-      </div>
+      <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 bg-[rgba(206,255,102,0.12)] text-[#ceff66]"><i class="fas fa-handshake"></i></div>
       <div>
         <div class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-white/40 mb-1 font-['Inter']">Value 01</div>
         <h3 class="font-['Space_Grotesk'] text-[1.25rem] font-bold leading-[1.2] mb-2">Trust &amp; Integrity</h3>
         <p class="text-[0.88rem] leading-[1.7] text-white/60 font-['Inter']">Our combination of proven processes, technologies and people is the answer to your needs. Nothing replaces human touch built on trust.</p>
       </div>
     </div>
-
-    <!-- Card 2: lime -->
     <div class="mobile-val-card bg-[#ceff66] text-[#111]">
-      <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 bg-black/10 text-[#111]">
-        <i class="fas fa-users"></i>
-      </div>
+      <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 bg-black/10 text-[#111]"><i class="fas fa-users"></i></div>
       <div>
         <div class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-black/40 mb-1 font-['Inter']">Value 02</div>
         <h3 class="font-['Space_Grotesk'] text-[1.25rem] font-bold leading-[1.2] mb-2">People First</h3>
         <p class="text-[0.88rem] leading-[1.7] text-black/60 font-['Inter']">We handpick the best people and invest in their growth &mdash; because exceptional service starts with exceptional teams who care deeply.</p>
       </div>
     </div>
-
-    <!-- Card 3: navy -->
     <div class="mobile-val-card bg-[#1a1a2e] text-white">
-      <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 bg-[rgba(206,255,102,0.12)] text-[#ceff66]">
-        <i class="fas fa-microchip"></i>
-      </div>
+      <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 bg-[rgba(206,255,102,0.12)] text-[#ceff66]"><i class="fas fa-microchip"></i></div>
       <div>
         <div class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-white/40 mb-1 font-['Inter']">Value 03</div>
         <h3 class="font-['Space_Grotesk'] text-[1.25rem] font-bold leading-[1.2] mb-2">Cutting-Edge Tech</h3>
         <p class="text-[0.88rem] leading-[1.7] text-white/60 font-['Inter']">Advanced processes and cutting-edge technologies make OneStop Solutions one of the leading strategic partners for outsourcing solutions.</p>
       </div>
     </div>
-
-    <!-- Card 4: white -->
     <div class="mobile-val-card bg-white text-[#111] border border-gray-200 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.12)]">
-      <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 bg-[#111] text-[#ceff66]">
-        <i class="fas fa-globe"></i>
-      </div>
+      <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 bg-[#111] text-[#ceff66]"><i class="fas fa-globe"></i></div>
       <div>
         <div class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-black/35 mb-1 font-['Inter']">Value 04</div>
         <h3 class="font-['Space_Grotesk'] text-[1.25rem] font-bold leading-[1.2] mb-2">Global Reach</h3>
         <p class="text-[0.88rem] leading-[1.7] text-black/55 font-['Inter']">With a strong understanding of international markets, we bring global perspective to every local challenge &mdash; bridging cultures seamlessly.</p>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ── DESKTOP (hidden below lg) — original sticky scroll effect ── -->
+<!-- ── DESKTOP sticky scroll cards ── -->
 <div class="hidden lg:flex w-full relative" style="height:400vh;" id="stack-section">
-
-  <!-- LEFT: sticky panel -->
   <div class="flex-[0_0_48%] h-screen sticky top-0 flex flex-col justify-center bg-[#111] px-[8%] pr-[5%] rounded-r-[40px]">
-    <div class="stack-eyebrow flex items-center gap-[10px] text-[#ceff66] text-[0.72rem] font-bold tracking-[0.28em] uppercase mb-6 font-['Inter']">
-      Our core values
-    </div>
+    <div class="stack-eyebrow flex items-center gap-[10px] text-[#ceff66] text-[0.72rem] font-bold tracking-[0.28em] uppercase mb-6 font-['Inter']">Our core values</div>
     <h2 class="font-['Space_Grotesk'] text-[clamp(2rem,3.8vw,3.2rem)] font-bold leading-[1.12] tracking-[-0.02em] text-white max-w-[520px] mb-7">
       Built on trust, technology &amp; <em class="not-italic text-[#ceff66]">human connection</em>
     </h2>
@@ -262,61 +227,43 @@
     </div>
   </div>
 
-  <!-- RIGHT: card stack -->
   <div class="flex-[0_0_52%] h-screen sticky top-0 flex items-center justify-center bg-[#eeeee9]">
-
-    <!-- Card 1: dark -->
     <div class="val-card absolute w-[360px] min-h-[380px] rounded-[32px] p-[2.6rem_2rem] flex flex-col justify-between bg-[#111] text-white shadow-[0_32px_64px_-16px_rgba(0,0,0,0.45)] cursor-default">
       <div>
-        <div class="w-[60px] h-[60px] rounded-[18px] flex items-center justify-center text-2xl mb-6 bg-[rgba(206,255,102,0.12)] text-[#ceff66]">
-          <i class="fas fa-handshake"></i>
-        </div>
+        <div class="w-[60px] h-[60px] rounded-[18px] flex items-center justify-center text-2xl mb-6 bg-[rgba(206,255,102,0.12)] text-[#ceff66]"><i class="fas fa-handshake"></i></div>
         <div class="text-[0.72rem] font-bold tracking-[0.22em] uppercase opacity-45 mb-2 font-['Inter']">Value 01</div>
         <h3 class="font-['Space_Grotesk'] text-[1.65rem] font-bold leading-[1.2] mb-4">Trust &amp; Integrity</h3>
         <p class="text-[0.92rem] leading-[1.7] opacity-70 font-['Inter']">Our combination of proven processes, technologies and people is the answer to your needs. Nothing replaces human touch built on trust.</p>
       </div>
       <div class="self-end font-['Space_Grotesk'] text-[3.5rem] font-bold opacity-[0.07] leading-none mt-4">01</div>
     </div>
-
-    <!-- Card 2: lime -->
     <div class="val-card absolute w-[360px] min-h-[380px] rounded-[32px] p-[2.6rem_2rem] flex flex-col justify-between bg-[#ceff66] text-[#111] shadow-[0_32px_64px_-16px_rgba(140,190,0,0.4)] cursor-default">
       <div>
-        <div class="w-[60px] h-[60px] rounded-[18px] flex items-center justify-center text-2xl mb-6 bg-black/10 text-[#111]">
-          <i class="fas fa-users"></i>
-        </div>
+        <div class="w-[60px] h-[60px] rounded-[18px] flex items-center justify-center text-2xl mb-6 bg-black/10 text-[#111]"><i class="fas fa-users"></i></div>
         <div class="text-[0.72rem] font-bold tracking-[0.22em] uppercase opacity-45 mb-2 font-['Inter']">Value 02</div>
         <h3 class="font-['Space_Grotesk'] text-[1.65rem] font-bold leading-[1.2] mb-4">People First</h3>
         <p class="text-[0.92rem] leading-[1.7] opacity-70 font-['Inter']">We handpick the best people and invest in their growth &mdash; because exceptional service starts with exceptional teams who care deeply.</p>
       </div>
       <div class="self-end font-['Space_Grotesk'] text-[3.5rem] font-bold opacity-[0.07] leading-none mt-4">02</div>
     </div>
-
-    <!-- Card 3: navy -->
     <div class="val-card absolute w-[360px] min-h-[380px] rounded-[32px] p-[2.6rem_2rem] flex flex-col justify-between bg-[#1a1a2e] text-white shadow-[0_32px_64px_-16px_rgba(0,0,0,0.55)] cursor-default">
       <div>
-        <div class="w-[60px] h-[60px] rounded-[18px] flex items-center justify-center text-2xl mb-6 bg-[rgba(206,255,102,0.12)] text-[#ceff66]">
-          <i class="fas fa-microchip"></i>
-        </div>
+        <div class="w-[60px] h-[60px] rounded-[18px] flex items-center justify-center text-2xl mb-6 bg-[rgba(206,255,102,0.12)] text-[#ceff66]"><i class="fas fa-microchip"></i></div>
         <div class="text-[0.72rem] font-bold tracking-[0.22em] uppercase opacity-45 mb-2 font-['Inter']">Value 03</div>
         <h3 class="font-['Space_Grotesk'] text-[1.65rem] font-bold leading-[1.2] mb-4">Cutting-Edge Tech</h3>
         <p class="text-[0.92rem] leading-[1.7] opacity-70 font-['Inter']">Advanced processes and cutting-edge technologies make OneStop Solutions one of the leading strategic partners for outsourcing solutions.</p>
       </div>
       <div class="self-end font-['Space_Grotesk'] text-[3.5rem] font-bold opacity-[0.07] leading-none mt-4">03</div>
     </div>
-
-    <!-- Card 4: white -->
     <div class="val-card absolute w-[360px] min-h-[380px] rounded-[32px] p-[2.6rem_2rem] flex flex-col justify-between bg-white text-[#111] border border-gray-200 shadow-[0_40px_80px_-10px_rgba(0,0,0,0.30),0_0_0_1px_rgba(0,0,0,0.07),inset_0_1px_0_rgba(255,255,255,0.9)] cursor-default">
       <div>
-        <div class="w-[60px] h-[60px] rounded-[18px] flex items-center justify-center text-2xl mb-6 bg-[#111] text-[#ceff66]">
-          <i class="fas fa-globe"></i>
-        </div>
+        <div class="w-[60px] h-[60px] rounded-[18px] flex items-center justify-center text-2xl mb-6 bg-[#111] text-[#ceff66]"><i class="fas fa-globe"></i></div>
         <div class="text-[0.72rem] font-bold tracking-[0.22em] uppercase opacity-45 mb-2 font-['Inter']">Value 04</div>
         <h3 class="font-['Space_Grotesk'] text-[1.65rem] font-bold leading-[1.2] mb-4">Global Reach</h3>
         <p class="text-[0.92rem] leading-[1.7] opacity-70 font-['Inter']">With a strong understanding of international markets, we bring global perspective to every local challenge &mdash; bridging cultures seamlessly.</p>
       </div>
       <div class="self-end font-['Space_Grotesk'] text-[3.5rem] font-bold opacity-[0.07] leading-none mt-4">04</div>
     </div>
-
   </div>
 </div>
 
@@ -324,11 +271,8 @@
 <section class="bg-white py-20 md:py-28 overflow-hidden">
   <div class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
       <div>
-        <div class="reveal flex items-center gap-[10px] text-[#ceff66] text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-5 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#ceff66] font-['Inter']">
-          Our philosophy
-        </div>
+        <div class="reveal flex items-center gap-[10px] text-[#ceff66] text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-5 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#ceff66] font-['Inter']">Our philosophy</div>
         <h2 class="reveal d1 font-['Space_Grotesk'] text-[clamp(1.8rem,3.8vw,3rem)] font-bold leading-[1.1] tracking-[-0.025em] text-[#111] mb-8">
           Communication is the <span class="bg-[#ceff66] px-[0.15em] pb-[0.05em] inline-block -skew-x-3 shadow-[-6px_6px_0_rgba(0,0,0,0.12)]">foundation</span> of lasting relationships
         </h2>
@@ -353,7 +297,6 @@
         </div>
       </div>
 
-      <!-- Right: image collage -->
       <div class="reveal-right relative">
         <div class="grid grid-cols-2 gap-4">
           <div class="row-span-2 mt-10 rounded-2xl overflow-hidden aspect-[3/4] shadow-[0_30px_50px_-20px_rgba(0,0,0,0.2)]">
@@ -380,25 +323,19 @@
   <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(206,255,102,0.07)_0%,transparent_65%)] pointer-events-none"></div>
   <div class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 relative z-10">
     <div class="text-center mb-16">
-      <div class="reveal inline-flex items-center gap-[10px] text-[#ceff66] text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-5 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#ceff66] font-['Inter']">
-        Our commitment
-      </div>
+      <div class="reveal inline-flex items-center gap-[10px] text-[#ceff66] text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-5 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#ceff66] font-['Inter']">Our commitment</div>
       <h2 class="reveal d1 font-['Space_Grotesk'] text-[clamp(2rem,5vw,3.8rem)] font-bold leading-[1.08] tracking-[-0.025em] text-white max-w-[720px] mx-auto">
         Superior service is more than innovation &mdash; it's <span class="text-[#ceff66]">sustained excellence</span>
       </h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
       <div class="reveal-left bg-white/[0.04] border border-white/5 rounded-[32px] p-10">
-        <div class="w-[52px] h-[52px] bg-[#ceff66] rounded-[14px] flex items-center justify-center mb-6 shadow-[8px_8px_0_rgba(0,0,0,0.3)]">
-          <i class="fas fa-lightbulb text-2xl text-[#111]"></i>
-        </div>
+        <div class="w-[52px] h-[52px] bg-[#ceff66] rounded-[14px] flex items-center justify-center mb-6 shadow-[8px_8px_0_rgba(0,0,0,0.3)]"><i class="fas fa-lightbulb text-2xl text-[#111]"></i></div>
         <h3 class="font-['Space_Grotesk'] text-xl md:text-2xl font-bold text-white mb-4">Innovative ideas that suit your needs</h3>
         <p class="text-white/55 text-[0.98rem] leading-relaxed font-['Inter']">Superior customer service requires not only the innovative ideas that suit your business needs, but the experience and knowledge to see that they are successfully implemented and maintained &mdash; which is the core value of OneStop Solutions Services.</p>
       </div>
       <div class="reveal-right bg-white/[0.04] border border-white/5 rounded-[32px] p-10">
-        <div class="w-[52px] h-[52px] bg-[#ceff66] rounded-[14px] flex items-center justify-center mb-6 shadow-[8px_8px_0_rgba(0,0,0,0.3)]">
-          <i class="fas fa-rocket text-2xl text-[#111]"></i>
-        </div>
+        <div class="w-[52px] h-[52px] bg-[#ceff66] rounded-[14px] flex items-center justify-center mb-6 shadow-[8px_8px_0_rgba(0,0,0,0.3)]"><i class="fas fa-rocket text-2xl text-[#111]"></i></div>
         <h3 class="font-['Space_Grotesk'] text-xl md:text-2xl font-bold text-white mb-4">From implementation to ongoing success</h3>
         <p class="text-white/55 text-[0.98rem] leading-relaxed font-['Inter']">Our commitment, coupled with our combination of handpicked people, advanced processes and cutting-edge technologies, has made OneStop Solutions Services one of the leading strategic partners for the provision of one-stop outsourcing solutions.</p>
       </div>
@@ -425,9 +362,7 @@
       <div class="absolute -left-10 -bottom-10 w-48 h-48 border-4 rounded-full pointer-events-none border-[rgba(206,255,102,0.15)]"></div>
       <div class="absolute right-16 bottom-16 w-20 h-20 rounded-2xl hidden xl:block bg-[#ceff66] opacity-5 rotate-[18deg]"></div>
       <div class="relative z-20 max-w-3xl">
-        <div class="flex items-center gap-[10px] text-[#ceff66] text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-6 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#ceff66] font-['Inter']">
-          Ready to get started?
-        </div>
+        <div class="flex items-center gap-[10px] text-[#ceff66] text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-6 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#ceff66] font-['Inter']">Ready to get started?</div>
         <h2 class="font-['Space_Grotesk'] text-[clamp(2rem,5vw,3.8rem)] font-bold leading-[1.08] tracking-[-0.025em] text-white mb-5">
           Let's build something<br>exceptional together.
         </h2>
@@ -448,20 +383,41 @@
 </section>
 
 <!-- ========== FOOTER ========== -->
-<?php
-@include('footer.php')
-?>
+<?php @include('footer.php') ?>
 
 <!-- ========== JAVASCRIPT ========== -->
 <script>
-  // Scroll progress bar
+  // ── Scroll progress + navbar hide/show ──────────────────────────────────
+  const progressBar   = document.getElementById('scroll-progress');
+  const navbarWrapper = document.getElementById('navbar-wrapper');
+  let lastScrollY = 0;
+  let ticking     = false;
+
+  function handleNavbarScroll() {
+    const cur = window.scrollY;
+    if (cur <= 10) {
+      navbarWrapper.classList.remove('nav-hidden');
+    } else if (cur > lastScrollY + 5) {
+      navbarWrapper.classList.add('nav-hidden');
+    } else if (cur < lastScrollY - 5) {
+      navbarWrapper.classList.remove('nav-hidden');
+    }
+    lastScrollY = cur;
+    ticking = false;
+  }
+
   window.addEventListener('scroll', () => {
     const s = window.scrollY;
     const m = document.documentElement.scrollHeight - window.innerHeight;
-    document.getElementById('scroll-progress').style.width = (s / m * 100) + '%';
+    progressBar.style.width = (s / m * 100) + '%';
+
+    if (!ticking) {
+      requestAnimationFrame(handleNavbarScroll);
+      ticking = true;
+    }
   }, { passive: true });
 
-  // Scroll reveal
+  // ── Scroll reveal ────────────────────────────────────────────────────────
   const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(en => {
@@ -470,40 +426,14 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach(el => revealObs.observe(el));
 
-  // Transition delays
+  // ── Transition delays ────────────────────────────────────────────────────
   document.querySelectorAll('.d1').forEach(el => el.style.transitionDelay = '0.08s');
   document.querySelectorAll('.d2').forEach(el => el.style.transitionDelay = '0.18s');
   document.querySelectorAll('.d3').forEach(el => el.style.transitionDelay = '0.28s');
   document.querySelectorAll('.d4').forEach(el => el.style.transitionDelay = '0.38s');
   document.querySelectorAll('.d5').forEach(el => el.style.transitionDelay = '0.48s');
 
-  // Mobile menu
-  const toggle = document.getElementById('menuToggle');
-  const mMenu  = document.getElementById('mobile-menu');
-  const b1 = document.getElementById('bar1');
-  const b2 = document.getElementById('bar2');
-  const b3 = document.getElementById('bar3');
-  let mOpen = false;
-  if (toggle) {
-    toggle.addEventListener('click', () => {
-      mOpen = !mOpen;
-      mMenu.classList.toggle('open', mOpen);
-      if (b1) b1.style.transform = mOpen ? 'translateY(8px) rotate(45deg)' : '';
-      if (b2) b2.style.opacity   = mOpen ? '0' : '1';
-      if (b3) b3.style.transform = mOpen ? 'translateY(-8px) rotate(-45deg)' : '';
-    });
-  }
-  if (mMenu) {
-    mMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      mOpen = false; mMenu.classList.remove('open');
-      if (b1) b1.style.transform = '';
-      if (b2) b2.style.opacity   = '1';
-      if (b3) b3.style.transform = '';
-    }));
-  }
-
-  // ── Desktop: Stacked Cards scroll ──
-  // Only runs when #stack-section is in the DOM (i.e. on lg+ where it's visible)
+  // ── Desktop: stacked cards scroll ───────────────────────────────────────
   const stackSection = document.getElementById('stack-section');
   if (stackSection && getComputedStyle(stackSection).display !== 'none') {
     const valCards = stackSection.querySelectorAll('.val-card');

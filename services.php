@@ -38,14 +38,21 @@
 
     .perspective-1000 { perspective: 1000px; }
 
-    /* Font assignments */
-    body {
-      font-family: 'Inter', sans-serif;
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+
+    /* ── Navbar hide-on-scroll wrapper ── */
+    #navbar-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
     }
-    
-    h1, h2, h3, h4, h5, h6, 
-    .font-heading {
-      font-family: 'Space Grotesk', sans-serif;
+    #navbar-wrapper.nav-hidden {
+      transform: translateY(-100%);
     }
   </style>
 </head>
@@ -53,44 +60,33 @@
 
 <div id="scroll-progress" class="fixed top-0 left-0 w-0 h-[3px] bg-[#ceff66] z-[999] duration-100 shadow-[0_0_10px_rgba(206,255,102,0.6)]"></div>
 
-<?php @include('navbar.php'); ?>
-
-<div id="mobile-menu" class="hidden fixed top-16 left-0 right-0 bg-[#0a0a0a] backdrop-blur-[16px] px-8 py-6 z-50 border-t border-white/5">
-  <a href="index.html" class="block font-medium text-white/75 text-lg py-3 border-b border-white/5 hover:text-[#ceff66] transition-colors font-['Inter']">Home</a>
-  <a href="about.html" class="block font-medium text-white/75 text-lg py-3 border-b border-white/5 hover:text-[#ceff66] transition-colors font-['Inter']">About</a>
-  <a href="#"          class="block font-medium text-[#ceff66] text-lg py-3 border-b border-white/5 hover:text-white transition-colors font-['Inter']">Services</a>
-  <a href="#"          class="block font-medium text-white/75 text-lg py-3 border-b border-white/5 hover:text-[#ceff66] transition-colors font-['Inter']">Case Study</a>
-  <a href="#"          class="block font-medium text-white/75 text-lg py-3 hover:text-[#ceff66] transition-colors font-['Inter']">Get in touch &rarr;</a>
+<!-- ========== NAVBAR ========== -->
+<div id="navbar-wrapper">
+  <?php @include('navbar.php'); ?>
 </div>
 
-<!-- ========== HERO — pitch‑dark background with round gradient ========== -->
-<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-black">
+<!-- ========== HERO ========== -->
+<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-black pt-20">
 
-  <!-- round (radial) accent gradient at bottom right -->
   <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_bottom_right,_#ceff66_0%,_transparent_70%)] opacity-40 pointer-events-none"></div>
-  
-  <!-- animated blobs (very subtle white blurs, almost invisible) -->
+
   <div class="absolute inset-0 opacity-5 pointer-events-none">
     <div class="absolute top-20 left-10 w-96 h-96 bg-white rounded-full mix-blend-overlay filter blur-[80px] animate-pulse"></div>
     <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-white rounded-full mix-blend-overlay filter blur-[100px] animate-pulse" style="animation-delay:2s;"></div>
   </div>
 
-  <!-- grid overlay (barely visible) -->
   <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image:url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M0 0 L60 0 L60 60 L0 60 Z&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; stroke-width=&quot;1&quot;/%3E%3C/svg%3E');"></div>
 
-  <!-- content (all text remains white) -->
   <div class="relative z-10 text-center px-5 sm:px-8 md:px-12 lg:px-24 py-20 md:py-28">
     <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 mb-6">
       <span class="w-2 h-2 bg-[#ceff66] rounded-full animate-pulse"></span>
       <span class="text-white/85 text-sm font-medium tracking-wider font-['Inter']">SERVICES</span>
     </div>
-
     <h1 class="reveal d1 font-['Space_Grotesk'] font-bold text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white leading-[1.1] tracking-[-0.03em] mb-6">
       Services
     </h1>
-
     <p class="reveal d2 text-white/70 text-xl max-w-2xl mx-auto font-['Inter']">
-      People. Process. Results. &mdash; Building trust through excellence since 2014.
+      Delivering reliable solutions through expert teams and efficient processes.
     </p>
   </div>
 </section>
@@ -107,7 +103,7 @@
     <span class="font-['Space_Grotesk'] text-[0.75rem] sm:text-[0.85rem] font-bold text-[#111] px-6 sm:px-8 uppercase flex-shrink-0">Survey Research <span class="opacity-40 mx-2">&#10022;</span></span>
     <span class="font-['Space_Grotesk'] text-[0.75rem] sm:text-[0.85rem] font-bold text-[#111] px-6 sm:px-8 uppercase flex-shrink-0">Winback <span class="opacity-40 mx-2">&#10022;</span></span>
     <span class="font-['Space_Grotesk'] text-[0.75rem] sm:text-[0.85rem] font-bold text-[#111] px-6 sm:px-8 uppercase flex-shrink-0">Technical Support <span class="opacity-40 mx-2">&#10022;</span></span>
-    <!-- duplicate -->
+    <!-- duplicate for seamless loop -->
     <span class="font-['Space_Grotesk'] text-[0.75rem] sm:text-[0.85rem] font-bold text-[#111] px-6 sm:px-8 uppercase flex-shrink-0">Inbound <span class="opacity-40 mx-2">&#10022;</span></span>
     <span class="font-['Space_Grotesk'] text-[0.75rem] sm:text-[0.85rem] font-bold text-[#111] px-6 sm:px-8 uppercase flex-shrink-0">Outbound <span class="opacity-40 mx-2">&#10022;</span></span>
     <span class="font-['Space_Grotesk'] text-[0.75rem] sm:text-[0.85rem] font-bold text-[#111] px-6 sm:px-8 uppercase flex-shrink-0">Lead Generation <span class="opacity-40 mx-2">&#10022;</span></span>
@@ -136,7 +132,6 @@
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 
-    <!-- 1. Inbound -->
     <div class="reveal group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
       <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1543269664-56d93c1b41a6?q=80&w=1000&auto=format&fit=crop" alt="Inbound service" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -149,7 +144,6 @@
       </div>
     </div>
 
-    <!-- 2. Outbound -->
     <div class="reveal d2 group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
       <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop" alt="Outbound service" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -162,7 +156,6 @@
       </div>
     </div>
 
-    <!-- 3. Lead generation -->
     <div class="reveal d3 group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
       <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1000&auto=format&fit=crop" alt="Lead generation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -175,7 +168,6 @@
       </div>
     </div>
 
-    <!-- 4. Customer / Quality -->
     <div class="reveal group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
       <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1556740714-a8395b3bf30f?q=80&w=1000&auto=format&fit=crop" alt="Customer service" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -188,7 +180,6 @@
       </div>
     </div>
 
-    <!-- 5. Digital Marketing -->
     <div class="reveal d2 group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
       <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Digital marketing" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -201,7 +192,6 @@
       </div>
     </div>
 
-    <!-- 6. Web development -->
     <div class="reveal d3 group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
       <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1000&auto=format&fit=crop" alt="Web development" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -214,7 +204,6 @@
       </div>
     </div>
 
-    <!-- 7. Survey research -->
     <div class="reveal group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
       <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Survey research" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -227,7 +216,6 @@
       </div>
     </div>
 
-    <!-- 8. Winback programs -->
     <div class="reveal d2 group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
       <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1000&auto=format&fit=crop" alt="Winback programs" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -240,7 +228,6 @@
       </div>
     </div>
 
-    <!-- 9. Technical support -->
     <div class="reveal d3 group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
       <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?q=80&w=1000&auto=format&fit=crop" alt="Technical support" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -269,7 +256,6 @@
   <div class="absolute bottom-40 left-20 w-96 h-96 border border-[#ceff66]/5 rounded-full"></div>
 
   <div class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 relative z-10">
-
     <div class="text-center max-w-2xl mx-auto mb-16 lg:mb-20">
       <div class="inline-flex items-center gap-3 text-[#ceff66] text-[0.7rem] font-bold tracking-[0.28em] uppercase mb-4 font-['Inter']">
         <span class="w-8 h-px bg-[#ceff66]"></span>
@@ -283,7 +269,6 @@
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-
       <div class="space-y-10">
         <div class="reveal group flex gap-5">
           <div class="flex-shrink-0 w-12 h-12 bg-[#ceff66]/10 rounded-xl flex items-center justify-center group-hover:bg-[#ceff66]/20 transition-colors duration-300">
@@ -364,7 +349,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -413,18 +397,37 @@
   </div>
 </section>
 
-<?php
-@include('footer.php');
-?>
+<?php @include('footer.php'); ?>
 
 <!-- ========== JAVASCRIPT ========== -->
 <script>
+  // ── Scroll progress + navbar hide/show ──────────────────────────────────
+  const progressBar   = document.getElementById('scroll-progress');
+  const navbarWrapper = document.getElementById('navbar-wrapper');
+  let lastScrollY = 0;
+  let ticking     = false;
+
+  function handleNavbarScroll() {
+    const y = window.scrollY;
+    if (y <= 10) {
+      navbarWrapper.classList.remove('nav-hidden');
+    } else if (y > lastScrollY + 5) {
+      navbarWrapper.classList.add('nav-hidden');
+    } else if (y < lastScrollY - 5) {
+      navbarWrapper.classList.remove('nav-hidden');
+    }
+    lastScrollY = y;
+    ticking = false;
+  }
+
   window.addEventListener('scroll', () => {
     const s = window.scrollY;
     const m = document.documentElement.scrollHeight - window.innerHeight;
-    document.getElementById('scroll-progress').style.width = (s / m * 100) + '%';
+    progressBar.style.width = (s / m * 100) + '%';
+    if (!ticking) { requestAnimationFrame(handleNavbarScroll); ticking = true; }
   }, { passive: true });
 
+  // ── Reveal on scroll ─────────────────────────────────────────────────────
   const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(en => {
@@ -437,30 +440,6 @@
   document.querySelectorAll('.d2').forEach(el => el.style.transitionDelay = '0.18s');
   document.querySelectorAll('.d3').forEach(el => el.style.transitionDelay = '0.28s');
   document.querySelectorAll('.d4').forEach(el => el.style.transitionDelay = '0.38s');
-
-  const toggle = document.getElementById('menuToggle');
-  const mMenu  = document.getElementById('mobile-menu');
-  const b1 = document.getElementById('bar1');
-  const b2 = document.getElementById('bar2');
-  const b3 = document.getElementById('bar3');
-  let mOpen = false;
-  if (toggle) {
-    toggle.addEventListener('click', () => {
-      mOpen = !mOpen;
-      mMenu.classList.toggle('open', mOpen);
-      if (b1) b1.style.transform = mOpen ? 'translateY(8px) rotate(45deg)' : '';
-      if (b2) b2.style.opacity   = mOpen ? '0' : '1';
-      if (b3) b3.style.transform = mOpen ? 'translateY(-8px) rotate(-45deg)' : '';
-    });
-  }
-  if (mMenu) {
-    mMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      mOpen = false; mMenu.classList.remove('open');
-      if (b1) b1.style.transform = '';
-      if (b2) b2.style.opacity   = '1';
-      if (b3) b3.style.transform = '';
-    }));
-  }
 </script>
 </body>
 </html>

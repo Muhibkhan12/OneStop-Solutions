@@ -25,6 +25,20 @@
     .reveal-left.visible,.reveal-right.visible{opacity:1;transform:translateX(0)}
     .d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}.d4{transition-delay:.38s}
 
+    /* ── NAVBAR HIDE-ON-SCROLL ── */
+    #navbar-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+    #navbar-wrapper.nav-hidden {
+      transform: translateY(-100%);
+    }
+
     /* ── HERO ── */
     .hero-overlay{background:linear-gradient(105deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.38) 55%,rgba(0,0,0,.05) 100%);pointer-events:none}
     .btn-primary{font-family:'Inter',sans-serif;font-weight:600;background:linear-gradient(145deg,#c5f467,#a6e62c);transition:all .28s ease;box-shadow:0 10px 24px -8px rgba(166,230,44,.45)}
@@ -32,8 +46,6 @@
     .btn-primary i{transition:transform .2s}
     .btn-primary:hover i{transform:translateX(4px)}
 
-    /* ── FEATURE / ABOUT ──
-       Removed the conflicting fixed padding & grid — Tailwind classes handle layout now */
     .main-image{
       width:100%;height:auto;border-radius:24px;
       box-shadow:0 40px 60px -28px rgba(0,0,0,.3);
@@ -42,10 +54,9 @@
       transition:all .5s cubic-bezier(.2,.9,.3,1)
     }
     .main-image:hover{transform:scale(1.015);filter:grayscale(70%) contrast(1.05)}
-    /* ↑ aspect-ratio now set inline per breakpoint via Tailwind */
 
     .secondary-img{
-      width:100%;          /* was 70% — now fills its flex col */
+      width:100%;
       border-radius:16px;
       box-shadow:0 30px 40px -25px rgba(0,0,0,.25);
       filter:grayscale(100%) contrast(1.1);
@@ -55,7 +66,6 @@
     }
     .secondary-img:hover{transform:scale(1.02) translateY(-4px)}
 
-    /* decorative squares — only visible on xl+ */
     .decor-squares{position:absolute;top:-10px;right:20px;z-index:20;pointer-events:none}
     .square-lime{width:85px;height:85px;background:var(--lime);position:absolute;top:0;right:60px;opacity:.9;transform:rotate(10deg);border-radius:18px;box-shadow:-10px 12px 25px -8px rgba(160,210,60,.25)}
     .square-dark{width:85px;height:85px;background:#1e1e24;position:absolute;top:30px;right:0;transform:rotate(-7deg);border-radius:18px;box-shadow:12px 15px 25px -10px rgba(0,0,0,.25)}
@@ -77,7 +87,7 @@
     .brand-name{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;color:#fff;letter-spacing:-.01em}
     .brand-dot{width:4px;height:4px;background:var(--lime);border-radius:50%;flex-shrink:0;margin-left:4px}
 
-    /* ── SERVICES — 9-card grid ── */
+    /* ── SERVICES ── */
     .header-tag{
       font-family:'Inter',sans-serif;font-weight:500;font-size:.82rem;
       letter-spacing:.28em;text-transform:uppercase;color:#8f8f8f;
@@ -97,7 +107,6 @@
       box-shadow:-8px 8px 0 rgba(0,0,0,.14)
     }
 
-    /* card grid: 3 cols → 2 cols → 1 col */
     .card-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -178,7 +187,7 @@
     .swiper-slide{height:auto}
 
     /* ── SCROLL PROGRESS ── */
-    #scroll-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--lime);z-index:999;transition:width .1s linear;box-shadow:0 0 10px rgba(206,255,102,.6)}
+    #scroll-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--lime);z-index:9999;transition:width .1s linear;box-shadow:0 0 10px rgba(206,255,102,.6)}
 
     /* ── MOBILE TWEAKS ── */
     @media(max-width:640px){
@@ -197,10 +206,14 @@
   </style>
 </head>
 <body class="antialiased">
-<?php
-  @include('navbar.php')
-?>
+
+<!-- Scroll Progress -->
 <div id="scroll-progress"></div>
+
+<!-- ========== NAVBAR ========== -->
+<div id="navbar-wrapper">
+  <?php @include('navbar.php') ?>
+</div>
 
 <!-- ════════════════════════════════════════
      HERO
@@ -235,17 +248,13 @@
 
 <!-- ════════════════════════════════════════
      FEATURE / ABOUT
-     FIX: removed conflicting CSS .section-premium / .two-col classes;
-          layout now driven entirely by Tailwind utility classes
 ════════════════════════════════════════ -->
 <section class="w-full bg-white py-16 sm:py-20 md:py-28 lg:py-36 px-5 sm:px-8 md:px-12 lg:px-20 overflow-hidden relative">
 
-  <!-- decorative accents — only on xl screens -->
   <div class="hidden xl:block absolute left-16 top-28 w-px h-64 bg-gradient-to-b from-transparent via-[#ceff66]/30 to-transparent pointer-events-none"></div>
   <div class="hidden xl:block absolute top-44 right-24 w-40 h-[3px] bg-[#ceff66] rounded-full opacity-70 pointer-events-none"></div>
 
   <div class="max-w-[1440px] mx-auto">
-    <!-- Two-column: image left, text right — stacks on mobile -->
     <div class="flex flex-col lg:flex-row items-center gap-10 md:gap-14 lg:gap-20">
 
       <!-- IMAGE COL -->
@@ -273,7 +282,6 @@
           Anchored in Karachi, One Stop Solutions delivers customized outsourcing that improves customer satisfaction, retention, and profitability. We believe direct contact &mdash; phone, email, chat &mdash; builds trust that lasts.
         </p>
 
-        <!-- Two small images side-by-side -->
         <div class="reveal d3 flex gap-4">
           <div class="w-1/2">
             <img class="secondary-img"
@@ -290,7 +298,6 @@
     </div>
   </div>
 
-  <!-- decorative squares — only on xl -->
   <div class="hidden xl:block decor-squares absolute bottom-10 right-10">
     <div class="square-lime"></div>
     <div class="square-dark"></div>
@@ -312,7 +319,6 @@
       <div class="brand-item"><span class="brand-name">CANNET</span><div class="brand-dot"></div></div>
       <div class="brand-item"><span class="brand-name">NORTHERN LEASING SYSTEMS</span><div class="brand-dot"></div></div>
       <div class="brand-item"><span class="brand-name">THE MARKETING SOURCE</span><div class="brand-dot"></div></div>
-      <!-- duplicate for seamless loop -->
       <div class="brand-item"><span class="brand-name">Argosy BPO</span><div class="brand-dot"></div></div>
       <div class="brand-item"><span class="brand-name">TEK BUZZ</span><div class="brand-dot"></div></div>
       <div class="brand-item"><span class="brand-name">GATEWAY MERCHANT CAPITAL</span><div class="brand-dot"></div></div>
@@ -326,17 +332,13 @@
 </section>
 
 <!-- ════════════════════════════════════════
-     SERVICES — 9 cards, 3×3 grid
-     FIX: removed conflicting .services-modern fixed padding;
-          section padding is now Tailwind-driven
+     SERVICES
 ════════════════════════════════════════ -->
 <section class="w-full bg-white py-16 sm:py-20 md:py-28 lg:py-36 px-5 sm:px-8 md:px-12 lg:px-20 relative overflow-hidden">
-  <!-- decorative blob -->
   <div class="absolute -top-12 -right-12 w-64 h-64 bg-[#ceff66]/10 rounded-[48px] rotate-[25deg] pointer-events-none z-0"></div>
 
   <div class="max-w-[1440px] mx-auto relative z-10">
 
-    <!-- Header row -->
     <div class="flex flex-wrap justify-between items-end mb-14 md:mb-20 gap-8 relative z-10">
       <div>
         <span class="reveal header-tag">everything we deliver</span>
@@ -347,10 +349,7 @@
       </p>
     </div>
 
-    <!-- 9-card grid -->
     <div class="card-grid">
-
-      <!-- 1 Inbound -->
       <div class="reveal d1 service-card-modern">
         <img class="card-bg-image" src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2069&auto=format&fit=crop" alt="inbound calls">
         <div class="card-overlay"></div>
@@ -360,8 +359,6 @@
           <p class="card-desc">Customer care, order taking, helpdesk &mdash; we handle high-volume inbound with empathy and efficiency.</p>
         </div>
       </div>
-
-      <!-- 2 Outbound -->
       <div class="reveal d2 service-card-modern">
         <img class="card-bg-image" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1974&auto=format&fit=crop" alt="outbound calls">
         <div class="card-overlay"></div>
@@ -371,8 +368,6 @@
           <p class="card-desc">Telemarketing, appointment setting, market research &mdash; proactive outreach that delivers results.</p>
         </div>
       </div>
-
-      <!-- 3 Lead Gen -->
       <div class="reveal d3 service-card-modern">
         <img class="card-bg-image" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop" alt="lead generation">
         <div class="card-overlay"></div>
@@ -382,8 +377,6 @@
           <p class="card-desc">Qualified B2B &amp; B2C leads through multi-channel strategies that fill your pipeline with real opportunities.</p>
         </div>
       </div>
-
-      <!-- 4 Customer Quality -->
       <div class="reveal d1 service-card-modern">
         <img class="card-bg-image" src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1200&auto=format&fit=crop" alt="customer quality services">
         <div class="card-overlay"></div>
@@ -393,8 +386,6 @@
           <p class="card-desc">Dedicated support, QA monitoring, and continuous improvement programs for superior customer experience.</p>
         </div>
       </div>
-
-      <!-- 5 Digital Marketing -->
       <div class="reveal d2 service-card-modern">
         <img class="card-bg-image" src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop" alt="digital marketing">
         <div class="card-overlay"></div>
@@ -404,8 +395,6 @@
           <p class="card-desc">SEO, PPC, social media, content &mdash; data-driven campaigns that maximise ROI and grow your brand online.</p>
         </div>
       </div>
-
-      <!-- 6 Web Dev -->
       <div class="reveal d3 service-card-modern">
         <img class="card-bg-image" src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2069&auto=format&fit=crop" alt="web development">
         <div class="card-overlay"></div>
@@ -415,8 +404,6 @@
           <p class="card-desc">Custom websites, e-commerce, and portals &mdash; built for performance, conversion, and long-term scalability.</p>
         </div>
       </div>
-
-      <!-- 7 Survey Research -->
       <div class="reveal d1 service-card-modern">
         <img class="card-bg-image" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop" alt="survey research">
         <div class="card-overlay"></div>
@@ -426,8 +413,6 @@
           <p class="card-desc">Customer feedback, market studies, data collection &mdash; actionable insights gathered from real people at scale.</p>
         </div>
       </div>
-
-      <!-- 8 Winback -->
       <div class="reveal d2 service-card-modern">
         <img class="card-bg-image" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=600&auto=format&fit=crop" alt="winback programs">
         <div class="card-overlay"></div>
@@ -437,8 +422,6 @@
           <p class="card-desc">Re-engage lost customers, reduce churn, and recover revenue with tailored retention campaigns and empathetic outreach.</p>
         </div>
       </div>
-
-      <!-- 9 Tech Support -->
       <div class="reveal d3 service-card-modern">
         <img class="card-bg-image" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=600&auto=format&fit=crop" alt="technical support">
         <div class="card-overlay"></div>
@@ -448,8 +431,7 @@
           <p class="card-desc">Tier 1/2 support, troubleshooting, IT helpdesk &mdash; fast, reliable, and multilingual assistance your customers can count on.</p>
         </div>
       </div>
-
-    </div><!-- /.card-grid -->
+    </div>
   </div>
 </section>
 
@@ -567,12 +549,7 @@
   </div>
 </div>
 
-<?php
-@include('footer.php')
-
-?>
-
-
+<?php @include('footer.php') ?>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
@@ -588,12 +565,37 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// ── Scroll progress + navbar hide/show ──────────────────────────────────
+const progressBar   = document.getElementById('scroll-progress');
+const navbarWrapper = document.getElementById('navbar-wrapper');
+let lastScrollY = 0;
+let ticking     = false;
+
+function handleNavbarScroll() {
+  const currentScrollY = window.scrollY;
+  if (currentScrollY <= 10) {
+    navbarWrapper.classList.remove('nav-hidden');
+  } else if (currentScrollY > lastScrollY + 5) {
+    navbarWrapper.classList.add('nav-hidden');
+  } else if (currentScrollY < lastScrollY - 5) {
+    navbarWrapper.classList.remove('nav-hidden');
+  }
+  lastScrollY = currentScrollY;
+  ticking = false;
+}
+
 window.addEventListener('scroll', () => {
   const s = window.scrollY;
   const m = document.documentElement.scrollHeight - window.innerHeight;
-  document.getElementById('scroll-progress').style.width = (s / m * 100) + '%';
+  progressBar.style.width = (s / m * 100) + '%';
+
+  if (!ticking) {
+    requestAnimationFrame(handleNavbarScroll);
+    ticking = true;
+  }
 }, { passive: true });
 
+// ── Reveal on scroll ────────────────────────────────────────────────────
 const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(en => {
