@@ -401,10 +401,10 @@
           Let's align our services to your goals. Inbound, outbound, digital, or technical support &mdash; we deliver.
         </p>
         <div class="flex flex-wrap gap-3">
-          <a href="#" class="inline-flex items-center gap-2 rounded-full px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold text-neutral-900 bg-gradient-to-br from-[#c5f467] to-[#a6e62c] hover:from-[#b3e04e] hover:to-[#93cd25] transition-all duration-300 shadow-2xl hover:-translate-y-0.5 font-['Inter']">
+          <a href="contact.php" class="inline-flex items-center gap-2 rounded-full px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold text-neutral-900 bg-gradient-to-br from-[#c5f467] to-[#a6e62c] hover:from-[#b3e04e] hover:to-[#93cd25] transition-all duration-300 shadow-2xl hover:-translate-y-0.5 font-['Inter']">
             Contact us <i class="fas fa-arrow-right text-sm"></i>
           </a>
-          <a href="#" class="inline-flex items-center gap-2 border border-white/25 rounded-full px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-medium text-white hover:bg-white/10 transition-all font-['Inter']">
+          <a href="tel:+923361369929" class="inline-flex items-center gap-2 border border-white/25 rounded-full px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-medium text-white hover:bg-white/10 transition-all font-['Inter']">
             0336 1369929
           </a>
         </div>
