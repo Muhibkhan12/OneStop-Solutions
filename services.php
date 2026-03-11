@@ -116,11 +116,15 @@
   </div>
 </div>
 
-<!-- ========== SERVICE GRID ========== -->
-<section id="service-grid" class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-20 md:py-28 bg-[#fafafa] relative">
-  <div class="absolute top-0 left-0 w-64 h-64 rounded-br-[80px] bg-[rgba(206,255,102,0.06)] pointer-events-none"></div>
-
-  <div class="text-center max-w-3xl mx-auto mb-16">
+<!-- ========== SERVICE GRID - PREMIUM MODERN CARDS WITH BACKGROUND IMAGES ========== -->
+<section id="service-grid" class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-20 md:py-28 bg-[#fafafa] relative overflow-hidden">
+  
+  <!-- Enhanced background decoration -->
+  <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-[#ceff66]/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+  <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#ceff66]/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 animate-pulse animation-delay-2000"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-6xl max-h-96 bg-gradient-to-r from-transparent via-[#ceff66]/5 to-transparent rotate-12"></div>
+  
+  <div class="text-center max-w-3xl mx-auto mb-16 relative z-10">
     <div class="reveal inline-flex items-center gap-[10px] text-[#ceff66] text-[0.7rem] font-semibold tracking-[0.28em] uppercase mb-4 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#ceff66] font-['Inter']">
       end-to-end solutions
     </div>
@@ -130,121 +134,301 @@
     <p class="reveal d2 text-[#5a5a5a] text-lg max-w-2xl mx-auto font-['Inter']">From first contact to technical support &mdash; we cover the entire customer journey with excellence.</p>
   </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-
-    <div class="reveal group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
+  <!-- Premium Cards Grid with Background Images -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 relative z-10">
+    
+    <!-- Card 1: Inbound Calls - Premium Card -->
+    <div class="reveal group relative h-[550px] rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_40px_60px_-20px_rgba(206,255,102,0.5)] transition-all duration-700 hover:-translate-y-3">
+      <!-- Background Image with Parallax -->
       <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1543269664-56d93c1b41a6?q=80&w=1000&auto=format&fit=crop" alt="Inbound service" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"></div>
+        <img src="https://images.unsplash.com/photo-1543269664-56d93c1b41a6?q=80&w=1000&auto=format&fit=crop" alt="Inbound service" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+        <!-- Multi-layer Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#ceff66]/20 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700 mix-blend-overlay"></div>
+        <!-- Animated Glow Line -->
+        <div class="absolute bottom-0 left-0 w-0 h-1 bg-[#ceff66] group-hover:w-full transition-all duration-700 delay-300"></div>
       </div>
-      <div class="relative p-8 min-h-[400px] flex flex-col justify-center text-white">
-        <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-phone-volume text-2xl text-[#111]"></i></div>
-        <h3 class="font-['Space_Grotesk'] text-2xl font-bold mb-2">Inbound Calls</h3>
-        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4 font-['Inter']">Customer care, order taking, helpdesk &mdash; we handle high-volume inbound with empathy and efficiency.</p>
+      
+      <!-- Content with Premium Styling -->
+      <div class="relative h-full flex flex-col justify-end p-8 text-white">
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#ceff66] to-[#a6e62c] rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:-rotate-6 group-hover:shadow-[#ceff66]/30 transition-all duration-500">
+            <i class="fas fa-phone-volume text-3xl text-[#111]"></i>
+          </div>
+          <span class="text-7xl font-black text-white/10 group-hover:text-[#ceff66]/20 transition-all duration-500">01</span>
+        </div>
+        
+        <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-3 group-hover:text-[#ceff66] transition-colors duration-300 transform group-hover:translate-x-2">Inbound Calls</h3>
+        
+        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-6 font-['Inter'] transform transition-transform duration-300 group-hover:translate-x-1">Customer care, order taking, helpdesk &mdash; we handle high-volume inbound with empathy and efficiency.</p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-4 py-2 bg-[#ceff66]/20 text-[#ceff66] text-xs rounded-full border border-[#ceff66]/30 font-medium backdrop-blur-sm hover:bg-[#ceff66]/30 transition-all duration-300">24/7 Support</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">Multi-language</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">High volume</span>
+        </div>
+        
+        
       </div>
     </div>
 
-    <div class="reveal d2 group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
+    <!-- Card 2: Outbound Calls - Premium Card -->
+    <div class="reveal d2 group relative h-[550px] rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_40px_60px_-20px_rgba(206,255,102,0.5)] transition-all duration-700 hover:-translate-y-3">
       <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop" alt="Outbound service" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"></div>
+        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop" alt="Outbound service" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#ceff66]/20 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700 mix-blend-overlay"></div>
+        <div class="absolute bottom-0 left-0 w-0 h-1 bg-[#ceff66] group-hover:w-full transition-all duration-700 delay-300"></div>
       </div>
-      <div class="relative p-8 min-h-[400px] flex flex-col justify-center text-white">
-        <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-phone-alt text-2xl text-[#111]"></i></div>
-        <h3 class="font-['Space_Grotesk'] text-2xl font-bold mb-2">Outbound Calls</h3>
-        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4 font-['Inter']">Telemarketing, appointment setting, market research &mdash; proactive outreach that delivers results.</p>
+      
+      <div class="relative h-full flex flex-col justify-end p-8 text-white">
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#ceff66] to-[#a6e62c] rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-[#ceff66]/30 transition-all duration-500">
+            <i class="fas fa-phone-alt text-3xl text-[#111]"></i>
+          </div>
+          <span class="text-7xl font-black text-white/10 group-hover:text-[#ceff66]/20 transition-all duration-500">02</span>
+        </div>
+        
+        <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-3 group-hover:text-[#ceff66] transition-colors duration-300 transform group-hover:translate-x-2">Outbound Calls</h3>
+        
+        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-6 font-['Inter'] transform transition-transform duration-300 group-hover:translate-x-1">Telemarketing, appointment setting, market research &mdash; proactive outreach that delivers results.</p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-4 py-2 bg-[#ceff66]/20 text-[#ceff66] text-xs rounded-full border border-[#ceff66]/30 font-medium backdrop-blur-sm hover:bg-[#ceff66]/30 transition-all duration-300">B2B/B2C</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">Lead gen</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">Appointment setting</span>
+        </div>
+        
+        
       </div>
     </div>
 
-    <div class="reveal d3 group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
+    <!-- Card 3: Lead Generation - Premium Card -->
+    <div class="reveal d3 group relative h-[550px] rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_40px_60px_-20px_rgba(206,255,102,0.5)] transition-all duration-700 hover:-translate-y-3">
       <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1000&auto=format&fit=crop" alt="Lead generation" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"></div>
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1000&auto=format&fit=crop" alt="Lead generation" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#ceff66]/20 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700 mix-blend-overlay"></div>
+        <div class="absolute bottom-0 left-0 w-0 h-1 bg-[#ceff66] group-hover:w-full transition-all duration-700 delay-300"></div>
       </div>
-      <div class="relative p-8 min-h-[400px] flex flex-col justify-center text-white">
-        <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-chart-line text-2xl text-[#111]"></i></div>
-        <h3 class="font-['Space_Grotesk'] text-2xl font-bold mb-2">Lead Generation</h3>
-        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4 font-['Inter']">Qualified B2B &amp; B2C leads through multi-channel strategies that fill your pipeline.</p>
+      
+      <div class="relative h-full flex flex-col justify-end p-8 text-white">
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#ceff66] to-[#a6e62c] rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:-rotate-6 group-hover:shadow-[#ceff66]/30 transition-all duration-500">
+            <i class="fas fa-chart-line text-3xl text-[#111]"></i>
+          </div>
+          <span class="text-7xl font-black text-white/10 group-hover:text-[#ceff66]/20 transition-all duration-500">03</span>
+        </div>
+        
+        <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-3 group-hover:text-[#ceff66] transition-colors duration-300 transform group-hover:translate-x-2">Lead Generation</h3>
+        
+        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-6 font-['Inter'] transform transition-transform duration-300 group-hover:translate-x-1">Qualified B2B &amp; B2C leads through multi-channel strategies that fill your pipeline.</p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-4 py-2 bg-[#ceff66]/20 text-[#ceff66] text-xs rounded-full border border-[#ceff66]/30 font-medium backdrop-blur-sm hover:bg-[#ceff66]/30 transition-all duration-300">Multi-channel</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">Qualified leads</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">B2B focus</span>
+        </div>
+        
+        
       </div>
     </div>
 
-    <div class="reveal group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
+    <!-- Card 4: Customer & Quality Services - Premium Card -->
+    <div class="reveal group relative h-[550px] rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_40px_60px_-20px_rgba(206,255,102,0.5)] transition-all duration-700 hover:-translate-y-3">
       <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1556740714-a8395b3bf30f?q=80&w=1000&auto=format&fit=crop" alt="Customer service" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"></div>
+        <img src="https://images.unsplash.com/photo-1556740714-a8395b3bf30f?q=80&w=1000&auto=format&fit=crop" alt="Customer service" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#ceff66]/20 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700 mix-blend-overlay"></div>
+        <div class="absolute bottom-0 left-0 w-0 h-1 bg-[#ceff66] group-hover:w-full transition-all duration-700 delay-300"></div>
       </div>
-      <div class="relative p-8 min-h-[400px] flex flex-col justify-center text-white">
-        <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-headset text-2xl text-[#111]"></i></div>
-        <h3 class="font-['Space_Grotesk'] text-2xl font-bold mb-2">Customer &amp; Quality Services</h3>
-        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4 font-['Inter']">Dedicated support, QA monitoring, and continuous improvement for superior CX.</p>
+      
+      <div class="relative h-full flex flex-col justify-end p-8 text-white">
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#ceff66] to-[#a6e62c] rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-[#ceff66]/30 transition-all duration-500">
+            <i class="fas fa-headset text-3xl text-[#111]"></i>
+          </div>
+          <span class="text-7xl font-black text-white/10 group-hover:text-[#ceff66]/20 transition-all duration-500">04</span>
+        </div>
+        
+        <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-3 group-hover:text-[#ceff66] transition-colors duration-300 transform group-hover:translate-x-2">Customer & Quality</h3>
+        
+        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-6 font-['Inter'] transform transition-transform duration-300 group-hover:translate-x-1">Dedicated support, QA monitoring, and continuous improvement for superior CX.</p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-4 py-2 bg-[#ceff66]/20 text-[#ceff66] text-xs rounded-full border border-[#ceff66]/30 font-medium backdrop-blur-sm hover:bg-[#ceff66]/30 transition-all duration-300">QA monitoring</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">CSAT focus</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">Continuous improvement</span>
+        </div>
+        
+        
       </div>
     </div>
 
-    <div class="reveal d2 group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
+    <!-- Card 5: Digital Marketing - Premium Card -->
+    <div class="reveal d2 group relative h-[550px] rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_40px_60px_-20px_rgba(206,255,102,0.5)] transition-all duration-700 hover:-translate-y-3">
       <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Digital marketing" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"></div>
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="Digital marketing" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#ceff66]/20 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700 mix-blend-overlay"></div>
+        <div class="absolute bottom-0 left-0 w-0 h-1 bg-[#ceff66] group-hover:w-full transition-all duration-700 delay-300"></div>
       </div>
-      <div class="relative p-8 min-h-[400px] flex flex-col justify-center text-white">
-        <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-bullseye text-2xl text-[#111]"></i></div>
-        <h3 class="font-['Space_Grotesk'] text-2xl font-bold mb-2">Digital Marketing</h3>
-        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4 font-['Inter']">SEO, PPC, social media, content &mdash; data-driven campaigns that maximise ROI.</p>
+      
+      <div class="relative h-full flex flex-col justify-end p-8 text-white">
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#ceff66] to-[#a6e62c] rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:-rotate-6 group-hover:shadow-[#ceff66]/30 transition-all duration-500">
+            <i class="fas fa-bullseye text-3xl text-[#111]"></i>
+          </div>
+          <span class="text-7xl font-black text-white/10 group-hover:text-[#ceff66]/20 transition-all duration-500">05</span>
+        </div>
+        
+        <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-3 group-hover:text-[#ceff66] transition-colors duration-300 transform group-hover:translate-x-2">Digital Marketing</h3>
+        
+        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-6 font-['Inter'] transform transition-transform duration-300 group-hover:translate-x-1">SEO, PPC, social media, content &mdash; data-driven campaigns that maximise ROI.</p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-4 py-2 bg-[#ceff66]/20 text-[#ceff66] text-xs rounded-full border border-[#ceff66]/30 font-medium backdrop-blur-sm hover:bg-[#ceff66]/30 transition-all duration-300">SEO/PPC</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">Social media</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">Content strategy</span>
+        </div>
+        
+        
       </div>
     </div>
 
-    <div class="reveal d3 group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
+    <!-- Card 6: Web Development - Premium Card -->
+    <div class="reveal d3 group relative h-[550px] rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_40px_60px_-20px_rgba(206,255,102,0.5)] transition-all duration-700 hover:-translate-y-3">
       <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1000&auto=format&fit=crop" alt="Web development" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"></div>
+        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1000&auto=format&fit=crop" alt="Web development" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#ceff66]/20 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700 mix-blend-overlay"></div>
+        <div class="absolute bottom-0 left-0 w-0 h-1 bg-[#ceff66] group-hover:w-full transition-all duration-700 delay-300"></div>
       </div>
-      <div class="relative p-8 min-h-[400px] flex flex-col justify-center text-white">
-        <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-code text-2xl text-[#111]"></i></div>
-        <h3 class="font-['Space_Grotesk'] text-2xl font-bold mb-2">Web Development</h3>
-        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4 font-['Inter']">Custom websites, e-commerce, portals &mdash; built for performance and conversion.</p>
+      
+      <div class="relative h-full flex flex-col justify-end p-8 text-white">
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#ceff66] to-[#a6e62c] rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-[#ceff66]/30 transition-all duration-500">
+            <i class="fas fa-code text-3xl text-[#111]"></i>
+          </div>
+          <span class="text-7xl font-black text-white/10 group-hover:text-[#ceff66]/20 transition-all duration-500">06</span>
+        </div>
+        
+        <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-3 group-hover:text-[#ceff66] transition-colors duration-300 transform group-hover:translate-x-2">Web Development</h3>
+        
+        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-6 font-['Inter'] transform transition-transform duration-300 group-hover:translate-x-1">Custom websites, e-commerce, portals &mdash; built for performance and conversion.</p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-4 py-2 bg-[#ceff66]/20 text-[#ceff66] text-xs rounded-full border border-[#ceff66]/30 font-medium backdrop-blur-sm hover:bg-[#ceff66]/30 transition-all duration-300">Custom build</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">E-commerce</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">Responsive</span>
+        </div>
+        
+        
       </div>
     </div>
 
-    <div class="reveal group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
+    <!-- Card 7: Survey Research - Premium Card -->
+    <div class="reveal group relative h-[550px] rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_40px_60px_-20px_rgba(206,255,102,0.5)] transition-all duration-700 hover:-translate-y-3">
       <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Survey research" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"></div>
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Survey research" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#ceff66]/20 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700 mix-blend-overlay"></div>
+        <div class="absolute bottom-0 left-0 w-0 h-1 bg-[#ceff66] group-hover:w-full transition-all duration-700 delay-300"></div>
       </div>
-      <div class="relative p-8 min-h-[400px] flex flex-col justify-center text-white">
-        <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-poll text-2xl text-[#111]"></i></div>
-        <h3 class="font-['Space_Grotesk'] text-2xl font-bold mb-2">Survey Research</h3>
-        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4 font-['Inter']">Customer feedback, market studies, data collection &mdash; actionable insights from real people.</p>
+      
+      <div class="relative h-full flex flex-col justify-end p-8 text-white">
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#ceff66] to-[#a6e62c] rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:-rotate-6 group-hover:shadow-[#ceff66]/30 transition-all duration-500">
+            <i class="fas fa-poll text-3xl text-[#111]"></i>
+          </div>
+          <span class="text-7xl font-black text-white/10 group-hover:text-[#ceff66]/20 transition-all duration-500">07</span>
+        </div>
+        
+        <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-3 group-hover:text-[#ceff66] transition-colors duration-300 transform group-hover:translate-x-2">Survey Research</h3>
+        
+        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-6 font-['Inter'] transform transition-transform duration-300 group-hover:translate-x-1">Customer feedback, market studies, data collection &mdash; actionable insights from real people.</p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-4 py-2 bg-[#ceff66]/20 text-[#ceff66] text-xs rounded-full border border-[#ceff66]/30 font-medium backdrop-blur-sm hover:bg-[#ceff66]/30 transition-all duration-300">Data collection</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">Market insights</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">Customer feedback</span>
+        </div>
+        
+        
       </div>
     </div>
 
-    <div class="reveal d2 group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
+    <!-- Card 8: Winback Programs - Premium Card -->
+    <div class="reveal d2 group relative h-[550px] rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_40px_60px_-20px_rgba(206,255,102,0.5)] transition-all duration-700 hover:-translate-y-3">
       <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1000&auto=format&fit=crop" alt="Winback programs" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"></div>
+        <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1000&auto=format&fit=crop" alt="Winback programs" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#ceff66]/20 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700 mix-blend-overlay"></div>
+        <div class="absolute bottom-0 left-0 w-0 h-1 bg-[#ceff66] group-hover:w-full transition-all duration-700 delay-300"></div>
       </div>
-      <div class="relative p-8 min-h-[400px] flex flex-col justify-center text-white">
-        <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-undo-alt text-2xl text-[#111]"></i></div>
-        <h3 class="font-['Space_Grotesk'] text-2xl font-bold mb-2">Winback Programs</h3>
-        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4 font-['Inter']">Re-engage lost customers, reduce churn, and recover revenue with tailored retention campaigns.</p>
+      
+      <div class="relative h-full flex flex-col justify-end p-8 text-white">
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#ceff66] to-[#a6e62c] rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-[#ceff66]/30 transition-all duration-500">
+            <i class="fas fa-undo-alt text-3xl text-[#111]"></i>
+          </div>
+          <span class="text-7xl font-black text-white/10 group-hover:text-[#ceff66]/20 transition-all duration-500">08</span>
+        </div>
+        
+        <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-3 group-hover:text-[#ceff66] transition-colors duration-300 transform group-hover:translate-x-2">Winback Programs</h3>
+        
+        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-6 font-['Inter'] transform transition-transform duration-300 group-hover:translate-x-1">Re-engage lost customers, reduce churn, and recover revenue with tailored retention campaigns.</p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-4 py-2 bg-[#ceff66]/20 text-[#ceff66] text-xs rounded-full border border-[#ceff66]/30 font-medium backdrop-blur-sm hover:bg-[#ceff66]/30 transition-all duration-300">Retention</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">Revenue recovery</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">Churn reduction</span>
+        </div>
+        
+        
       </div>
     </div>
 
-    <div class="reveal d3 group relative overflow-hidden rounded-3xl shadow-[0_10px_30px_-15px_rgba(0,0,0,0.15)] max-w-[340px] mx-auto w-full">
+    <!-- Card 9: Technical Support - Premium Card -->
+    <div class="reveal d3 group relative h-[550px] rounded-3xl overflow-hidden shadow-2xl hover:shadow-[0_40px_60px_-20px_rgba(206,255,102,0.5)] transition-all duration-700 hover:-translate-y-3">
       <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?q=80&w=1000&auto=format&fit=crop" alt="Technical support" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"></div>
+        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?q=80&w=1000&auto=format&fit=crop" alt="Technical support" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#ceff66]/20 to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700 mix-blend-overlay"></div>
+        <div class="absolute bottom-0 left-0 w-0 h-1 bg-[#ceff66] group-hover:w-full transition-all duration-700 delay-300"></div>
       </div>
-      <div class="relative p-8 min-h-[400px] flex flex-col justify-center text-white">
-        <div class="w-14 h-14 bg-[#ceff66] rounded-xl flex items-center justify-center mb-4 shadow-lg transform group-hover:scale-110 transition-transform"><i class="fas fa-laptop-code text-2xl text-[#111]"></i></div>
-        <h3 class="font-['Space_Grotesk'] text-2xl font-bold mb-2">Technical Support</h3>
-        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-4 font-['Inter']">Tier 1/2 support, troubleshooting, IT helpdesk &mdash; fast, reliable, and multilingual.</p>
+      
+      <div class="relative h-full flex flex-col justify-end p-8 text-white">
+        <div class="flex items-center justify-between mb-6">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#ceff66] to-[#a6e62c] rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:scale-110 group-hover:-rotate-6 group-hover:shadow-[#ceff66]/30 transition-all duration-500">
+            <i class="fas fa-laptop-code text-3xl text-[#111]"></i>
+          </div>
+          <span class="text-7xl font-black text-white/10 group-hover:text-[#ceff66]/20 transition-all duration-500">09</span>
+        </div>
+        
+        <h3 class="font-['Space_Grotesk'] text-3xl font-bold mb-3 group-hover:text-[#ceff66] transition-colors duration-300 transform group-hover:translate-x-2">Technical Support</h3>
+        
+        <p class="text-white/80 text-[0.95rem] leading-relaxed mb-6 font-['Inter'] transform transition-transform duration-300 group-hover:translate-x-1">Tier 1/2 support, troubleshooting, IT helpdesk &mdash; fast, reliable, and multilingual.</p>
+        
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-4 py-2 bg-[#ceff66]/20 text-[#ceff66] text-xs rounded-full border border-[#ceff66]/30 font-medium backdrop-blur-sm hover:bg-[#ceff66]/30 transition-all duration-300">24/7 helpdesk</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">Multi-lingual</span>
+          <span class="px-4 py-2 bg-white/10 text-white text-xs rounded-full border border-white/20 font-medium backdrop-blur-sm hover:bg-white/20 transition-all duration-300">Tier 1/2 support</span>
+        </div>
+        
+        
       </div>
     </div>
-
   </div>
 
-  <div class="reveal text-center mt-16">
-    <a href="#contact" class="inline-flex items-center gap-2 bg-[#111] text-white rounded-full px-8 py-4 text-sm font-bold hover:bg-[#ceff66] hover:text-[#111] transition-all duration-300 shadow-xl group font-['Inter']">
-      Need a custom solution? <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+  <!-- Enhanced CTA Button -->
+  <div class="reveal text-center mt-20 relative z-10">
+    <a href="#contact" class="group inline-flex items-center gap-4 bg-gradient-to-r from-[#111] to-[#222] text-white rounded-full px-10 py-5 text-base font-bold hover:from-[#ceff66] hover:to-[#a6e62c] hover:text-[#111] transition-all duration-500 shadow-2xl hover:shadow-[0_20px_40px_-10px_rgba(206,255,102,0.5)] transform hover:-translate-y-1 font-['Inter']">
+      <span class="relative">
+        Need a custom solution?
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ceff66] group-hover:w-full transition-all duration-500 group-hover:bg-[#111]"></span>
+      </span>
+      <i class="fas fa-arrow-right text-sm group-hover:translate-x-2 transition-transform duration-300"></i>
     </a>
   </div>
 </section>
