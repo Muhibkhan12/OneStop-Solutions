@@ -394,9 +394,7 @@
     <!-- Full-screen mobile menu -->
     <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
 
-        <button class="menu-close-btn" id="menuClose" aria-label="Close menu">
-            
-        </button>
+        
 
         <!-- big nav links -->
         <nav style="margin-bottom:1rem;">
