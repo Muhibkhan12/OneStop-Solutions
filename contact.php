@@ -26,6 +26,10 @@
       from { transform: rotate(0deg); }
       to   { transform: rotate(-360deg); }
     }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
     .reveal-left  { opacity: 0; transform: translateX(-60px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
@@ -36,6 +40,7 @@
     .d2 { transition-delay: 0.18s; }
     .d3 { transition-delay: 0.28s; }
     .d4 { transition-delay: 0.38s; }
+    .d5 { transition-delay: 0.48s; }
 
     .gradient-text {
       background: linear-gradient(135deg, #fff 0%, #ceff66 100%);
@@ -106,6 +111,37 @@
     }
     #navbar-wrapper.nav-hidden {
       transform: translateY(-100%);
+    }
+
+    /* FAQ Styles */
+    .faq-item {
+      transition: all 0.3s ease;
+    }
+    .faq-item.active {
+      border-color: #ceff66;
+      background: linear-gradient(to right, rgba(206,255,102,0.02), transparent);
+    }
+    .faq-question {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .faq-question:hover {
+      background-color: rgba(206,255,102,0.03);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .faq-answer.show {
+      max-height: 300px;
+    }
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      color: #ceff66;
     }
   </style>
 </head>
@@ -289,6 +325,130 @@
   </div>
 </section>
 
+<!-- ========== MODERN FAQ SECTION ========== -->
+<section class="relative py-20 bg-[#fafafa] overflow-hidden">
+  
+  <!-- Background decoration -->
+  <div class="absolute top-40 left-20 w-64 h-64 bg-[#ceff66]/5 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-40 right-20 w-80 h-80 bg-purple-600/5 rounded-full blur-3xl"></div>
+  
+  <div class="max-w-4xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20 relative z-10">
+    
+    <!-- Section header -->
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-[#ceff66]/10 rounded-full border border-[#ceff66]/20 mb-6">
+        <span class="w-2 h-2 bg-[#ceff66] rounded-full animate-pulse"></span>
+        <span class="text-[#111] text-sm font-medium tracking-wider font-['Inter']">FAQ</span>
+      </div>
+      <h2 class="reveal d1 font-['Space_Grotesk'] text-4xl md:text-5xl font-bold text-[#111] mb-4">
+        Frequently Asked <span class="text-[#ceff66]">Questions</span>
+      </h2>
+      <p class="reveal d2 text-gray-600 text-lg max-w-2xl mx-auto font-['Inter']">
+        Everything you need to know about our services and how we can help your business grow.
+      </p>
+    </div>
+    
+    <!-- FAQ Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+      
+      <!-- Column 1 -->
+      <div class="space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#ceff66]/50 transition-all duration-300 reveal-left">
+          <div class="faq-question p-6 flex justify-between items-center" onclick="toggleFaq(this)">
+            <h3 class="font-['Space_Grotesk'] font-semibold text-lg pr-8">What services do you offer?</h3>
+            <i class="faq-icon fas fa-plus text-[#ceff66] text-xl transition-transform"></i>
+          </div>
+          <div class="faq-answer px-6">
+            <p class="text-gray-600 pb-6 font-['Inter']">
+              We offer a comprehensive range of outsourcing solutions including inbound/outbound calling, lead generation, digital marketing, web development, survey research, winback programs, and technical support.
+            </p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 2 -->
+        <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#ceff66]/50 transition-all duration-300 reveal-left d2">
+          <div class="faq-question p-6 flex justify-between items-center" onclick="toggleFaq(this)">
+            <h3 class="font-['Space_Grotesk'] font-semibold text-lg pr-8">How quickly do you respond to inquiries?</h3>
+            <i class="faq-icon fas fa-plus text-[#ceff66] text-xl transition-transform"></i>
+          </div>
+          <div class="faq-answer px-6">
+            <p class="text-gray-600 pb-6 font-['Inter']">
+              We pride ourselves on responding to all inquiries within 24 hours during business days. For urgent matters, please mention "URGENT" in your message subject line.
+            </p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 3 -->
+        <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#ceff66]/50 transition-all duration-300 reveal-left d3">
+          <div class="faq-question p-6 flex justify-between items-center" onclick="toggleFaq(this)">
+            <h3 class="font-['Space_Grotesk'] font-semibold text-lg pr-8">Do you work with international clients?</h3>
+            <i class="faq-icon fas fa-plus text-[#ceff66] text-xl transition-transform"></i>
+          </div>
+          <div class="faq-answer px-6">
+            <p class="text-gray-600 pb-6 font-['Inter']">
+              Absolutely! We serve clients globally and have extensive experience working with businesses across different time zones and cultures. Our team is equipped to handle international communication seamlessly.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Column 2 -->
+      <div class="space-y-4">
+        <!-- FAQ Item 4 -->
+        <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#ceff66]/50 transition-all duration-300 reveal-right">
+          <div class="faq-question p-6 flex justify-between items-center" onclick="toggleFaq(this)">
+            <h3 class="font-['Space_Grotesk'] font-semibold text-lg pr-8">What is your pricing model?</h3>
+            <i class="faq-icon fas fa-plus text-[#ceff66] text-xl transition-transform"></i>
+          </div>
+          <div class="faq-answer px-6">
+            <p class="text-gray-600 pb-6 font-['Inter']">
+              We offer flexible pricing models including per-hour, per-project, and dedicated team options. Contact us for a customized quote based on your specific requirements.
+            </p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 5 -->
+        <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#ceff66]/50 transition-all duration-300 reveal-right d2">
+          <div class="faq-question p-6 flex justify-between items-center" onclick="toggleFaq(this)">
+            <h3 class="font-['Space_Grotesk'] font-semibold text-lg pr-8">How do you ensure data security?</h3>
+            <i class="faq-icon fas fa-plus text-[#ceff66] text-xl transition-transform"></i>
+          </div>
+          <div class="faq-answer px-6">
+            <p class="text-gray-600 pb-6 font-['Inter']">
+              We follow industry-standard security protocols including encrypted communications, secure servers, and strict NDAs. All team members undergo regular security training.
+            </p>
+          </div>
+        </div>
+        
+        <!-- FAQ Item 6 -->
+        <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#ceff66]/50 transition-all duration-300 reveal-right d3">
+          <div class="faq-question p-6 flex justify-between items-center" onclick="toggleFaq(this)">
+            <h3 class="font-['Space_Grotesk'] font-semibold text-lg pr-8">Can I start with a trial project?</h3>
+            <i class="faq-icon fas fa-plus text-[#ceff66] text-xl transition-transform"></i>
+          </div>
+          <div class="faq-answer px-6">
+            <p class="text-gray-600 pb-6 font-['Inter']">
+              Yes! We offer a flexible trial period to help you evaluate our services and ensure we're the right fit for your business needs before committing to a long-term engagement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Still have questions? -->
+    <div class="reveal d4 mt-16 text-center">
+      <div class="inline-flex items-center gap-4 bg-white px-8 py-4 rounded-full shadow-lg border border-gray-100">
+        <span class="text-gray-600 font-['Inter']">Still have questions?</span>
+        <a href="#" class="inline-flex items-center gap-2 bg-[#ceff66] text-black px-6 py-2 rounded-full font-semibold hover:scale-105 transition-transform">
+          Contact Support
+          <i class="fas fa-arrow-right text-sm"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== CTA SECTION ========== -->
 <section class="relative py-20 bg-[#111]">
   <div class="max-w-4xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20 text-center">
@@ -349,6 +509,32 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach(el => revealObs.observe(el));
+  
+  // ── FAQ Toggle Function ─────────────────────────────────────────────────
+  window.toggleFaq = function(element) {
+    const faqItem = element.closest('.faq-item');
+    const answer = faqItem.querySelector('.faq-answer');
+    const icon = element.querySelector('.faq-icon');
+    
+    // Close other FAQs
+    document.querySelectorAll('.faq-item').forEach(item => {
+      if (item !== faqItem && item.classList.contains('active')) {
+        item.classList.remove('active');
+        item.querySelector('.faq-answer').classList.remove('show');
+        item.querySelector('.faq-icon').className = 'faq-icon fas fa-plus text-[#ceff66] text-xl transition-transform';
+      }
+    });
+    
+    // Toggle current
+    faqItem.classList.toggle('active');
+    answer.classList.toggle('show');
+    
+    if (answer.classList.contains('show')) {
+      icon.className = 'faq-icon fas fa-times text-[#ceff66] text-xl transition-transform';
+    } else {
+      icon.className = 'faq-icon fas fa-plus text-[#ceff66] text-xl transition-transform';
+    }
+  };
 </script>
 
 </body>

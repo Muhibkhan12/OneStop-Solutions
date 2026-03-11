@@ -498,7 +498,7 @@
         
         <!-- Social - darker theme - ENHANCED with better hover -->
         <div class="flex gap-4">
-          <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-white/40 hover:text-[#ceff66] hover:border-[#ceff66] hover:bg-[#ceff66]/10 hover:scale-125 hover:rotate-12 transition-all duration-300">
+          <a href="https://www.linkedin.com/company/onestopsolutions/" class="w-10 h-10 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-white/40 hover:text-[#ceff66] hover:border-[#ceff66] hover:bg-[#ceff66]/10 hover:scale-125 hover:rotate-12 transition-all duration-300">
             <i class="fab fa-linkedin-in text-sm"></i>
           </a>
           <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-white/40 hover:text-[#ceff66] hover:border-[#ceff66] hover:bg-[#ceff66]/10 hover:scale-125 hover:rotate-12 transition-all duration-300">
