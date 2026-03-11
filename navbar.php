@@ -414,7 +414,7 @@
         <div class="mob-footer">
             <span class="mob-footer-tag">OneStop Solutions</span>
             <div class="mob-social">
-                <a href="#" aria-label="LinkedIn">  <i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/company/onestopsolutions/" aria-label="LinkedIn">  <i class="fab fa-linkedin-in"></i></a>
                 <a href="#" aria-label="Facebook">  <i class="fab fa-facebook-f"></i></a>
                 <a href="#" aria-label="Instagram"> <i class="fab fa-instagram"></i></a>
             </div>
