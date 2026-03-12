@@ -838,7 +838,7 @@
                 <div class="testimonial-card relative">
                   <i class="fa-solid fa-asterisk text-3xl font-bold text-lime-300 opacity-40 absolute top-5 right-5" aria-hidden="true"></i>
                   <blockquote itemprop="reviewBody">
-                    <p class="text-base sm:text-lg md:text-xl leading-relaxed relative z-10 font-['Inter']">"From ticketing to technical support &mdash; they cover everything. We scaled our BPO operations without scaling headcount."</p>
+                    <p class="text-base sm:text-lg md:text-xl leading-relaxed relative z-10 font-['Inter']">"From ticketing to technical support - they cover everything. We scaled our BPO operations without scaling headcount."</p>
                   </blockquote>
                   <div class="flex items-center gap-2 mt-6">
                     <span class="text-lime-400 text-sm" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
