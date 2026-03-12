@@ -150,7 +150,7 @@
       Outsource <span class="text-[#ceff66]">Smarter</span>
     </h1>
     <p class="reveal d2 text-white/70 text-xl max-w-2xl mx-auto font-['Inter']">
-      7+ years of excellence, 60% average cost savings, and 24/7 dedicated support.
+      12+ years of excellence, 60% average cost savings, and 24/7 dedicated support.
     </p>
   </div>
 
@@ -164,7 +164,7 @@
   <div class="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
       <div class="reveal-left">
-        <span class="text-[#ceff66] text-sm font-semibold tracking-[0.3em] uppercase mb-6 block font-['Inter']">7+ years of excellence</span>
+        <span class="text-[#ceff66] text-sm font-semibold tracking-[0.3em] uppercase mb-6 block font-['Inter']">12+ years of excellence</span>
         <h2 class="font-['Space_Grotesk'] text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-[-0.02em] text-[#111] mb-8">
           Telemarketing &<br>
           <span class="text-[#ceff66]">BPO specialists</span><br>
@@ -216,7 +216,7 @@
             </div>
             <div class="relative overflow-hidden rounded-3xl aspect-square bg-[#ceff66] flex items-center justify-center group hover:scale-105 transition-transform">
               <div class="text-center">
-                <div class="text-5xl font-bold text-black mb-2 font-['Space_Grotesk']">7+</div>
+                <div class="text-5xl font-bold text-black mb-2 font-['Space_Grotesk']">12+</div>
                 <div class="text-sm text-black/60 font-['Inter']">Years Strong</div>
               </div>
             </div>
