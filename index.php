@@ -405,54 +405,35 @@
   <!-- ════════════════════════════════════════
        HERO — primary H1, above the fold
   ════════════════════════════════════════ -->
-  <section
-    aria-label="One Stop Solutions – BPO and Contact Centre in Karachi"
-    class="relative w-full min-h-screen flex flex-col bg-neutral-900 pt-16 md:pt-0"
-    itemscope itemtype="https://schema.org/WPHeader">
-
-    <div class="absolute inset-0 overflow-hidden">
-      <!-- fetchpriority=high + explicit dimensions for LCP image -->
-      <img
-        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2940&auto=format&fit=crop"
-        alt="One Stop Solutions contact centre agents working in Karachi office"
-        class="w-full h-full object-cover object-[center_30%]"
-        fetchpriority="high"
-        width="2940" height="1960"
-        decoding="async">
-      <div class="absolute inset-0 hero-overlay" aria-hidden="true"></div>
-    </div>
-
-    <div class="relative z-20 flex-1 flex flex-col justify-center px-5 pt-8 pb-4 md:px-12 lg:px-20">
-      <div class="max-w-3xl">
-        <p class="reveal text-xs sm:text-sm font-medium tracking-[0.22em] uppercase mb-5 text-[#ceff66] font-['Inter']">
-          BPO &bull; Contact Centre &bull; Digital Marketing
-        </p>
-
-        <!-- THE ONE TRUE H1 — keyword-rich, concise -->
-        <h1 class="reveal d1 text-white font-['Space_Grotesk'] font-bold tracking-[-0.025em] leading-[1.08]"
-            style="font-size:clamp(2.2rem,7vw,5.2rem)">
-          BPO &amp; Contact Centre<br>Services that build real loyalty.
-        </h1>
-
-        <p class="reveal d2 text-white/65 text-sm sm:text-base md:text-lg mt-5 md:mt-8 max-w-md leading-relaxed font-['Inter']">
-          Founded in 2014, Karachi &mdash; One Stop Solutions combines people, process &amp; technology to deliver customized BPO, contact centre &amp; digital marketing solutions to domestic and global clients.
-        </p>
-
-        <div class="reveal d3 mt-7 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-          <a href="contact.php"
-             class="btn-primary inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold text-neutral-900 shadow-xl"
-             title="Contact One Stop Solutions">
-            Let's connect <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i>
-          </a>
-          <a href="contact.php"
-             class="inline-flex items-center justify-center gap-2 border border-white/25 rounded-full px-7 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-all font-['Inter']"
-             title="24/7 contact centre support">
-            24/7 support <i class="fas fa-headset text-xs" aria-hidden="true"></i>
-          </a>
-        </div>
+<div class="relative w-full min-h-screen flex flex-col bg-neutral-900 pt-16 md:pt-0">
+  <div class="absolute inset-0 overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2940&auto=format&fit=crop"
+         alt="Contact centre team"
+         class="w-full h-full object-cover object-[center_30%]">
+    <div class="absolute inset-0 hero-overlay"></div>
+  </div>
+  <div class="relative z-20 flex-1 flex flex-col justify-center px-5 pt-8 pb-4 md:px-12 lg:px-20">
+    <div class="max-w-3xl">
+      <p class="reveal text-xs sm:text-sm font-medium tracking-[0.22em] uppercase mb-5 text-[#ceff66] font-['Inter']">BPO &bull; Contact Centre &bull; Digital Marketing</p>
+      <h1 class="reveal d1 text-white font-['Space_Grotesk'] font-bold tracking-[-0.025em] leading-[1.08]"
+          style="font-size:clamp(2.2rem,7vw,5.2rem)"> <!-- FIX: fluid hero title -->
+        Outsourcing that<br>builds real loyalty.
+      </h1>
+      <p class="reveal d2 text-white/65 text-sm sm:text-base md:text-lg mt-5 md:mt-8 max-w-md leading-relaxed font-['Inter']">
+        Founded 2014, Karachi &mdash; we combine people, process &amp; technology to deliver customized BPO, contact centre &amp; marketing solutions worldwide.
+      </p>
+      <!-- FIX: flex-col on tiny screens, flex-row on sm+ -->
+      <div class="reveal d3 mt-7 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+        <a href="contact.php" class="btn-primary inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold text-neutral-900 shadow-xl">
+          Let's connect <i class="fas fa-arrow-right text-sm"></i>
+        </a>
+        <a href="#" class="inline-flex items-center justify-center gap-2 border border-white/25 rounded-full px-7 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-all font-['Inter']">
+          24/7 support <i class="fas fa-headset text-xs"></i>
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
   <!-- ════════════════════════════════════════
        ABOUT — Who We Are
