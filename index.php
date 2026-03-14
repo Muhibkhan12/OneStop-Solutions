@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <!-- ═══════════════════════════════════════════════
        PRIMARY SEO META
   ═══════════════════════════════════════════════ -->
@@ -427,7 +426,7 @@
         <a href="contact.php" class="btn-primary inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold text-neutral-900 shadow-xl">
           Let's connect <i class="fas fa-arrow-right text-sm"></i>
         </a>
-        <a href="#" class="inline-flex items-center justify-center gap-2 border border-white/25 rounded-full px-7 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-all font-['Inter']">
+        <a href="contact.php" class="inline-flex items-center justify-center gap-2 border border-white/25 rounded-full px-7 py-3.5 text-base font-medium text-white hover:bg-white/10 transition-all font-['Inter']">
           24/7 support <i class="fas fa-headset text-xs"></i>
         </a>
       </div>
