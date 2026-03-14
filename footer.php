@@ -553,7 +553,7 @@
           </div>
           <div>
             <span class="text-xs text-white/40 block">Email</span>
-            <span class="text-sm text-white/80 group-hover:text-white transition-colors duration-300 font-['Inter']">example@gmail.com</span>
+            <span class="text-sm text-white/80 group-hover:text-white transition-colors duration-300 font-['Inter']">onestopsolutions@gmail.com</span>
           </div>
         </div>
         <div class="flex items-center gap-3 group p-3 rounded-lg hover:bg-white/5 transition-all duration-300">
