@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
             --lime: #ceff66;
@@ -31,11 +31,11 @@
             100% { background-position: 0 0, 0 0, 200% 0; }
         }
 
-        .animate-pulse-slow { animation: pulse-slow 4s ease-in-out infinite; }
-        .animate-pulse-slower { animation: pulse-slower 6s ease-in-out infinite; }
-        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-pulse-slow  { animation: pulse-slow   4s ease-in-out infinite; }
+        .animate-pulse-slower{ animation: pulse-slower  6s ease-in-out infinite; }
+        .animate-float       { animation: float         6s ease-in-out infinite; }
 
-        /* ── Contact items: stack icon + text nicely on all screens ── */
+        /* Contact items */
         .contact-item {
             display: flex;
             align-items: flex-start;
@@ -46,12 +46,14 @@
         }
         .contact-item:hover { background: rgba(255,255,255,0.05); }
 
+        /* Icon circle — lime-tinted so it's visible on black */
         .contact-icon {
             width: 2.5rem;
             height: 2.5rem;
             flex-shrink: 0;
             border-radius: 50%;
-            background: rgba(255,255,255,0.05);
+            background: rgba(206,255,102,0.08);
+            border: 1px solid rgba(206,255,102,0.25);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -59,10 +61,11 @@
         }
         .contact-item:hover .contact-icon {
             background: rgba(206,255,102,0.2);
+            border-color: rgba(206,255,102,0.5);
             transform: scale(1.1) rotate(6deg);
         }
 
-        /* ── CTA button ── */
+        /* CTA button */
         .cta-btn {
             position: relative;
             display: inline-flex;
@@ -86,12 +89,22 @@
             transition: background 0.3s;
         }
         .cta-btn:hover::before { background: rgba(206,255,102,0.1); }
-        .cta-btn span { position: relative; color: rgba(255,255,255,0.9); font-weight: 600; font-size: 0.875rem; transition: color 0.3s; }
+        .cta-btn span {
+            position: relative;
+            color: rgba(255,255,255,0.9);
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
         .cta-btn:hover span { color: #ceff66; }
-        .cta-btn i { position: relative; color: #ceff66; transition: transform 0.3s; }
+        .cta-btn i {
+            position: relative;
+            color: #ceff66;
+            transition: transform 0.3s;
+        }
         .cta-btn:hover i { transform: translateX(4px); }
 
-        /* ── Nav link ── */
+        /* Footer nav links */
         .footer-link {
             font-size: 0.875rem;
             color: rgba(255,255,255,0.7);
@@ -102,7 +115,7 @@
         }
         .footer-link:hover { color: #ceff66; transform: translateX(4px); }
 
-        /* ── Section heading underline ── */
+        /* Section heading */
         .section-heading {
             font-size: 0.75rem;
             text-transform: uppercase;
@@ -113,6 +126,7 @@
             position: relative;
             display: inline-block;
             margin-bottom: 1rem;
+            cursor: default;
         }
         .section-heading::after {
             content: '';
@@ -124,14 +138,14 @@
         }
         .section-heading:hover::after { width: 100%; }
 
-        /* ── Social icon ── */
+        /* Social icons — visible on black */
         .social-icon {
             width: 2.5rem; height: 2.5rem;
             border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
             display: flex; align-items: center; justify-content: center;
-            color: rgba(255,255,255,0.4);
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
             font-size: 0.875rem;
             transition: all 0.3s;
@@ -143,7 +157,7 @@
             transform: scale(1.25) rotate(12deg);
         }
 
-        /* ── Bottom bar ── */
+        /* Bottom bar */
         .footer-bottom {
             padding-top: 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -154,7 +168,7 @@
             justify-content: space-between;
         }
 
-        /* ── RESPONSIVE: contact grid ── */
+        /* RESPONSIVE: contact grid */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -167,7 +181,7 @@
             .contact-grid { grid-template-columns: 1fr 1fr 1fr; }
         }
 
-        /* ── RESPONSIVE: middle row (contact + CTA) ── */
+        /* RESPONSIVE: middle row */
         .middle-row {
             display: flex;
             flex-direction: column;
@@ -182,7 +196,7 @@
             }
         }
 
-        /* ── RESPONSIVE: top section grid ── */
+        /* RESPONSIVE: top section grid */
         .top-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -197,7 +211,7 @@
             .top-grid { grid-template-columns: 2fr 0.1fr 1.5fr; gap: 2rem; }
         }
 
-        /* ── Links grid ── */
+        /* Links grid */
         .links-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -214,8 +228,8 @@
         <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_rgba(206,255,102,0.05),_transparent_70%)] animate-pulse-slow"></div>
         <div class="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_rgba(139,92,246,0.05),_transparent_70%)] animate-pulse-slower"></div>
         <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(to right, #ceff66 1px, transparent 1px), linear-gradient(to bottom, #ceff66 1px, transparent 1px); background-size: 40px 40px;"></div>
-        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-[rgba(206,255,102,0.05)] rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[rgba(139,92,246,0.05)] rounded-full blur-3xl animate-float" style="animation-delay:-2s;"></div>
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full blur-3xl animate-float" style="background: rgba(206,255,102,0.05);"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl animate-float" style="background: rgba(139,92,246,0.05); animation-delay: -2s;"></div>
         <div class="absolute inset-0 bg-black/40"></div>
     </div>
 
@@ -238,7 +252,7 @@
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                     <a href="https://www.facebook.com/OSSolutioners/" class="social-icon">
-                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-facebook text-dark"></i>
                     </a>
                 </div>
             </div>
@@ -277,7 +291,7 @@
                 <!-- Email -->
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <i class="fas fa-envelope text-[#ceff66] text-sm"></i>
+                        <i class="fas fa-envelope" style="color: #ceff66; font-size: 0.875rem;"></i>
                     </div>
                     <div class="min-w-0">
                         <span class="text-xs text-white/40 block">Email</span>
@@ -289,7 +303,7 @@
                 <!-- Phone -->
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <i class="fas fa-phone text-[#ceff66] text-sm"></i>
+                        <i class="fas fa-phone" style="color: #ceff66; font-size: 0.875rem;"></i>
                     </div>
                     <div class="min-w-0">
                         <span class="text-xs text-white/40 block">Phone</span>
@@ -300,7 +314,7 @@
                 <!-- Address -->
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt text-[#ceff66] text-sm"></i>
+                        <i class="fas fa-map-marker-alt" style="color: #ceff66; font-size: 0.875rem;"></i>
                     </div>
                     <div class="min-w-0">
                         <span class="text-xs text-white/40 block">Office</span>
@@ -327,8 +341,8 @@
                 &copy; 2025 One Stop Solutions. All rights reserved.
             </p>
             <div class="flex gap-4 flex-wrap">
-                <a href="#" class="text-xs text-white/30 hover:text-white/60 font-['Inter'] transition-colors">Privacy Policy</a>
-                <a href="#" class="text-xs text-white/30 hover:text-white/60 font-['Inter'] transition-colors">Terms of Service</a>
+                <a href="#" class="text-xs text-white/30 hover:text-white/60 font-['Inter'] transition-colors duration-200">Privacy Policy</a>
+                <a href="#" class="text-xs text-white/30 hover:text-white/60 font-['Inter'] transition-colors duration-200">Terms of Service</a>
             </div>
         </div>
 
