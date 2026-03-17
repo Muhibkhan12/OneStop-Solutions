@@ -545,46 +545,47 @@
 
     <!-- Middle section with contact and CTA - ENHANCED with better layout -->
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 py-12">
-      <!-- Contact info - darker theme - ENHANCED with better organization -->
-      <div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div class="flex items-center gap-3 group p-3 rounded-lg hover:bg-white/5 transition-all duration-300">
-          <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#ceff66]/20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-            <i class="fas fa-envelope text-[#ceff66] text-sm group-hover:scale-110 transition-transform duration-300"></i>
-          </div>
-          <div>
-            <span class="text-xs text-white/40 block">Email</span>
-            <span class="text-sm text-white/80 group-hover:text-white transition-colors duration-300 font-['Inter']">onestopsolutions@gmail.com</span>
-          </div>
-        </div>
-        <div class="flex items-center gap-3 group p-3 rounded-lg hover:bg-white/5 transition-all duration-300">
-          <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#ceff66]/20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-            <i class="fas fa-phone text-[#ceff66] text-sm group-hover:scale-110 transition-transform duration-300"></i>
-          </div>
-          <div>
-            <span class="text-xs text-white/40 block">Phone</span>
-            <span class="text-sm text-white/80 group-hover:text-white transition-colors duration-300 font-['Inter']">0336 1369929</span>
-          </div>
-        </div>
-        <div class="flex items-center gap-3 group p-3 rounded-lg hover:bg-white/5 transition-all duration-300">
-          <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#ceff66]/20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-            <i class="fas fa-map-marker-alt text-[#ceff66] text-sm group-hover:scale-110 transition-transform duration-300"></i>
-          </div>
-          <div>
-            <span class="text-xs text-white/40 block">Office</span>
-            <span class="text-sm text-white/80 group-hover:text-white transition-colors duration-300 max-w-xs font-['Inter']">Suite#116, 1st Floor, Park Avenue, Shahra-e-Faisal, P.E.C.H.S Block 2 Block 6 PECHS, Karachi, 75400</span>
-          </div>
-        </div>
+  <!-- Contact info -->
+  <div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div class="flex items-center gap-3 group p-3 rounded-lg hover:bg-white/5 transition-all duration-300">
+      <div class="w-10 h-10 flex-shrink-0 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#ceff66]/20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+        <i class="fas fa-envelope text-[#ceff66] text-sm group-hover:scale-110 transition-transform duration-300"></i>
       </div>
-      
-      <!-- CTA Button - NEW but keeps the spirit -->
-      <div class="lg:col-span-2 flex items-center justify-end">
-        <a href="contact.php" class="group relative inline-flex items-center gap-2 px-6 py-3 bg-[#ceff66]/10 border border-[#ceff66]/30 rounded-lg overflow-hidden hover:border-[#ceff66] transition-all duration-300">
-          <span class="absolute inset-0 bg-[#ceff66]/0 group-hover:bg-[#ceff66]/10 transition-all duration-300"></span>
-          <span class="relative text-white/90 group-hover:text-[#ceff66] font-semibold text-sm">Let's work together</span>
-          <i class="fas fa-arrow-right relative text-[#ceff66] group-hover:translate-x-1 transition-transform duration-300"></i>
-        </a>
+      <div>
+        <span class="text-xs text-white/40 block">Email</span>
+        <span class="text-sm text-white/80 group-hover:text-white transition-colors duration-300 font-['Inter']">info@onestopsolutions.com</span>
+        <span class="text-sm text-white/80 group-hover:text-white transition-colors duration-300 font-['Inter']">hr@onestopsolutions.com</span>
       </div>
     </div>
+    <div class="flex items-center gap-3 group p-3 rounded-lg hover:bg-white/5 transition-all duration-300">
+      <div class="w-10 h-10 flex-shrink-0 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#ceff66]/20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+        <i class="fas fa-phone text-[#ceff66] text-sm group-hover:scale-110 transition-transform duration-300"></i>
+      </div>
+      <div>
+        <span class="text-xs text-white/40 block">Phone</span>
+        <span class="text-sm text-white/80 group-hover:text-white transition-colors duration-300 font-['Inter']">0336 1369929</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 group p-3 rounded-lg hover:bg-white/5 transition-all duration-300">
+      <div class="w-10 h-10 flex-shrink-0 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#ceff66]/20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+        <i class="fas fa-map-marker-alt text-[#ceff66] text-sm group-hover:scale-110 transition-transform duration-300"></i>
+      </div>
+      <div>
+        <span class="text-xs text-white/40 block">Office</span>
+        <span class="text-sm text-white/80 group-hover:text-white transition-colors duration-300 max-w-xs font-['Inter']">Suite#116, 1st Floor, Park Avenue, Shahra-e-Faisal, P.E.C.H.S Block 2 Block 6 PECHS, Karachi, 75400</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Button -->
+  <div class="lg:col-span-2 flex items-center justify-end">
+    <a href="contact.php" class="group relative inline-flex items-center gap-2 px-6 py-3 bg-[#ceff66]/10 border border-[#ceff66]/30 rounded-lg overflow-hidden hover:border-[#ceff66] transition-all duration-300">
+      <span class="absolute inset-0 bg-[#ceff66]/0 group-hover:bg-[#ceff66]/10 transition-all duration-300"></span>
+      <span class="relative text-white/90 group-hover:text-[#ceff66] font-semibold text-sm">Let's work together</span>
+      <i class="fas fa-arrow-right relative text-[#ceff66] group-hover:translate-x-1 transition-transform duration-300"></i>
+    </a>
+  </div>
+</div>
   </div>
 </footer>
 
