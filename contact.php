@@ -340,12 +340,30 @@
                 <i class="fas fa-phone-alt text-[#111] text-lg mt-1 flex-shrink-0"></i>
                 <h4 class="font-['Space_Grotesk'] font-semibold text-[#111] text-base sm:text-lg">Contact</h4>
               </div>
-              <div class="pl-8 font-['Inter'] text-sm sm:text-base">
-                <p class="text-[#111] opacity-80">Phone: 0336 1369929</p>
-                <p class="text-[#111] opacity-80">
-                  Email: <a href="mailto:example@gmail.com" class="hover:underline break-all">example@gmail.com</a>
-                </p>
-              </div>
+              <div class="pl-8 font-['Inter'] text-sm sm:text-base space-y-3">
+  
+  <!-- Phone -->
+  <div>
+    <p class="text-[#111] font-semibold">Phone</p>
+    <a href="tel:03361369929" class="text-[#111] opacity-80 hover:underline">
+      0336 1369929
+    </a>
+  </div>
+
+  <!-- Email -->
+  <div>
+    <p class="text-[#111] font-semibold">Email</p>
+    <div class="flex flex-col space-y-1">
+      <a href="mailto:info@onestopsolutions.com" class="text-[#111] opacity-80 hover:underline break-all">
+        info@onestopsolutions.com
+      </a>
+      <a href="mailto:hr@onestopsolutions.com" class="text-[#111] opacity-80 hover:underline break-all">
+        hr@onestopsolutions.com
+      </a>
+    </div>
+  </div>
+
+</div>
             </div>
 
             <!-- Open Time -->

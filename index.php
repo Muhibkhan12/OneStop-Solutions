@@ -787,13 +787,6 @@
             A global logistics firm reduced churn by 34% after implementing our winback and quality survey programs.
           </p>
           <div class="mt-7 flex items-center gap-4" itemscope itemtype="https://schema.org/Person">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden grayscale flex-shrink-0">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
-                   alt="Ahmed Raza, COO at TransWorld Logistics"
-                   class="w-full h-full object-cover"
-                   width="80" height="80"
-                   loading="lazy" decoding="async">
-            </div>
             <div>
               <p class="font-semibold font-['Space_Grotesk'] text-sm sm:text-base" itemprop="name">Ahmed Raza</p>
               <p class="text-xs sm:text-sm text-gray-400 font-['Inter']" itemprop="jobTitle">COO, TransWorld Logistics</p>

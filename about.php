@@ -584,12 +584,6 @@
           </p>
         </blockquote>
         <div class="inline-flex items-center gap-3 mt-6" itemscope itemtype="https://schema.org/Person">
-          <div class="w-9 h-9 rounded-full overflow-hidden bg-[#333]">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop"
-                 alt="Founder and CEO of One Stop Solutions Karachi"
-                 class="w-full h-full object-cover grayscale"
-                 width="80" height="80" loading="lazy" decoding="async">
-          </div>
           <span class="text-sm text-white/45 font-['Inter']" itemprop="jobTitle">&mdash; Founder &amp; CEO, One Stop Solutions</span>
         </div>
       </div>
