@@ -572,7 +572,7 @@
       </div>
       <div>
         <span class="text-xs text-white/40 block">Office</span>
-        <span class="text-sm text-white/80 group-hover:text-white transition-colors duration-300 max-w-xs font-['Inter']">Suite#116, 1st Floor, Park Avenue, Shahra-e-Faisal, P.E.C.H.S Block 2 Block 6 PECHS, Karachi, 75400</span>
+        <span class="text-sm text-white/80 group-hover:text-white transition-colors duration-300 max-w-xs font-['Inter']">Suite# 111 & 116, 1st Floor, Park Avenue,  P.E.C.H.S, Block 6 , Shahra-e-Faisal, Karachi, 75400</span>
       </div>
     </div>
   </div>
