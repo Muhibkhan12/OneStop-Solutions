@@ -1,3 +1,4 @@
+<?php /* Formspree handles all emails — no PHP needed */ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,119 +13,55 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0px);
-      }
-
-      50% {
-        transform: translateY(-10px);
-      }
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-10px); }
     }
-
     @keyframes pulse-glow {
-
-      0%,
-      100% {
-        opacity: 0.3;
-        filter: blur(40px);
-      }
-
-      50% {
-        opacity: 0.6;
-        filter: blur(60px);
-      }
+      0%, 100% { opacity: 0.3; filter: blur(40px); }
+      50%       { opacity: 0.6; filter: blur(60px); }
     }
-
     @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     /* ── REVEAL ANIMATIONS ── */
     .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1);
     }
-
     .reveal-left {
-      opacity: 0;
-      transform: translateX(-40px);
-      /* FIX: reduced from 60px — prevents horizontal scroll on mobile */
-      transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      opacity: 0; transform: translateX(-40px);
+      transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1);
     }
-
     .reveal-right {
-      opacity: 0;
-      transform: translateX(40px);
-      /* FIX: reduced from 60px */
-      transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      opacity: 0; transform: translateX(40px);
+      transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1);
     }
-
-    .reveal.visible,
-    .reveal-left.visible,
-    .reveal-right.visible {
-      opacity: 1;
-      transform: translate(0);
+    .reveal.visible, .reveal-left.visible, .reveal-right.visible {
+      opacity: 1; transform: translate(0);
     }
-
-    .d1 {
-      transition-delay: 0.08s;
-    }
-
-    .d2 {
-      transition-delay: 0.18s;
-    }
-
-    .d3 {
-      transition-delay: 0.28s;
-    }
-
-    .d4 {
-      transition-delay: 0.38s;
-    }
-
-    .d5 {
-      transition-delay: 0.48s;
-    }
+    .d1 { transition-delay: 0.08s; }
+    .d2 { transition-delay: 0.18s; }
+    .d3 { transition-delay: 0.28s; }
+    .d4 { transition-delay: 0.38s; }
+    .d5 { transition-delay: 0.48s; }
 
     /* ── BASE ── */
-    body {
-      font-family: 'Inter', sans-serif;
-    }
+    body { font-family: 'Inter', sans-serif; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Space Grotesk', sans-serif; }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: 'Space Grotesk', sans-serif;
-    }
-
-    /* ── NAVBAR HIDE-ON-SCROLL ── */
+    /* ── NAVBAR ── */
     #navbar-wrapper {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
       will-change: transform;
     }
-
-    #navbar-wrapper.nav-hidden {
-      transform: translateY(-100%);
-    }
+    #navbar-wrapper.nav-hidden { transform: translateY(-100%); }
 
     /* ── CONTACT FORM INPUTS ── */
     .contact-input {
@@ -134,19 +71,20 @@
       font-family: 'Inter', sans-serif;
       width: 100%;
     }
-
     .contact-input:focus {
       border-color: #ceff66;
-      box-shadow: 0 0 0 4px rgba(206, 255, 102, 0.1);
+      box-shadow: 0 0 0 4px rgba(206,255,102,0.1);
       outline: none;
       background-color: white;
     }
-
-    /* ── SOCIAL ICONS ── */
-    .social-icon {
-      transition: all 0.2s ease;
+    /* invalid state */
+    .contact-input.invalid {
+      border-color: #ef4444;
+      box-shadow: 0 0 0 4px rgba(239,68,68,0.1);
     }
 
+    /* ── SOCIAL ICONS ── */
+    .social-icon { transition: all 0.2s ease; }
     .social-icon:hover {
       background-color: #111 !important;
       color: #ceff66 !important;
@@ -154,156 +92,74 @@
     }
 
     /* ── SELECT DROPDOWN ── */
-    select option {
-      background-color: #0a0a0a;
-      color: white;
-    }
+    select option { background-color: #0a0a0a; color: white; }
 
     /* ── FAQ STYLES ── */
-    .faq-item {
-      transition: all 0.3s ease;
-    }
-
+    .faq-item { transition: all 0.3s ease; }
     .faq-item.active {
       border-color: #ceff66;
-      background: linear-gradient(to right, rgba(206, 255, 102, 0.02), transparent);
+      background: linear-gradient(to right, rgba(206,255,102,0.02), transparent);
     }
-
-    .faq-question {
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .faq-question:hover {
-      background-color: rgba(206, 255, 102, 0.03);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .faq-answer.show {
-      max-height: 300px;
-    }
-
-    .faq-icon {
-      transition: transform 0.3s ease;
-      flex-shrink: 0;
-    }
-
-    /* FIX: prevent icon shrinking */
+    .faq-question { cursor: pointer; transition: all 0.3s ease; }
+    .faq-question:hover { background-color: rgba(206,255,102,0.03); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1); }
+    .faq-answer.show { max-height: 300px; }
+    .faq-icon { transition: transform 0.3s ease; flex-shrink: 0; }
 
     /* ── HERO RESPONSIVE TEXT ── */
     .hero-title {
       font-size: clamp(3rem, 10vw, 9rem);
-      /* FIX: fluid type scale replaces fixed breakpoints */
       line-height: 1.05;
       letter-spacing: -0.03em;
     }
 
-    /* ── INFO CARD RESPONSIVE ── */
-    .info-card-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
     /* ── SOCIAL ROW WRAP ── */
-    .social-row {
-      display: flex;
-      flex-wrap: wrap;
-      /* FIX: wrap icons on small screens */
-      gap: 0.6rem;
-    }
+    .social-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
 
-    /* ── SUBMIT BUTTON: full width on mobile ── */
+    /* ── SUBMIT BUTTON ── */
     .submit-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      background: #ceff66;
-      color: black;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 1rem 2rem;
-      border-radius: 9999px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      /* FIX: full width on mobile */
-      justify-content: center;
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      background: #ceff66; color: black; font-weight: 600; font-size: 1rem;
+      padding: 1rem 2rem; border-radius: 9999px; border: none; cursor: pointer;
+      transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 100%; justify-content: center;
     }
-
     @media (min-width: 640px) {
-      .submit-btn {
-        width: auto;
-        /* restore auto on tablet+ */
-        justify-content: flex-start;
-      }
+      .submit-btn { width: auto; justify-content: flex-start; }
     }
+    .submit-btn:hover { transform: scale(1.03); box-shadow: 0 20px 30px -10px rgba(206,255,102,0.5); }
+    .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 
-    .submit-btn:hover {
-      transform: scale(1.03);
-      box-shadow: 0 20px 30px -10px rgba(206, 255, 102, 0.5);
-    }
-
-    /* ── CONTACT INFO CARD PADDING ── */
+    /* ── CONTACT INFO CARD ── */
     .contact-info-card {
-      background: #ceff66;
-      border-radius: 2.5rem;
-      /* FIX: reduced from 40px to rem so it scales */
+      background: #ceff66; border-radius: 2.5rem;
       padding: 2rem 1.75rem;
-      /* FIX: tighter on mobile */
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-      position: relative;
-      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+      position: relative; overflow: hidden;
     }
+    @media (min-width: 640px)  { .contact-info-card { padding: 2.5rem 3rem; } }
+    @media (min-width: 768px)  { .contact-info-card { padding: 3rem 3.5rem; } }
 
-    @media (min-width: 640px) {
-      .contact-info-card {
-        padding: 2.5rem 3rem;
-      }
-    }
+    /* ── SECTION HEADINGS ── */
+    .section-heading-lg { font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.1; }
+    .section-heading-xl { font-size: clamp(2rem, 5vw, 3rem);    line-height: 1.1; }
+    .cta-heading        { font-size: clamp(1.75rem, 5vw, 3rem); line-height: 1.15; }
 
-    @media (min-width: 768px) {
-      .contact-info-card {
-        padding: 3rem 3.5rem;
-      }
-    }
+    /* ── FAQ QUESTION ── */
+    .faq-question h3 { font-size: clamp(0.9rem, 2.5vw, 1.1rem); line-height: 1.35; }
 
-    /* ── FAQ QUESTION: prevent text overflow ── */
-    .faq-question h3 {
-      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-      /* FIX: fluid, prevent overflow */
-      line-height: 1.35;
+    /* ── TOAST / ALERT ── */
+    .alert-box {
+      animation: fadeInDown 0.4s ease forwards;
+      border-radius: 12px; padding: 14px 20px;
+      display: flex; align-items: flex-start; gap: 12px;
+      font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.5;
     }
+    .alert-success { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+    .alert-error   { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
 
-    /* ── SECTION HEADING FLUID ── */
-    .section-heading-lg {
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      line-height: 1.1;
-    }
-
-    .section-heading-xl {
-      font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.1;
-    }
-
-    /* ── CTA SECTION HEADING ── */
-    .cta-heading {
-      font-size: clamp(1.75rem, 5vw, 3rem);
-      line-height: 1.15;
-    }
-
-    /* ── PREVENT HORIZONTAL SCROLL globally ── */
-    html,
-    body {
-      overflow-x: hidden;
-    }
+    /* ── PREVENT HORIZONTAL SCROLL ── */
+    html, body { overflow-x: hidden; }
   </style>
 </head>
 
@@ -318,9 +174,7 @@
   </div>
 
   <!-- ========== HERO ========== -->
-  <!-- FIX: pt-[navbar height] so content isn't hidden behind fixed navbar on mobile -->
   <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-black pt-16 md:pt-20">
-
     <div class="absolute bottom-0 right-0 w-[600px] h-[600px] md:w-[800px] md:h-[800px] bg-[radial-gradient(circle_at_bottom_right,_#ceff66_0%,_transparent_70%)] opacity-40 pointer-events-none"></div>
     <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image:url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M0 0 L60 0 L60 60 L0 60 Z&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; stroke-width=&quot;1&quot;/%3E%3C/svg%3E');"></div>
 
@@ -329,7 +183,6 @@
         <span class="w-2 h-2 bg-[#ceff66] rounded-full animate-pulse"></span>
         <span class="text-white/85 text-xs sm:text-sm font-medium tracking-wider font-['Inter']">GET IN TOUCH</span>
       </div>
-      <!-- FIX: use fluid hero-title class instead of multiple fixed breakpoints -->
       <h1 class="reveal d1 hero-title font-['Space_Grotesk'] font-bold text-white mb-6">
         Contact <span class="text-[#ceff66]">Us</span>
       </h1>
@@ -337,7 +190,6 @@
         Have a question or ready to start your outsourcing journey? We're here to help.
       </p>
     </div>
-
   </section>
 
   <!-- ========== MAIN CONTACT SECTION ========== -->
@@ -349,56 +201,88 @@
         <div class="reveal-left">
           <div class="mb-8">
             <span class="text-[#ceff66] text-sm font-semibold tracking-wider uppercase mb-3 block font-['Inter']">Contact Us</span>
-            <!-- FIX: fluid heading -->
             <h2 class="section-heading-lg font-['Space_Grotesk'] font-bold text-[#111] leading-tight">
               Join Us in Creating <span class="text-[#ceff66]">Something Great</span>
             </h2>
           </div>
 
-          <!-- FIX: form uses div not form tag for React compat, but kept as form for PHP -->
-          <form class="mt-8" action="#" method="POST">
-            <!-- FIX: stack to 1 col on mobile, 2 on sm+ -->
+          <!-- Alerts shown by JS after Formspree response -->
+          <div id="alert-success" class="alert-box alert-success mb-6 hidden">
+            <i class="fas fa-circle-check text-green-600 text-lg mt-0.5 flex-shrink-0"></i>
+            <span>Thank you! Your message has been sent. We'll get back to you within 24 hours.</span>
+          </div>
+          <div id="alert-error" class="alert-box alert-error mb-6 hidden">
+            <i class="fas fa-circle-exclamation text-red-600 text-lg mt-0.5 flex-shrink-0"></i>
+            <span>Something went wrong. Please email us at <a href="mailto:info@onestopsolutions" class="underline font-semibold">info@onestopsolutions.com</a>.</span>
+          </div>
+
+          <!-- Web3Forms: get your free key at https://web3forms.com -->
+          <form class="mt-8" id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+
+            <!-- Web3Forms access key — replace with your own from web3forms.com (free) -->
+            <input type="hidden" name="access_key" value="1f36ea7f-dfc5-4a71-8189-a7b6aa03d0c6">
+            <!-- Optional: customize the subject line -->
+            <input type="hidden" name="subject" value="New Contact Form Submission — OneStop Solutions">
+            <!-- Redirect to same page after submit (we handle it via JS) -->
+            <input type="hidden" name="redirect" value="false">
+
+            <!-- Name Row -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               <div>
-                <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">First Name</label>
-                <input type="text" id="first-name" name="first-name" placeholder="John"
+                <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">
+                  First Name <span class="text-red-500">*</span>
+                </label>
+                <input type="text" id="first-name" name="first-name"
+                  placeholder="John" required
                   class="contact-input px-4 py-3 sm:px-5 sm:py-4 rounded-2xl text-[#111] placeholder-gray-400">
+                <p class="field-error text-red-500 text-xs mt-1 hidden">First name is required.</p>
               </div>
               <div>
-                <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">Last Name</label>
-                <input type="text" id="last-name" name="last-name" placeholder="Doe"
+                <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">
+                  Last Name <span class="text-red-500">*</span>
+                </label>
+                <input type="text" id="last-name" name="last-name"
+                  placeholder="Doe" required
                   class="contact-input px-4 py-3 sm:px-5 sm:py-4 rounded-2xl text-[#111] placeholder-gray-400">
+                <p class="field-error text-red-500 text-xs mt-1 hidden">Last name is required.</p>
               </div>
             </div>
 
+            <!-- Email / Phone Row -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">Email</label>
-                <input type="email" id="email" name="email" placeholder="john@example.com"
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">
+                  Email <span class="text-red-500">*</span>
+                </label>
+                <input type="email" id="email" name="email"
+                  placeholder="john@example.com" required
                   class="contact-input px-4 py-3 sm:px-5 sm:py-4 rounded-2xl text-[#111] placeholder-gray-400">
+                <p class="field-error text-red-500 text-xs mt-1 hidden">A valid email is required.</p>
               </div>
               <div>
                 <label for="phone" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000"
+                <input type="tel" id="phone" name="phone"
+                  placeholder="+1 (555) 000-0000"
                   class="contact-input px-4 py-3 sm:px-5 sm:py-4 rounded-2xl text-[#111] placeholder-gray-400">
               </div>
             </div>
 
+            <!-- Service -->
             <div class="mb-4">
               <label for="service" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">Select Service</label>
               <div class="relative">
                 <select id="service" name="service"
                   class="w-full px-4 py-3 sm:px-5 sm:py-4 rounded-2xl bg-[#ceff66] border-2 border-[#ceff66] text-[#111] font-semibold focus:outline-none focus:ring-4 focus:ring-[#ceff66]/30 transition-all appearance-none cursor-pointer font-['Inter']">
-                  <option value="" disabled selected>Choose a service</option>
-                  <option value="inbound-calls">Inbound Calls</option>
-                  <option value="outbound-calls">Outbound Calls</option>
-                  <option value="lead-generation">Lead Generation</option>
-                  <option value="customer-quality">Customer &amp; Quality Services</option>
-                  <option value="digital-marketing">Digital Marketing</option>
-                  <option value="web-development">Web Development</option>
-                  <option value="survey-research">Survey Research</option>
-                  <option value="winback-programs">Winback Programs</option>
-                  <option value="technical-support">Technical Support</option>
+                  <option value="" disabled>Choose a service</option>
+                  <option value="Inbound Calls">Inbound Calls</option>
+                  <option value="Outbound Calls">Outbound Calls</option>
+                  <option value="Lead Generation">Lead Generation</option>
+                  <option value="Customer & Quality Services">Customer &amp; Quality Services</option>
+                  <option value="Digital Marketing">Digital Marketing</option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="Survey Research">Survey Research</option>
+                  <option value="Winback Programs">Winback Programs</option>
+                  <option value="Technical Support">Technical Support</option>
                 </select>
                 <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
                   <svg class="w-5 h-5 text-[#111]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -408,23 +292,29 @@
               </div>
             </div>
 
+            <!-- Message -->
             <div class="mb-6">
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..."
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">
+                Message <span class="text-red-500">*</span>
+              </label>
+              <textarea id="message" name="message" rows="5"
+                placeholder="Tell us about your project..." required
                 class="contact-input px-4 py-3 sm:px-5 sm:py-4 rounded-2xl text-[#111] placeholder-gray-400 resize-none"></textarea>
+              <p class="field-error text-red-500 text-xs mt-1 hidden">Message cannot be empty.</p>
             </div>
 
-            <button type="submit" class="submit-btn group font-['Inter']">
-              Send Message
-              <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            <!-- Submit -->
+            <button type="submit" id="submitBtn" class="submit-btn group font-['Inter']">
+              <span id="btnText">Send Message</span>
+              <i id="btnIcon" class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
             </button>
+
           </form>
         </div>
 
         <!-- RIGHT: Contact Info Card -->
         <div class="reveal-right">
           <div class="contact-info-card">
-            <!-- decorative blobs — hidden on very small screens to reduce visual noise -->
             <div class="absolute top-0 right-0 w-32 h-32 sm:w-40 sm:h-40 bg-white opacity-10 rounded-full -mr-8 -mt-8 pointer-events-none"></div>
             <div class="absolute bottom-0 left-0 w-24 h-24 sm:w-32 sm:h-32 bg-black opacity-5 rounded-full -ml-8 -mb-8 pointer-events-none"></div>
 
@@ -450,28 +340,17 @@
                   <h4 class="font-['Space_Grotesk'] font-semibold text-[#111] text-base sm:text-lg">Contact</h4>
                 </div>
                 <div class="pl-8 font-['Inter'] text-sm sm:text-base space-y-3">
-
-                  <!-- Phone -->
                   <div>
                     <p class="text-[#111] font-semibold">Phone</p>
-                    <a href="tel:03361369929" class="text-[#111] opacity-80 hover:underline">
-                      0336 1369929
-                    </a>
+                    <a href="tel:03361369929" class="text-[#111] opacity-80 hover:underline">0336 1369929</a>
                   </div>
-
-                  <!-- Email -->
                   <div>
                     <p class="text-[#111] font-semibold">Email</p>
                     <div class="flex flex-col space-y-1">
-                      <a href="mailto:info@onestopsolutions.com" class="text-[#111] opacity-80 hover:underline break-all">
-                        info@onestopsolutions.com
-                      </a>
-                      <a href="mailto:hr@onestopsolutions.com" class="text-[#111] opacity-80 hover:underline break-all">
-                        hr@onestopsolutions.com
-                      </a>
+                      <a href="mailto:info@onestopsolutions.com" class="text-[#111] opacity-80 hover:underline break-all">info@onestopsolutions.com</a>
+                      <a href="mailto:hr@onestopsolutions.com"   class="text-[#111] opacity-80 hover:underline break-all">hr@onestopsolutions.com</a>
                     </div>
                   </div>
-
                 </div>
               </div>
 
@@ -490,18 +369,16 @@
                   <i class="fas fa-share-alt text-[#111] text-lg flex-shrink-0"></i>
                   <h4 class="font-['Space_Grotesk'] font-semibold text-[#111] text-base sm:text-lg">Stay Connected</h4>
                 </div>
-                <!-- FIX: flex-wrap so icons don't overflow on narrow screens -->
                 <div class="social-row pl-8 flex gap-3">
-  
-  <a href="https://www.linkedin.com/company/onestopsolutions/" class="w-9 h-9 sm:w-10 sm:h-10 bg-black/10 rounded-full flex items-center justify-center text-[#111] hover:bg-black hover:text-white transition-all duration-200">
-    <i class="fab fa-linkedin-in text-sm"></i>
-  </a>
-
-  <a href="https://www.facebook.com/OSSolutioners/" class="w-9 h-9 sm:w-10 sm:h-10 bg-black/10 rounded-full flex items-center justify-center text-[#111] hover:bg-black hover:text-white transition-all duration-200">
-    <i class="fab fa-facebook-f text-sm"></i>
-  </a>
-
-</div>
+                  <a href="https://www.linkedin.com/company/onestopsolutions/"
+                     class="w-9 h-9 sm:w-10 sm:h-10 bg-black/10 rounded-full flex items-center justify-center text-[#111] hover:bg-black hover:text-white transition-all duration-200">
+                    <i class="fab fa-linkedin-in text-sm"></i>
+                  </a>
+                  <a href="https://www.facebook.com/OSSolutioners/"
+                     class="w-9 h-9 sm:w-10 sm:h-10 bg-black/10 rounded-full flex items-center justify-center text-[#111] hover:bg-black hover:text-white transition-all duration-200">
+                    <i class="fab fa-facebook-f text-sm"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -517,9 +394,8 @@
       <div class="bg-[#f5f5f5] rounded-[24px] sm:rounded-[32px] p-2 border border-[#ceff66]/30 overflow-hidden shadow-lg">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231118.23582609927!2d66.97534769999999!3d24.861504949999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f066c8f5e6b%3A0x8d3e4d0c5e9f5a5a!2sKarachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
-          width="100%"
-          height="280"
-          style="border:0; border-radius: 20px; display:block;"
+          width="100%" height="280"
+          style="border:0; border-radius:20px; display:block;"
           allowfullscreen="" loading="lazy"
           class="grayscale contrast-125 opacity-90 hover:opacity-100 transition-opacity sm:h-[350px] md:h-[400px]">
         </iframe>
@@ -529,13 +405,10 @@
 
   <!-- ========== FAQ SECTION ========== -->
   <section class="relative py-16 md:py-20 bg-[#fafafa] overflow-hidden">
-
     <div class="absolute top-40 left-10 sm:left-20 w-48 sm:w-64 h-48 sm:h-64 bg-[#ceff66]/5 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute bottom-40 right-10 sm:right-20 w-56 sm:w-80 h-56 sm:h-80 bg-purple-600/5 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-4xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20 relative z-10">
-
-      <!-- Header -->
       <div class="text-center max-w-2xl mx-auto mb-12">
         <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-[#ceff66]/10 rounded-full border border-[#ceff66]/20 mb-5">
           <span class="w-2 h-2 bg-[#ceff66] rounded-full animate-pulse"></span>
@@ -549,9 +422,7 @@
         </p>
       </div>
 
-      <!-- FIX: single column on mobile, 2 cols on md+ -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
-
         <!-- Column 1 -->
         <div class="space-y-4">
           <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#ceff66]/50 transition-all duration-300 reveal-left">
@@ -631,12 +502,10 @@
         </div>
       </div>
 
-      <!-- Still have questions -->
       <div class="reveal d4 mt-12 text-center">
-        <!-- FIX: flex-col on mobile, flex-row on sm+ -->
         <div class="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-4 bg-white px-6 sm:px-8 py-4 rounded-full shadow-lg border border-gray-100">
           <span class="text-gray-600 font-['Inter'] text-sm sm:text-base">Still have questions?</span>
-          <a href="#" class="inline-flex items-center gap-2 bg-[#ceff66] text-black px-5 sm:px-6 py-2 rounded-full font-semibold text-sm hover:scale-105 transition-transform whitespace-nowrap">
+          <a href="#contactForm" class="inline-flex items-center gap-2 bg-[#ceff66] text-black px-5 sm:px-6 py-2 rounded-full font-semibold text-sm hover:scale-105 transition-transform whitespace-nowrap">
             Contact Support
             <i class="fas fa-arrow-right text-xs"></i>
           </a>
@@ -656,7 +525,7 @@
         <p class="text-white/40 text-base sm:text-lg max-w-2xl mx-auto mb-8 font-['Inter']">
           Whether you're ready to scale or just exploring options, our team is here to guide you every step of the way.
         </p>
-        <a href="#" class="group inline-flex items-center gap-3 rounded-full px-7 sm:px-8 py-3 sm:py-4 bg-[#ceff66] text-black font-semibold text-base sm:text-lg hover:scale-105 transition-all duration-300 hover:shadow-[0_20px_30px_-10px_rgba(206,255,102,0.5)] font-['Inter']">
+        <a href="#contactForm" class="group inline-flex items-center gap-3 rounded-full px-7 sm:px-8 py-3 sm:py-4 bg-[#ceff66] text-black font-semibold text-base sm:text-lg hover:scale-105 transition-all duration-300 hover:shadow-[0_20px_30px_-10px_rgba(206,255,102,0.5)] font-['Inter']">
           Schedule a Call
           <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
         </a>
@@ -670,59 +539,103 @@
   <!-- ========== JAVASCRIPT ========== -->
   <script>
     // ── Scroll progress + navbar hide/show ──────────────────────────────
-    const progressBar = document.getElementById('scroll-progress');
+    const progressBar   = document.getElementById('scroll-progress');
     const navbarWrapper = document.getElementById('navbar-wrapper');
-    let lastScrollY = 0;
-    let ticking = false;
+    let lastScrollY = 0, ticking = false;
 
     function handleNavbarScroll() {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY <= 10) {
-        navbarWrapper.classList.remove('nav-hidden');
-      } else if (currentScrollY > lastScrollY + 5) {
-        navbarWrapper.classList.add('nav-hidden');
-      } else if (currentScrollY < lastScrollY - 5) {
-        navbarWrapper.classList.remove('nav-hidden');
-      }
-      lastScrollY = currentScrollY;
+      const y = window.scrollY;
+      if (y <= 10)                        navbarWrapper.classList.remove('nav-hidden');
+      else if (y > lastScrollY + 5)       navbarWrapper.classList.add('nav-hidden');
+      else if (y < lastScrollY - 5)       navbarWrapper.classList.remove('nav-hidden');
+      lastScrollY = y;
       ticking = false;
     }
 
     window.addEventListener('scroll', () => {
-      const s = window.scrollY;
-      const m = document.documentElement.scrollHeight - window.innerHeight;
+      const s = window.scrollY, m = document.documentElement.scrollHeight - window.innerHeight;
       if (m > 0) progressBar.style.width = (s / m * 100) + '%';
-
-      if (!ticking) {
-        requestAnimationFrame(handleNavbarScroll);
-        ticking = true;
-      }
-    }, {
-      passive: true
-    });
+      if (!ticking) { requestAnimationFrame(handleNavbarScroll); ticking = true; }
+    }, { passive: true });
 
     // ── Reveal on scroll ────────────────────────────────────────────────
     const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     const revealObs = new IntersectionObserver((entries) => {
       entries.forEach(en => {
-        if (en.isIntersecting) {
-          en.target.classList.add('visible');
-          revealObs.unobserve(en.target);
-        }
+        if (en.isIntersecting) { en.target.classList.add('visible'); revealObs.unobserve(en.target); }
       });
-    }, {
-      threshold: 0.08,
-      rootMargin: '0px 0px -30px 0px'
-    });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
     revealEls.forEach(el => revealObs.observe(el));
+
+    // ── Client-side form validation ─────────────────────────────────────
+    const form      = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText   = document.getElementById('btnText');
+    const btnIcon   = document.getElementById('btnIcon');
+
+    const rules = [
+      { id: 'first-name', check: v => v.trim() !== '',  msg: 'First name is required.' },
+      { id: 'last-name',  check: v => v.trim() !== '',  msg: 'Last name is required.'  },
+      { id: 'email',      check: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), msg: 'A valid email is required.' },
+      { id: 'message',    check: v => v.trim() !== '',  msg: 'Message cannot be empty.' },
+    ];
+
+    function validateField(rule) {
+      const el  = document.getElementById(rule.id);
+      const err = el.parentElement.querySelector('.field-error') || el.closest('div').querySelector('.field-error');
+      const ok  = rule.check(el.value);
+      el.classList.toggle('invalid', !ok);
+      if (err) err.classList.toggle('hidden', ok);
+      return ok;
+    }
+
+    // Live re-validation on blur
+    rules.forEach(rule => {
+      const el = document.getElementById(rule.id);
+      if (el) el.addEventListener('blur', () => validateField(rule));
+    });
+
+    // ── Formspree AJAX submit ────────────────────────────────────────────
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      let valid = true;
+      rules.forEach(rule => { if (!validateField(rule)) valid = false; });
+      if (!valid) return;
+
+      submitBtn.disabled = true;
+      btnText.textContent = 'Sending…';
+      btnIcon.className   = 'fas fa-spinner fa-spin';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          document.getElementById('alert-success').classList.remove('hidden');
+          document.getElementById('alert-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+          form.reset();
+        } else {
+          document.getElementById('alert-error').classList.remove('hidden');
+          document.getElementById('alert-error').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      } catch {
+        document.getElementById('alert-error').classList.remove('hidden');
+      }
+
+      submitBtn.disabled  = false;
+      btnText.textContent = 'Send Message';
+      btnIcon.className   = 'fas fa-arrow-right group-hover:translate-x-1 transition-transform';
+    });
 
     // ── FAQ Toggle ───────────────────────────────────────────────────────
     window.toggleFaq = function(element) {
       const faqItem = element.closest('.faq-item');
-      const answer = faqItem.querySelector('.faq-answer');
-      const icon = element.querySelector('.faq-icon');
+      const answer  = faqItem.querySelector('.faq-answer');
+      const icon    = element.querySelector('.faq-icon');
 
-      // Close others
       document.querySelectorAll('.faq-item').forEach(item => {
         if (item !== faqItem && item.classList.contains('active')) {
           item.classList.remove('active');
@@ -733,12 +646,11 @@
 
       faqItem.classList.toggle('active');
       answer.classList.toggle('show');
-      icon.className = answer.classList.contains('show') ?
-        'faq-icon fas fa-times text-[#ceff66] text-lg' :
-        'faq-icon fas fa-plus text-[#ceff66] text-lg';
+      icon.className = answer.classList.contains('show')
+        ? 'faq-icon fas fa-times text-[#ceff66] text-lg'
+        : 'faq-icon fas fa-plus text-[#ceff66] text-lg';
     };
   </script>
 
 </body>
-
 </html>
