@@ -524,30 +524,7 @@
       <li>Northern Leasing Systems</li><li>The Marketing Source</li>
     </ul>
 
-    <!-- Row 1: forward -->
-    <div class="marquee-row mb-4" aria-hidden="true">
-      <div class="marquee-track fwd">
-        <div class="brand-item"><span class="brand-name">Argosy BPO</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">TEK BUZZ</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">GATEWAY MERCHANT CAPITAL</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">VIRGO</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">CLICK MILLIONS</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">CANNET</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">NORTHERN LEASING SYSTEMS</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">THE MARKETING SOURCE</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">Argosy BPO</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">TEK BUZZ</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">GATEWAY MERCHANT CAPITAL</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">VIRGO</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">CLICK MILLIONS</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">CANNET</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">NORTHERN LEASING SYSTEMS</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">THE VOIP SUPPLIER LLC</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">OUTWORK CORP</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">F-TECH SOLUTIONS</span><div class="brand-dot"></div></div>
-        <div class="brand-item"><span class="brand-name">CIK TELECOM Inc</span><div class="brand-dot"></div></div>
-      </div>
-    </div>
+    
 
     <!-- Row 2: reverse -->
     <div class="marquee-row" aria-hidden="true">
