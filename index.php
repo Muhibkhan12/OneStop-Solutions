@@ -587,7 +587,7 @@
           <h2 class="reveal d1 header-title">Nine BPO services that help<br>your <span>business grow</span></h2>
         </div>
         <p class="reveal d2 max-w-xs sm:max-w-sm text-[#4a4a4a] font-['Inter'] text-sm sm:text-base leading-relaxed border-b-2 border-[#ceff66] pb-4">
-          From inbound calls to digital campaigns &mdash; every outsourcing service is designed to reduce cost, increase loyalty, and drive measurable results.
+          From inbound calls to Outbound &mdash; every outsourcing service is designed to reduce cost, increase loyalty, and drive measurable results.
         </p>
       </div>
 
@@ -608,17 +608,17 @@
         </article>
 
         <article class="reveal d2 service-card-modern" role="listitem" itemscope itemtype="https://schema.org/Service">
-          <img class="card-bg-image"
-               src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1974&auto=format&fit=crop"
-               alt="Outbound telemarketing agent making sales call"
-               width="1974" height="1316" loading="lazy" decoding="async">
-          <div class="card-overlay" aria-hidden="true"></div>
-          <div class="card-content">
-            <div class="icon-wrapper" aria-hidden="true"><div class="icon-dot"></div><i class="fas fa-phone-alt"></i></div>
-            <h3 class="card-title" itemprop="name">Outbound Telemarketing</h3>
-            <p class="card-desc" itemprop="description">Telemarketing, appointment setting, market research &mdash; proactive outbound outreach that delivers measurable results.</p>
-          </div>
-        </article>
+  <img class="card-bg-image"
+       src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1974&auto=format&fit=crop"
+       alt="Outbound sales representative closing a deal"
+       width="1974" height="1316" loading="lazy" decoding="async">
+  <div class="card-overlay" aria-hidden="true"></div>
+  <div class="card-content">
+    <div class="icon-wrapper" aria-hidden="true"><div class="icon-dot"></div><i class="fas fa-phone-alt"></i></div>
+    <h3 class="card-title" itemprop="name">Outbound Sales</h3>
+    <p class="card-desc" itemprop="description">Dedicated sales agents who prospect, qualify leads, and close deals — driving revenue growth through targeted outbound campaigns.</p>
+  </div>
+</article>
 
         <article class="reveal d3 service-card-modern" role="listitem" itemscope itemtype="https://schema.org/Service">
           <img class="card-bg-image"

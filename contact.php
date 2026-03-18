@@ -328,8 +328,7 @@
                   <h4 class="font-['Space_Grotesk'] font-semibold text-[#111] text-base sm:text-lg">Address</h4>
                 </div>
                 <p class="text-[#111] opacity-80 pl-8 font-['Inter'] text-sm sm:text-base leading-relaxed">
-                  Suite#116, 1st Floor, Park Avenue, Shahra-e-Faisal,<br>
-                  P.E.C.H.S Block 6, Karachi, 75400
+                 Suite# 111 &amp; 116, 1st Floor, Park Avenue, P.E.C.H.S, Block 6, Shahra-e-Faisal, Karachi, 75400
                 </p>
               </div>
 

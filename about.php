@@ -538,7 +538,7 @@
           </div>
           <div class="absolute -bottom-6 -left-8 bg-black text-white rounded-2xl px-5 py-4 shadow-2xl z-10">
             <div class="font-['Space_Grotesk'] text-2xl md:text-3xl font-bold text-[#ceff66] tracking-[-0.03em] leading-none">3 channels</div>
-            <div class="text-xs text-white/55 mt-1 font-['Inter']">Phone &middot; Email &middot; Chat</div>
+            <div class="text-xs text-white/55 mt-1 font-['Inter']"><a href="tel:03361369929">Phone</a> &middot; <a href="mailto:info@onestopsolutions.com">Email</a> &middot; <a href="contact.php">Chat</a></div>
           </div>
         </div>
 

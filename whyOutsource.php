@@ -346,9 +346,6 @@
       <span class="text-[#ceff66]">big picture.</span>
     </p>
     <div class="flex items-center justify-center gap-4">
-      <div class="w-12 h-12 rounded-full overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop" alt="CEO" class="w-full h-full object-cover">
-      </div>
       <div class="text-left">
         <div class="font-semibold text-[#111] font-['Space_Grotesk']">Founder & CEO</div>
         <div class="text-gray-500 text-sm font-['Inter']">OneStop Solutions</div>
