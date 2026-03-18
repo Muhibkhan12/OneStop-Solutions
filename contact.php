@@ -213,7 +213,7 @@
           </div>
           <div id="alert-error" class="alert-box alert-error mb-6 hidden">
             <i class="fas fa-circle-exclamation text-red-600 text-lg mt-0.5 flex-shrink-0"></i>
-            <span>Something went wrong. Please email us at <a href="mailto:info@onestopsolutions" class="underline font-semibold">info@onestopsolutions.com</a>.</span>
+            <span>Something went wrong. Please email us at <a href="mailto:info@onestopsolutions.com" class="underline font-semibold">info@onestopsolutions.com</a>.</span>
           </div>
 
           <!-- Web3Forms: get your free key at https://web3forms.com -->
