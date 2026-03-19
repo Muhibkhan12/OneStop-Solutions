@@ -541,7 +541,6 @@
             <div class="text-xs text-white/55 mt-1 font-['Inter']"><a href="tel:03361369929">Phone</a> &middot; <a href="mailto:info@onestopsolutions.com">Email</a> &middot; <a href="contact.php">Chat</a></div>
           </div>
         </div>
-
       </div>
     </div>
   </section>

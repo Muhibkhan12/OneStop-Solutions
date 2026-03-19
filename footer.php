@@ -252,7 +252,7 @@
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                     <a href="https://www.facebook.com/OSSolutioners/" class="social-icon">
-                        <i class="fab fa-facebook text-dark"></i>
+                        <i class="fab fa-facebook "></i>
                     </a>
                 </div>
             </div>
