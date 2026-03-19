@@ -771,7 +771,7 @@
           </p>
           <div class="mt-7 flex items-center gap-4" itemscope itemtype="https://schema.org/Person">
             <div>
-              <p class="font-semibold font-['Space_Grotesk'] text-sm sm:text-base" itemprop="name">Ahmed Raza</p>
+              <p class="font-semibold font-['Space_Grotesk'] text-sm sm:text-base" itemprop="name">Alex Smith</p>
               <p class="text-xs sm:text-sm text-gray-400 font-['Inter']" itemprop="jobTitle">COO, TransWorld Logistics</p>
             </div>
           </div>
