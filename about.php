@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 
   <!-- ═══════════════════════════════════════════════
        PRIMARY SEO META
@@ -177,10 +177,17 @@
     /* ── Mobile card ── */
     .mobile-val-card {
       border-radius: 28px;
-      padding: 1.75rem;
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 1.1rem;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .mobile-val-card {
+        padding: 1.75rem;
+        gap: 1.1rem;
+      }
     }
 
     body { font-family: 'Inter', sans-serif; }
@@ -244,11 +251,11 @@
 <main id="main-content">
 
   <!-- ════════════════════════════════════════
-       HERO — Blue theme
+       HERO — Blue theme (Responsive)
   ════════════════════════════════════════ -->
 <section
     aria-label="About One Stop Solutions – BPO company founded in Karachi, 2014"
-    class="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-[#0a0f1e]">
+    class="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden bg-[#0a0f1e]">
 
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
@@ -271,52 +278,53 @@
     <div class="absolute inset-0 opacity-5 pointer-events-none z-0" aria-hidden="true"
          style="background-image:url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M0 0 L60 0 L60 60 L0 60 Z&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; stroke-width=&quot;1&quot;/%3E%3C/svg%3E');"></div>
 
-    <div class="relative z-10 text-center px-5 sm:px-8 md:px-12 lg:px-24 pt-32 pb-20 md:pt-40 md:pb-28">
-      <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 mb-6">
+    <div class="relative z-10 text-center px-5 sm:px-8 md:px-12 lg:px-24 pt-24 pb-16 md:pt-40 md:pb-28">
+      <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 mb-5 md:mb-6">
         <span class="w-2 h-2 bg-[#4f9eff] rounded-full animate-pulse" aria-hidden="true"></span>
-        <span class="text-white/85 text-sm font-medium tracking-wider font-['Inter']">ABOUT US</span>
+        <span class="text-white/85 text-xs sm:text-sm font-medium tracking-wider font-['Inter']">ABOUT US</span>
       </div>
 
-      <h1 class="reveal d1 font-['Space_Grotesk'] font-bold text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white leading-[1.1] tracking-[-0.03em] mb-6">
+      <h1 class="reveal d1 font-['Space_Grotesk'] font-bold text-white leading-[1.1] tracking-[-0.03em] mb-5 md:mb-6"
+          style="font-size:clamp(2.2rem, 8vw, 5rem);">
         About <span class="text-[#4f9eff]">Us</span>
       </h1>
 
-      <p class="reveal d2 text-white/70 text-xl max-w-2xl mx-auto font-['Inter']">
+      <p class="reveal d2 text-white/70 text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-['Inter']">
         People. Process. Results. &mdash; Building trust through BPO excellence since 2014 in Karachi, Pakistan.
       </p>
     </div>
   </section>
 
   <!-- ════════════════════════════════════════
-       TICKER — Blue theme
+       TICKER — Blue theme (Responsive)
   ════════════════════════════════════════ -->
-  <div class="bg-[#4f9eff] py-[14px] overflow-hidden" aria-hidden="true">
+  <div class="bg-[#4f9eff] py-2 sm:py-[14px] overflow-hidden" aria-hidden="true">
     <div class="ticker-track flex whitespace-nowrap">
-      <span class="font-['Space_Grotesk'] text-[0.85rem] font-bold text-white px-8 tracking-[0.05em] uppercase flex-shrink-0">BPO Solutions <span class="opacity-40 mx-2">&#10022;</span></span>
-      <span class="font-['Space_Grotesk'] text-[0.85rem] font-bold text-white px-8 tracking-[0.05em] uppercase flex-shrink-0">Contact Centre <span class="opacity-40 mx-2">&#10022;</span></span>
-      <span class="font-['Space_Grotesk'] text-[0.85rem] font-bold text-white px-8 tracking-[0.05em] uppercase flex-shrink-0">Digital Marketing <span class="opacity-40 mx-2">&#10022;</span></span>
-      <span class="font-['Space_Grotesk'] text-[0.85rem] font-bold text-white px-8 tracking-[0.05em] uppercase flex-shrink-0">Customer Retention <span class="opacity-40 mx-2">&#10022;</span></span>
-      <span class="font-['Space_Grotesk'] text-[0.85rem] font-bold text-white px-8 tracking-[0.05em] uppercase flex-shrink-0">Outsourcing Excellence <span class="opacity-40 mx-2">&#10022;</span></span>
-      <span class="font-['Space_Grotesk'] text-[0.85rem] font-bold text-white px-8 tracking-[0.05em] uppercase flex-shrink-0">Karachi, Pakistan <span class="opacity-40 mx-2">&#10022;</span></span>
-      <span class="font-['Space_Grotesk'] text-[0.85rem] font-bold text-white px-8 tracking-[0.05em] uppercase flex-shrink-0">International Markets <span class="opacity-40 mx-2">&#10022;</span></span>
-      <span class="font-['Space_Grotesk'] text-[0.85rem] font-bold text-white px-8 tracking-[0.05em] uppercase flex-shrink-0">BPO Solutions <span class="opacity-40 mx-2">&#10022;</span></span>
-      <span class="font-['Space_Grotesk'] text-[0.85rem] font-bold text-white px-8 tracking-[0.05em] uppercase flex-shrink-0">Contact Centre <span class="opacity-40 mx-2">&#10022;</span></span>
-      <span class="font-['Space_Grotesk'] text-[0.85rem] font-bold text-white px-8 tracking-[0.05em] uppercase flex-shrink-0">Digital Marketing <span class="opacity-40 mx-2">&#10022;</span></span>
+      <span class="font-['Space_Grotesk'] text-[0.7rem] sm:text-[0.85rem] font-bold text-white px-4 sm:px-8 tracking-[0.05em] uppercase flex-shrink-0">BPO Solutions <span class="opacity-40 mx-2">&#10022;</span></span>
+      <span class="font-['Space_Grotesk'] text-[0.7rem] sm:text-[0.85rem] font-bold text-white px-4 sm:px-8 tracking-[0.05em] uppercase flex-shrink-0">Contact Centre <span class="opacity-40 mx-2">&#10022;</span></span>
+      <span class="font-['Space_Grotesk'] text-[0.7rem] sm:text-[0.85rem] font-bold text-white px-4 sm:px-8 tracking-[0.05em] uppercase flex-shrink-0">Digital Marketing <span class="opacity-40 mx-2">&#10022;</span></span>
+      <span class="font-['Space_Grotesk'] text-[0.7rem] sm:text-[0.85rem] font-bold text-white px-4 sm:px-8 tracking-[0.05em] uppercase flex-shrink-0">Customer Retention <span class="opacity-40 mx-2">&#10022;</span></span>
+      <span class="font-['Space_Grotesk'] text-[0.7rem] sm:text-[0.85rem] font-bold text-white px-4 sm:px-8 tracking-[0.05em] uppercase flex-shrink-0">Outsourcing Excellence <span class="opacity-40 mx-2">&#10022;</span></span>
+      <span class="font-['Space_Grotesk'] text-[0.7rem] sm:text-[0.85rem] font-bold text-white px-4 sm:px-8 tracking-[0.05em] uppercase flex-shrink-0">Karachi, Pakistan <span class="opacity-40 mx-2">&#10022;</span></span>
+      <span class="font-['Space_Grotesk'] text-[0.7rem] sm:text-[0.85rem] font-bold text-white px-4 sm:px-8 tracking-[0.05em] uppercase flex-shrink-0">International Markets <span class="opacity-40 mx-2">&#10022;</span></span>
+      <span class="font-['Space_Grotesk'] text-[0.7rem] sm:text-[0.85rem] font-bold text-white px-4 sm:px-8 tracking-[0.05em] uppercase flex-shrink-0">BPO Solutions <span class="opacity-40 mx-2">&#10022;</span></span>
+      <span class="font-['Space_Grotesk'] text-[0.7rem] sm:text-[0.85rem] font-bold text-white px-4 sm:px-8 tracking-[0.05em] uppercase flex-shrink-0">Contact Centre <span class="opacity-40 mx-2">&#10022;</span></span>
+      <span class="font-['Space_Grotesk'] text-[0.7rem] sm:text-[0.85rem] font-bold text-white px-4 sm:px-8 tracking-[0.05em] uppercase flex-shrink-0">Digital Marketing <span class="opacity-40 mx-2">&#10022;</span></span>
     </div>
   </div>
 
   <!-- ════════════════════════════════════════
-       MISSION — Who We Are (Blue accents)
+       MISSION — Who We Are (Responsive)
   ════════════════════════════════════════ -->
   <section
     id="mission"
     aria-label="Who we are — One Stop Solutions BPO company overview"
-    class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-20 md:py-28 bg-[#fafafa] relative"
+    class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-12 md:py-28 bg-[#fafafa] relative"
     itemscope itemtype="https://schema.org/AboutPage">
 
     <div class="absolute top-0 right-0 w-64 h-64 rounded-bl-[80px] bg-[rgba(79,158,255,0.06)] pointer-events-none" aria-hidden="true"></div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center relative z-10">
 
       <!-- Image -->
       <div class="reveal-left relative">
@@ -329,93 +337,95 @@
                decoding="async">
           <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" aria-hidden="true"></div>
         </div>
-        <div class="absolute -bottom-8 -right-6 bg-white rounded-2xl px-6 py-5 shadow-2xl border border-gray-100 max-w-[220px] z-10">
-          <div class="font-['Space_Grotesk'] text-3xl font-bold text-[#111] tracking-[-0.03em]">Since <span class="text-[#4f9eff]">2014</span></div>
-          <div class="text-xs text-gray-400 mt-1 leading-tight font-['Inter']">Delivering outsourcing excellence across domestic &amp; international markets</div>
+        <div class="absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 bg-white rounded-2xl px-4 py-3 sm:px-6 sm:py-5 shadow-2xl border border-gray-100 max-w-[200px] sm:max-w-[220px] z-10">
+          <div class="font-['Space_Grotesk'] text-2xl sm:text-3xl font-bold text-[#111] tracking-[-0.03em]">Since <span class="text-[#4f9eff]">2014</span></div>
+          <div class="text-[10px] sm:text-xs text-gray-400 mt-1 leading-tight font-['Inter']">Delivering outsourcing excellence across domestic &amp; international markets</div>
         </div>
-        <div class="absolute -top-5 -left-5 w-14 h-14 rounded-xl bg-[#4f9eff] rotate-12 -z-[1] opacity-80" aria-hidden="true"></div>
-        <div class="absolute -top-2 -left-2 w-10 h-10 rounded-lg bg-[#1e1e24] -rotate-[8deg] -z-[1]" aria-hidden="true"></div>
+        <div class="absolute -top-4 -left-4 sm:-top-5 sm:-left-5 w-10 h-10 sm:w-14 sm:h-14 rounded-xl bg-[#4f9eff] rotate-12 -z-[1] opacity-80" aria-hidden="true"></div>
+        <div class="absolute -top-2 -left-2 w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[#1e1e24] -rotate-[8deg] -z-[1]" aria-hidden="true"></div>
       </div>
 
       <!-- Text -->
       <div>
-        <div class="reveal flex items-center gap-[10px] text-[#4f9eff] text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-5 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#4f9eff] font-['Inter']">
+        <div class="reveal flex items-center gap-[10px] text-[#4f9eff] text-[0.65rem] sm:text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-4 sm:mb-5 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#4f9eff] font-['Inter']">
           Who we are
         </div>
-        <h2 class="reveal d1 font-['Space_Grotesk'] text-[clamp(2rem,4vw,3.2rem)] font-bold leading-[1.1] tracking-[-0.025em] text-[#111] mb-6">
+        <h2 class="reveal d1 font-['Space_Grotesk'] font-bold leading-[1.1] tracking-[-0.025em] text-[#111] mb-4 sm:mb-6"
+            style="font-size:clamp(1.6rem, 4vw, 3rem);">
           A comprehensive BPO &amp; marketing outsourcing partner since 2014
         </h2>
-        <p class="reveal d2 text-[1.05rem] text-[#5a5a5a] leading-relaxed mb-5 font-['Inter']" itemprop="description">
+        <p class="reveal d2 text-[#5a5a5a] text-sm sm:text-base md:text-[1.05rem] leading-relaxed mb-4 sm:mb-5 font-['Inter']" itemprop="description">
           One Stop Solutions provides a comprehensive range of BPO, contact centre &amp; digital marketing solutions to domestic and international markets. Anchored in Karachi, Pakistan, with a strong understanding of international markets and societies.
         </p>
-        <p class="reveal d3 text-[1.05rem] text-[#5a5a5a] leading-relaxed mb-8 font-['Inter']">
+        <p class="reveal d3 text-[#5a5a5a] text-sm sm:text-base md:text-[1.05rem] leading-relaxed mb-6 sm:mb-8 font-['Inter']">
           Our experience, technologies and suite of services give us the expertise and flexibility to design and implement customised outsourcing solutions that help our clients perform critical call-centre and marketing tasks as effectively and efficiently as possible.
         </p>
-        <div class="reveal d4 flex flex-wrap gap-3">
-          <span class="inline-flex items-center gap-2 bg-[#f4f3f0] rounded-full px-[18px] py-2 text-[0.85rem] font-medium text-[#111] font-['Inter']"><i class="fas fa-check text-[#4f9eff]" aria-hidden="true"></i> BPO Services</span>
-          <span class="inline-flex items-center gap-2 bg-[#f4f3f0] rounded-full px-[18px] py-2 text-[0.85rem] font-medium text-[#111] font-['Inter']"><i class="fas fa-check text-[#4f9eff]" aria-hidden="true"></i> Contact Centre</span>
-          <span class="inline-flex items-center gap-2 bg-[#f4f3f0] rounded-full px-[18px] py-2 text-[0.85rem] font-medium text-[#111] font-['Inter']"><i class="fas fa-check text-[#4f9eff]" aria-hidden="true"></i> Digital Marketing</span>
-          <span class="inline-flex items-center gap-2 bg-[#f4f3f0] rounded-full px-[18px] py-2 text-[0.85rem] font-medium text-[#111] font-['Inter']"><i class="fas fa-check text-[#4f9eff]" aria-hidden="true"></i> Customer Retention</span>
+        <div class="reveal d4 flex flex-wrap gap-2 sm:gap-3">
+          <span class="inline-flex items-center gap-2 bg-[#f4f3f0] rounded-full px-3 py-1.5 sm:px-[18px] sm:py-2 text-[0.75rem] sm:text-[0.85rem] font-medium text-[#111] font-['Inter']"><i class="fas fa-check text-[#4f9eff] text-xs sm:text-sm" aria-hidden="true"></i> BPO Services</span>
+          <span class="inline-flex items-center gap-2 bg-[#f4f3f0] rounded-full px-3 py-1.5 sm:px-[18px] sm:py-2 text-[0.75rem] sm:text-[0.85rem] font-medium text-[#111] font-['Inter']"><i class="fas fa-check text-[#4f9eff] text-xs sm:text-sm" aria-hidden="true"></i> Contact Centre</span>
+          <span class="inline-flex items-center gap-2 bg-[#f4f3f0] rounded-full px-3 py-1.5 sm:px-[18px] sm:py-2 text-[0.75rem] sm:text-[0.85rem] font-medium text-[#111] font-['Inter']"><i class="fas fa-check text-[#4f9eff] text-xs sm:text-sm" aria-hidden="true"></i> Digital Marketing</span>
+          <span class="inline-flex items-center gap-2 bg-[#f4f3f0] rounded-full px-3 py-1.5 sm:px-[18px] sm:py-2 text-[0.75rem] sm:text-[0.85rem] font-medium text-[#111] font-['Inter']"><i class="fas fa-check text-[#4f9eff] text-xs sm:text-sm" aria-hidden="true"></i> Customer Retention</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ════════════════════════════════════════
-       CORE VALUES — Mobile & Tablet (Blue theme)
+       CORE VALUES — Mobile & Tablet (Responsive)
   ════════════════════════════════════════ -->
   <section
-    class="lg:hidden bg-[#111] py-16 px-5 sm:px-8 md:px-12"
+    class="lg:hidden bg-[#111] py-12 sm:py-16 px-5 sm:px-8 md:px-12"
     aria-label="Core values of One Stop Solutions">
 
-    <div class="mb-10">
-      <div class="flex items-center gap-3 text-[#4f9eff] text-[0.72rem] font-bold tracking-[0.28em] uppercase mb-5 font-['Inter']">
+    <div class="mb-8 sm:mb-10">
+      <div class="flex items-center gap-3 text-[#4f9eff] text-[0.65rem] sm:text-[0.72rem] font-bold tracking-[0.28em] uppercase mb-4 sm:mb-5 font-['Inter']">
         <span class="block w-7 h-0.5 bg-[#4f9eff] flex-shrink-0" aria-hidden="true"></span>
         Our core values
       </div>
-      <h2 class="font-['Space_Grotesk'] text-[clamp(1.9rem,6vw,2.8rem)] font-bold leading-[1.12] tracking-[-0.02em] text-white mb-4">
+      <h2 class="font-['Space_Grotesk'] font-bold leading-[1.12] tracking-[-0.02em] text-white mb-3 sm:mb-4"
+          style="font-size:clamp(1.6rem, 6vw, 2.8rem);">
         Built on trust, technology &amp; <em class="not-italic text-[#4f9eff]">human connection</em>
       </h2>
-      <p class="text-[0.95rem] text-white/55 leading-[1.7] max-w-lg font-['Inter']">
+      <p class="text-white/55 text-sm sm:text-[0.95rem] leading-[1.7] max-w-lg font-['Inter']">
         Our combination of proven processes, technologies and people is the answer to your outsourcing needs. Nothing replaces human touch built on trust.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5" role="list">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5" role="list">
 
       <article class="mobile-val-card bg-[#1c1c1c] text-white" role="listitem" itemscope itemtype="https://schema.org/DefinedTerm">
-        <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 bg-[rgba(79,158,255,0.12)] text-[#4f9eff]" aria-hidden="true"><i class="fas fa-handshake"></i></div>
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-xl sm:text-2xl flex-shrink-0 bg-[rgba(79,158,255,0.12)] text-[#4f9eff]" aria-hidden="true"><i class="fas fa-handshake"></i></div>
         <div>
-          <div class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-white/40 mb-1 font-['Inter']">Value 01</div>
-          <h3 class="font-['Space_Grotesk'] text-[1.25rem] font-bold leading-[1.2] mb-2" itemprop="name">Trust &amp; Integrity</h3>
-          <p class="text-[0.88rem] leading-[1.7] text-white/60 font-['Inter']" itemprop="description">Our combination of proven processes, technologies and people is the answer to your needs. Nothing replaces human touch built on trust.</p>
+          <div class="text-[0.6rem] sm:text-[0.68rem] font-bold tracking-[0.22em] uppercase text-white/40 mb-1 font-['Inter']">Value 01</div>
+          <h3 class="font-['Space_Grotesk'] text-lg sm:text-[1.25rem] font-bold leading-[1.2] mb-2" itemprop="name">Trust &amp; Integrity</h3>
+          <p class="text-[0.8rem] sm:text-[0.88rem] leading-[1.7] text-white/60 font-['Inter']" itemprop="description">Our combination of proven processes, technologies and people is the answer to your needs. Nothing replaces human touch built on trust.</p>
         </div>
       </article>
 
       <article class="mobile-val-card bg-[#4f9eff] text-[#111]" role="listitem" itemscope itemtype="https://schema.org/DefinedTerm">
-        <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 bg-black/10 text-[#111]" aria-hidden="true"><i class="fas fa-users"></i></div>
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-xl sm:text-2xl flex-shrink-0 bg-black/10 text-[#111]" aria-hidden="true"><i class="fas fa-users"></i></div>
         <div>
-          <div class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-black/40 mb-1 font-['Inter']">Value 02</div>
-          <h3 class="font-['Space_Grotesk'] text-[1.25rem] font-bold leading-[1.2] mb-2" itemprop="name">People First</h3>
-          <p class="text-[0.88rem] leading-[1.7] text-black/60 font-['Inter']" itemprop="description">We handpick the best people and invest in their growth &mdash; because exceptional BPO service starts with exceptional teams who care deeply.</p>
+          <div class="text-[0.6rem] sm:text-[0.68rem] font-bold tracking-[0.22em] uppercase text-black/40 mb-1 font-['Inter']">Value 02</div>
+          <h3 class="font-['Space_Grotesk'] text-lg sm:text-[1.25rem] font-bold leading-[1.2] mb-2" itemprop="name">People First</h3>
+          <p class="text-[0.8rem] sm:text-[0.88rem] leading-[1.7] text-black/60 font-['Inter']" itemprop="description">We handpick the best people and invest in their growth &mdash; because exceptional BPO service starts with exceptional teams who care deeply.</p>
         </div>
       </article>
 
       <article class="mobile-val-card bg-[#1a1a2e] text-white" role="listitem" itemscope itemtype="https://schema.org/DefinedTerm">
-        <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 bg-[rgba(79,158,255,0.12)] text-[#4f9eff]" aria-hidden="true"><i class="fas fa-microchip"></i></div>
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-xl sm:text-2xl flex-shrink-0 bg-[rgba(79,158,255,0.12)] text-[#4f9eff]" aria-hidden="true"><i class="fas fa-microchip"></i></div>
         <div>
-          <div class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-white/40 mb-1 font-['Inter']">Value 03</div>
-          <h3 class="font-['Space_Grotesk'] text-[1.25rem] font-bold leading-[1.2] mb-2" itemprop="name">Cutting-Edge Technology</h3>
-          <p class="text-[0.88rem] leading-[1.7] text-white/60 font-['Inter']" itemprop="description">Advanced processes and cutting-edge technologies make One Stop Solutions one of the leading strategic outsourcing partners in the region.</p>
+          <div class="text-[0.6rem] sm:text-[0.68rem] font-bold tracking-[0.22em] uppercase text-white/40 mb-1 font-['Inter']">Value 03</div>
+          <h3 class="font-['Space_Grotesk'] text-lg sm:text-[1.25rem] font-bold leading-[1.2] mb-2" itemprop="name">Cutting-Edge Technology</h3>
+          <p class="text-[0.8rem] sm:text-[0.88rem] leading-[1.7] text-white/60 font-['Inter']" itemprop="description">Advanced processes and cutting-edge technologies make One Stop Solutions one of the leading strategic outsourcing partners in the region.</p>
         </div>
       </article>
 
       <article class="mobile-val-card bg-white text-[#111] border border-gray-200 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.12)]" role="listitem" itemscope itemtype="https://schema.org/DefinedTerm">
-        <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 bg-[#111] text-[#4f9eff]" aria-hidden="true"><i class="fas fa-globe"></i></div>
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-xl sm:text-2xl flex-shrink-0 bg-[#111] text-[#4f9eff]" aria-hidden="true"><i class="fas fa-globe"></i></div>
         <div>
-          <div class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-black/35 mb-1 font-['Inter']">Value 04</div>
-          <h3 class="font-['Space_Grotesk'] text-[1.25rem] font-bold leading-[1.2] mb-2" itemprop="name">Global Reach</h3>
-          <p class="text-[0.88rem] leading-[1.7] text-black/55 font-['Inter']" itemprop="description">With a strong understanding of international markets, we bring global perspective to every local challenge &mdash; bridging cultures seamlessly.</p>
+          <div class="text-[0.6rem] sm:text-[0.68rem] font-bold tracking-[0.22em] uppercase text-black/35 mb-1 font-['Inter']">Value 04</div>
+          <h3 class="font-['Space_Grotesk'] text-lg sm:text-[1.25rem] font-bold leading-[1.2] mb-2" itemprop="name">Global Reach</h3>
+          <p class="text-[0.8rem] sm:text-[0.88rem] leading-[1.7] text-black/55 font-['Inter']" itemprop="description">With a strong understanding of international markets, we bring global perspective to every local challenge &mdash; bridging cultures seamlessly.</p>
         </div>
       </article>
 
@@ -432,11 +442,12 @@
     aria-label="One Stop Solutions core values — Trust, People, Technology, Global Reach">
 
     <div class="flex-[0_0_48%] h-screen sticky top-0 flex flex-col justify-center bg-[#111] px-[8%] pr-[5%] rounded-r-[40px]">
-      <div class="stack-eyebrow flex items-center gap-[10px] text-[#4f9eff] text-[0.72rem] font-bold tracking-[0.28em] uppercase mb-6 font-['Inter']">Our core values</div>
-      <h2 class="font-['Space_Grotesk'] text-[clamp(2rem,3.8vw,3.2rem)] font-bold leading-[1.12] tracking-[-0.02em] text-white max-w-[520px] mb-7">
+      <div class="stack-eyebrow flex items-center gap-[10px] text-[#4f9eff] text-[0.7rem] sm:text-[0.72rem] font-bold tracking-[0.28em] uppercase mb-5 sm:mb-6 font-['Inter']">Our core values</div>
+      <h2 class="font-['Space_Grotesk'] font-bold leading-[1.12] tracking-[-0.02em] text-white max-w-[520px] mb-5 sm:mb-7"
+          style="font-size:clamp(1.8rem, 3.8vw, 3rem);">
         Built on trust, technology &amp; <em class="not-italic text-[#4f9eff]">human connection</em>
       </h2>
-      <p class="text-[0.95rem] text-white/55 max-w-[400px] leading-[1.7] mb-10 font-['Inter']">
+      <p class="text-white/55 text-sm sm:text-[0.95rem] max-w-[400px] leading-[1.7] mb-8 sm:mb-10 font-['Inter']">
         Our combination of proven outsourcing processes, technologies and people is the answer to your needs. Nothing replaces human touch built on trust.
       </p>
       <div class="flex gap-2" role="tablist" aria-label="Core value indicators">
@@ -448,88 +459,89 @@
     </div>
 
     <div class="flex-[0_0_52%] h-screen sticky top-0 flex items-center justify-center bg-[#eeeee9]" aria-hidden="true">
-      <div class="val-card absolute w-[360px] min-h-[380px] rounded-[32px] p-[2.6rem_2rem] flex flex-col justify-between bg-[#111] text-white shadow-[0_32px_64px_-16px_rgba(0,0,0,0.45)] cursor-default">
+      <div class="val-card absolute w-[320px] sm:w-[360px] min-h-[360px] sm:min-h-[380px] rounded-[32px] p-[2rem_1.5rem] sm:p-[2.6rem_2rem] flex flex-col justify-between bg-[#111] text-white shadow-[0_32px_64px_-16px_rgba(0,0,0,0.45)] cursor-default">
         <div>
-          <div class="w-[60px] h-[60px] rounded-[18px] flex items-center justify-center text-2xl mb-6 bg-[rgba(79,158,255,0.12)] text-[#4f9eff]"><i class="fas fa-handshake"></i></div>
-          <div class="text-[0.72rem] font-bold tracking-[0.22em] uppercase opacity-45 mb-2 font-['Inter']">Value 01</div>
-          <h3 class="font-['Space_Grotesk'] text-[1.65rem] font-bold leading-[1.2] mb-4">Trust &amp; Integrity</h3>
-          <p class="text-[0.92rem] leading-[1.7] opacity-70 font-['Inter']">Our combination of proven processes, technologies and people is the answer to your needs. Nothing replaces human touch built on trust.</p>
+          <div class="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] rounded-[18px] flex items-center justify-center text-xl sm:text-2xl mb-5 sm:mb-6 bg-[rgba(79,158,255,0.12)] text-[#4f9eff]"><i class="fas fa-handshake"></i></div>
+          <div class="text-[0.68rem] sm:text-[0.72rem] font-bold tracking-[0.22em] uppercase opacity-45 mb-2 font-['Inter']">Value 01</div>
+          <h3 class="font-['Space_Grotesk'] text-[1.4rem] sm:text-[1.65rem] font-bold leading-[1.2] mb-3 sm:mb-4">Trust &amp; Integrity</h3>
+          <p class="text-[0.85rem] sm:text-[0.92rem] leading-[1.7] opacity-70 font-['Inter']">Our combination of proven processes, technologies and people is the answer to your needs. Nothing replaces human touch built on trust.</p>
         </div>
-        <div class="self-end font-['Space_Grotesk'] text-[3.5rem] font-bold opacity-[0.07] leading-none mt-4">01</div>
+        <div class="self-end font-['Space_Grotesk'] text-[3rem] sm:text-[3.5rem] font-bold opacity-[0.07] leading-none mt-4">01</div>
       </div>
-      <div class="val-card absolute w-[360px] min-h-[380px] rounded-[32px] p-[2.6rem_2rem] flex flex-col justify-between bg-[#4f9eff] text-[#111] shadow-[0_32px_64px_-16px_rgba(79,158,255,0.4)] cursor-default">
+      <div class="val-card absolute w-[320px] sm:w-[360px] min-h-[360px] sm:min-h-[380px] rounded-[32px] p-[2rem_1.5rem] sm:p-[2.6rem_2rem] flex flex-col justify-between bg-[#4f9eff] text-[#111] shadow-[0_32px_64px_-16px_rgba(79,158,255,0.4)] cursor-default">
         <div>
-          <div class="w-[60px] h-[60px] rounded-[18px] flex items-center justify-center text-2xl mb-6 bg-black/10 text-[#111]"><i class="fas fa-users"></i></div>
-          <div class="text-[0.72rem] font-bold tracking-[0.22em] uppercase opacity-45 mb-2 font-['Inter']">Value 02</div>
-          <h3 class="font-['Space_Grotesk'] text-[1.65rem] font-bold leading-[1.2] mb-4">People First</h3>
-          <p class="text-[0.92rem] leading-[1.7] opacity-70 font-['Inter']">We handpick the best people and invest in their growth &mdash; because exceptional service starts with exceptional teams who care deeply.</p>
+          <div class="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] rounded-[18px] flex items-center justify-center text-xl sm:text-2xl mb-5 sm:mb-6 bg-black/10 text-[#111]"><i class="fas fa-users"></i></div>
+          <div class="text-[0.68rem] sm:text-[0.72rem] font-bold tracking-[0.22em] uppercase opacity-45 mb-2 font-['Inter']">Value 02</div>
+          <h3 class="font-['Space_Grotesk'] text-[1.4rem] sm:text-[1.65rem] font-bold leading-[1.2] mb-3 sm:mb-4">People First</h3>
+          <p class="text-[0.85rem] sm:text-[0.92rem] leading-[1.7] opacity-70 font-['Inter']">We handpick the best people and invest in their growth &mdash; because exceptional service starts with exceptional teams who care deeply.</p>
         </div>
-        <div class="self-end font-['Space_Grotesk'] text-[3.5rem] font-bold opacity-[0.07] leading-none mt-4">02</div>
+        <div class="self-end font-['Space_Grotesk'] text-[3rem] sm:text-[3.5rem] font-bold opacity-[0.07] leading-none mt-4">02</div>
       </div>
-      <div class="val-card absolute w-[360px] min-h-[380px] rounded-[32px] p-[2.6rem_2rem] flex flex-col justify-between bg-[#1a1a2e] text-white shadow-[0_32px_64px_-16px_rgba(0,0,0,0.55)] cursor-default">
+      <div class="val-card absolute w-[320px] sm:w-[360px] min-h-[360px] sm:min-h-[380px] rounded-[32px] p-[2rem_1.5rem] sm:p-[2.6rem_2rem] flex flex-col justify-between bg-[#1a1a2e] text-white shadow-[0_32px_64px_-16px_rgba(0,0,0,0.55)] cursor-default">
         <div>
-          <div class="w-[60px] h-[60px] rounded-[18px] flex items-center justify-center text-2xl mb-6 bg-[rgba(79,158,255,0.12)] text-[#4f9eff]"><i class="fas fa-microchip"></i></div>
-          <div class="text-[0.72rem] font-bold tracking-[0.22em] uppercase opacity-45 mb-2 font-['Inter']">Value 03</div>
-          <h3 class="font-['Space_Grotesk'] text-[1.65rem] font-bold leading-[1.2] mb-4">Cutting-Edge Technology</h3>
-          <p class="text-[0.92rem] leading-[1.7] opacity-70 font-['Inter']">Advanced processes and cutting-edge technologies make One Stop Solutions one of the leading strategic partners for outsourcing solutions.</p>
+          <div class="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] rounded-[18px] flex items-center justify-center text-xl sm:text-2xl mb-5 sm:mb-6 bg-[rgba(79,158,255,0.12)] text-[#4f9eff]"><i class="fas fa-microchip"></i></div>
+          <div class="text-[0.68rem] sm:text-[0.72rem] font-bold tracking-[0.22em] uppercase opacity-45 mb-2 font-['Inter']">Value 03</div>
+          <h3 class="font-['Space_Grotesk'] text-[1.4rem] sm:text-[1.65rem] font-bold leading-[1.2] mb-3 sm:mb-4">Cutting-Edge Technology</h3>
+          <p class="text-[0.85rem] sm:text-[0.92rem] leading-[1.7] opacity-70 font-['Inter']">Advanced processes and cutting-edge technologies make One Stop Solutions one of the leading strategic partners for outsourcing solutions.</p>
         </div>
-        <div class="self-end font-['Space_Grotesk'] text-[3.5rem] font-bold opacity-[0.07] leading-none mt-4">03</div>
+        <div class="self-end font-['Space_Grotesk'] text-[3rem] sm:text-[3.5rem] font-bold opacity-[0.07] leading-none mt-4">03</div>
       </div>
-      <div class="val-card absolute w-[360px] min-h-[380px] rounded-[32px] p-[2.6rem_2rem] flex flex-col justify-between bg-white text-[#111] border border-gray-200 shadow-[0_40px_80px_-10px_rgba(0,0,0,0.30),0_0_0_1px_rgba(0,0,0,0.07),inset_0_1px_0_rgba(255,255,255,0.9)] cursor-default">
+      <div class="val-card absolute w-[320px] sm:w-[360px] min-h-[360px] sm:min-h-[380px] rounded-[32px] p-[2rem_1.5rem] sm:p-[2.6rem_2rem] flex flex-col justify-between bg-white text-[#111] border border-gray-200 shadow-[0_40px_80px_-10px_rgba(0,0,0,0.30),0_0_0_1px_rgba(0,0,0,0.07),inset_0_1px_0_rgba(255,255,255,0.9)] cursor-default">
         <div>
-          <div class="w-[60px] h-[60px] rounded-[18px] flex items-center justify-center text-2xl mb-6 bg-[#111] text-[#4f9eff]"><i class="fas fa-globe"></i></div>
-          <div class="text-[0.72rem] font-bold tracking-[0.22em] uppercase opacity-45 mb-2 font-['Inter']">Value 04</div>
-          <h3 class="font-['Space_Grotesk'] text-[1.65rem] font-bold leading-[1.2] mb-4">Global Reach</h3>
-          <p class="text-[0.92rem] leading-[1.7] opacity-70 font-['Inter']">With a strong understanding of international markets, we bring global perspective to every local challenge &mdash; bridging cultures seamlessly.</p>
+          <div class="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] rounded-[18px] flex items-center justify-center text-xl sm:text-2xl mb-5 sm:mb-6 bg-[#111] text-[#4f9eff]"><i class="fas fa-globe"></i></div>
+          <div class="text-[0.68rem] sm:text-[0.72rem] font-bold tracking-[0.22em] uppercase opacity-45 mb-2 font-['Inter']">Value 04</div>
+          <h3 class="font-['Space_Grotesk'] text-[1.4rem] sm:text-[1.65rem] font-bold leading-[1.2] mb-3 sm:mb-4">Global Reach</h3>
+          <p class="text-[0.85rem] sm:text-[0.92rem] leading-[1.7] opacity-70 font-['Inter']">With a strong understanding of international markets, we bring global perspective to every local challenge &mdash; bridging cultures seamlessly.</p>
         </div>
-        <div class="self-end font-['Space_Grotesk'] text-[3.5rem] font-bold opacity-[0.07] leading-none mt-4">04</div>
+        <div class="self-end font-['Space_Grotesk'] text-[3rem] sm:text-[3.5rem] font-bold opacity-[0.07] leading-none mt-4">04</div>
       </div>
     </div>
   </section>
 
   <!-- ════════════════════════════════════════
-       PHILOSOPHY — Our Story (Blue accents)
+       PHILOSOPHY — Our Story (Responsive)
   ════════════════════════════════════════ -->
   <section
     id="philosophy"
     aria-label="One Stop Solutions outsourcing philosophy and approach"
-    class="bg-white py-20 md:py-28 overflow-hidden">
+    class="bg-white py-12 md:py-28 overflow-hidden">
 
     <div class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
 
         <!-- Text -->
         <div>
-          <div class="reveal flex items-center gap-[10px] text-[#4f9eff] text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-5 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#4f9eff] font-['Inter']">Our philosophy</div>
-          <h2 class="reveal d1 font-['Space_Grotesk'] text-[clamp(1.8rem,3.8vw,3rem)] font-bold leading-[1.1] tracking-[-0.025em] text-[#111] mb-8">
+          <div class="reveal flex items-center gap-[10px] text-[#4f9eff] text-[0.65rem] sm:text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-4 sm:mb-5 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#4f9eff] font-['Inter']">Our philosophy</div>
+          <h2 class="reveal d1 font-['Space_Grotesk'] font-bold leading-[1.1] tracking-[-0.025em] text-[#111] mb-6 sm:mb-8"
+              style="font-size:clamp(1.5rem, 3.8vw, 2.8rem);">
             Communication is the <span class="bg-[#4f9eff] text-white px-[0.15em] pb-[0.05em] inline-block -skew-x-3 shadow-[-6px_6px_0_rgba(0,0,0,0.12)]">foundation</span> of lasting customer relationships
           </h2>
 
-          <ol class="flex flex-col gap-9 mt-8" style="list-style:none; padding:0;">
-            <li class="reveal d1 relative pl-[60px] md:pl-20 group">
-              <div class="absolute left-0 top-0 w-11 h-11 md:w-14 md:h-14 bg-[#4f9eff] rounded-2xl flex items-center justify-center font-['Space_Grotesk'] text-lg md:text-xl font-bold text-white shadow-[6px_6px_0_rgba(0,0,0,0.15)] transition-transform group-hover:scale-105 group-hover:-rotate-3" aria-hidden="true">01</div>
-              <div class="absolute left-[22px] md:left-[27px] top-11 md:top-14 w-[2px] h-[calc(100%+40px)] bg-gradient-to-b from-[rgba(79,158,255,0.3)] to-transparent pointer-events-none" aria-hidden="true"></div>
-              <h3 class="font-['Space_Grotesk'] text-base md:text-lg font-bold mb-2">Direct &amp; personalised contact</h3>
-              <p class="text-[#5a5a5a] text-sm md:text-[0.95rem] leading-relaxed font-['Inter']">In the era of digital communications, one-on-one communication is the most effective way to strengthen customer loyalty and build a brand name.</p>
+          <ol class="flex flex-col gap-6 sm:gap-9 mt-6 sm:mt-8" style="list-style:none; padding:0;">
+            <li class="reveal d1 relative pl-[50px] sm:pl-[60px] md:pl-20 group">
+              <div class="absolute left-0 top-0 w-9 h-9 sm:w-11 sm:h-11 md:w-14 md:h-14 bg-[#4f9eff] rounded-2xl flex items-center justify-center font-['Space_Grotesk'] text-base sm:text-lg md:text-xl font-bold text-white shadow-[6px_6px_0_rgba(0,0,0,0.15)] transition-transform group-hover:scale-105 group-hover:-rotate-3" aria-hidden="true">01</div>
+              <div class="absolute left-[18px] sm:left-[22px] md:left-[27px] top-9 sm:top-11 md:top-14 w-[2px] h-[calc(100%+40px)] bg-gradient-to-b from-[rgba(79,158,255,0.3)] to-transparent pointer-events-none" aria-hidden="true"></div>
+              <h3 class="font-['Space_Grotesk'] text-sm sm:text-base md:text-lg font-bold mb-2">Direct &amp; personalised contact</h3>
+              <p class="text-[#5a5a5a] text-xs sm:text-sm md:text-[0.95rem] leading-relaxed font-['Inter']">In the era of digital communications, one-on-one communication is the most effective way to strengthen customer loyalty and build a brand name.</p>
             </li>
-            <li class="reveal d2 relative pl-[60px] md:pl-20 group">
-              <div class="absolute left-0 top-0 w-11 h-11 md:w-14 md:h-14 bg-[#4f9eff] rounded-2xl flex items-center justify-center font-['Space_Grotesk'] text-lg md:text-xl font-bold text-white shadow-[6px_6px_0_rgba(0,0,0,0.15)] transition-transform group-hover:scale-105 group-hover:-rotate-3" aria-hidden="true">02</div>
-              <div class="absolute left-[22px] md:left-[27px] top-11 md:top-14 w-[2px] h-[calc(100%+40px)] bg-gradient-to-b from-[rgba(79,158,255,0.3)] to-transparent pointer-events-none" aria-hidden="true"></div>
-              <h3 class="font-['Space_Grotesk'] text-base md:text-lg font-bold mb-2">Every touchpoint matters</h3>
-              <p class="text-[#5a5a5a] text-sm md:text-[0.95rem] leading-relaxed font-['Inter']">Whether via telephone, email, or live chat &mdash; each communication represents a unique opportunity to strengthen your relationship with the customer.</p>
+            <li class="reveal d2 relative pl-[50px] sm:pl-[60px] md:pl-20 group">
+              <div class="absolute left-0 top-0 w-9 h-9 sm:w-11 sm:h-11 md:w-14 md:h-14 bg-[#4f9eff] rounded-2xl flex items-center justify-center font-['Space_Grotesk'] text-base sm:text-lg md:text-xl font-bold text-white shadow-[6px_6px_0_rgba(0,0,0,0.15)] transition-transform group-hover:scale-105 group-hover:-rotate-3" aria-hidden="true">02</div>
+              <div class="absolute left-[18px] sm:left-[22px] md:left-[27px] top-9 sm:top-11 md:top-14 w-[2px] h-[calc(100%+40px)] bg-gradient-to-b from-[rgba(79,158,255,0.3)] to-transparent pointer-events-none" aria-hidden="true"></div>
+              <h3 class="font-['Space_Grotesk'] text-sm sm:text-base md:text-lg font-bold mb-2">Every touchpoint matters</h3>
+              <p class="text-[#5a5a5a] text-xs sm:text-sm md:text-[0.95rem] leading-relaxed font-['Inter']">Whether via telephone, email, or live chat &mdash; each communication represents a unique opportunity to strengthen your relationship with the customer.</p>
             </li>
-            <li class="reveal d3 relative pl-[60px] md:pl-20 group">
-              <div class="absolute left-0 top-0 w-11 h-11 md:w-14 md:h-14 bg-[#4f9eff] rounded-2xl flex items-center justify-center font-['Space_Grotesk'] text-lg md:text-xl font-bold text-white shadow-[6px_6px_0_rgba(0,0,0,0.15)] transition-transform group-hover:scale-105 group-hover:-rotate-3" aria-hidden="true">03</div>
-              <h3 class="font-['Space_Grotesk'] text-base md:text-lg font-bold mb-2">Outstanding interactions, every time</h3>
-              <p class="text-[#5a5a5a] text-sm md:text-[0.95rem] leading-relaxed font-['Inter']">We ensure each of your one-on-one customer interactions is outstanding &mdash; retaining existing customers while continually attracting new ones.</p>
+            <li class="reveal d3 relative pl-[50px] sm:pl-[60px] md:pl-20 group">
+              <div class="absolute left-0 top-0 w-9 h-9 sm:w-11 sm:h-11 md:w-14 md:h-14 bg-[#4f9eff] rounded-2xl flex items-center justify-center font-['Space_Grotesk'] text-base sm:text-lg md:text-xl font-bold text-white shadow-[6px_6px_0_rgba(0,0,0,0.15)] transition-transform group-hover:scale-105 group-hover:-rotate-3" aria-hidden="true">03</div>
+              <h3 class="font-['Space_Grotesk'] text-sm sm:text-base md:text-lg font-bold mb-2">Outstanding interactions, every time</h3>
+              <p class="text-[#5a5a5a] text-xs sm:text-sm md:text-[0.95rem] leading-relaxed font-['Inter']">We ensure each of your one-on-one customer interactions is outstanding &mdash; retaining existing customers while continually attracting new ones.</p>
             </li>
           </ol>
         </div>
 
         <!-- Images -->
         <div class="reveal-right relative">
-          <div class="grid grid-cols-2 gap-4">
-            <div class="row-span-2 mt-10 rounded-2xl overflow-hidden aspect-[3/4] shadow-[0_30px_50px_-20px_rgba(0,0,0,0.2)]">
+          <div class="grid grid-cols-2 gap-3 sm:gap-4">
+            <div class="row-span-2 mt-8 sm:mt-10 rounded-2xl overflow-hidden aspect-[3/4] shadow-[0_30px_50px_-20px_rgba(0,0,0,0.2)]">
               <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=800&auto=format&fit=crop"
                    alt="One Stop Solutions call centre agent handling outbound customer contact"
                    class="w-full h-full object-cover grayscale contrast-[1.05]"
@@ -548,9 +560,9 @@
                    width="600" height="600" loading="lazy" decoding="async">
             </div>
           </div>
-          <div class="absolute -bottom-6 -left-8 bg-black text-white rounded-2xl px-5 py-4 shadow-2xl z-10">
-            <div class="font-['Space_Grotesk'] text-2xl md:text-3xl font-bold text-[#4f9eff] tracking-[-0.03em] leading-none">3 channels</div>
-            <div class="text-xs text-white/55 mt-1 font-['Inter']"><a href="tel:03361369929">Phone</a> &middot; <a href="mailto:info@onestopsolutions.com">Email</a> &middot; <a href="contact.php">Chat</a></div>
+          <div class="absolute -bottom-4 -left-6 sm:-bottom-6 sm:-left-8 bg-black text-white rounded-2xl px-4 py-3 sm:px-5 sm:py-4 shadow-2xl z-10">
+            <div class="font-['Space_Grotesk'] text-xl sm:text-2xl md:text-3xl font-bold text-[#4f9eff] tracking-[-0.03em] leading-none">3 channels</div>
+            <div class="text-[10px] sm:text-xs text-white/55 mt-1 font-['Inter']"><a href="tel:03361369929" class="hover:text-[#4f9eff] transition-colors">Phone</a> &middot; <a href="mailto:info@onestopsolutions.com" class="hover:text-[#4f9eff] transition-colors">Email</a> &middot; <a href="contact.php" class="hover:text-[#4f9eff] transition-colors">Chat</a></div>
           </div>
         </div>
       </div>
@@ -558,78 +570,81 @@
   </section>
 
   <!-- ════════════════════════════════════════
-       COMMITMENT (Blue accents)
+       COMMITMENT (Responsive)
   ════════════════════════════════════════ -->
   <section
     id="commitment"
     aria-label="One Stop Solutions commitment to outsourcing excellence"
-    class="bg-[#0f0f0f] py-20 md:py-28 relative overflow-hidden">
+    class="bg-[#0f0f0f] py-12 md:py-28 relative overflow-hidden">
 
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(79,158,255,0.07)_0%,transparent_65%)] pointer-events-none" aria-hidden="true"></div>
 
     <div class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 relative z-10">
-      <div class="text-center mb-16">
-        <div class="reveal inline-flex items-center gap-[10px] text-[#4f9eff] text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-5 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#4f9eff] font-['Inter']">Our commitment</div>
-        <h2 class="reveal d1 font-['Space_Grotesk'] text-[clamp(2rem,5vw,3.8rem)] font-bold leading-[1.08] tracking-[-0.025em] text-white max-w-[720px] mx-auto">
+      <div class="text-center mb-10 md:mb-16">
+        <div class="reveal inline-flex items-center gap-[10px] text-[#4f9eff] text-[0.65rem] sm:text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-4 sm:mb-5 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#4f9eff] font-['Inter']">Our commitment</div>
+        <h2 class="reveal d1 font-['Space_Grotesk'] font-bold leading-[1.08] tracking-[-0.025em] text-white max-w-[720px] mx-auto"
+            style="font-size:clamp(1.6rem, 5vw, 3.5rem);">
           Superior BPO service is more than innovation &mdash; it's <span class="text-[#4f9eff]">sustained excellence</span>
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-        <article class="reveal-left bg-white/[0.04] border border-white/5 rounded-[32px] p-10" itemscope itemtype="https://schema.org/Service">
-          <div class="w-[52px] h-[52px] bg-[#4f9eff] rounded-[14px] flex items-center justify-center mb-6 shadow-[8px_8px_0_rgba(0,0,0,0.3)]" aria-hidden="true"><i class="fas fa-lightbulb text-2xl text-white"></i></div>
-          <h3 class="font-['Space_Grotesk'] text-xl md:text-2xl font-bold text-white mb-4" itemprop="name">Innovative outsourcing ideas that suit your business needs</h3>
-          <p class="text-white/55 text-[0.98rem] leading-relaxed font-['Inter']" itemprop="description">Superior customer service requires not only the innovative ideas that suit your business needs, but the experience and knowledge to see that they are successfully implemented and maintained &mdash; which is the core value of One Stop Solutions.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
+        <article class="reveal-left bg-white/[0.04] border border-white/5 rounded-[28px] sm:rounded-[32px] p-6 sm:p-10" itemscope itemtype="https://schema.org/Service">
+          <div class="w-10 h-10 sm:w-[52px] sm:h-[52px] bg-[#4f9eff] rounded-[12px] sm:rounded-[14px] flex items-center justify-center mb-4 sm:mb-6 shadow-[8px_8px_0_rgba(0,0,0,0.3)]" aria-hidden="true"><i class="fas fa-lightbulb text-xl sm:text-2xl text-white"></i></div>
+          <h3 class="font-['Space_Grotesk'] text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4" itemprop="name">Innovative outsourcing ideas that suit your business needs</h3>
+          <p class="text-white/55 text-sm sm:text-[0.98rem] leading-relaxed font-['Inter']" itemprop="description">Superior customer service requires not only the innovative ideas that suit your business needs, but the experience and knowledge to see that they are successfully implemented and maintained &mdash; which is the core value of One Stop Solutions.</p>
         </article>
-        <article class="reveal-right bg-white/[0.04] border border-white/5 rounded-[32px] p-10" itemscope itemtype="https://schema.org/Service">
-          <div class="w-[52px] h-[52px] bg-[#4f9eff] rounded-[14px] flex items-center justify-center mb-6 shadow-[8px_8px_0_rgba(0,0,0,0.3)]" aria-hidden="true"><i class="fas fa-rocket text-2xl text-white"></i></div>
-          <h3 class="font-['Space_Grotesk'] text-xl md:text-2xl font-bold text-white mb-4" itemprop="name">From implementation to ongoing BPO success</h3>
-          <p class="text-white/55 text-[0.98rem] leading-relaxed font-['Inter']" itemprop="description">Our commitment, coupled with our combination of handpicked people, advanced processes and cutting-edge technologies, has made One Stop Solutions one of the leading strategic partners for outsourcing solutions.</p>
+        <article class="reveal-right bg-white/[0.04] border border-white/5 rounded-[28px] sm:rounded-[32px] p-6 sm:p-10" itemscope itemtype="https://schema.org/Service">
+          <div class="w-10 h-10 sm:w-[52px] sm:h-[52px] bg-[#4f9eff] rounded-[12px] sm:rounded-[14px] flex items-center justify-center mb-4 sm:mb-6 shadow-[8px_8px_0_rgba(0,0,0,0.3)]" aria-hidden="true"><i class="fas fa-rocket text-xl sm:text-2xl text-white"></i></div>
+          <h3 class="font-['Space_Grotesk'] text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4" itemprop="name">From implementation to ongoing BPO success</h3>
+          <p class="text-white/55 text-sm sm:text-[0.98rem] leading-relaxed font-['Inter']" itemprop="description">Our commitment, coupled with our combination of handpicked people, advanced processes and cutting-edge technologies, has made One Stop Solutions one of the leading strategic partners for outsourcing solutions.</p>
         </article>
       </div>
 
-      <div class="reveal mt-16 text-center border-t border-white/5 pt-12">
+      <div class="reveal mt-10 md:mt-16 text-center border-t border-white/5 pt-8 md:pt-12">
         <blockquote>
-          <p class="font-['Space_Grotesk'] text-[clamp(1.4rem,3.5vw,2.4rem)] font-bold text-white leading-[1.3] max-w-[800px] mx-auto">
+          <p class="font-['Space_Grotesk'] font-bold text-white leading-[1.3] max-w-[800px] mx-auto"
+             style="font-size:clamp(1.2rem, 3.5vw, 2.2rem);">
             "We add value to your business by ensuring that each of your one-on-one interactions with a customer is <span class="text-[#4f9eff]">outstanding.</span>"
           </p>
         </blockquote>
-        <div class="inline-flex items-center gap-3 mt-6" itemscope itemtype="https://schema.org/Person">
-          <span class="text-sm text-white/45 font-['Inter']" itemprop="jobTitle">&mdash; Founder &amp; CEO, One Stop Solutions</span>
+        <div class="inline-flex items-center gap-3 mt-4 sm:mt-6" itemscope itemtype="https://schema.org/Person">
+          <span class="text-xs sm:text-sm text-white/45 font-['Inter']" itemprop="jobTitle">&mdash; Founder &amp; CEO, One Stop Solutions</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ════════════════════════════════════════
-       CTA (Blue theme)
+       CTA (Responsive)
   ════════════════════════════════════════ -->
   <section
     id="contact"
     aria-label="Start your outsourcing journey with One Stop Solutions"
-    class="bg-[#faf9f7] py-20 md:py-28">
+    class="bg-[#faf9f7] py-12 md:py-28">
 
     <div class="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
-      <div class="reveal bg-black text-white rounded-2xl md:rounded-3xl px-6 py-16 sm:px-10 md:p-16 lg:p-20 relative overflow-hidden">
-        <div class="absolute -right-10 -top-10 w-64 h-64 rounded-full blur-3xl pointer-events-none bg-[rgba(79,158,255,0.08)]" aria-hidden="true"></div>
-        <div class="absolute -left-10 -bottom-10 w-48 h-48 border-4 rounded-full pointer-events-none border-[rgba(79,158,255,0.15)]" aria-hidden="true"></div>
-        <div class="absolute right-16 bottom-16 w-20 h-20 rounded-2xl hidden xl:block bg-[#4f9eff] opacity-5 rotate-[18deg]" aria-hidden="true"></div>
+      <div class="reveal bg-black text-white rounded-2xl md:rounded-3xl px-5 py-10 sm:px-8 sm:py-12 md:p-16 lg:p-20 relative overflow-hidden">
+        <div class="absolute -right-10 -top-10 w-48 md:w-64 h-48 md:h-64 rounded-full blur-3xl pointer-events-none bg-[rgba(79,158,255,0.08)]" aria-hidden="true"></div>
+        <div class="absolute -left-10 -bottom-10 w-36 md:w-48 h-36 md:h-48 border-4 rounded-full pointer-events-none border-[rgba(79,158,255,0.15)]" aria-hidden="true"></div>
+        <div class="absolute right-12 bottom-12 sm:right-16 sm:bottom-16 w-16 h-16 sm:w-20 sm:h-20 rounded-2xl hidden xl:block bg-[#4f9eff] opacity-5 rotate-[18deg]" aria-hidden="true"></div>
         <div class="relative z-20 max-w-3xl">
-          <div class="flex items-center gap-[10px] text-[#4f9eff] text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-6 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#4f9eff] font-['Inter']">Ready to get started?</div>
-          <h2 class="font-['Space_Grotesk'] text-[clamp(2rem,5vw,3.8rem)] font-bold leading-[1.08] tracking-[-0.025em] text-white mb-5">
+          <div class="flex items-center gap-[10px] text-[#4f9eff] text-[0.65rem] sm:text-[0.75rem] font-semibold tracking-[0.28em] uppercase mb-4 sm:mb-6 before:content-[''] before:block before:w-7 before:h-0.5 before:bg-[#4f9eff] font-['Inter']">Ready to get started?</div>
+          <h2 class="font-['Space_Grotesk'] font-bold leading-[1.08] tracking-[-0.025em] text-white mb-3 sm:mb-5"
+              style="font-size:clamp(1.6rem, 5vw, 3.5rem);">
             Let's build something<br>exceptional together.
           </h2>
-          <p class="text-white/55 text-base md:text-lg max-w-[500px] leading-relaxed mb-10 font-['Inter']">
+          <p class="text-white/55 text-sm sm:text-base md:text-lg max-w-[500px] leading-relaxed mb-6 sm:mb-10 font-['Inter']">
             Whether you need a full BPO setup, a dedicated contact centre, or a results-driven digital marketing campaign &mdash; we have the team, technology and experience to deliver.
           </p>
-          <div class="flex flex-wrap gap-4">
+          <div class="flex flex-wrap gap-3 sm:gap-4">
             <a href="contact.php"
-               class="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white bg-[#4f9eff] hover:bg-[#3a7ed9] transition-all duration-300 shadow-2xl hover:-translate-y-0.5 font-['Inter']"
+               class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold text-white bg-[#4f9eff] hover:bg-[#3a7ed9] transition-all duration-300 shadow-2xl hover:-translate-y-0.5 font-['Inter']"
                title="Contact One Stop Solutions to start your BPO project">
-              Start a conversation <i class="fas fa-arrow-right text-sm" aria-hidden="true"></i>
+              Start a conversation <i class="fas fa-arrow-right text-xs sm:text-sm" aria-hidden="true"></i>
             </a>
             <a href="services.php"
-               class="inline-flex items-center gap-2 border border-white/25 rounded-full px-8 py-4 text-base font-medium text-white hover:bg-white/10 transition-all font-['Inter']"
+               class="inline-flex items-center gap-2 border border-white/25 rounded-full px-5 py-2.5 sm:px-8 sm:py-4 text-sm sm:text-base font-medium text-white hover:bg-white/10 transition-all font-['Inter']"
                title="View all BPO and contact centre services">
               View our services
             </a>

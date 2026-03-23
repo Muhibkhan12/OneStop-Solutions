@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>Why Outsource — OneStop Solutions</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -123,6 +123,20 @@
     .hover\:bg-accent:hover { background-color: #4f9eff; }
     .hover\:text-accent:hover { color: #4f9eff; }
     .from-accent { --tw-gradient-from: #4f9eff; }
+
+    /* Responsive text utilities */
+    .hero-heading {
+      font-size: clamp(2.2rem, 8vw, 5rem);
+    }
+    .section-heading {
+      font-size: clamp(1.8rem, 5vw, 3.5rem);
+    }
+    .benefit-title {
+      font-size: clamp(1.3rem, 4vw, 1.8rem);
+    }
+    .stat-number {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+    }
   </style>
 </head>
 <body class="antialiased bg-white text-[#111] overflow-x-hidden">
@@ -136,8 +150,7 @@
 </div>
 
 <!-- ========== HERO ========== -->
-<!-- ========== HERO ========== -->
-<section class="relative z-0 min-h-[50vh] flex items-center justify-center overflow-hidden bg-[#0a0f1e] pt-20">
+<section class="relative z-0 min-h-[40vh] sm:min-h-[50vh] flex items-center justify-center overflow-hidden bg-[#0a0f1e] pt-16 sm:pt-20">
   <!-- Background Image -->
   <div class="absolute inset-0 z-0">
     <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2070&auto=format&fit=crop"
@@ -149,86 +162,88 @@
     <div class="absolute inset-0 bg-gradient-to-b from-[#0a0f1e]/80 via-[#0a0f1e]/60 to-[#0a0f1e]/80" aria-hidden="true"></div>
   </div>
   
-  <!-- Blue radial glow replacing lime -->
-  <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_bottom_right,_#4f9eff_0%,_transparent_70%)] opacity-40 pointer-events-none z-0"></div>
+  <!-- Blue radial glow -->
+  <div class="absolute bottom-0 right-0 w-[600px] sm:w-[800px] h-[600px] sm:h-[800px] bg-[radial-gradient(circle_at_bottom_right,_#4f9eff_0%,_transparent_70%)] opacity-40 pointer-events-none z-0"></div>
   <div class="absolute inset-0 opacity-5 pointer-events-none z-0" style="background-image:url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M0 0 L60 0 L60 60 L0 60 Z&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; stroke-width=&quot;1&quot;/%3E%3C/svg%3E');"></div>
 
-  <div class="relative z-10 text-center px-5 sm:px-8 md:px-12 lg:px-24 py-20 md:py-28">
-    <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 mb-6">
-      <span class="w-2 h-2 bg-[#4f9eff] rounded-full animate-pulse"></span>
-      <span class="text-white/85 text-sm font-medium tracking-wider font-['Inter']">WHY OUTSOURCE</span>
+  <div class="relative z-10 text-center px-5 sm:px-8 md:px-12 lg:px-24 py-12 sm:py-16 md:py-28">
+    <div class="reveal inline-flex items-center gap-2 sm:gap-3 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 mb-4 sm:mb-6">
+      <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#4f9eff] rounded-full animate-pulse"></span>
+      <span class="text-white/85 text-[10px] sm:text-xs md:text-sm font-medium tracking-wider font-['Inter']">WHY OUTSOURCE</span>
     </div>
-    <h1 class="reveal d1 font-['Space_Grotesk'] font-bold text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white leading-[1.1] tracking-[-0.03em] mb-6">
+    <h1 class="reveal d1 font-['Space_Grotesk'] font-bold text-white leading-[1.1] tracking-[-0.03em] mb-4 sm:mb-6"
+        style="font-size:clamp(2.2rem, 8vw, 5rem);">
       Outsource <span class="text-[#4f9eff]">Smarter</span>
     </h1>
-    <p class="reveal d2 text-white/70 text-xl max-w-2xl mx-auto font-['Inter']">
+    <p class="reveal d2 text-white/70 text-sm sm:text-base md:text-xl max-w-2xl mx-auto font-['Inter'] px-4">
       12+ years of excellence, 60% average cost savings, and 24/7 dedicated support.
     </p>
   </div>
 </section>
 
 <!-- ========== WHO WE ARE ========== -->
-<section class="relative py-32 bg-white overflow-hidden">
-  <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#4f9eff]/10 rounded-full blur-[120px]"></div>
-  <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-200/30 rounded-full blur-[100px]"></div>
+<section class="relative py-16 sm:py-24 md:py-32 bg-white overflow-hidden">
+  <div class="absolute top-0 right-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-[#4f9eff]/10 rounded-full blur-[120px]"></div>
+  <div class="absolute bottom-0 left-0 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] bg-blue-200/30 rounded-full blur-[100px]"></div>
 
   <div class="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       <div class="reveal-left">
-        <span class="text-[#4f9eff] text-sm font-semibold tracking-[0.3em] uppercase mb-6 block font-['Inter']">12+ years of excellence</span>
-        <h2 class="font-['Space_Grotesk'] text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-[-0.02em] text-[#111] mb-8">
+        <span class="text-[#4f9eff] text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.3em] uppercase mb-4 sm:mb-6 block font-['Inter']">12+ years of excellence</span>
+        <h2 class="font-['Space_Grotesk'] font-bold leading-[1.1] tracking-[-0.02em] text-[#111] mb-6 sm:mb-8"
+            style="font-size:clamp(1.8rem, 5vw, 3.5rem);">
           Telemarketing &<br>
           <span class="text-[#4f9eff]">BPO specialists</span><br>
           you can trust
         </h2>
-        <p class="text-gray-600 text-lg leading-relaxed mb-6 font-['Inter']">
+        <p class="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-6 font-['Inter']">
           OneStop Solutions has been operating in the telemarketing and BPO industry for more than 7 years now. Our customer service representatives are thoroughly trained for handling both outbound as well as inbound calls, including chat support.
         </p>
-        <p class="text-gray-500 text-base leading-relaxed mb-8 font-['Inter']">
+        <p class="text-gray-500 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 font-['Inter']">
           In addition, we've also employed countless experts working as virtual assistants providing back-office solutions for organizations of every size and sector.
         </p>
-        <div class="flex flex-wrap gap-3">
-          <span class="px-4 py-2 bg-gray-100 border border-[#4f9eff]/50 rounded-full text-sm text-gray-700 hover:bg-[#4f9eff] hover:text-white transition-all duration-300 cursor-default font-['Inter']">Outbound Calls</span>
-          <span class="px-4 py-2 bg-gray-100 border border-[#4f9eff]/50 rounded-full text-sm text-gray-700 hover:bg-[#4f9eff] hover:text-white transition-all duration-300 cursor-default font-['Inter']">Inbound Support</span>
-          <span class="px-4 py-2 bg-gray-100 border border-[#4f9eff]/50 rounded-full text-sm text-gray-700 hover:bg-[#4f9eff] hover:text-white transition-all duration-300 cursor-default font-['Inter']">Chat Support</span>
-          <span class="px-4 py-2 bg-gray-100 border border-[#4f9eff]/50 rounded-full text-sm text-gray-700 hover:bg-[#4f9eff] hover:text-white transition-all duration-300 cursor-default font-['Inter']">Virtual Assistants</span>
-          <span class="px-4 py-2 bg-gray-100 border border-[#4f9eff]/50 rounded-full text-sm text-gray-700 hover:bg-[#4f9eff] hover:text-white transition-all duration-300 cursor-default font-['Inter']">Back-Office Solutions</span>
+        <div class="flex flex-wrap gap-2 sm:gap-3">
+          <span class="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 border border-[#4f9eff]/50 rounded-full text-xs sm:text-sm text-gray-700 hover:bg-[#4f9eff] hover:text-white transition-all duration-300 cursor-default font-['Inter']">Outbound Calls</span>
+          <span class="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 border border-[#4f9eff]/50 rounded-full text-xs sm:text-sm text-gray-700 hover:bg-[#4f9eff] hover:text-white transition-all duration-300 cursor-default font-['Inter']">Inbound Support</span>
+          <span class="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 border border-[#4f9eff]/50 rounded-full text-xs sm:text-sm text-gray-700 hover:bg-[#4f9eff] hover:text-white transition-all duration-300 cursor-default font-['Inter']">Chat Support</span>
+          <span class="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 border border-[#4f9eff]/50 rounded-full text-xs sm:text-sm text-gray-700 hover:bg-[#4f9eff] hover:text-white transition-all duration-300 cursor-default font-['Inter']">Virtual Assistants</span>
+          <span class="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 border border-[#4f9eff]/50 rounded-full text-xs sm:text-sm text-gray-700 hover:bg-[#4f9eff] hover:text-white transition-all duration-300 cursor-default font-['Inter']">Back-Office Solutions</span>
         </div>
       </div>
 
       <div class="reveal-right">
-        <div class="grid grid-cols-2 gap-4">
-          <div class="space-y-4">
-            <div class="relative overflow-hidden rounded-3xl aspect-square group">
+        <div class="grid grid-cols-2 gap-3 sm:gap-4">
+          <div class="space-y-3 sm:space-y-4">
+            <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl aspect-square group">
               <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=800&auto=format&fit=crop" alt="Team" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <div class="absolute bottom-4 left-4 text-white">
-                <div class="text-2xl font-bold font-['Space_Grotesk']" style="text-shadow: 3px 3px 8px rgba(0,0,0,0.9), 0px 0px 12px rgba(0,0,0,50);">50+</div>
-                <div class="text-xs text-white/60 font-['Inter']" style="text-shadow: 2px 2px 5px rgba(0,0,0,0.9), 0px 0px 8px rgba(0,0,0,1);">Team Members</div>
+              <div class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 text-white">
+                <div class="text-xl sm:text-2xl font-bold font-['Space_Grotesk']" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.7), 0px 0px 8px rgba(0,0,0,0.5);">50+</div>
+                <div class="text-[10px] sm:text-xs text-white/60 font-['Inter']" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">Team Members</div>
               </div>
             </div>
-            <div class="relative overflow-hidden rounded-3xl aspect-square group">
+            <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl aspect-square group">
               <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=800&auto=format&fit=crop" alt="Support" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <div class="absolute bottom-4 left-4 text-white">
-                <div class="text-2xl font-bold font-['Space_Grotesk']" style="text-shadow: 3px 3px 8px rgba(0,0,0,0.9), 0px 0px 12px rgba(0,0,0,1);">24/7</div>
-                <div class="text-xs text-white/60 font-['Inter']" style="text-shadow: 2px 2px 5px rgba(0,0,0,0.9), 0px 0px 8px rgba(0,0,0,1);">Coverage</div>
+              <div class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 text-white">
+                <div class="text-xl sm:text-2xl font-bold font-['Space_Grotesk']" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.7), 0px 0px 8px rgba(0,0,0,0.5);">24/7</div>
+                <div class="text-[10px] sm:text-xs text-white/60 font-['Inter']" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">Coverage</div>
               </div>
             </div>
           </div>
-          <div class="mt-8 space-y-4">
-            <div class="relative overflow-hidden rounded-3xl aspect-square group">
+          <div class="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
+            <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl aspect-square group">
               <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop" alt="Meeting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <div class="absolute bottom-4 left-4 text-white">
-                <div class="text-2xl font-bold font-['Space_Grotesk']" style="text-shadow: 3px 3px 8px rgba(0,0,0,0.9), 0px 0px 12px rgba(0,0,0,0.8);">98%</div>
-                <div class="text-xs text-white/60 font-['Inter']" style="text-shadow: 2px 2px 5px rgba(0,0,0,0.9), 0px 0px 8px rgba(0,0,0,0.7);">Satisfaction</div>
+              <div class="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 text-white">
+                <div class="text-xl sm:text-2xl font-bold font-['Space_Grotesk']" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.7), 0px 0px 8px rgba(0,0,0,0.5);">98%</div>
+                <div class="text-[10px] sm:text-xs text-white/60 font-['Inter']" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">Satisfaction</div>
               </div>
             </div>
-            <div class="relative overflow-hidden rounded-3xl aspect-square bg-[#4f9eff] flex items-center justify-center group hover:scale-105 transition-transform">
+            <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl aspect-square bg-[#4f9eff] flex items-center justify-center group hover:scale-105 transition-transform">
               <div class="text-center">
-                <div class="text-5xl font-bold text-white mb-2 font-['Space_Grotesk']" style="text-shadow: 4px 4px 10px rgba(0,0,0,0.8), 0px 0px 15px rgba(0,0,0,0.7);">12+</div>
-                <div class="text-sm text-white/80 font-['Inter']" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.8), 0px 0px 10px rgba(0,0,0,0.6);">Years Strong</div>
+                <div class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2 font-['Space_Grotesk']" style="text-shadow: 2px 2px 6px rgba(0,0,0,0.5);">12+</div>
+                <div class="text-[10px] sm:text-xs md:text-sm text-white/80 font-['Inter']" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.4);">Years Strong</div>
               </div>
             </div>
           </div>
@@ -239,77 +254,78 @@
 </section>
 
 <!-- ========== BENEFITS SECTION ========== -->
-<section class="relative py-32 bg-gray-50 overflow-hidden" id="benefits">
+<section class="relative py-16 sm:py-24 md:py-32 bg-gray-50 overflow-hidden" id="benefits">
   <div class="absolute inset-0 opacity-10">
-    <div class="absolute top-20 left-20 w-96 h-96 bg-[#4f9eff] rounded-full blur-[100px] animate-pulse"></div>
-    <div class="absolute bottom-20 right-20 w-96 h-96 bg-blue-600 rounded-full blur-[100px] animate-pulse animation-delay-1000"></div>
+    <div class="absolute top-20 left-20 w-64 sm:w-96 h-64 sm:h-96 bg-[#4f9eff] rounded-full blur-[100px] animate-pulse"></div>
+    <div class="absolute bottom-20 right-20 w-64 sm:w-96 h-64 sm:h-96 bg-blue-600 rounded-full blur-[100px] animate-pulse animation-delay-1000"></div>
   </div>
 
   <div class="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20 relative z-10">
-    <div class="text-center mb-20">
-      <span class="text-[#4f9eff] text-sm font-semibold tracking-[0.3em] uppercase mb-4 block font-['Inter']">Why Outsource</span>
-      <h2 class="font-['Space_Grotesk'] text-5xl md:text-6xl lg:text-7xl font-bold text-[#111] mb-6">
+    <div class="text-center mb-12 sm:mb-16 md:mb-20">
+      <span class="text-[#4f9eff] text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.3em] uppercase mb-3 sm:mb-4 block font-['Inter']">Why Outsource</span>
+      <h2 class="font-['Space_Grotesk'] font-bold text-[#111] mb-4 sm:mb-6"
+          style="font-size:clamp(1.8rem, 5vw, 3rem);">
         Six <span class="text-[#4f9eff]">powerful</span><br>
         reasons to partner
       </h2>
-      <p class="text-gray-500 text-lg max-w-2xl mx-auto font-['Inter']">Lower costs, better management, and greater agility — all in one strategic partnership.</p>
+      <p class="text-gray-500 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-['Inter'] px-4">Lower costs, better management, and greater agility — all in one strategic partnership.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="benefit-card-modern group relative bg-white rounded-[32px] p-8 border border-gray-200 hover:border-[#4f9eff] shadow-lg hover:shadow-xl transition-all">
-        <div class="absolute top-6 right-6 text-6xl font-bold text-gray-100 font-['Space_Grotesk']">01</div>
-        <div class="w-16 h-16 bg-[#4f9eff] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
-          <i class="fas fa-piggy-bank text-2xl text-white"></i>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+      <div class="benefit-card-modern group relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border border-gray-200 hover:border-[#4f9eff] shadow-lg hover:shadow-xl transition-all">
+        <div class="absolute top-4 right-4 sm:top-6 sm:right-6 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-100 font-['Space_Grotesk']">01</div>
+        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#4f9eff] rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform">
+          <i class="fas fa-piggy-bank text-xl sm:text-2xl text-white"></i>
         </div>
-        <h3 class="font-['Space_Grotesk'] text-2xl font-bold text-[#111] mb-3">Serious Savings</h3>
-        <p class="text-gray-500 text-sm leading-relaxed font-['Inter']">A lower cost structure and reduced operating costs bolster your competitive advantage, allowing you to focus funds on core items.</p>
+        <h3 class="font-['Space_Grotesk'] text-xl sm:text-2xl font-bold text-[#111] mb-2 sm:mb-3">Serious Savings</h3>
+        <p class="text-gray-500 text-xs sm:text-sm leading-relaxed font-['Inter']">A lower cost structure and reduced operating costs bolster your competitive advantage, allowing you to focus funds on core items.</p>
       </div>
 
-      <div class="benefit-card-modern group relative bg-white rounded-[32px] p-8 border border-gray-200 hover:border-[#4f9eff] shadow-lg hover:shadow-xl transition-all">
-        <div class="absolute top-6 right-6 text-6xl font-bold text-gray-100 font-['Space_Grotesk']">02</div>
-        <div class="w-16 h-16 bg-[#4f9eff] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
-          <i class="fas fa-users-gear text-2xl text-white"></i>
+      <div class="benefit-card-modern group relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border border-gray-200 hover:border-[#4f9eff] shadow-lg hover:shadow-xl transition-all">
+        <div class="absolute top-4 right-4 sm:top-6 sm:right-6 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-100 font-['Space_Grotesk']">02</div>
+        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#4f9eff] rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform">
+          <i class="fas fa-users-gear text-xl sm:text-2xl text-white"></i>
         </div>
-        <h3 class="font-['Space_Grotesk'] text-2xl font-bold text-[#111] mb-3">Flexible Staffing</h3>
-        <p class="text-gray-500 text-sm leading-relaxed font-['Inter']">Outsourcing makes it easy to bring in expert resources for seasonal or cyclical operations — scale up or down on demand.</p>
+        <h3 class="font-['Space_Grotesk'] text-xl sm:text-2xl font-bold text-[#111] mb-2 sm:mb-3">Flexible Staffing</h3>
+        <p class="text-gray-500 text-xs sm:text-sm leading-relaxed font-['Inter']">Outsourcing makes it easy to bring in expert resources for seasonal or cyclical operations — scale up or down on demand.</p>
       </div>
 
-      <div class="benefit-card-modern group relative bg-white rounded-[32px] p-8 border border-gray-200 hover:border-[#4f9eff] shadow-lg hover:shadow-xl transition-all">
-        <div class="absolute top-6 right-6 text-6xl font-bold text-gray-100 font-['Space_Grotesk']">03</div>
-        <div class="w-16 h-16 bg-[#4f9eff] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
-          <i class="fas fa-star text-2xl text-white"></i>
+      <div class="benefit-card-modern group relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border border-gray-200 hover:border-[#4f9eff] shadow-lg hover:shadow-xl transition-all">
+        <div class="absolute top-4 right-4 sm:top-6 sm:right-6 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-100 font-['Space_Grotesk']">03</div>
+        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#4f9eff] rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform">
+          <i class="fas fa-star text-xl sm:text-2xl text-white"></i>
         </div>
-        <h3 class="font-['Space_Grotesk'] text-2xl font-bold text-[#111] mb-3">Excellent Management</h3>
-        <p class="text-gray-500 text-sm leading-relaxed font-['Inter']">OneStop's highly trained team brings high-calibre management skills to the table — for a much lower price tag than in-house hires.</p>
+        <h3 class="font-['Space_Grotesk'] text-xl sm:text-2xl font-bold text-[#111] mb-2 sm:mb-3">Excellent Management</h3>
+        <p class="text-gray-500 text-xs sm:text-sm leading-relaxed font-['Inter']">OneStop's highly trained team brings high-calibre management skills to the table — for a much lower price tag than in-house hires.</p>
       </div>
 
-      <div class="benefit-card-modern group relative bg-white rounded-[32px] p-8 border border-gray-200 hover:border-[#4f9eff] shadow-lg hover:shadow-xl transition-all">
-        <div class="absolute top-6 right-6 text-6xl font-bold text-gray-100 font-['Space_Grotesk']">04</div>
-        <div class="w-16 h-16 bg-[#4f9eff] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
-          <i class="fas fa-shield-halved text-2xl text-white"></i>
+      <div class="benefit-card-modern group relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border border-gray-200 hover:border-[#4f9eff] shadow-lg hover:shadow-xl transition-all">
+        <div class="absolute top-4 right-4 sm:top-6 sm:right-6 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-100 font-['Space_Grotesk']">04</div>
+        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#4f9eff] rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform">
+          <i class="fas fa-shield-halved text-xl sm:text-2xl text-white"></i>
         </div>
-        <h3 class="font-['Space_Grotesk'] text-2xl font-bold text-[#111] mb-3">Continuity & Risk</h3>
-        <p class="text-gray-500 text-sm leading-relaxed font-['Inter']">In industries with high employee turnover, outsourcing with OneStop provides continuity, consistency, and peace of mind.</p>
+        <h3 class="font-['Space_Grotesk'] text-xl sm:text-2xl font-bold text-[#111] mb-2 sm:mb-3">Continuity & Risk</h3>
+        <p class="text-gray-500 text-xs sm:text-sm leading-relaxed font-['Inter']">In industries with high employee turnover, outsourcing with OneStop provides continuity, consistency, and peace of mind.</p>
       </div>
 
-      <div class="benefit-card-modern group relative bg-white rounded-[32px] p-8 border border-gray-200 hover:border-[#4f9eff] shadow-lg hover:shadow-xl transition-all">
-        <div class="absolute top-6 right-6 text-6xl font-bold text-gray-100 font-['Space_Grotesk']">05</div>
-        <div class="w-16 h-16 bg-[#4f9eff] rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
-          <i class="fas fa-bolt text-2xl text-white"></i>
+      <div class="benefit-card-modern group relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border border-gray-200 hover:border-[#4f9eff] shadow-lg hover:shadow-xl transition-all">
+        <div class="absolute top-4 right-4 sm:top-6 sm:right-6 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-100 font-['Space_Grotesk']">05</div>
+        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#4f9eff] rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform">
+          <i class="fas fa-bolt text-xl sm:text-2xl text-white"></i>
         </div>
-        <h3 class="font-['Space_Grotesk'] text-2xl font-bold text-[#111] mb-3">Greater Agility</h3>
-        <p class="text-gray-500 text-sm leading-relaxed font-['Inter']">Having a support infrastructure in place makes it easier to deal with change — and stay decisively ahead of the competition.</p>
+        <h3 class="font-['Space_Grotesk'] text-xl sm:text-2xl font-bold text-[#111] mb-2 sm:mb-3">Greater Agility</h3>
+        <p class="text-gray-500 text-xs sm:text-sm leading-relaxed font-['Inter']">Having a support infrastructure in place makes it easier to deal with change — and stay decisively ahead of the competition.</p>
       </div>
 
-      <div class="benefit-card-modern group relative bg-[#4f9eff] rounded-[32px] p-8 border-2 border-[#4f9eff] hover:shadow-[0_20px_40px_-15px_rgba(79,158,255,0.5)] transition-all">
-        <div class="absolute top-6 right-6 text-6xl font-bold text-white/10 font-['Space_Grotesk']">06</div>
-        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-2xl group-hover:scale-110 transition-transform">
-          <i class="fas fa-file-invoice text-2xl text-[#4f9eff]"></i>
+      <div class="benefit-card-modern group relative bg-[#4f9eff] rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 border-2 border-[#4f9eff] hover:shadow-[0_20px_40px_-15px_rgba(79,158,255,0.5)] transition-all">
+        <div class="absolute top-4 right-4 sm:top-6 sm:right-6 text-4xl sm:text-5xl md:text-6xl font-bold text-white/10 font-['Space_Grotesk']">06</div>
+        <div class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-2xl group-hover:scale-110 transition-transform">
+          <i class="fas fa-file-invoice text-xl sm:text-2xl text-[#4f9eff]"></i>
         </div>
-        <h3 class="font-['Space_Grotesk'] text-2xl font-bold text-white mb-3">Free Proposal</h3>
-        <p class="text-white/80 text-sm leading-relaxed mb-6 font-['Inter']">Get a FREE customised proposal specific to your requirement, technology and tenure of the project.</p>
-        <a href="#contact" class="inline-flex items-center gap-2 bg-white text-[#4f9eff] rounded-full px-6 py-3 text-sm font-semibold hover:bg-gray-100 transition-all group-hover:gap-3 font-['Inter']">
-          Get started <i class="fas fa-arrow-right text-xs"></i>
+        <h3 class="font-['Space_Grotesk'] text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">Free Proposal</h3>
+        <p class="text-white/80 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 font-['Inter']">Get a FREE customised proposal specific to your requirement, technology and tenure of the project.</p>
+        <a href="#contact" class="inline-flex items-center gap-2 bg-white text-[#4f9eff] rounded-full px-4 sm:px-5 md:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold hover:bg-gray-100 transition-all group-hover:gap-3 font-['Inter']">
+          Get started <i class="fas fa-arrow-right text-[10px] sm:text-xs"></i>
         </a>
       </div>
     </div>
@@ -317,77 +333,83 @@
 </section>
 
 <!-- ========== STATS SECTION ========== -->
-<section class="relative py-32 bg-white overflow-hidden">
+<section class="relative py-16 sm:py-24 md:py-32 bg-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
       <div class="reveal d1 text-center group">
-        <div class="text-7xl font-['Space_Grotesk'] font-bold text-[#4f9eff] mb-3 group-hover:scale-110 transition-transform">98%</div>
-        <div class="text-gray-500 text-sm uppercase tracking-wider font-['Inter']">Client Retention</div>
-        <div class="w-0 group-hover:w-20 h-0.5 bg-[#4f9eff] mx-auto mt-4 transition-all duration-500"></div>
+        <div class="font-['Space_Grotesk'] font-bold text-[#4f9eff] mb-2 sm:mb-3 group-hover:scale-110 transition-transform"
+             style="font-size:clamp(2rem, 6vw, 3.5rem);">98%</div>
+        <div class="text-gray-500 text-[10px] sm:text-xs uppercase tracking-wider font-['Inter']">Client Retention</div>
+        <div class="w-0 group-hover:w-16 sm:group-hover:w-20 h-0.5 bg-[#4f9eff] mx-auto mt-3 sm:mt-4 transition-all duration-500"></div>
       </div>
       <div class="reveal d2 text-center group">
-        <div class="text-7xl font-['Space_Grotesk'] font-bold text-[#4f9eff] mb-3 group-hover:scale-110 transition-transform">50+</div>
-        <div class="text-gray-500 text-sm uppercase tracking-wider font-['Inter']">Global Clients</div>
-        <div class="w-0 group-hover:w-20 h-0.5 bg-[#4f9eff] mx-auto mt-4 transition-all duration-500"></div>
+        <div class="font-['Space_Grotesk'] font-bold text-[#4f9eff] mb-2 sm:mb-3 group-hover:scale-110 transition-transform"
+             style="font-size:clamp(2rem, 6vw, 3.5rem);">50+</div>
+        <div class="text-gray-500 text-[10px] sm:text-xs uppercase tracking-wider font-['Inter']">Global Clients</div>
+        <div class="w-0 group-hover:w-16 sm:group-hover:w-20 h-0.5 bg-[#4f9eff] mx-auto mt-3 sm:mt-4 transition-all duration-500"></div>
       </div>
       <div class="reveal d3 text-center group">
-        <div class="text-7xl font-['Space_Grotesk'] font-bold text-[#4f9eff] mb-3 group-hover:scale-110 transition-transform">24/7</div>
-        <div class="text-gray-500 text-sm uppercase tracking-wider font-['Inter']">Coverage</div>
-        <div class="w-0 group-hover:w-20 h-0.5 bg-[#4f9eff] mx-auto mt-4 transition-all duration-500"></div>
+        <div class="font-['Space_Grotesk'] font-bold text-[#4f9eff] mb-2 sm:mb-3 group-hover:scale-110 transition-transform"
+             style="font-size:clamp(2rem, 6vw, 3.5rem);">24/7</div>
+        <div class="text-gray-500 text-[10px] sm:text-xs uppercase tracking-wider font-['Inter']">Coverage</div>
+        <div class="w-0 group-hover:w-16 sm:group-hover:w-20 h-0.5 bg-[#4f9eff] mx-auto mt-3 sm:mt-4 transition-all duration-500"></div>
       </div>
       <div class="reveal d4 text-center group">
-        <div class="text-7xl font-['Space_Grotesk'] font-bold text-[#4f9eff] mb-3 group-hover:scale-110 transition-transform">100%</div>
-        <div class="text-gray-500 text-sm uppercase tracking-wider font-['Inter']">Custom Solutions</div>
-        <div class="w-0 group-hover:w-20 h-0.5 bg-[#4f9eff] mx-auto mt-4 transition-all duration-500"></div>
+        <div class="font-['Space_Grotesk'] font-bold text-[#4f9eff] mb-2 sm:mb-3 group-hover:scale-110 transition-transform"
+             style="font-size:clamp(2rem, 6vw, 3.5rem);">100%</div>
+        <div class="text-gray-500 text-[10px] sm:text-xs uppercase tracking-wider font-['Inter']">Custom Solutions</div>
+        <div class="w-0 group-hover:w-16 sm:group-hover:w-20 h-0.5 bg-[#4f9eff] mx-auto mt-3 sm:mt-4 transition-all duration-500"></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ========== QUOTE SECTION ========== -->
-<section class="relative py-32 bg-gray-50 overflow-hidden">
+<section class="relative py-16 sm:py-24 md:py-32 bg-gray-50 overflow-hidden">
   <div class="absolute inset-0">
-    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-[#4f9eff]/20 rounded-full"></div>
-    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-[#4f9eff]/40 rounded-full"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] sm:w-[800px] h-[500px] sm:h-[800px] border border-[#4f9eff]/20 rounded-full"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] border border-[#4f9eff]/40 rounded-full"></div>
   </div>
   <div class="max-w-4xl mx-auto px-5 text-center relative z-10">
-    <div class="text-8xl text-[#4f9eff] mb-8 font-bold font-['Space_Grotesk']">*</div>
-    <p class="font-['Space_Grotesk'] text-3xl md:text-4xl lg:text-5xl font-bold text-[#111] leading-[1.2] mb-8">
+    <div class="text-5xl sm:text-6xl md:text-8xl text-[#4f9eff] mb-5 sm:mb-8 font-bold font-['Space_Grotesk']">*</div>
+    <p class="font-['Space_Grotesk'] font-bold text-[#111] leading-[1.2] mb-5 sm:mb-8 px-4"
+       style="font-size:clamp(1.3rem, 4vw, 2.2rem);">
       We handle the intricate, repetitious tasks — so you can focus on the
       <span class="text-[#4f9eff]">big picture.</span>
     </p>
     <div class="flex items-center justify-center gap-4">
       <div class="text-left">
-        <div class="font-semibold text-[#111] font-['Space_Grotesk']">Founder & CEO</div>
-        <div class="text-gray-500 text-sm font-['Inter']">OneStop Solutions</div>
+        <div class="font-semibold text-[#111] font-['Space_Grotesk'] text-sm sm:text-base">Founder & CEO</div>
+        <div class="text-gray-500 text-xs sm:text-sm font-['Inter']">OneStop Solutions</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ========== CTA SECTION ========== -->
-<section class="relative py-32 bg-[#0a0f1e]" id="contact">
+<section class="relative py-16 sm:py-24 md:py-32 bg-[#0a0f1e]" id="contact">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
-    <div class="relative glass-card rounded-[48px] p-12 md:p-20 overflow-hidden border border-[#4f9eff]/20">
-      <div class="absolute -top-40 -right-40 w-80 h-80 bg-[#4f9eff] rounded-full blur-[100px] opacity-20 animate-pulse"></div>
-      <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-600 rounded-full blur-[100px] opacity-20 animate-pulse animation-delay-2000"></div>
+    <div class="relative glass-card rounded-3xl sm:rounded-4xl md:rounded-[48px] p-8 sm:p-10 md:p-16 lg:p-20 overflow-hidden border border-[#4f9eff]/20">
+      <div class="absolute -top-40 -right-40 w-64 sm:w-80 h-64 sm:h-80 bg-[#4f9eff] rounded-full blur-[100px] opacity-20 animate-pulse"></div>
+      <div class="absolute -bottom-40 -left-40 w-64 sm:w-80 h-64 sm:h-80 bg-blue-600 rounded-full blur-[100px] opacity-20 animate-pulse animation-delay-2000"></div>
       <div class="relative z-10 text-center">
-        <span class="text-[#4f9eff] text-sm font-semibold tracking-[0.3em] uppercase mb-4 block font-['Inter']">Ready to outsource?</span>
-        <h2 class="font-['Space_Grotesk'] text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+        <span class="text-[#4f9eff] text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.3em] uppercase mb-3 sm:mb-4 block font-['Inter']">Ready to outsource?</span>
+        <h2 class="font-['Space_Grotesk'] font-bold text-white mb-4 sm:mb-6 px-4"
+            style="font-size:clamp(1.6rem, 5vw, 3rem);">
           Get your free, custom<br>
           <span class="text-[#4f9eff]">proposal today.</span>
         </h2>
-        <p class="text-white/40 text-lg max-w-2xl mx-auto mb-12 font-['Inter']">
+        <p class="text-white/40 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-8 sm:mb-12 font-['Inter'] px-4">
           We can work up a FREE customised proposal specific to your requirement, technology and tenure of the project. No obligation, just clarity.
         </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="contact.php" class="group inline-flex items-center gap-3 rounded-full px-8 py-4 bg-[#4f9eff] text-white font-semibold text-lg hover:scale-105 transition-all duration-300 hover:shadow-[0_20px_30px_-10px_rgba(79,158,255,0.5)] font-['Inter']">
+        <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+          <a href="contact.php" class="group inline-flex items-center gap-2 sm:gap-3 rounded-full px-5 sm:px-7 md:px-8 py-2.5 sm:py-3 md:py-4 bg-[#4f9eff] text-white font-semibold text-sm sm:text-base md:text-lg hover:scale-105 transition-all duration-300 hover:shadow-[0_20px_30px_-10px_rgba(79,158,255,0.5)] font-['Inter']">
             Request free proposal
-            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform text-xs sm:text-sm"></i>
           </a>
-          <a href="about.html" class="group inline-flex items-center gap-3 rounded-full px-8 py-4 border border-white/20 text-white font-semibold text-lg hover:border-[#4f9eff] transition-all font-['Inter']">
+          <a href="about.html" class="group inline-flex items-center gap-2 sm:gap-3 rounded-full px-5 sm:px-7 md:px-8 py-2.5 sm:py-3 md:py-4 border border-white/20 text-white font-semibold text-sm sm:text-base md:text-lg hover:border-[#4f9eff] transition-all font-['Inter']">
             Learn about us
-            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform text-xs sm:text-sm"></i>
           </a>
         </div>
       </div>
@@ -425,7 +447,7 @@
   window.addEventListener('scroll', () => {
     const s = window.scrollY;
     const m = document.documentElement.scrollHeight - window.innerHeight;
-    progressBar.style.width = (s / m * 100) + '%';
+    if (m > 0) progressBar.style.width = (s / m * 100) + '%';
 
     if (!ticking) {
       requestAnimationFrame(handleNavbarScroll);

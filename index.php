@@ -1302,23 +1302,23 @@
       <div class="max-w-[1440px] mx-auto">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-14 text-center">
           <div class="reveal d1">
-            <p class="stat-number" aria-label="98 percent">98%</p>
-            <p class="text-xs font-medium uppercase tracking-widest mt-2 font-['Inter']">client retention rate</p>
+            <p class="stat-number" aria-label="98 percent" style="text-shadow: 1px 1px 2px rgba(0,0,0,1);">98%</p>
+            <p class="text-xs font-medium uppercase tracking-widest mt-2 font-['Inter']" style="text-shadow: 0.5px 0.5px 1.5px rgba(0,0,0,0.09);">client retention rate</p>
             <div class="w-10 h-1 mx-auto mt-3" style="background:#4f9eff;" aria-hidden="true"></div>
           </div>
           <div class="reveal d2">
-            <p class="stat-number" aria-label="50 plus">50+</p>
-            <p class="text-xs font-medium uppercase tracking-widest mt-2 font-['Inter']">global clients served</p>
+            <p class="stat-number" aria-label="50 plus" style="text-shadow: 1px 1px 2px rgba(0,0,0,1);">50+</p>
+            <p class="text-xs font-medium uppercase tracking-widest mt-2 font-['Inter']" style="text-shadow: 0.5px 0.5px 1.5px rgba(0,0,0,0.09);">global clients served</p>
             <div class="w-10 h-1 mx-auto mt-3" style="background:#4f9eff;" aria-hidden="true"></div>
           </div>
           <div class="reveal d3">
-            <p class="stat-number" aria-label="24 slash 7">24/7</p>
-            <p class="text-xs font-medium uppercase tracking-widest mt-2 font-['Inter']">support coverage</p>
+            <p class="stat-number" aria-label="24 slash 7" style="text-shadow: 1px 1px 2px rgba(0,0,0,1);">24/7</p>
+            <p class="text-xs font-medium uppercase tracking-widest mt-2 font-['Inter']" style="text-shadow: 0.5px 0.5px 1.5px rgba(0,0,0,0.09);">support coverage</p>
             <div class="w-10 h-1 mx-auto mt-3" style="background:#4f9eff;" aria-hidden="true"></div>
           </div>
           <div class="reveal d4">
-            <p class="stat-number" aria-label="9 plus">9+</p>
-            <p class="text-xs font-medium uppercase tracking-widest mt-2 font-['Inter']">BPO service lines</p>
+            <p class="stat-number" aria-label="9 plus" style="text-shadow: 1px 1px 2px rgba(0,0,0,1);">9+</p>
+            <p class="text-xs font-medium uppercase tracking-widest mt-2 font-['Inter']" style="text-shadow: 0.5px 0.5px 1.5px rgba(0,0,0,0.09);">BPO service lines</p>
             <div class="w-10 h-1 mx-auto mt-3" style="background:#4f9eff;" aria-hidden="true"></div>
           </div>
         </div>
@@ -1332,7 +1332,7 @@
           <div class="absolute inset-0 flex items-center px-5 md:px-10" style="background:linear-gradient(to right,rgba(0,15,60,0.65),transparent);">
             <blockquote>
               <p class="text-white font-bold max-w-xs sm:max-w-sm md:max-w-xl font-['Space_Grotesk']"
-                style="font-size:clamp(0.85rem, 2.5vw, 1.8rem); line-height:1.25; text-shadow:2px 3px 8px rgba(0,0,0,.45);">
+                style="font-size:clamp(0.85rem, 2.5vw, 1.8rem); line-height:1.25; text-shadow:1px 1.5px 4px rgba(0,0,0,0.22);">
                 "They don't just outsource &mdash; they partner."
               </p>
             </blockquote>
