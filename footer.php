@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
-            --lime: #ceff66;
-            --lime-dark: #a6e62c;
+            --blue: #4f9eff;
+            --blue-dark: #2b7fe0;
         }
 
         @keyframes float {
@@ -25,10 +25,6 @@
         @keyframes pulse-slower {
             0%, 100% { opacity: 0.1; transform: scale(1); }
             50% { opacity: 0.2; transform: scale(1.2); }
-        }
-        @keyframes shine {
-            0% { background-position: 0 0, 0 0, -100% 0; }
-            100% { background-position: 0 0, 0 0, 200% 0; }
         }
 
         .animate-pulse-slow  { animation: pulse-slow   4s ease-in-out infinite; }
@@ -46,22 +42,22 @@
         }
         .contact-item:hover { background: rgba(255,255,255,0.05); }
 
-        /* Icon circle — lime-tinted so it's visible on black */
+        /* Icon circle — blue-tinted */
         .contact-icon {
             width: 2.5rem;
             height: 2.5rem;
             flex-shrink: 0;
             border-radius: 50%;
-            background: rgba(206,255,102,0.08);
-            border: 1px solid rgba(206,255,102,0.25);
+            background: rgba(79,158,255,0.08);
+            border: 1px solid rgba(79,158,255,0.25);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s;
         }
         .contact-item:hover .contact-icon {
-            background: rgba(206,255,102,0.2);
-            border-color: rgba(206,255,102,0.5);
+            background: rgba(79,158,255,0.2);
+            border-color: rgba(79,158,255,0.5);
             transform: scale(1.1) rotate(6deg);
         }
 
@@ -72,23 +68,23 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.75rem 1.5rem;
-            background: rgba(206,255,102,0.1);
-            border: 1px solid rgba(206,255,102,0.3);
+            background: rgba(79,158,255,0.1);
+            border: 1px solid rgba(79,158,255,0.3);
             border-radius: 0.5rem;
             overflow: hidden;
             text-decoration: none;
             transition: border-color 0.3s;
             white-space: nowrap;
         }
-        .cta-btn:hover { border-color: #ceff66; }
+        .cta-btn:hover { border-color: #4f9eff; }
         .cta-btn::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(206,255,102,0);
+            background: rgba(79,158,255,0);
             transition: background 0.3s;
         }
-        .cta-btn:hover::before { background: rgba(206,255,102,0.1); }
+        .cta-btn:hover::before { background: rgba(79,158,255,0.1); }
         .cta-btn span {
             position: relative;
             color: rgba(255,255,255,0.9);
@@ -96,10 +92,10 @@
             font-size: 0.875rem;
             transition: color 0.3s;
         }
-        .cta-btn:hover span { color: #ceff66; }
+        .cta-btn:hover span { color: #4f9eff; }
         .cta-btn i {
             position: relative;
-            color: #ceff66;
+            color: #4f9eff;
             transition: transform 0.3s;
         }
         .cta-btn:hover i { transform: translateX(4px); }
@@ -113,7 +109,7 @@
             font-family: 'Inter', sans-serif;
             transition: color 0.2s, transform 0.2s;
         }
-        .footer-link:hover { color: #ceff66; transform: translateX(4px); }
+        .footer-link:hover { color: #4f9eff; transform: translateX(4px); }
 
         /* Section heading */
         .section-heading {
@@ -133,12 +129,12 @@
             position: absolute;
             bottom: -4px; left: 0;
             width: 0; height: 1px;
-            background: #ceff66;
+            background: #4f9eff;
             transition: width 0.3s;
         }
         .section-heading:hover::after { width: 100%; }
 
-        /* Social icons — visible on black */
+        /* Social icons */
         .social-icon {
             width: 2.5rem; height: 2.5rem;
             border-radius: 50%;
@@ -151,9 +147,9 @@
             transition: all 0.3s;
         }
         .social-icon:hover {
-            color: #ceff66;
-            border-color: #ceff66;
-            background: rgba(206,255,102,0.1);
+            color: #4f9eff;
+            border-color: #4f9eff;
+            background: rgba(79,158,255,0.1);
             transform: scale(1.25) rotate(12deg);
         }
 
@@ -223,13 +219,13 @@
 
 <footer class="relative max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-16 md:py-20 bg-[#000000] text-white/90 font-['Inter'] overflow-hidden">
 
-    <!-- Background effects -->
+    <!-- Background effects — all lime refs swapped to blue -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_rgba(206,255,102,0.05),_transparent_70%)] animate-pulse-slow"></div>
-        <div class="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_rgba(139,92,246,0.05),_transparent_70%)] animate-pulse-slower"></div>
-        <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(to right, #ceff66 1px, transparent 1px), linear-gradient(to bottom, #ceff66 1px, transparent 1px); background-size: 40px 40px;"></div>
-        <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full blur-3xl animate-float" style="background: rgba(206,255,102,0.05);"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl animate-float" style="background: rgba(139,92,246,0.05); animation-delay: -2s;"></div>
+        <div class="absolute top-0 left-0 w-full h-full animate-pulse-slow" style="background:radial-gradient(ellipse at top right, rgba(79,158,255,0.07), transparent 70%);"></div>
+        <div class="absolute bottom-0 right-0 w-full h-full animate-pulse-slower" style="background:radial-gradient(ellipse at bottom left, rgba(43,127,224,0.05), transparent 70%);"></div>
+        <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(to right, #4f9eff 1px, transparent 1px), linear-gradient(to bottom, #4f9eff 1px, transparent 1px); background-size: 40px 40px;"></div>
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full blur-3xl animate-float" style="background: rgba(79,158,255,0.06);"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl animate-float" style="background: rgba(43,127,224,0.05); animation-delay: -2s;"></div>
         <div class="absolute inset-0 bg-black/40"></div>
     </div>
 
@@ -252,7 +248,7 @@
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                     <a href="https://www.facebook.com/OSSolutioners/" class="social-icon">
-                        <i class="fab fa-facebook "></i>
+                        <i class="fab fa-facebook"></i>
                     </a>
                 </div>
             </div>
@@ -291,7 +287,7 @@
                 <!-- Email -->
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <i class="fas fa-envelope" style="color: #ceff66; font-size: 0.875rem;"></i>
+                        <i class="fas fa-envelope" style="color:#4f9eff; font-size:0.875rem;"></i>
                     </div>
                     <div class="min-w-0">
                         <span class="text-xs text-white/40 block">Email</span>
@@ -303,7 +299,7 @@
                 <!-- Phone -->
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <i class="fas fa-phone" style="color: #ceff66; font-size: 0.875rem;"></i>
+                        <i class="fas fa-phone" style="color:#4f9eff; font-size:0.875rem;"></i>
                     </div>
                     <div class="min-w-0">
                         <span class="text-xs text-white/40 block">Phone</span>
@@ -314,7 +310,7 @@
                 <!-- Address -->
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt" style="color: #ceff66; font-size: 0.875rem;"></i>
+                        <i class="fas fa-map-marker-alt" style="color:#4f9eff; font-size:0.875rem;"></i>
                     </div>
                     <div class="min-w-0">
                         <span class="text-xs text-white/40 block">Office</span>

@@ -72,12 +72,11 @@
       width: 100%;
     }
     .contact-input:focus {
-      border-color: #ceff66;
-      box-shadow: 0 0 0 4px rgba(206,255,102,0.1);
+      border-color: #4f9eff;
+      box-shadow: 0 0 0 4px rgba(79,158,255,0.12);
       outline: none;
       background-color: white;
     }
-    /* invalid state */
     .contact-input.invalid {
       border-color: #ef4444;
       box-shadow: 0 0 0 4px rgba(239,68,68,0.1);
@@ -86,22 +85,22 @@
     /* ── SOCIAL ICONS ── */
     .social-icon { transition: all 0.2s ease; }
     .social-icon:hover {
-      background-color: #111 !important;
-      color: #ceff66 !important;
+      background-color: #1a3a6e !important;
+      color: #4f9eff !important;
       transform: translateY(-3px);
     }
 
     /* ── SELECT DROPDOWN ── */
-    select option { background-color: #0a0a0a; color: white; }
+    select option { background-color: #0a0f1e; color: white; }
 
     /* ── FAQ STYLES ── */
     .faq-item { transition: all 0.3s ease; }
     .faq-item.active {
-      border-color: #ceff66;
-      background: linear-gradient(to right, rgba(206,255,102,0.02), transparent);
+      border-color: #4f9eff;
+      background: linear-gradient(to right, rgba(79,158,255,0.04), transparent);
     }
     .faq-question { cursor: pointer; transition: all 0.3s ease; }
-    .faq-question:hover { background-color: rgba(206,255,102,0.03); }
+    .faq-question:hover { background-color: rgba(79,158,255,0.04); }
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1); }
     .faq-answer.show { max-height: 300px; }
     .faq-icon { transition: transform 0.3s ease; flex-shrink: 0; }
@@ -119,22 +118,23 @@
     /* ── SUBMIT BUTTON ── */
     .submit-btn {
       display: inline-flex; align-items: center; gap: 0.75rem;
-      background: #ceff66; color: black; font-weight: 600; font-size: 1rem;
+      background: #4f9eff; color: white; font-weight: 600; font-size: 1rem;
       padding: 1rem 2rem; border-radius: 9999px; border: none; cursor: pointer;
-      transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(79,158,255,0.25);
       width: 100%; justify-content: center;
     }
     @media (min-width: 640px) {
       .submit-btn { width: auto; justify-content: flex-start; }
     }
-    .submit-btn:hover { transform: scale(1.03); box-shadow: 0 20px 30px -10px rgba(206,255,102,0.5); }
+    .submit-btn:hover { transform: scale(1.03); box-shadow: 0 20px 30px -10px rgba(79,158,255,0.5); }
     .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 
     /* ── CONTACT INFO CARD ── */
     .contact-info-card {
-      background: #ceff66; border-radius: 2.5rem;
+      background: linear-gradient(145deg, #4f9eff, #2b7fe0);
+      border-radius: 2.5rem;
       padding: 2rem 1.75rem;
-      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+      box-shadow: 0 25px 50px -12px rgba(43,127,224,0.4);
       position: relative; overflow: hidden;
     }
     @media (min-width: 640px)  { .contact-info-card { padding: 2.5rem 3rem; } }
@@ -165,8 +165,8 @@
 
 <body class="antialiased bg-white text-[#111]">
 
-  <!-- Scroll Progress -->
-  <div id="scroll-progress" class="fixed top-0 left-0 w-0 h-[3px] bg-[#ceff66] z-[9999] duration-100 shadow-[0_0_20px_rgba(206,255,102,0.8)]"></div>
+  <!-- Scroll Progress — blue -->
+  <div id="scroll-progress" class="fixed top-0 left-0 w-0 h-[3px] z-[9999] duration-100" style="background:#4f9eff; box-shadow:0 0 20px rgba(79,158,255,0.7);"></div>
 
   <!-- ========== NAVBAR ========== -->
   <div id="navbar-wrapper">
@@ -174,23 +174,35 @@
   </div>
 
   <!-- ========== HERO ========== -->
-  <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-black pt-16 md:pt-20">
-    <div class="absolute bottom-0 right-0 w-[600px] h-[600px] md:w-[800px] md:h-[800px] bg-[radial-gradient(circle_at_bottom_right,_#ceff66_0%,_transparent_70%)] opacity-40 pointer-events-none"></div>
-    <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image:url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M0 0 L60 0 L60 60 L0 60 Z&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; stroke-width=&quot;1&quot;/%3E%3C/svg%3E');"></div>
+<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-[#0a0f1e] pt-16 md:pt-20">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2070&auto=format&fit=crop"
+             alt="Customer service representative taking a call and helping a client with BPO support"
+             class="w-full h-full object-cover opacity-30"
+             width="2070" height="1380"
+             loading="eager"
+             decoding="async">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0a0f1e]/80 via-[#0a0f1e]/60 to-[#0a0f1e]/80" aria-hidden="true"></div>
+    </div>
+    
+    <!-- Blue radial glow -->
+    <div class="absolute bottom-0 right-0 w-[600px] h-[600px] md:w-[800px] md:h-[800px] pointer-events-none opacity-40 z-0" style="background:radial-gradient(circle at bottom right, #4f9eff 0%, transparent 70%);"></div>
+    <div class="absolute inset-0 opacity-5 pointer-events-none z-0" style="background-image:url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M0 0 L60 0 L60 60 L0 60 Z&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; stroke-width=&quot;1&quot;/%3E%3C/svg%3E');"></div>
 
     <div class="relative z-10 text-center px-5 sm:px-8 md:px-12 lg:px-24 py-16 md:py-24">
-      <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-white/15 backdrop-blur-sm rounded-full border border-white/30 mb-6">
-        <span class="w-2 h-2 bg-[#ceff66] rounded-full animate-pulse"></span>
-        <span class="text-white/85 text-xs sm:text-sm font-medium tracking-wider font-['Inter']">GET IN TOUCH</span>
-      </div>
-      <h1 class="reveal d1 hero-title font-['Space_Grotesk'] font-bold text-white mb-6">
-        Contact <span class="text-[#ceff66]">Us</span>
-      </h1>
-      <p class="reveal d2 text-white/70 text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-['Inter']">
-        Have a question or ready to start your outsourcing journey? We're here to help.
-      </p>
+        <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
+            <span class="w-2 h-2 rounded-full animate-pulse" style="background:#4f9eff;"></span>
+            <span class="text-white/85 text-xs sm:text-sm font-medium tracking-wider font-['Inter']">GET IN TOUCH</span>
+        </div>
+        <h1 class="reveal d1 hero-title font-['Space_Grotesk'] font-bold text-white mb-6">
+            Contact <span style="color:#4f9eff;">Us</span>
+        </h1>
+        <p class="reveal d2 text-white/70 text-base sm:text-lg md:text-xl max-w-2xl mx-auto font-['Inter']">
+            Have a question or ready to start your outsourcing journey? We're here to help.
+        </p>
     </div>
-  </section>
+</section>
 
   <!-- ========== MAIN CONTACT SECTION ========== -->
   <section class="py-16 md:py-24 bg-white">
@@ -200,13 +212,12 @@
         <!-- LEFT: Contact Form -->
         <div class="reveal-left">
           <div class="mb-8">
-            <span class="text-[#ceff66] text-sm font-semibold tracking-wider uppercase mb-3 block font-['Inter']">Contact Us</span>
+            <span class="text-sm font-semibold tracking-wider uppercase mb-3 block font-['Inter']" style="color:#4f9eff;">Contact Us</span>
             <h2 class="section-heading-lg font-['Space_Grotesk'] font-bold text-[#111] leading-tight">
-              Join Us in Creating <span class="text-[#ceff66]">Something Great</span>
+              Join Us in Creating <span style="color:#4f9eff;">Something Great</span>
             </h2>
           </div>
 
-          <!-- Alerts shown by JS after Formspree response -->
           <div id="alert-success" class="alert-box alert-success mb-6 hidden">
             <i class="fas fa-circle-check text-green-600 text-lg mt-0.5 flex-shrink-0"></i>
             <span>Thank you! Your message has been sent. We'll get back to you within 24 hours.</span>
@@ -216,14 +227,9 @@
             <span>Something went wrong. Please email us at <a href="mailto:info@onestopsolutions.com" class="underline font-semibold">info@onestopsolutions.com</a>.</span>
           </div>
 
-          <!-- Web3Forms: get your free key at https://web3forms.com -->
           <form class="mt-8" id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
-
-            <!-- Web3Forms access key — replace with your own from web3forms.com (free) -->
             <input type="hidden" name="access_key" value="1f36ea7f-dfc5-4a71-8189-a7b6aa03d0c6">
-            <!-- Optional: customize the subject line -->
             <input type="hidden" name="subject" value="New Contact Form Submission — OneStop Solutions">
-            <!-- Redirect to same page after submit (we handle it via JS) -->
             <input type="hidden" name="redirect" value="false">
 
             <!-- Name Row -->
@@ -272,20 +278,21 @@
               <label for="service" class="block text-sm font-medium text-gray-700 mb-2 font-['Inter']">Select Service</label>
               <div class="relative">
                 <select id="service" name="service"
-                  class="w-full px-4 py-3 sm:px-5 sm:py-4 rounded-2xl bg-[#ceff66] border-2 border-[#ceff66] text-[#111] font-semibold focus:outline-none focus:ring-4 focus:ring-[#ceff66]/30 transition-all appearance-none cursor-pointer font-['Inter']">
-                  <option value="" disabled>Choose a service</option>
-                  <option value="Inbound Calls">Inbound Calls</option>
-                  <option value="Outbound Calls">Outbound Calls</option>
-                  <option value="Lead Generation">Lead Generation</option>
-                  <option value="Customer & Quality Services">Customer &amp; Quality Services</option>
-                  <option value="Digital Marketing">Digital Marketing</option>
-                  <option value="Web Development">Web Development</option>
-                  <option value="Survey Research">Survey Research</option>
-                  <option value="Winback Programs">Winback Programs</option>
-                  <option value="Technical Support">Technical Support</option>
+                  class="w-full px-4 py-3 sm:px-5 sm:py-4 rounded-2xl border-2 text-white font-semibold focus:outline-none transition-all appearance-none cursor-pointer font-['Inter']"
+                  style="background:#4f9eff; border-color:#4f9eff; color:white;">
+                  <option value="" disabled style="background:#0a0f1e;">Choose a service</option>
+                  <option value="Inbound Calls"              style="background:#0a0f1e;">Inbound Calls</option>
+                  <option value="Outbound Calls"             style="background:#0a0f1e;">Outbound Calls</option>
+                  <option value="Lead Generation"            style="background:#0a0f1e;">Lead Generation</option>
+                  <option value="Customer & Quality Services" style="background:#0a0f1e;">Customer &amp; Quality Services</option>
+                  <option value="Digital Marketing"          style="background:#0a0f1e;">Digital Marketing</option>
+                  <option value="Web Development"            style="background:#0a0f1e;">Web Development</option>
+                  <option value="Survey Research"            style="background:#0a0f1e;">Survey Research</option>
+                  <option value="Winback Programs"           style="background:#0a0f1e;">Winback Programs</option>
+                  <option value="Technical Support"          style="background:#0a0f1e;">Technical Support</option>
                 </select>
                 <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
-                  <svg class="w-5 h-5 text-[#111]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </div>
@@ -312,42 +319,42 @@
           </form>
         </div>
 
-        <!-- RIGHT: Contact Info Card -->
+        <!-- RIGHT: Contact Info Card — blue gradient -->
         <div class="reveal-right">
           <div class="contact-info-card">
             <div class="absolute top-0 right-0 w-32 h-32 sm:w-40 sm:h-40 bg-white opacity-10 rounded-full -mr-8 -mt-8 pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 w-24 h-24 sm:w-32 sm:h-32 bg-black opacity-5 rounded-full -ml-8 -mb-8 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-24 h-24 sm:w-32 sm:h-32 bg-black opacity-10 rounded-full -ml-8 -mb-8 pointer-events-none"></div>
 
             <div class="relative z-10">
-              <h3 class="font-['Space_Grotesk'] text-xl sm:text-2xl font-bold text-[#111] mb-6 sm:mb-8">Contact Information</h3>
+              <h3 class="font-['Space_Grotesk'] text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8">Contact Information</h3>
 
               <!-- Address -->
               <div class="mb-6">
                 <div class="flex items-start gap-3 mb-1">
-                  <i class="fas fa-map-marker-alt text-[#111] text-lg mt-1 flex-shrink-0"></i>
-                  <h4 class="font-['Space_Grotesk'] font-semibold text-[#111] text-base sm:text-lg">Address</h4>
+                  <i class="fas fa-map-marker-alt text-white text-lg mt-1 flex-shrink-0"></i>
+                  <h4 class="font-['Space_Grotesk'] font-semibold text-white text-base sm:text-lg">Address</h4>
                 </div>
-                <p class="text-[#111] opacity-80 pl-8 font-['Inter'] text-sm sm:text-base leading-relaxed">
-                 Suite# 111 &amp; 116, 1st Floor, Park Avenue, P.E.C.H.S, Block 6, Shahra-e-Faisal, Karachi, 75400
+                <p class="text-white/80 pl-8 font-['Inter'] text-sm sm:text-base leading-relaxed">
+                  Suite# 111 &amp; 116, 1st Floor, Park Avenue, P.E.C.H.S, Block 6, Shahra-e-Faisal, Karachi, 75400
                 </p>
               </div>
 
               <!-- Contact -->
               <div class="mb-6">
                 <div class="flex items-start gap-3 mb-1">
-                  <i class="fas fa-phone-alt text-[#111] text-lg mt-1 flex-shrink-0"></i>
-                  <h4 class="font-['Space_Grotesk'] font-semibold text-[#111] text-base sm:text-lg">Contact</h4>
+                  <i class="fas fa-phone-alt text-white text-lg mt-1 flex-shrink-0"></i>
+                  <h4 class="font-['Space_Grotesk'] font-semibold text-white text-base sm:text-lg">Contact</h4>
                 </div>
                 <div class="pl-8 font-['Inter'] text-sm sm:text-base space-y-3">
                   <div>
-                    <p class="text-[#111] font-semibold">Phone</p>
-                    <a href="tel:03361369929" class="text-[#111] opacity-80 hover:underline">0336 1369929</a>
+                    <p class="text-white font-semibold">Phone</p>
+                    <a href="tel:03361369929" class="text-white/80 hover:text-white hover:underline">0336 1369929</a>
                   </div>
                   <div>
-                    <p class="text-[#111] font-semibold">Email</p>
+                    <p class="text-white font-semibold">Email</p>
                     <div class="flex flex-col space-y-1">
-                      <a href="mailto:info@onestopsolutions.com" class="text-[#111] opacity-80 hover:underline break-all">info@onestopsolutions.com</a>
-                      <a href="mailto:hr@onestopsolutions.com"   class="text-[#111] opacity-80 hover:underline break-all">hr@onestopsolutions.com</a>
+                      <a href="mailto:info@onestopsolutions.com" class="text-white/80 hover:text-white hover:underline break-all">info@onestopsolutions.com</a>
+                      <a href="mailto:hr@onestopsolutions.com"   class="text-white/80 hover:text-white hover:underline break-all">hr@onestopsolutions.com</a>
                     </div>
                   </div>
                 </div>
@@ -356,25 +363,25 @@
               <!-- Open Time -->
               <div class="mb-6">
                 <div class="flex items-start gap-3 mb-1">
-                  <i class="fas fa-clock text-[#111] text-lg mt-1 flex-shrink-0"></i>
-                  <h4 class="font-['Space_Grotesk'] font-semibold text-[#111] text-base sm:text-lg">Open Time</h4>
+                  <i class="fas fa-clock text-white text-lg mt-1 flex-shrink-0"></i>
+                  <h4 class="font-['Space_Grotesk'] font-semibold text-white text-base sm:text-lg">Open Time</h4>
                 </div>
-                <p class="text-[#111] opacity-80 pl-8 font-['Inter'] text-sm sm:text-base">Monday – Friday : 10:00 – 20:00</p>
+                <p class="text-white/80 pl-8 font-['Inter'] text-sm sm:text-base">Monday – Friday : 10:00 – 20:00</p>
               </div>
 
               <!-- Social -->
               <div>
                 <div class="flex items-center gap-3 mb-4">
-                  <i class="fas fa-share-alt text-[#111] text-lg flex-shrink-0"></i>
-                  <h4 class="font-['Space_Grotesk'] font-semibold text-[#111] text-base sm:text-lg">Stay Connected</h4>
+                  <i class="fas fa-share-alt text-white text-lg flex-shrink-0"></i>
+                  <h4 class="font-['Space_Grotesk'] font-semibold text-white text-base sm:text-lg">Stay Connected</h4>
                 </div>
                 <div class="social-row pl-8 flex gap-3">
                   <a href="https://www.linkedin.com/company/onestopsolutions/"
-                     class="w-9 h-9 sm:w-10 sm:h-10 bg-black/10 rounded-full flex items-center justify-center text-[#111] hover:bg-black hover:text-white transition-all duration-200">
+                     class="w-9 h-9 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-[#2b7fe0] transition-all duration-200">
                     <i class="fab fa-linkedin-in text-sm"></i>
                   </a>
                   <a href="https://www.facebook.com/OSSolutioners/"
-                     class="w-9 h-9 sm:w-10 sm:h-10 bg-black/10 rounded-full flex items-center justify-center text-[#111] hover:bg-black hover:text-white transition-all duration-200">
+                     class="w-9 h-9 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-[#2b7fe0] transition-all duration-200">
                     <i class="fab fa-facebook-f text-sm"></i>
                   </a>
                 </div>
@@ -390,7 +397,7 @@
   <!-- ========== MAP SECTION ========== -->
   <section class="relative py-12 md:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
-      <div class="bg-[#f5f5f5] rounded-[24px] sm:rounded-[32px] p-2 border border-[#ceff66]/30 overflow-hidden shadow-lg">
+      <div class="bg-[#f5f8ff] rounded-[24px] sm:rounded-[32px] p-2 overflow-hidden shadow-lg" style="border:1px solid rgba(79,158,255,0.2);">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231118.23582609927!2d66.97534769999999!3d24.861504949999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f066c8f5e6b%3A0x8d3e4d0c5e9f5a5a!2sKarachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
           width="100%" height="280"
@@ -403,18 +410,19 @@
   </section>
 
   <!-- ========== FAQ SECTION ========== -->
-  <section class="relative py-16 md:py-20 bg-[#fafafa] overflow-hidden">
-    <div class="absolute top-40 left-10 sm:left-20 w-48 sm:w-64 h-48 sm:h-64 bg-[#ceff66]/5 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-40 right-10 sm:right-20 w-56 sm:w-80 h-56 sm:h-80 bg-purple-600/5 rounded-full blur-3xl pointer-events-none"></div>
+  <section class="relative py-16 md:py-20 bg-[#f5f8ff] overflow-hidden">
+    <!-- Blue blobs replacing lime/purple -->
+    <div class="absolute top-40 left-10 sm:left-20 w-48 sm:w-64 h-48 sm:h-64 rounded-full blur-3xl pointer-events-none" style="background:rgba(79,158,255,0.07);"></div>
+    <div class="absolute bottom-40 right-10 sm:right-20 w-56 sm:w-80 h-56 sm:h-80 rounded-full blur-3xl pointer-events-none" style="background:rgba(43,127,224,0.06);"></div>
 
     <div class="max-w-4xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20 relative z-10">
       <div class="text-center max-w-2xl mx-auto mb-12">
-        <div class="reveal inline-flex items-center gap-3 px-4 py-2 bg-[#ceff66]/10 rounded-full border border-[#ceff66]/20 mb-5">
-          <span class="w-2 h-2 bg-[#ceff66] rounded-full animate-pulse"></span>
+        <div class="reveal inline-flex items-center gap-3 px-4 py-2 rounded-full border mb-5" style="background:rgba(79,158,255,0.08); border-color:rgba(79,158,255,0.2);">
+          <span class="w-2 h-2 rounded-full animate-pulse" style="background:#4f9eff;"></span>
           <span class="text-[#111] text-sm font-medium tracking-wider font-['Inter']">FAQ</span>
         </div>
         <h2 class="reveal d1 section-heading-xl font-['Space_Grotesk'] font-bold text-[#111] mb-4">
-          Frequently Asked <span class="text-[#ceff66]">Questions</span>
+          Frequently Asked <span style="color:#4f9eff;">Questions</span>
         </h2>
         <p class="reveal d2 text-gray-600 text-base sm:text-lg max-w-2xl mx-auto font-['Inter']">
           Everything you need to know about our services and how we can help your business grow.
@@ -424,10 +432,10 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
         <!-- Column 1 -->
         <div class="space-y-4">
-          <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#ceff66]/50 transition-all duration-300 reveal-left">
+          <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 reveal-left" style="--hover-border:#4f9eff;">
             <div class="faq-question p-5 sm:p-6 flex justify-between items-center gap-3" onclick="toggleFaq(this)">
               <h3 class="font-['Space_Grotesk'] font-semibold">What services do you offer?</h3>
-              <i class="faq-icon fas fa-plus text-[#ceff66] text-lg"></i>
+              <i class="faq-icon fas fa-plus text-lg" style="color:#4f9eff;"></i>
             </div>
             <div class="faq-answer px-5 sm:px-6">
               <p class="text-gray-600 pb-5 font-['Inter'] text-sm sm:text-base">
@@ -436,10 +444,10 @@
             </div>
           </div>
 
-          <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#ceff66]/50 transition-all duration-300 reveal-left d2">
+          <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 reveal-left d2">
             <div class="faq-question p-5 sm:p-6 flex justify-between items-center gap-3" onclick="toggleFaq(this)">
               <h3 class="font-['Space_Grotesk'] font-semibold">How quickly do you respond?</h3>
-              <i class="faq-icon fas fa-plus text-[#ceff66] text-lg"></i>
+              <i class="faq-icon fas fa-plus text-lg" style="color:#4f9eff;"></i>
             </div>
             <div class="faq-answer px-5 sm:px-6">
               <p class="text-gray-600 pb-5 font-['Inter'] text-sm sm:text-base">
@@ -448,10 +456,10 @@
             </div>
           </div>
 
-          <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#ceff66]/50 transition-all duration-300 reveal-left d3">
+          <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 reveal-left d3">
             <div class="faq-question p-5 sm:p-6 flex justify-between items-center gap-3" onclick="toggleFaq(this)">
               <h3 class="font-['Space_Grotesk'] font-semibold">Do you work with international clients?</h3>
-              <i class="faq-icon fas fa-plus text-[#ceff66] text-lg"></i>
+              <i class="faq-icon fas fa-plus text-lg" style="color:#4f9eff;"></i>
             </div>
             <div class="faq-answer px-5 sm:px-6">
               <p class="text-gray-600 pb-5 font-['Inter'] text-sm sm:text-base">
@@ -463,10 +471,10 @@
 
         <!-- Column 2 -->
         <div class="space-y-4">
-          <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#ceff66]/50 transition-all duration-300 reveal-right">
+          <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 reveal-right">
             <div class="faq-question p-5 sm:p-6 flex justify-between items-center gap-3" onclick="toggleFaq(this)">
               <h3 class="font-['Space_Grotesk'] font-semibold">What is your pricing model?</h3>
-              <i class="faq-icon fas fa-plus text-[#ceff66] text-lg"></i>
+              <i class="faq-icon fas fa-plus text-lg" style="color:#4f9eff;"></i>
             </div>
             <div class="faq-answer px-5 sm:px-6">
               <p class="text-gray-600 pb-5 font-['Inter'] text-sm sm:text-base">
@@ -475,10 +483,10 @@
             </div>
           </div>
 
-          <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#ceff66]/50 transition-all duration-300 reveal-right d2">
+          <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 reveal-right d2">
             <div class="faq-question p-5 sm:p-6 flex justify-between items-center gap-3" onclick="toggleFaq(this)">
               <h3 class="font-['Space_Grotesk'] font-semibold">How do you ensure data security?</h3>
-              <i class="faq-icon fas fa-plus text-[#ceff66] text-lg"></i>
+              <i class="faq-icon fas fa-plus text-lg" style="color:#4f9eff;"></i>
             </div>
             <div class="faq-answer px-5 sm:px-6">
               <p class="text-gray-600 pb-5 font-['Inter'] text-sm sm:text-base">
@@ -487,10 +495,10 @@
             </div>
           </div>
 
-          <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#ceff66]/50 transition-all duration-300 reveal-right d3">
+          <div class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 reveal-right d3">
             <div class="faq-question p-5 sm:p-6 flex justify-between items-center gap-3" onclick="toggleFaq(this)">
               <h3 class="font-['Space_Grotesk'] font-semibold">Can I start with a trial project?</h3>
-              <i class="faq-icon fas fa-plus text-[#ceff66] text-lg"></i>
+              <i class="faq-icon fas fa-plus text-lg" style="color:#4f9eff;"></i>
             </div>
             <div class="faq-answer px-5 sm:px-6">
               <p class="text-gray-600 pb-5 font-['Inter'] text-sm sm:text-base">
@@ -504,7 +512,7 @@
       <div class="reveal d4 mt-12 text-center">
         <div class="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-4 bg-white px-6 sm:px-8 py-4 rounded-full shadow-lg border border-gray-100">
           <span class="text-gray-600 font-['Inter'] text-sm sm:text-base">Still have questions?</span>
-          <a href="#contactForm" class="inline-flex items-center gap-2 bg-[#ceff66] text-black px-5 sm:px-6 py-2 rounded-full font-semibold text-sm hover:scale-105 transition-transform whitespace-nowrap">
+          <a href="#contactForm" class="inline-flex items-center gap-2 text-white px-5 sm:px-6 py-2 rounded-full font-semibold text-sm hover:scale-105 transition-transform whitespace-nowrap" style="background:#4f9eff;">
             Contact Support
             <i class="fas fa-arrow-right text-xs"></i>
           </a>
@@ -514,17 +522,20 @@
   </section>
 
   <!-- ========== CTA SECTION ========== -->
-  <section class="relative py-16 md:py-20 bg-[#111]">
+  <section class="relative py-16 md:py-20 bg-[#0a0f1e]">
     <div class="max-w-4xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20 text-center">
       <div class="reveal">
-        <span class="text-[#ceff66] text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase mb-4 block font-['Inter']">Ready to start?</span>
+        <span class="text-sm font-semibold tracking-[0.3em] uppercase mb-4 block font-['Inter']" style="color:#4f9eff;">Ready to start?</span>
         <h2 class="cta-heading font-['Space_Grotesk'] font-bold text-white mb-5">
-          Let's Build Something <span class="text-[#ceff66]">Amazing</span> Together
+          Let's Build Something <span style="color:#4f9eff;">Amazing</span> Together
         </h2>
         <p class="text-white/40 text-base sm:text-lg max-w-2xl mx-auto mb-8 font-['Inter']">
           Whether you're ready to scale or just exploring options, our team is here to guide you every step of the way.
         </p>
-        <a href="#contactForm" class="group inline-flex items-center gap-3 rounded-full px-7 sm:px-8 py-3 sm:py-4 bg-[#ceff66] text-black font-semibold text-base sm:text-lg hover:scale-105 transition-all duration-300 hover:shadow-[0_20px_30px_-10px_rgba(206,255,102,0.5)] font-['Inter']">
+        <a href="#contactForm" class="group inline-flex items-center gap-3 rounded-full px-7 sm:px-8 py-3 sm:py-4 text-white font-semibold text-base sm:text-lg hover:scale-105 transition-all duration-300 font-['Inter']"
+           style="background:#4f9eff; box-shadow:0 4px 15px rgba(79,158,255,0.3);"
+           onmouseover="this.style.boxShadow='0 20px 30px -10px rgba(79,158,255,0.5)'"
+           onmouseout="this.style.boxShadow='0 4px 15px rgba(79,158,255,0.3)'">
           Schedule a Call
           <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
         </a>
@@ -588,13 +599,11 @@
       return ok;
     }
 
-    // Live re-validation on blur
     rules.forEach(rule => {
       const el = document.getElementById(rule.id);
       if (el) el.addEventListener('blur', () => validateField(rule));
     });
 
-    // ── Formspree AJAX submit ────────────────────────────────────────────
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       let valid = true;
@@ -639,15 +648,15 @@
         if (item !== faqItem && item.classList.contains('active')) {
           item.classList.remove('active');
           item.querySelector('.faq-answer').classList.remove('show');
-          item.querySelector('.faq-icon').className = 'faq-icon fas fa-plus text-[#ceff66] text-lg';
+          item.querySelector('.faq-icon').className = 'faq-icon fas fa-plus text-lg';
+          item.querySelector('.faq-icon').style.color = '#4f9eff';
         }
       });
 
       faqItem.classList.toggle('active');
       answer.classList.toggle('show');
-      icon.className = answer.classList.contains('show')
-        ? 'faq-icon fas fa-times text-[#ceff66] text-lg'
-        : 'faq-icon fas fa-plus text-[#ceff66] text-lg';
+      icon.className = 'faq-icon fas ' + (answer.classList.contains('show') ? 'fa-times' : 'fa-plus') + ' text-lg';
+      icon.style.color = '#4f9eff';
     };
   </script>
 

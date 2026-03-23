@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --lime: #ceff66;
-            --lime-dark: #a6e62c;
+            --blue: #4f9eff;
+            --blue-dark: #2b7fe0;
             --ink: #111;
         }
 
@@ -22,7 +22,7 @@
             inset: 0;
             width: 100vw;
             height: 100vh;
-            background: #0a0a0a;
+            background: #0a0f1e;
             z-index: 999;
             flex-direction: column;
             justify-content: center;
@@ -41,29 +41,28 @@
             to   { opacity: 1; transform: translateX(0); }
         }
 
-        /* Scroll lock — position:fixed + top offset keeps iOS Safari honest */
         body.menu-open {
             overflow: hidden;
             position: fixed;
             width: 100%;
         }
 
-        /* scrolled state */
+        /* scrolled state — blue frosted glass instead of lime */
         .navbar-wrapper.scrolled #mobile-menu {
-            background: rgba(218, 255, 80, 0.95);
+            background: rgba(30, 80, 180, 0.97);
             backdrop-filter: blur(24px) saturate(1.8) brightness(1.05);
             -webkit-backdrop-filter: blur(24px) saturate(1.8) brightness(1.05);
         }
-        .navbar-wrapper.scrolled #mobile-menu .mob-link { color: rgba(0,0,0,0.4); }
-        .navbar-wrapper.scrolled #mobile-menu .mob-link:hover { color: #111; }
-        .navbar-wrapper.scrolled #mobile-menu .mob-link.active { color: #111; }
-        .navbar-wrapper.scrolled #mobile-menu .mob-cta { background: #111; color: var(--lime); }
-        .navbar-wrapper.scrolled #mobile-menu .mob-cta:hover { background: #000; transform: translateX(4px); }
-        .navbar-wrapper.scrolled #mobile-menu .mob-footer-tag { color: rgba(0,0,0,0.5); }
-        .navbar-wrapper.scrolled #mobile-menu .mob-social a { border-color: rgba(0,0,0,0.2); color: rgba(0,0,0,0.5); }
-        .navbar-wrapper.scrolled #mobile-menu .mob-social a:hover { background: #111; border-color: #111; color: var(--lime); }
-        .navbar-wrapper.scrolled #mobile-menu .menu-close-btn { border-color: rgba(0,0,0,0.2); color: rgba(0,0,0,0.5); }
-        .navbar-wrapper.scrolled #mobile-menu .menu-close-btn:hover { background: #111; border-color: #111; color: var(--lime); }
+        .navbar-wrapper.scrolled #mobile-menu .mob-link { color: rgba(255,255,255,0.4); }
+        .navbar-wrapper.scrolled #mobile-menu .mob-link:hover { color: #fff; }
+        .navbar-wrapper.scrolled #mobile-menu .mob-link.active { color: #fff; }
+        .navbar-wrapper.scrolled #mobile-menu .mob-cta { background: #fff; color: var(--blue-dark); }
+        .navbar-wrapper.scrolled #mobile-menu .mob-cta:hover { background: #e8f2ff; transform: translateX(4px); }
+        .navbar-wrapper.scrolled #mobile-menu .mob-footer-tag { color: rgba(255,255,255,0.4); }
+        .navbar-wrapper.scrolled #mobile-menu .mob-social a { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.5); }
+        .navbar-wrapper.scrolled #mobile-menu .mob-social a:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+        .navbar-wrapper.scrolled #mobile-menu .menu-close-btn { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.5); }
+        .navbar-wrapper.scrolled #mobile-menu .menu-close-btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
 
         /* ── MOBILE LINKS ── */
         .mob-link {
@@ -78,7 +77,7 @@
             line-height: 1.1;
             transition: color 0.2s ease, transform 0.25s ease;
         }
-        .mob-link:hover { color: var(--lime); transform: translateX(12px); }
+        .mob-link:hover { color: var(--blue); transform: translateX(12px); }
         .mob-link.active { color: #fff; }
 
         .mob-cta {
@@ -88,8 +87,8 @@
             margin-top: 2rem;
             padding: 0.9rem 1.75rem;
             border-radius: 0;
-            background: var(--lime);
-            color: #111;
+            background: var(--blue);
+            color: #fff;
             font-family: 'Inter', sans-serif;
             font-weight: 700;
             font-size: 0.85rem;
@@ -100,7 +99,7 @@
             clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
             white-space: nowrap;
         }
-        .mob-cta:hover { background: var(--lime-dark); transform: translateX(4px); }
+        .mob-cta:hover { background: var(--blue-dark); transform: translateX(4px); }
 
         /* mob footer row */
         .mob-footer {
@@ -132,7 +131,7 @@
             font-size: 0.85rem;
             transition: all 0.2s;
         }
-        .mob-social a:hover { background: var(--lime); border-color: var(--lime); color: #111; }
+        .mob-social a:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
 
         /* close X */
         .menu-close-btn {
@@ -148,7 +147,7 @@
             transition: all 0.2s;
             flex-shrink: 0;
         }
-        .menu-close-btn:hover { background: var(--lime); border-color: var(--lime); color: #111; }
+        .menu-close-btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
 
         /* ── DESKTOP NAV LINKS ── */
         .nav-link {
@@ -168,17 +167,17 @@
             position: absolute;
             bottom: -4px; left: 0;
             width: 0; height: 1px;
-            background: var(--lime);
+            background: var(--blue);
             transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .nav-link:hover { color: #fff; }
         .nav-link:hover::before { width: 100%; }
 
-        /* scrolled desktop state */
-        .navbar-wrapper.scrolled .nav-link { color: rgba(0,0,0,0.6); }
-        .navbar-wrapper.scrolled .nav-link:hover { color: #111; }
-        .navbar-wrapper.scrolled .nav-link::before { background: #111; }
-        .navbar-wrapper.scrolled .bar { background: #111; }
+        /* scrolled desktop state — blue frosted glass */
+        .navbar-wrapper.scrolled .nav-link { color: rgba(255,255,255,0.75); }
+        .navbar-wrapper.scrolled .nav-link:hover { color: #fff; }
+        .navbar-wrapper.scrolled .nav-link::before { background: #fff; }
+        .navbar-wrapper.scrolled .bar { background: #fff; }
 
         #menuToggle.is-open { display: none !important; }
 
@@ -214,12 +213,13 @@
                 border-color 0.45s ease,
                 box-shadow 0.45s ease;
         }
+        /* scrolled: deep blue frosted glass instead of lime */
         .navbar-wrapper.scrolled {
-            background: rgba(218, 255, 80, 0.72);
+            background: rgba(20, 60, 150, 0.72);
             backdrop-filter: blur(24px) saturate(1.8) brightness(1.05);
             -webkit-backdrop-filter: blur(24px) saturate(1.8) brightness(1.05);
-            border-bottom: 1px solid rgba(166, 230, 44, 0.5);
-            box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 8px 40px -12px rgba(140, 200, 20, 0.35);
+            border-bottom: 1px solid rgba(79, 158, 255, 0.35);
+            box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset, 0 8px 40px -12px rgba(43, 127, 224, 0.4);
         }
 
         /* ── NAVBAR INNER LAYOUT ── */
@@ -261,9 +261,9 @@
             transition: all 0.2s;
             white-space: nowrap;
         }
-        #desktop-contact:hover { background: var(--lime); border-color: var(--lime); color: #111; }
-        .navbar-wrapper.scrolled #desktop-contact { border-color: rgba(0,0,0,0.25) !important; color: #111 !important; }
-        .navbar-wrapper.scrolled #desktop-contact:hover { background: #111 !important; border-color: #111 !important; color: var(--lime) !important; }
+        #desktop-contact:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+        .navbar-wrapper.scrolled #desktop-contact { border-color: rgba(255,255,255,0.35) !important; color: #fff !important; }
+        .navbar-wrapper.scrolled #desktop-contact:hover { background: var(--blue) !important; border-color: var(--blue) !important; color: #fff !important; }
 
         /* ── RESPONSIVE VISIBILITY ── */
         #desktop-links   { display: none; }
@@ -362,13 +362,12 @@
     var isOpen   = false;
     var savedScrollY = 0;
 
-    // Block touchmove on the overlay (belt-and-suspenders for iOS Safari)
     function preventTouch(e) { e.preventDefault(); }
 
     function openMenu() {
         isOpen = true;
-        savedScrollY = window.scrollY;                    // remember position
-        document.body.style.top = '-' + savedScrollY + 'px'; // pin body
+        savedScrollY = window.scrollY;
+        document.body.style.top = '-' + savedScrollY + 'px';
         document.body.classList.add('menu-open');
         menu.classList.add('is-open');
         toggle.classList.add('is-open');
@@ -382,8 +381,8 @@
         toggle.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
         document.body.classList.remove('menu-open');
-        document.body.style.top = '';                     // unpin body
-        window.scrollTo(0, savedScrollY);                 // restore position
+        document.body.style.top = '';
+        window.scrollTo(0, savedScrollY);
         menu.removeEventListener('touchmove', preventTouch);
     }
 
@@ -396,12 +395,13 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && isOpen) closeMenu(); });
     window.addEventListener('resize', function () { if (window.innerWidth >= 768 && isOpen) closeMenu(); });
 
-    /* Scroll: blurry yellowish bg */
+    /* Scroll: blue frosted glass on scroll */
     var scrollTicking = false;
     function handleScrolledState() {
         if (window.scrollY > 40) {
             navInner.classList.add('scrolled');
-            if (logo) logo.style.filter = 'brightness(0)';
+            /* logo stays white — blue bg is dark enough */
+            if (logo) logo.style.filter = 'brightness(0) invert(1)';
         } else {
             navInner.classList.remove('scrolled');
             if (logo) logo.style.filter = 'brightness(0) invert(1)';
